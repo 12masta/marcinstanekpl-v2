@@ -28,29 +28,29 @@ Poprzedni post znajdziesz tutaj: [Wiadomość Slack z wynikami testów po zakoń
 ## Tworzenie nowego projektu .NET
 Tworzę nowy projekt z testami Xunit
 
-{% highlight javascript %}
+```
 $ mkdir TestContainersXUnitExample
 $ cd TestContainersXUnitExample
 $ dotnet new xunit
-{% endhighlight %}
+```
 
 Następnie dodaję NuGet DotNet.Testcontainers:
 
-{% highlight javascript %}
+```
 $ dotnet add package DotNet.Testcontainers
-{% endhighlight %}
+```
 
 Oraz zależności związane z samą bazą danych:
 
-{% highlight javascript %}
+```
 dotnet add package System.Data.SqlClient
-{% endhighlight %}
+```
 
 W ten sposób mam gotowe środowisko, na którym mogę rozpocząć pracę.
 
 Otwieram projekt i istniejącą już klasę testową. Rozkręcenie takiej instancji okazuję się niezwykle proste. Oto całość testu
 
-{% highlight csharp %}
+```
 [Fact]
 public async Task InitContainerTest()
 {
@@ -77,7 +77,7 @@ public async Task InitContainerTest()
         }
     }
 }
-{% endhighlight %}
+```
 
 Changeset na githubie:
 

@@ -25,29 +25,29 @@ In my case, most often I need an MSSQL database if I want to run tests that inte
 ## Creating new .NET project
 I am creating a new project with Xunit tests
 
-{% highlight javascript %}
+```
 $ mkdir TestContainersXUnitExample
 $ cd TestContainersXUnitExample
 $ dotnet new xunit
-{% endhighlight %}
+```
 
 Then I add NuGet DotNet.Testcontainers:
 
-{% highlight javascript %}
+```
 $ dotnet add package DotNet.Testcontainers
-{% endhighlight %}
+```
 
 And dependencies related to the database itself:
 
-{% highlight javascript %}
+```
 dotnet add package System.Data.SqlClient
-{% endhighlight %}
+```
 
 This way I have a ready environment where I can start working.
 
 I open a project and an existing test class. Setting up such an instance turns out to be extremely simple. Here is the complete test
 
-{% highlight csharp %}
+```
 [Fact]
 public async Task InitContainerTest()
 {
@@ -74,7 +74,7 @@ public async Task InitContainerTest()
         }
     }
 }
-{% endhighlight %}
+```
 
 Changeset on github:
 

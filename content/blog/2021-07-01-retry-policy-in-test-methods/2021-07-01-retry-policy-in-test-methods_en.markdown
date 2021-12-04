@@ -24,7 +24,7 @@ You can find the previous post here: [.NET Testcontainers library, infrastructur
  
 This is how code can look like:
 
-{% highlight csharp %}
+```
 public string Id { get; set; }
 public EntitiesDatabaseLoader Entities { get; set; }
 
@@ -38,7 +38,7 @@ return Policy.HandleResult<Entity>(r => r == null)
          TimeSpan.FromSeconds(3)
        })
        .Execute(() => Entities.Load(Id));
-{% endhighlight %}
+```
 
 _HandleResult_ method is responsible for handling behaviour defined as argument passed to it.
 

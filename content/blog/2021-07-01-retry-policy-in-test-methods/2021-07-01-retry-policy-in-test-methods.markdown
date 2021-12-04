@@ -25,7 +25,7 @@ Widziałem implementację biblioteki Polly w przypadku, gdy jako zespół próbo
  
 Tak może wyglądać kod:
 
-{% highlight csharp %}
+```
 public string Id { get; set; }
 public EntitiesDatabaseLoader Entities { get; set; }
 
@@ -39,7 +39,7 @@ return Policy.HandleResult<Entity>(r => r == null)
          TimeSpan.FromSeconds(3)
        })
        .Execute(() => Entities.Load(Id));
-{% endhighlight %}
+```
 
 _HandleResult_ metoda odpowiada za obsługę zachowania zdefiniowanego jako przekazany do niej argument.
 
