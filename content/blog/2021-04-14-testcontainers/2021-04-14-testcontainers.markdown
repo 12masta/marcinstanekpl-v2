@@ -1,6 +1,6 @@
 ---
-title:  "Biblioteka .NET Testcontainers, infrastruktura dla testów"
-date:   2021-04-14 08:00:00 +0200
+title: Biblioteka .NET Testcontainers, infrastruktura dla testów
+date: 2021-04-14 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, pl]
 permalink: /testcontainers-1

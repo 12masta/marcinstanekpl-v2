@@ -1,6 +1,6 @@
 ---
-title:  ".NET Testcontainers library, infrastructure for the tests"
-date:   2021-05-18 08:00:00 +0200
+title: .NET Testcontainers library, infrastructure for the tests
+date: 2021-05-18 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, en]
 permalink: /en/testcontainers-1

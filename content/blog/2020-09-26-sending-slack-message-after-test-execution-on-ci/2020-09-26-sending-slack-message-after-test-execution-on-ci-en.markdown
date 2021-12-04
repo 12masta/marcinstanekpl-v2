@@ -1,6 +1,6 @@
 ---
-title:  "Slack message with test results after the CI build process is complete"
-date:   2020-09-26 08:00:00 +0200
+title: Slack message with test results after the CI build process is complete
+date: 2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, en]
 permalink: /en/azure-devops-1
