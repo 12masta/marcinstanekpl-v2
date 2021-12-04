@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  ".NET Testcontainers library, infrastructure for the tests"
 date:   2021-05-18 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]

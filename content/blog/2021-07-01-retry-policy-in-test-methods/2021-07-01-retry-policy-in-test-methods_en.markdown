@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Retry policy for methods in terms of integration tests"
 date:   2021-07-01 08:00:00 +0200
 categories: [testautomation, .net, polly]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Wiadomość Slack z wynikami testów po zakończonym procesie budowania na CI"
 date:   2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Polityka ponawiania dla metod w przypadku testów integracyjnych"
 date:   2021-07-01 08:00:00 +0200
 categories: [testautomation, .net, polly]

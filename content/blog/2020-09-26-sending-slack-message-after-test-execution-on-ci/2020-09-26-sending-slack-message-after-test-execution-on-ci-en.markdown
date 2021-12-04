@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Slack message with test results after the CI build process is complete"
 date:   2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
