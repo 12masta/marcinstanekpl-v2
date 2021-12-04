@@ -18,7 +18,7 @@ ogdescription:
 During several integrations of tests implementation across the .NET-based projects, I was struggling very often race conditions across the methods which try to pull some state from the DB to make some assertion on it. Very often this is a point of failure which makes the integration tests flaky.
 
 You can find the previous post here: [.NET Testcontainers library, infrastructure for the tests
-]({% post_url 2021-05-18-testcontainers_en %})
+](/2021-04-14-testcontainers/2021-04-14-testcontainers_en/)
 
  I saw some implementation of Polly library in the case where as a team we were trying to consume 3rd parties API’s to increase resilience. I decided to try the same in the tests in terms of methods that pull some data from the database. The solution looks promising it already fixes some issues in the project which I am currently working on.
  

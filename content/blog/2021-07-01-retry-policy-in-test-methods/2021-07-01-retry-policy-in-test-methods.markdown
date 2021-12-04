@@ -18,7 +18,7 @@ ogdescription:
 Podczas kilku implementacji testów w projektach opartych na .NET, bardzo często zmagałem się ze zjawiskiem _race conditions_ między metodami, które próbują pobrać jakiś stan z bazy danych, aby dokonać na nim pewnych asercji. Bardzo często jest to punkt niepowodzenia, który sprawia, że ​​testy integracyjne są niepewne tzw. flaky tests.
 
 Poprzedni post znajdziesz tutaj: [Biblioteka .NET Testcontainers, infrastruktura dla testów
-]({% post_url 2021-04-14-testcontainers %})
+](/2021-04-14-testcontainers/2021-04-14-testcontainers/)
 
 
 Widziałem implementację biblioteki Polly w przypadku, gdy jako zespół próbowaliśmy wykorzystać API stron trzecich w celu zwiększenia odporności. Postanowiłem spróbować tego samego w testach pod kątem metod, które pobierają niektóre dane z bazy danych. Rozwiązanie wygląda obiecująco, naprawia już pewne problemy w projekcie, nad którym aktualnie pracuję.
