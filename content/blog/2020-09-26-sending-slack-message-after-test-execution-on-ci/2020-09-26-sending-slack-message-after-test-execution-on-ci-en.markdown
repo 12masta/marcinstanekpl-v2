@@ -3,7 +3,7 @@ title: Slack message with test results after the CI build process is complete
 date: 2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, en]
-permalink: /en/azure-devops-1
+slug: en/azure-devops-1
 language: en
 ogimage:
   - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643

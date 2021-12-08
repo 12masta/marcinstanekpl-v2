@@ -3,7 +3,7 @@ title: Wiadomość Slack z wynikami testów po zakończonym procesie budowania n
 date: 2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, pl]
-permalink: /azure-devops-1
+slug: azure-devops-1
 language: pl
 ogimage:
   - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643

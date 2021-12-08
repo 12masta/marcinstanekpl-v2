@@ -3,7 +3,7 @@ title: Biblioteka .NET Testcontainers, infrastruktura dla testów
 date: 2021-04-14 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, pl]
-permalink: /testcontainers-1
+slug: testcontainers-1
 language: pl
 ogimage:
   - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-04-14-testcontainers%2Flogo.png?alt=media&token=e5c98b5b-5b66-4047-9ac9-e67130825b1a
