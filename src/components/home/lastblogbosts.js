@@ -1,13 +1,13 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../layout"
+import { Link } from "gatsby"
 
 export class LastBlogPosts extends React.Component {
 
 
   render() {
     console.log(this.props.posts)
-    return ( <ol style={{ listStyle: `none` }}>
+    return (
+      <ol style={{ listStyle: `none` }}>
       {this.props.posts.map(post => {
         const title = post.frontmatter.title || post.fields.slug
 
@@ -38,6 +38,7 @@ export class LastBlogPosts extends React.Component {
           </li>
         )
       })}
+      <hr />
     </ol>);
 
   }
