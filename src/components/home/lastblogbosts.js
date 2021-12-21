@@ -5,7 +5,6 @@ export class LastBlogPosts extends React.Component {
 
 
   render() {
-    console.log(this.props.posts)
     return (
       <ol style={{ listStyle: `none` }}>
       {this.props.posts.map(post => {
@@ -38,7 +37,6 @@ export class LastBlogPosts extends React.Component {
           </li>
         )
       })}
-      <hr />
     </ol>);
 
   }
