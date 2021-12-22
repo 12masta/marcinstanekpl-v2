@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Strona główna" />
       <Jumbotron />
-      <LastBlogPosts name={"Marcin"} posts={posts}/>
+      <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts}/>
       <Featurette header={"Quality Assurance"} leadText={"Poszukujesz kontrolera jakości? Potrzebujesz zautomatyzować procesy testowe w Twojej firmie? Masz problem z jakością kodu w Twojej organizacji? Trafiłeś w dobre miejsce, aby rozwiązać te problemy!"} image={"qa"} alignToLeft={true}/>
       <Featurette header={"Automatyzacja"} leadText={"Pasjonuję się tworzeniem frameworków testowych, które usprawniają pracę zespołów deweloperskich, są efektywne i łatwe w utrzymaniu."} image={"automation"} alignToLeft={false}/>
       <Featurette header={"Tworzę kompletne rozwiązania"} leadText={"Twój biznes jest unikatowy. Sposób jego dostarczania również powinien taki być. Tworzę kompleksowe rozwiązania zapewniania jakości aby za każdym razem wydawać oprogramowanie najwyższej jakości."} image={"complete_solutions"} alignToLeft={true}/>

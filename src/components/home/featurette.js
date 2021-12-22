@@ -15,6 +15,8 @@ export class Featurette extends React.Component {
         src="../../images/home/qa.png"
         quality={95}
         alt="jumbotron image"
+        placeholder="blurred"
+        loading="eager"
       />
     }
     else if(this.props.image === "automation"){
@@ -24,6 +26,8 @@ export class Featurette extends React.Component {
         src="../../images/home/automation.png"
         quality={95}
         alt="jumbotron image"
+        placeholder="blurred"
+        loading="eager"
       />
     }
     else if(this.props.image === "complete_solutions"){
@@ -33,6 +37,8 @@ export class Featurette extends React.Component {
         src="../../images/home/complete_solutions.png"
         quality={95}
         alt="jumbotron image"
+        placeholder="blurred"
+        loading="eager"
       />
     }
     else if(this.props.image === "on_time"){
@@ -42,6 +48,8 @@ export class Featurette extends React.Component {
         src="../../images/home/on_time.png"
         quality={95}
         alt="jumbotron image"
+        placeholder="blurred"
+        loading="eager"
       />
     }
     else if(this.props.image === "inform"){
@@ -51,6 +59,8 @@ export class Featurette extends React.Component {
         src="../../images/home/inform.png"
         quality={95}
         alt="jumbotron image"
+        placeholder="blurred"
+        loading="eager"
       />
     }
 
@@ -74,12 +84,6 @@ export class Featurette extends React.Component {
           <p className="lead">{this.props.leadText}</p>
         </div>
         <div className={column2Orientation}>
-     {/*     <svg className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-               height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-               preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee"></rect>
-            <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-          </svg>*/}
           {image}
 
         </div>
