@@ -14,9 +14,7 @@ const Layout = ({ location, title, children }) => {
 
       <div className="container">
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        © marcinstanek.pl, {new Date().getFullYear()}
       </footer>
       </div>
     </div>
