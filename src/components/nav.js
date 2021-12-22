@@ -14,7 +14,7 @@ export class Nav extends React.Component {
             </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <a className="nav-link" aria-current="page" href="/en.html">English</a>
+                <a className="nav-link" aria-current="page" href="/en/">English</a>
                 <a className="nav-link" href="/blog/pl/">Blog</a>
               </div>
             </div>

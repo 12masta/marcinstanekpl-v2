@@ -8,7 +8,7 @@ import { LastBlogPosts } from "../components/home/lastblogbosts"
 import { Featurette } from "../components/home/featurette"
 import { ContactForm } from "../components/home/contactform"
 
-const BlogIndex = ({ data, location }) => {
+const HomePl = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl")
 
@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default HomePl
 
 export const pageQuery = graphql`
   query {
