@@ -12,6 +12,8 @@ export class Jumbotron extends React.Component {
             src="../../images/home/hero.png"
             quality={95}
             alt="jumbotron image"
+            placeholder="blurred"
+            loading="eager"
           />
         </div>
         <div className="col-lg-6">
