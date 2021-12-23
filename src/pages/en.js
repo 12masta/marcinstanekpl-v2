@@ -17,7 +17,7 @@ const HomeEn = ({ data, location }) => {
       <Seo title="Home page"/>
       <Jumbotron header={"I initiate and improve software Quality Assurance processes"}
                  description={"Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins."}
-                 wantToKnowMoreButtonText={"I want to know more"}/>
+                 wantToKnowMoreButtonText={"I want to know more"} blogUrl="/blog/en/"/>
       <LastBlogPosts header={"Recent blog posts"} posts={posts}/>
       <Featurette header={"Quality Assurance"}
                   leadText={"Are you looking for a Quality Assurance Engineer? Do you need to automate test processes in your company? You have a problem with the quality of the code in your organization? You've come to the right place to solve these problems!"}

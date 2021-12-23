@@ -20,8 +20,8 @@ export class Jumbotron extends React.Component {
           <h1 className="display-5 fw-bold lh-1 mb-3">{this.props.header}</h1>
           <p className="lead">{this.props.description}</p>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">{this.props.wantToKnowMoreButtonText}</button>
-            <button href="/blog/pl/" type="button" className="btn btn-outline-secondary btn-lg px-4">Blog</button>
+            <a href="#want-to-know" type="button" className="btn btn-primary btn-lg px-4 me-md-2">{this.props.wantToKnowMoreButtonText}</a>
+            <a href={this.props.blogUrl} type="button" className="btn btn-outline-secondary btn-lg px-4">Blog</a>
           </div>
         </div>
 
