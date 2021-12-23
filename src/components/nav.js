@@ -2,6 +2,29 @@ import * as React from "react"
 
 export class Nav extends React.Component {
   render() {
+    console.log(this.props.pathName)
+    let languageHref
+    let languageLabel
+    let blogHref
+
+    if (this.props.pathName.includes("blog/en/")) {
+      languageHref = "/blog/pl/"
+      languageLabel = "Polski"
+      blogHref = "/blog/en/"
+    } else if (this.props.pathName.includes("blog/pl/")) {
+      languageHref = "/blog/en/"
+      languageLabel = "English"
+      blogHref = "/blog/pl/"
+    } else if (this.props.pathName.includes("/en")) {
+      languageHref = "/"
+      languageLabel = "Polski"
+      blogHref = "/blog/en/"
+    } else {
+      languageHref = "/en/"
+      languageLabel = "English"
+      blogHref = "/blog/pl/"
+    }
+
     return (
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -14,8 +37,8 @@ export class Nav extends React.Component {
             </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <a className="nav-link" aria-current="page" href="/en/">English</a>
-                <a className="nav-link" href="/blog/pl/">Blog</a>
+                <a className="nav-link" aria-current="page" href={languageHref}>{languageLabel}</a>
+                <a className="nav-link" href={blogHref}>Blog</a>
               </div>
             </div>
           </div>

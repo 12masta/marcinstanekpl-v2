@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <main role="main">
-        <Nav />
+        <Nav pathName={location.pathname}/>
         <div className="container">{children}</div>
       </main>
 
