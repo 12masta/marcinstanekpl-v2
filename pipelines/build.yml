@@ -18,6 +18,7 @@ steps:
       echo See https://aka.ms/yaml
     displayName: 'Run a multi-line script'
 
-      - script: |
-          gatsby build
-        displayName: 'Building a website'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      gatsby build
+    displayName: 'Run a multi-line script'
