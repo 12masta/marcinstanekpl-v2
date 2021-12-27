@@ -1,8 +1,4 @@
 # Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
   - master
 
@@ -10,24 +6,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - script: sudo apt-get install curl
-    displayName: 'Install curl which allows you to transfer data and download additional dependencies'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
 
-  - script: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-    displayName: 'Download the latest nvm version'
+  - script: npm install -g gatsby-cli
+    displayName: 'Install gatsby'
 
-  - script: nvm --version
-    displayName: 'Confirm that nvm has worked'
-
-  - script: |
-      nvm install 14
-      nvm use 14
-    displayName: 'Set default Node.js version'
-
-  - script: |
-      nvm install 14
-      nvm use 14
-    displayName: 'Confirm that this worked. The output should be a version number.'
+  - script: gatsby --version
+    displayName: 'Verify gatsby installation'
 
   - script: |
       echo Add other tasks to build, test, and deploy your project.
