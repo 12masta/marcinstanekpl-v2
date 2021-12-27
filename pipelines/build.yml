@@ -21,7 +21,7 @@ steps:
 
   - task: AzureStaticWebApp@0
     inputs:
-      app_location: '/'
+      app_location: '/public/'
       output_location: 'public'
       skip_app_build: true
       verbose: true
