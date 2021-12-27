@@ -15,7 +15,7 @@ const HomePl = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Strona główna"/>
-      <Jumbotron header={"Inicjuję i naprawiam procesy kontroli jakości oprogramowania. Test"}
+      <Jumbotron header={"Inicjuję i naprawiam procesy kontroli jakości oprogramowania"}
                  description={"Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins."}
                  wantToKnowMoreButtonText={"Chcę wiedzieć więcej"} blogUrl="/blog/pl/"/>
       <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts}/>
