@@ -28,6 +28,5 @@ steps:
   - task: AzureStaticWebApp@0
     inputs:
       app_location: '/'
-      app_build_command: 'gatsby build'
       output_location: 'public'
-      azure_static_web_apps_api_token: $(static-web-app-deployment-token)
+      azure_static_web_apps_api_token: '$(static-web-app-deployment-token)'
