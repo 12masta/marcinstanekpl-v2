@@ -1,0 +1,23 @@
+# Starter pipeline
+trigger:
+  - master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+
+  - script: npm install -g gatsby-cli
+    displayName: 'Install gatsby'
+
+  - script: gatsby --version
+    displayName: 'Verify gatsby installation'
+
+  - script: npm install
+    displayName: 'npm install'
+
+  - script: gatsby build
+    displayName: 'Building gatsby'
