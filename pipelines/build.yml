@@ -21,3 +21,9 @@ steps:
 
   - script: gatsby build
     displayName: 'Building gatsby'
+
+  - task: AzureStaticWebApp@0
+    inputs:
+      app_location: '/'
+      app_build_command: 'gatsby build'
+      output_location: 'public'
