@@ -5,6 +5,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- group: tokens
+
 steps:
   - task: NodeTool@0
     inputs:
@@ -27,3 +30,4 @@ steps:
       app_location: '/'
       app_build_command: 'gatsby build'
       output_location: 'public'
+      azure_static_web_apps_api_token: $(static-web-app-deployment-token)
