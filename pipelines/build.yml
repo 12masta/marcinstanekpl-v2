@@ -13,9 +13,6 @@ steps:
   - script: sudo apt-get install curl
     displayName: 'Install curl which allows you to transfer data and download additional dependencies'
 
-  - script: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-    displayName: 'Download the latest nvm version'
-
   - script: nvm --version
     displayName: 'Confirm that nvm has worked'
 
