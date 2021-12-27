@@ -21,7 +21,7 @@ const HomePl = ({ data, location }) => {
       <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts}/>
       <Featurette header={"Quality Assurance"}
                   leadText={"Poszukujesz kontrolera jakości? Potrzebujesz zautomatyzować procesy testowe w Twojej firmie? Masz problem z jakością kodu w Twojej organizacji? Trafiłeś w dobre miejsce, aby rozwiązać te problemy!"}
-                  image={"qa"} alignToLeft={true}/ i/>
+                  image={"qa"} alignToLeft={true}/>
       <Featurette header={"Automatyzacja"}
                   leadText={"Pasjonuję się tworzeniem frameworków testowych, które usprawniają pracę zespołów deweloperskich, są efektywne i łatwe w utrzymaniu."}
                   image={"automation"} alignToLeft={false}/>
