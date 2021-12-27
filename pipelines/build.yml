@@ -18,7 +18,10 @@ steps:
       echo See https://aka.ms/yaml
     displayName: 'Run a multi-line script'
 
+  - script: sudo apt-get install curl
+    displayName: 'Run a one-line script'
+
   - script: |
       echo Add other tasks to build, test, and deploy your project.
       gatsby build
-    displayName: 'Run a multi-line script'
+    displayName: 'Building gatsby'
