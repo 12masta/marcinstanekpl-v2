@@ -10,16 +10,24 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+  - script: sudo apt-get install curl
+    displayName: 'Install curl which allows you to transfer data and download additional dependencies'
+
+  - script: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+    displayName: 'Download the latest nvm version'
+
+  - script: nvm --version
+    displayName: 'Confirm that nvm has worked'
 
   - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
+      nvm install 14
+      nvm use 14
+    displayName: 'Set default Node.js version'
 
-  - script: sudo apt-get install curl
-    displayName: 'Run a one-line script'
+  - script: |
+      nvm install 14
+      nvm use 14
+    displayName: 'Confirm that this worked. The output should be a version number.'
 
   - script: |
       echo Add other tasks to build, test, and deploy your project.
