@@ -29,6 +29,12 @@ steps:
 
   - script: npm run test-ci
     displayName: "Run playwirght tests"
+  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/results.xml'
+      testRunTitle: 'Playwright tests'
 
   - task: AzureStaticWebApp@0
     inputs:
