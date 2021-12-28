@@ -7,12 +7,12 @@ export class PostBlogPage
   implements INavbarPagePart, IHomePlPage
 {
   async gotoPl() {
-    await this.page.goto("http://localhost:8000" + "/dotnet-polly")
+    await this.page.goto("/dotnet-polly")
     await this.navbar.waitFor()
   }
 
   async gotoEn() {
-    await this.page.goto("http://localhost:8000" + "/en/dotnet-polly")
+    await this.page.goto("/en/dotnet-polly")
     await this.navbar.waitFor()
   }
 }

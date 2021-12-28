@@ -7,12 +7,12 @@ export class HomePage
   implements INavbarPagePart, IHomePlPage
 {
   async gotoPl() {
-    await this.page.goto("http://localhost:8000")
+    await this.page.goto("/")
     await this.navbar.waitFor()
   }
 
   async gotoEn() {
-    await this.page.goto("http://localhost:8000" + "/en/")
+    await this.page.goto("/en/")
     await this.navbar.waitFor()
   }
 }
