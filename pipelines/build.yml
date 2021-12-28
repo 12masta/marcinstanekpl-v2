@@ -25,8 +25,11 @@ steps:
   - script: npm run build
     displayName: "Building site with gatsby under the hood"
 
-  - script: npx playwright install
+  - script: npx playwright install-deps
     displayName: "Installing playwright deps"
+
+  - script: npx playwright install
+    displayName: "Installing playwright"
 
   - script: npm run test-ci
     displayName: "Run playwirght tests"
