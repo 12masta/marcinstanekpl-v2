@@ -1,18 +1,18 @@
-// bloghomepage.ts
+// postblogpage.ts
 import { Page } from "@playwright/test"
 import { INavbarPagePart, NavbarPagePart } from "../common/navbarpagepart"
 
-export class BlogHomePage
+export class PostBlogPage
   extends NavbarPagePart
   implements INavbarPagePart, IHomePlPage
 {
   async gotoPl() {
-    await this.page.goto("http://localhost:8000" + "/blog/pl/")
+    await this.page.goto("http://localhost:8000" + "/dotnet-polly")
     await this.navbar.waitFor()
   }
 
   async gotoEn() {
-    await this.page.goto("http://localhost:8000" + "/blog/en/")
+    await this.page.goto("http://localhost:8000" + "/en/dotnet-polly")
     await this.navbar.waitFor()
   }
 }

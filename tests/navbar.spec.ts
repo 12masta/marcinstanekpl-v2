@@ -43,3 +43,28 @@ test("Navbar blog home page en", async ({ page }) => {
   )
   await expect(homeEnPage.blogLink).toHaveAttribute("href", "/blog/en/")
 })
+
+test("Navbar post blog page pl", async ({ page }) => {
+  const homePlPage = new BlogHomePage(page)
+  await homePlPage.gotoPl()
+
+  await expect(homePlPage.navbarBrand).toHaveAttribute("href", "/")
+  await expect(homePlPage.navbarLanguageLink).toHaveAttribute(
+    "href",
+    "/blog/en/"
+  )
+  await expect(homePlPage.blogLink).toHaveAttribute("href", "/blog/pl/")
+})
+
+test("Navbar post blog page en", async ({ page }) => {
+  const homeEnPage = new BlogHomePage(page)
+  await homeEnPage.gotoEn()
+
+  await expect(homeEnPage.navbarBrand).toHaveAttribute("href", "/en/")
+  await expect(homeEnPage.navbarLanguageLink).toHaveAttribute(
+    "href",
+    "/blog/pl/"
+  )
+  await expect(homeEnPage.blogLink).toHaveAttribute("href", "/blog/en/")
+})
+
