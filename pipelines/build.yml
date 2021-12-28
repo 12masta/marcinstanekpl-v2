@@ -29,6 +29,7 @@ steps:
 
   - script: npm run test-ci
     displayName: "Run playwirght tests"
+    continueOnError: true
   
   - task: PublishTestResults@2
     inputs:
