@@ -33,7 +33,7 @@ export class Nav extends React.Component {
 
     return (
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-light" data-test="navbar">
           <div className="container-fluid">
             <a className="navbar-brand" href={brandHref}>marcinstanek.pl</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
