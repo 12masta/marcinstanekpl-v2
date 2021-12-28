@@ -9,9 +9,7 @@ pr:
       - "*"
 
 pool:
-  vmImage: 'ubuntu-20.04'
-
-container: mcr.microsoft.com/playwright:focal
+  vmImage: 'ubuntu-latest'
 
 variables:
   - group: tokens
@@ -26,6 +24,9 @@ steps:
 
   - script: npm run build
     displayName: "Building site with gatsby under the hood"
+
+  - script: npx playwright install
+    displayName: "Installing playwright deps"
 
   - script: npm run test-ci
     displayName: "Run playwirght tests"
