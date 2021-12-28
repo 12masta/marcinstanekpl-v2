@@ -9,7 +9,9 @@ pr:
       - "*"
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-20.04'
+
+container: mcr.microsoft.com/playwright:focal
 
 variables:
   - group: tokens
