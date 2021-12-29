@@ -56,9 +56,9 @@ const thresholdsConfigNavbarPostBlogPagePl = {
 
 lighthouseTest.describe("Lighthouse", () => {
   lighthouseTest("Lighthouse - Navbar home page pl", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homePlPage = new HomePage(page)
     await homePlPage.gotoPl()
+
     await playAudit({
       page,
       port,
@@ -67,7 +67,6 @@ lighthouseTest.describe("Lighthouse", () => {
   })
 
   lighthouseTest("Lighthouse - Navbar home page en", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homeEnPage = new HomePage(page)
     await homeEnPage.gotoEn()
 
@@ -79,7 +78,6 @@ lighthouseTest.describe("Lighthouse", () => {
   })
 
   lighthouseTest("Lighthouse - Navbar blog home page pl", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homePlPage = new BlogHomePage(page)
     await homePlPage.gotoPl()
 
@@ -91,7 +89,6 @@ lighthouseTest.describe("Lighthouse", () => {
   })
 
   lighthouseTest("Lighthouse - Navbar blog home page en", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homeEnPage = new BlogHomePage(page)
     await homeEnPage.gotoEn()
 
@@ -103,7 +100,6 @@ lighthouseTest.describe("Lighthouse", () => {
   })
 
   lighthouseTest("Lighthouse - Navbar post blog page pl", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homePlPage = new BlogHomePage(page)
     await homePlPage.gotoPl()
 
@@ -115,7 +111,6 @@ lighthouseTest.describe("Lighthouse", () => {
   })
 
   lighthouseTest("Lighthouse - Navbar post blog page en", async ({ page, port }) => {
-    lighthouseTest.setTimeout(900000)
     const homeEnPage = new BlogHomePage(page)
     await homeEnPage.gotoEn()
 
