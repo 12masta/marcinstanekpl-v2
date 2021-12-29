@@ -4,7 +4,7 @@ import { PlaywrightTestConfig, devices } from "@playwright/test"
 const config: PlaywrightTestConfig = {
   webServer: {
     command: "npm run start",
-    port: 8000,
+    port: 9000,
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   use: {
-    baseURL: "http://localhost:8000/",
+    baseURL: "http://localhost:9000/",
     trace: "on-first-retry",
   },
   projects: [
@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
-    {
+    /*{
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
@@ -35,7 +35,7 @@ const config: PlaywrightTestConfig = {
     {
       name: "Mobile Safari",
       use: { ...devices["iPhone 12"] },
-    },
+    },*/
   ],
 }
 export default config
