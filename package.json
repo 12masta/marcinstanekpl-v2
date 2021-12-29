@@ -58,7 +58,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "npx playwright test --config=tests/local.config.ts",
-    "test-ci": "npx playwright test --config=tests/ci.config.ts"
+    "test": "npx playwright test --config=tests/local.config.ts --grep-invert=lighthouse",
+    "test-ci": "npx playwright test --config=tests/ci.config.ts --grep-invert=lighthouse",
+    "test-li": "npx playwright test --config=tests/local.lighthouse.config.ts --grep=lighthouse",
+    "test-ci-li": "npx playwright test --config=tests/ci.lighthouse.config.ts --grep=lighthouse"
   }
 }
