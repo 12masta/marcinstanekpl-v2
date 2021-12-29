@@ -34,11 +34,21 @@ steps:
   - script: npm run test-ci
     displayName: "Run playwirght tests"
     continueOnError: true
-  
+
+  - script: npm run test-ci-li
+    displayName: "Run playwirght-lighthouse tests"
+    continueOnError: true
+
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/results.xml'
+      testRunTitle: 'Playwright tests'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/results-lighthouse.xml'
       testRunTitle: 'Playwright tests'
 
   - task: AzureStaticWebApp@0
