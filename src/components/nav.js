@@ -2,8 +2,6 @@ import * as React from "react"
 
 export class Nav extends React.Component {
   render() {
-    console.log(this.props.pathName)
-
     let brandHref
     let languageHref
     let languageLabel
