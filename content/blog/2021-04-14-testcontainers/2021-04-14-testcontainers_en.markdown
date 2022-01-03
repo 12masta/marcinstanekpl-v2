@@ -5,12 +5,8 @@ categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, en]
 slug: en/testcontainers-1
 language: en
-ogimage:
-  - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-04-14-testcontainers%2Flogo.png?alt=media&token=e5c98b5b-5b66-4047-9ac9-e67130825b1a
-ogimagetype:
-  - image/png
-ogdescription:
-  - Managing containers for the test purposes from the code level
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-04-14-testcontainers%2Flogo.png?alt=media&token=e5c98b5b-5b66-4047-9ac9-e67130825b1a
+ogImageType: image/png
 ---
 
 ## Testcontainers

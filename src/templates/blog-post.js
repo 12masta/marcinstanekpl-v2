@@ -14,6 +14,8 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        ogImage={post.frontmatter.ogImage}
+        ogImageType={post.frontmatter.ogImageType}
       />
       <div className="container mt-4">
         <article
@@ -84,6 +86,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        ogImage
+        ogImageType
+        language
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

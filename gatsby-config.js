@@ -3,12 +3,17 @@ module.exports = {
     title: `marcinstanek.pl`,
     author: {
       name: `Marcin Stanek`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `who lives and works in Poland building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `
+        I implement and improve software Quality Assurance processes. Specialist in building automatic tests. QA leader.`,
+    siteUrl: `https://marcinstanek.pl`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `MarcinstanekP`,
+    },
+    og: {
+      ogImage: "/ogImage.jpg",
+      ogImageType: "image/jpg",
     },
   },
   plugins: [
@@ -128,6 +133,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    'gatsby-plugin-slug'
+    "gatsby-plugin-slug",
   ],
 }

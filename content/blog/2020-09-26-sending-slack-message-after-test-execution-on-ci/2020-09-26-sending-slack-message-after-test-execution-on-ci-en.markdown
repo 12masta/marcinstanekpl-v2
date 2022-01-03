@@ -5,12 +5,8 @@ categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, en]
 slug: en/azure-devops-1
 language: en
-ogimage:
-  - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
-ogimagetype:
-  - image/png
-ogdescription:
-  - Report from the tests on Slack, automatically
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
+ogImageType: image/png
 ---
 
 ## Context

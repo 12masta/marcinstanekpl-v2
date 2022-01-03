@@ -1,5 +1,4 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -19,6 +18,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+              ogImage
+              ogImageType
             }
           }
         }
@@ -53,6 +54,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
           slug: post.fields.slug,
+          ogImage: post.fields.ogImage,
+          ogImageType: post.fields.ogImageType
         },
       })
     })
@@ -73,6 +76,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       author: Author
       siteUrl: String
       social: Social
+      og: Og
     }
 
     type Author {
@@ -94,10 +98,19 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       language: String
+      ogImage: String
+      ogImageType: String
     }
 
     type Fields {
       slug: String
+      ogImage: String
+      ogImageType: String
+    }
+    
+    type Og {
+      ogImage: String
+      ogImageType: String
     }
   `)
 }
