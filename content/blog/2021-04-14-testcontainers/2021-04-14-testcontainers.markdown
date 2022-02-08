@@ -83,5 +83,3 @@ Changeset na githubie:
 Jak widać, uruchomienie takiej bazy danych jest bardzo prostym zadaniem. Pierwsze uruchomienie testu trwa dosyć długo. W moim przypadku około 3 minut. Na już rozgrzanym środowisku trwa to już 10 sekund, należy jednak wziąć pod uwagę, że możemy rozkręcić instancję, a potem jej reużyć dla więcej niż jednego testu. Dlatego też podejrzewam, że dla większego zestawu testów wynik ten nie będzie problemem.
 
 Na horyzoncie pojawia się też problem utworzenia bardziej skomplikowanego setupu z odtworzeniem backupu lub predefiniowanego obrazu z gotowym backupem bazy danych do przeprowadzenia testu. Poruszę ten problem w następnym poście dotyczącego tego narzędzia.
-
-{% include leadmagnet-selenium-homework.markdown %}
