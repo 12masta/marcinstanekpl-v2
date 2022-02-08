@@ -82,10 +82,12 @@ const Seo = ({ description, lang, meta, title, ogImage, ogImageType }) => {
         {
           name: `og:image`,
           content: metaOgImage,
+          id: 'og:image'
         },
         {
           name: `og:image:type`,
           content: metaOgImageType,
+          id: 'og:image:type'
         },
       ].concat(meta)}
     />
