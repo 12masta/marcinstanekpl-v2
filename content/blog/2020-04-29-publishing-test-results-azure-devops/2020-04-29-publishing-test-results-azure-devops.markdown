@@ -128,7 +128,7 @@ steps:
 
 Po zapisaniu zmian, kiedy nasz pipeline się wykona pojawia się zakładka _Tests_ w której możemy zobaczyć nasz raport. Ta strona ma następujące sekcje:
 
-![Podusmowanie wyników testów](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-3.png?alt=media&token=c1eccd8a-836e-4089-9e39-fd6b87411bc4)
+![Podsumowanie wyników testów](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-3.png?alt=media&token=c1eccd8a-836e-4089-9e39-fd6b87411bc4)
 
 - Summary: zapewnia kluczowe miary ilościowe do wykonania testu, takie jak całkowita liczba testów, testy zakończone niepowodzeniem, procent zaliczenia i inne. Zapewnia również różnicowe wskaźniki zmian w porównaniu do poprzedniego wykonania.
 
