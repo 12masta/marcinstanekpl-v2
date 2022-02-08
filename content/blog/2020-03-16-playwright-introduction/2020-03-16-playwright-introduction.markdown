@@ -15,7 +15,7 @@ Niedawno Microsoft ogłosił jej wydanie. Tworzą ją autorzy narzędzia Puppete
 
 Po dodaniu paru bibliotek osiągniemy oczekiwany efekt. Będę się opierał na bibliotekach Mocha i Chai, wybór oczywiście jest dużo szerszy.
 
-Jeżeli chcesz podążać krok za krokiem mojego rozwiązania u siebie lokalnie będziesz potrzebować, wykonać odrobinę pracy i przejść przez setup projektu, który opisałem już w poście: [Przygotowanie środowiska]({% post_url 2019-09-30-environment-setup %}) Playground jest ten sam co w przypadku serii testów o Cypress. Oba rozwiązania są stworzone na podstawie JS także będzie ciekawa okazja do porównania tych dwóch narzędzi.
+Jeżeli chcesz podążać krok za krokiem mojego rozwiązania u siebie lokalnie będziesz potrzebować, wykonać odrobinę pracy i przejść przez setup projektu, który opisałem już w poście: [Przygotowanie środowiska](/cypress-0) Playground jest ten sam co w przypadku serii testów o Cypress. Oba rozwiązania są stworzone na podstawie JS także będzie ciekawa okazja do porównania tych dwóch narzędzi.
 
 ## Setup
 
