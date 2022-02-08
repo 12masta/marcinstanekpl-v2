@@ -249,7 +249,7 @@ button.first().click()
 
 Sprawdźmy to!
 
-{% include_relative videoVimeo.html video="https://player.vimeo.com/video/384340011" %}
+[click](https://player.vimeo.com/video/384340011)
 
 Jak widać, test zakończył się powodzeniem. Element którego wyszukiwaliśmy za pomocą nowo dodanej biblioteki został znaleziony, a interakcja zakończyła się powodzeniem. Doskonale!
 
