@@ -13,8 +13,6 @@ ogImageType: image/png
 
 Sending messages to Slack with the results of automated tests after the build on the CI server gave me a lot of value. This mechanism facilitates access to test reports for the entire team. It encourages a deeper analysis of the tests. Moreover, additional analytics are very helpful in detecting flaky tests. Read how to achieve it.
 
-{% include_relative subForm-en.markdown %}
-
 
 ## How to achieve it?
    
@@ -26,7 +24,7 @@ The solution is based on the Slack API, Webhooks and Powershell script. This is 
 
 We need a webhook URL to be able to continue with the "Create an Incoming Webhook" section. The next step is API consumption, also described in the documentation at the link provided above. To combine all these elements I will use a Powershell script:
 
-{% highlight powershell %}
+```
 function SendSlackTestReport {
     param (    
         [Parameter(Mandatory = $true, Position = 1)]$Url
@@ -60,7 +58,7 @@ function SendSlackTestReport {
 Write-Host "Sending slack message for BUILD: $($env:BUILD_BUILDID)"
 
 SendSlackTestReport $($env:WEBHOOK_URL)
-{% endhighlight %}
+```
 
 ## Busniess logic
    
@@ -72,13 +70,13 @@ The _payload_ variable, as the name suggests, stores the message that will be se
 
 The step in azure-pipelines.yml looks like this:
 
-{% highlight powershell %}
+```
 - task: PowerShell@2
   inputs:
     filePath: 'devops/slack-message.ps1'
   displayName: 'Send Slack message with link to test report' 
   condition: always()
-{% endhighlight %}
+```
 
 As you can see, the powershell script is located in the project's repository in the devops directory. This way, CI tools know what script to run. I also added a condition section which will cause the step to run always regardless of the test result.
 
@@ -86,4 +84,3 @@ As you can see, the powershell script is located in the project's repository in 
 
 This is how I achieved the effect of monitoring automated tests on the Slack platform. This method is quite universal. It allows you to apply the script in any place supporting Powershell. It significantly increases the quality of automated tests and prompts the team to more often analyze the results of tests performed on the CI server at earlier scheduled times or when they are performed automatically after creating a PR to the code.
 
-{% include_relative leadmagnet-en.markdown %}
