@@ -1,0 +1,562 @@
+---
+title:  Refaktoryzacja testów - App Actions vs Page Object Model
+date:   2019-11-05 08:00:00 +0200
+categories: [testautomation, cypress]
+tags: [testautomation, cypress, pl]
+slug: cypress-3
+ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-05-refactor%2Fblog_post_cover.png?alt=media&token=5dc8a4e0-cda0-4138-99d6-25cea5138a2d
+ogimagetype: image/png
+language: pl
+---
+
+## Wstęp
+
+Jak niektórzy w komentarzach zdążyli zauważyć kod testów jest bardzo niskiej jakości, dlatego dzisiaj postaram się poprawić scenariusze i przejść proces ich refaktoryzacji. Pierwsze co przychodzi do głowy w tej sytuacji to użycie wzorcu Page Object Model, aby uczynić nasze testy bardziej logicznymi jednoznacznie uwypuklając ich sens biznesowy. W dokumentacji jednak, znalazłem taki wpis: [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/) sugeruje on jednak, aby spróbować podejścia do problemu z innej strony - dlatego implementuje oba sposoby i zobaczę, co z tego będzie.
+
+Poprzedni post w tej tematyce znajdziesz tutaj: [Testy logowania z Cypress](/cypress-2)
+
+## App Actions
+
+Jako, że jestem ciekawy nowego podejścia zaczynam od App Actions, bo tak właśnie jest ono nazwane. Tworzę nowy plik o nazwie:
+
+    LoginTests.AppActions.spec.js
+
+Następnie kopiuje do niego zawartość pliku _LoginTests.spec.js_ Okazuję się, że twórcy narzędzia wystawili API umożliwiające rozszerzenie wachlarza funkcji dostępnych pod obiektem:
+
+    cy.<custom_command>
+
+Do tworzenia tego typu funkcji przewidziano właściwe miejsce - plik w katalogu:
+
+    cypress/support/index.js
+
+Dodaje tutaj część kodu, którą używam do procesu logowania się poprzez formatkę na stronie. Dodaje taki kod:
+```
+Cypress.Commands.add('login', (username, password) => {
+    Cypress.log({
+        name: 'login',
+        message: `${username} | ${password}`,
+    })
+    cy.get(':nth-child(1) > .form-control')
+        .type(username)
+    cy.get(':nth-child(2) > .form-control')
+        .type(password)
+    cy.get('.btn')
+           .click()
+})
+```
+
+Następnie przechodzę do zmian w pliku: _LoginTests.AppActions.spec_ zmieniając sposób obsługi wydarzenia logowania się użytkowników teście _Successfull login_:
+
+```
+it('Successfull login', function () {
+    (...)
+    cy.visit('http://localhost:4100/login')
+    cy.login('test@test.com', 'test')
+    cy.url()
+    .should('contain', 'http://localhost:4100/')
+    cy.get(':nth-child(4) > .nav-link')
+    (...)
+})
+```
+
+Zwijam również do osobnych funkcji zapytania do API tj. wszystkich akcji typu: _cy.request_:
+
+```
+Cypress.Commands.add('createNewUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'createNewUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', 'http://localhost:5000/users', {
+        user: {
+        username: 'test',
+        email: 'test@test.com',
+        password: 'test'
+        }
+    })
+    cy.request('POST', 'http://localhost:5000/users', {
+        user: {
+        username: 'test',
+        email: 'test@test.com',
+        password: 'test'
+        }
+    })
+})
+```
+
+Mój test wygląda teraz dużo prościej:
+```
+it('Successfull login', function () {
+    cy.createNewUserAPI('test', 'test@test.com', 'test')
+    cy.visit('http://localhost:4100/login')
+    cy.login('test@test.com', 'test')
+    cy.url()
+        .should('contain', 'http://localhost:4100/')
+    (...)
+})
+```
+
+Podążam tym tropem podczas refaktoryzacji i aktualizuje kolejne przypadki. Okazuje się, że w wielu miejscach mogę użyc ponownie funkcje _cy.login_ oraz _cy.createNewUserAPI_. Podczas pracy orientuje się, że potrzebuje jeszcze funkcji: _cy.deleteUser_:
+
+```
+Cypress.Commands.add('deleteUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'deleteUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', 'http://localhost:5000/users', {
+        user: {
+            username: 'test',
+            email: 'test@test.com',
+            password: 'test'
+        }
+    })
+})
+```
+
+Ponadto użycie tego podejścia pozwala na [chaining](https://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/) funkcji. Praktyczne użycie App Actions powoduje, że test _Successfull login_ wygląda dużo przejrzyściej.
+
+```
+it('Successfull login', function () {
+    cy.createNewUserAPI('test', 'test@test.com', 'test')
+    .visit('http://localhost:4100/login')
+    .login('test@test.com', 'test')
+    .url()
+        .should('contain', 'http://localhost:4100/')
+    .get(':nth-child(4) > .nav-link')
+        .should('have.attr', 'href', '/@test')
+    .get(':nth-child(3) > .nav-link')
+        .should('have.attr', 'href', '/settings')
+    .get('.container > .nav > :nth-child(2) > .nav-link')
+        .should('have.attr', 'href', '/editor')
+})
+```
+
+Myślę, że można jeszcze ukryć techniczne zawiłości w asercji testu ukrywając jej logikę w Custom Command:
+
+```
+    Cypress.Commands.add('shouldBeLoggedIn', (username, email, password) => {
+        Cypress.log({
+            name: 'shouldBeLoggedIn',
+            message: `${username} | ${email}| ${password}`
+        })
+        cy.get(':nth-child(4) > .nav-link')
+            .should('have.attr', 'href', '/@test')
+            .get(':nth-child(3) > .nav-link')
+            .should('have.attr', 'href', '/settings')
+            .get('.container > .nav > :nth-child(2) > .nav-link')
+            .should('have.attr', 'href', '/editor')
+    })
+```
+
+To samo mogę zrobić dla walidowania wyświetlonego komunikatu o błędzie i walidacji adresu URL:
+
+```
+Cypress.Commands.add('shouldErrorMessageBeValid', (text) => {
+    Cypress.log({
+        name: 'shouldErrorMessageBeValid',
+        message: `${text}`
+    })
+    cy.get('.error-messages > li')
+        .should('have.text', text)
+})
+
+Cypress.Commands.add('shouldErrorMessagesBeValid', (message, secondeMessgae) => {
+    Cypress.log({
+        name: 'shouldErrorMessagesBeValid',
+        message: `${message} | ${secondeMessgae}`
+    })
+    cy.get('.error-messages > :nth-child(1)')
+        .should('have.text', message)
+        .get('.error-messages > :nth-child(2)')
+        .should('have.text', secondeMessgae)
+})
+
+Cypress.Commands.add('shouldUrlContain', (url) => {
+    Cypress.log({
+        name: 'shouldUrlContain',
+        message: `${url}`
+    })
+    cy.url()
+        .should('contain', url)
+})
+```
+
+Po zastosowaniu powyższych praktyk kończymy z testami wyglądającymi w ten sposób:
+
+```
+describe('Login Tests App Actions', function () {
+    it('Successfull login', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .visit('http://localhost:4100/login')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('http://localhost:4100/')
+            .shouldBeLoggedIn('test', 'test@test.com', 'test')
+    })
+
+    it('Incorrect password', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .visit('http://localhost:4100/login')
+            .login('test@test.com', 'test2')
+            .shouldUrlContain('http://localhost:4100/login')
+            .shouldErrorMessageBeValid('Error Invalid email / password.')
+    })
+
+    it('Not existing user', function () {
+        cy.deleteUserAPI('test', 'test@test.com', 'test')
+            .visit('http://localhost:4100/login')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('http://localhost:4100/login')
+            .shouldErrorMessageBeValid('Error Invalid email / password.')
+    })
+
+    it('Empty fields', function () {
+        cy.visit('http://localhost:4100/login')
+            .login('', '')
+            .shouldUrlContain('http://localhost:4100/login')
+            .shouldErrorMessagesBeValid('\'Email\' must not be empty.', '\'Password\' must not be empty.')
+    })
+})
+```
+
+Okazuje się, że test: _Empty fields_ zakończył się niepowodzeniem z powodu błędu: _CypressError: cy.type() cannot accept an empty String. You need to actually type something._ Oznacza to, że wysłanie ciągu znaków o wartości: _''_ do funkcji _cy.type_ kończy się niepowodzeniem, ponieważ nie jest to poprawne użycie tej funkcji. Wolę podejście z Selenium, gdzie nie jest to problemem. Okazuje się jednak, że twórcy Cypressa są innego zdania na ten temat i nie jest to defekt w ich mniemaniu: [GitHub Issue - .type() will not accept an empty string](https://github.com/cypress-io/cypress/issues/3587). Ja wolę móc swobodnie sparametryzować utworzoną przeze mnie funkcję w sposób, w jaki ją utworzyłem, dlatego modyfikuje kod funkcji _cy.login_ aby pominąć interakcje z polami login i password, jeżeli argumenty przekazane do funkcji są pustymi ciągami znaków:
+
+```
+Cypress.Commands.add('login', (username, password) => {
+    Cypress.log({
+        name: 'login',
+        message: `${username} | ${password}`,
+    })
+    if (username) {
+        cy.get(':nth-child(1) > .form-control')
+            .type(username)
+    }
+    if (password) {
+        cy.get(':nth-child(2) > .form-control')
+            .type(password)
+    }
+    cy.get('.btn')
+        .click()
+})
+```
+
+Po powyższych zmianach okazuje się, że same testy są dużo czytelniejsze, jednak sporo ze złych praktyk zostało przesuniętych do pliku commands.js. Większośći z nich nie będę na ten moment poprawiał, zamierzam jednak logiczniej ułożyć pliki i odseparować od siebie osobne bloki logiczne. Tworzę nowy folder o nazwie _login_ na ścieżce _cypress/support/. W tym folderze tworzę plik o nazwie: loginCommands.js_ i kopiuję z pliku _commands.js_ implementacje funkcji _cy.login_. Następnie tworzę kolejny plik _loginAssertionsCommands.js_ i kopiuję do niego implementacje funkcji: _cy.shouldBeLoggedIn_, _cy.shouldErrorMessageBeValid(arg)_ i _cy.shouldErrorMessagesBeValid(arg, arg)_ Analogiczne operacje wykonuję dla funkcji _cy.createNewUserAPI_, _cy.deleteUserAPI_ i _cy.shouldUrlContain_ Ostatecznie, aby mieć dostęp do tych funkcji w nowo utworzonych plikach muszę zmodyfikować plik: _index.js_ w katalogu: cypress/support/index.js i dodać odpowiednie importy:
+
+```
+import './commands'
+import './api/apiCommands'
+import './common/urlAssertionsCommands'
+import './login/loginAssertionsCommands'
+import './login/loginCommands'
+```
+
+Po tej operacji na pewno będzie łatwiej znaleźć interesujące nas funkcje, ponieważ w mojej opinii są o wiele logiczniej poukładane. Benefity tej refaktoryzacji będzie można odczuć dopiero wtedy, kiedy ilość funkcji będzie rosnąć wraz z pokryciem testami funkcji aplikacji.
+
+Nasuwa się jeszcze jedno pytanie: dlaczego to działa? Przecież te funkcje nie powinny być widoczne w testach. Ten mechanizm funkcjonuje, ponieważ wszystkie zależności z pliku: _cypress/support/index.js_ są automatycznie załadowane przed wykonaniem każdej specyfikacji przez mechanizm Cypressa.
+
+### App Actions - commit
+
+Wszystkie zmiany w kodzie dotyczące App Actions znajdziesz [tutaj](https://github.com/12masta/react-redux-realworld-example-app/commit/11d965258e549f1de7cc003858aba7ee6e0baba4).
+
+{% include_relative subForm.markdown %}
+
+## Page Object Model
+
+Zastosowanie wzorca Page Object Model jest również jak najbardziej możliwe.
+
+Tworzę nowy plik o nazwie:
+
+    LoginTests.PageObjectModel.spec.js
+
+Następnie kopiuje do niego zawartość pliku _LoginTests.spec.js_ Kolejnym krokiem jest utworzenie nowej klasy, która będzie reprezentować obiekt strony logowania. Tworzę ją w tym miejscu: _cypress/pageobjects/LoginPage.js_ Następnie prototypuje jak będzie wyglądać użycie klasy w teście, wiem, że kod będzie wyglądał mniej więcej tak:
+
+```
+it('Successfull login', function () {
+  (...)
+  
+  cy.visit('http://localhost:4100/login')
+        
+  const homePage = new LoginPage()
+    .login('test@test.com', 'test')
+  
+  cy.url()
+    .should('contain', 'http://localhost:4100/')
+  (...)
+})
+```
+
+Widzę też, że będę potrzebował klasy HomePage która będzie reprezentować stronę domową aplikacji. Tworzę ją w tym miejscu projektu: _cypress/pageobjects/HomePage.js_ i przechodzę do implementacji funkcji _LoginPage.login_:
+
+```
+import HomePage from './HomePage'
+
+class LoginPage {
+    login(email, password) {
+        cy.get(':nth-child(1) > .form-control')
+            .type(email)
+        cy.get(':nth-child(2) > .form-control')
+        .type(password)
+        cy.get('.btn')
+            .click()
+
+        return new HomePage()
+    }
+}
+
+export default LoginPage;
+```
+
+Uruchamiam test, otrzymuje błąd: _ReferenceError: LoginPage is not defined_ okazuję się, że w pliku z testami zapomniałem zaimportować użytych przeze mnie nowo utworzonych klas, naprawiam to dodając następujący kod w pliku: _LoginTests.PageObjectModel.spec.js_
+
+```
+    import LoginPage from '../pageobjects/LoginPage'
+```
+
+Kontynuuje prototypowanie dla asercji:
+
+```
+it('Successfull login', function () {
+    (...)
+
+    cy.visit('http://localhost:4100/login')
+
+    const homePage = new LoginPage()
+        .login('test@test.com', 'test')
+
+    homePage.url()
+        .should('contain', 'http://localhost:4100/')
+    homePage.userProfile()
+        .should('have.attr', 'href', '/@test')
+    homePage.settings()
+        .should('have.attr', 'href', '/settings')
+    homePage.editor()
+        .should('have.attr', 'href', '/editor')
+})
+```
+
+Już wiem jak ma wyglądać mój interfejs(to na razie tylko klasa, jednak myślę o niej jak o przyszłym interfejsie), dlatego też przechodzę do implementacji:
+
+```
+class HomePage {
+    url() {
+        return cy.url()
+    }
+
+    userProfile() {
+        return cy.get(':nth-child(4) > .nav-link')
+    }
+
+    settings() {
+        return cy.get(':nth-child(3) > .nav-link')
+    }
+
+    editor() {
+        return cy.get('.container > .nav > :nth-child(2) > .nav-link')
+    }
+}
+
+export default HomePage;
+```
+
+Następnie wykonuję te same operacje dla reuqestów do API. Utworzę nową klasę, którą odpowiedzialnością będzie zarządzanie stanem użytkownika. Prototypuję jak chciałbym żeby wyglądał test:
+
+```
+it('Successfull login', function () {
+    new User('test', 'test@test.com', 'test')
+        .remove()
+        .create()
+
+    cy.visit('http://localhost:4100/login')
+    const homePage = new LoginPage()
+        .login('test@test.com', 'test')
+
+    homePage.url()
+        .should('contain', 'http://localhost:4100/')
+    homePage.userProfile()
+        .should('have.attr', 'href', '/@test')
+    homePage.settings()
+        .should('have.attr', 'href', '/settings')
+    homePage.editor()
+        .should('have.attr', 'href', '/editor')
+})
+```
+
+Kiedy już wiem co chcę osiągnąć przechodzę do implementacji klasy: _cypress/requests/User.js_:
+
+```
+class User {
+
+    constructor(username, email, password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    create() {
+        Cypress.log({
+        name: 'Log.User.create()',
+        message: `${this.username} | ${this.email} | ${this.password}`
+        })
+
+        cy.request('POST', 'http://localhost:5000/users', {
+        user: {
+            username: this.username,
+            email: this.email,
+            password: this.password
+        }
+        })
+        return this;
+    }
+
+    remove() {
+        Cypress.log({
+        name: 'Log.User.remove()',
+        message: `${this.username} | ${this.email} | ${this.password}`
+        })
+        cy.request('DELETE', 'http://localhost:5000/users', {
+        user: {
+            username: this.username,
+            email: this.email,
+            password: this.password
+        }
+        })
+        return this;
+    }
+}
+
+export default User;
+```
+
+Teraz kiedy mam pierwszy test, który wygląda tak jakbym tego oczekiwał kontynuuję refaktoryzacje kolejnych scenariuszy. Okazuje się że dla testu: _Incorrect password_ utworzona funkcja _LoginPage.login(arg, arg)_ nie jest wystarczająca, ponieważ zwraca obiekt typu HomePage, a wiemy, że po niepoprawnym logowaniu powinniśmy pozostać na PageObject typu LoginPage. Dlatego też wymagana jest zmiana tej klasy. Klasa LoginPage po refaktoryzacji będzie wyglądać tak:
+
+```
+import HomePage from './HomePage'
+
+class LoginPage {
+    login(email, password) {
+        if (email) {
+            cy.get(':nth-child(1) > .form-control')
+                .type(email)
+        }
+        if (password) {
+            cy.get(':nth-child(2) > .form-control')
+                .type(password)
+        }
+        cy.get('.btn')
+            .click()
+    }
+
+    loginIncorrectPass(email, password) {
+        this.login(email, password)
+        return new LoginPage()
+    }
+
+    loginCorrectPass(email, password) {
+        this.login(email, password)
+        return new HomePage()
+    }
+
+    url() {
+        return cy.url()
+    }
+
+    errorMessage() {
+        return cy.get('.error-messages > li')
+    }
+}
+
+export default LoginPage;
+```
+
+Po refaktoryzacji wszystkich testów używając wzorca otrzymuję taki kod:
+
+```
+import LoginPage from '../pageobjects/LoginPage'
+import User from '../requests/User'
+
+describe('Login Tests Page Objects', function () {
+  it('Successfull login', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    cy.visit('http://localhost:4100/login')
+    const homePage = new LoginPage()
+      .loginCorrectPass('test@test.com', 'test')
+
+    homePage.url()
+      .should('contain', 'http://localhost:4100/')
+    homePage.userProfile()
+      .should('have.attr', 'href', '/@test')
+    homePage.settings()
+      .should('have.attr', 'href', '/settings')
+    homePage.editor()
+      .should('have.attr', 'href', '/editor')
+  })
+
+  it('Incorrect password', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    cy.visit('http://localhost:4100/login')
+
+    const loginPage = new LoginPage()
+      .loginIncorrectPass('test@test.com', 'test-incorrect')
+
+    loginPage.url()
+      .should('contain', 'http://localhost:4100/login')
+    loginPage.errorMessage()
+      .should('have.text', 'Error Invalid email / password.')
+  })
+
+  it('Not existing user', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+
+    cy.visit('http://localhost:4100/login')
+
+    const loginPage = new LoginPage()
+      .loginIncorrectPass('test@test.com', 'test')
+
+    loginPage.url()
+      .should('contain', 'http://localhost:4100/login')
+    loginPage.errorMessage()
+      .should('have.text', 'Error Invalid email / password.')
+  })
+
+  it('Empty fields', function () {
+    cy.visit('http://localhost:4100/login')
+
+    const loginPage = new LoginPage()
+      .loginIncorrectPass('', '')
+
+    loginPage.url()
+      .should('contain', 'http://localhost:4100/login')
+    loginPage.errorMessage()
+      .should('have.length', 2)
+    loginPage.errorMessage().first()
+      .should('have.text', '\'Email\' must not be empty.')
+      .next()
+      .should('have.text', '\'Password\' must not be empty.')
+  })
+})
+```
+
+Z powodzeniem udało mi się zaimplementować wzorzec Page Object Model. Tak samo, jak dla App Actions, w dalszym ciągu jest sporo do poprawy, jednak na ten moment skupiłem się na podstawowej implementacji założeń wzorca.
+
+### Page Object Model - commit
+
+Wszystkie zmiany w kodzie dotyczące Page Object Model znajdziesz [tutaj](https://github.com/12masta/react-redux-realworld-example-app/commit/c8408db5ec5d9dd23fc528bb692a2dff5cd91bae).
+
+## Podsumowanie
+
+To, co spodobało mi się to możliwość głębokiej integracji z narzędziem, nie potrzebujemy - przynajmniej na tym etapie produkcji testów, tworzyć kolejnego frameworku, bo mamy już gotowy i swobodnie nim zarządzamy rozszerzając jego funkcje. Ponadto testy napisane tym podejściem są bardzo czytelne. Spodziewałem się jednak czegoś więcej, wydaje mi się, że wraz z rozwojem zarządzanie tymi funkcjami stanie się uciążliwe i zbyt mało zorganizowane. Równocześnie myślę, że dopisanie większej ilości scenariuszy sprawi, że będę musiał głębiej przeanalizować problem i zmusi mnie to do okrycia potencjału drzemiącego w tym podejściu. Cieszy mnie za to fakt, że mamy wybór, z łatwością można zaimplementować wzorzec Page Object i pozostać przy starych nawykach, jeżeli nam na tym zależy.
+
+Całość zmian znajdziesz w moim repo na branchu, tutaj:
+
+    https://github.com/12masta/react-redux-realworld-example-app/tree/3-cypress
+
+Changeset:
+
+    https://github.com/12masta/react-redux-realworld-example-app/pull/3/files
