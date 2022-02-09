@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Listen podcast, tester!"
+title:  Listen podcast, tester!
 date:   2019-09-04 18:03:22 +0200
 categories: materials
 tags: en
