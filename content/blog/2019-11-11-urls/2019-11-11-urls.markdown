@@ -1,0 +1,315 @@
+---
+title:  Porządki, usystematyzowanie adresów URL
+date:   2019-11-11 08:00:00 +0200
+categories: [testautomation, cypress]
+tags: [testautomation, cypress, pl]
+slug: cypress-4
+ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fblog_post_cover.png?alt=media&token=ff1ab910-05aa-464a-9b6f-5dd81930ef8b
+ogimagetype: image/png
+language: pl
+---
+
+## Wstęp
+
+W tym poście poruszam kolejny istotny, brakujący element w moich testach. Jest to odpowiednie zarządzanie adresami URL aplikacji, której testy automatyzuję.
+
+Poprzedni post w tej tematyce znajdziesz tutaj: [Refaktoryzacja testów - App Actions vs Page Object Model](/cypress-3)
+
+## Haki ;)
+
+Pierwszym elementem, który kwalifikuje się do dzisiejszej refaktoryzacji, jest załadowanie odpowiedniej podstrony aplikacji. Operacja ta wykonuje się podczas każdego testu i rozmywa jego logikę oraz cel. Chodzi mi dokładnie o linijkę tego typu:
+
+```
+cy.visit('http://localhost:4100/login')
+```
+
+Z pewnością niejedna osoba zauważyła, że to bez sensu i powinno zostać rozwiązane w lepszy, czystszy sposób. Oczywiście Cypress udostępnia narzędzia, które pozwolą nam posprzątać ten nieporządek. Jak większość narzędzi, frameworków czy bibliotek testowych mamy dostęp do funkcji pozwalających nam uruchomić kod przed lub po wykonanym teście. Twórcy Cypressa nazywają je _hooks_. Mamy do wyboru, jak to zwykle bywa, 4 tego typu funkcje:
+
+```
+describe('Haki', function() {
+  before(function() {
+    // uruchamia się raz przed całym zbiorem testów w bloku describe
+  })
+
+  after(function() {
+    // uruchamia się raz po wykonaniu się całego zbioru testów w bloku describe
+  })
+
+  beforeEach(function() {
+    // uruchamia się przed każdym testem w bloku describe
+  })
+
+  afterEach(function() {
+    // uruchamia się po każdym teście w bloku describe
+  })
+})
+```
+
+Przenosząc to do realiów aplikacji, której testy staram się zautomatyzować wiem, że przed każdym testem muszę dokonać nawigacji do konkretnej strony. Wygląda na doskonałego kandydata do użycia funkcji _beforeEach()_. Implementacja nie będzie zbyt skomplikowana:
+
+```
+describe('Login Tests App Actions', function () {
+
+    beforeEach(function () {
+        cy.visit('http://localhost:4100/login')
+    })
+
+    it('Successfull login', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('http://localhost:4100/')
+            .shouldBeLoggedIn('test', 'test@test.com', 'test')
+    })
+
+    //analogiczne zmiany dla reszty testów
+    (...)
+})
+```
+
+Z łatwością można zauważyć, że taka prosta zmiana znacząco poprawiła jakość testów. Usunęła zbędny krok, który jest potrzebny podczas analizy przypadku testowego oraz uwydatniła potrzebę nawigacji do pożądanej przez nas podstrony przed możliwością przeprowadzenia testu. Podczas wykonywania się testu można zauważyć, że blok _BEFORE EACH_ jest odpowiednio wydzielony w oknie Cypressa:
+
+![1-beforeEach](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fcypress-4-1.gif?alt=media&token=274b2530-c182-404c-9eb2-2f4da0719dd1)
+
+## Centralizacja adresów URL
+
+Następnym problemem jest rozsianie adresów URL w argumentach funkcji. Próba zmiany adresu w celu przetestowania aplikacji na innym, na przykład nielokalnym środowisku, skończyłaby się dużym bólem zmiany każdego miejsca, gdzie jest użyty tenże adres. Do naprawy tej sytuacji użyję dwóch mechanizmów. Pierwszy z nich to ustawienie: _baseUrl_, a kolejnym jest możliwość ustawienia zmiennych środowiskowych. Oba odnoszą się do przechowywania zmiennych w pliku konfiguracyjnym. Ustawienie _baseUrl_ polega na dodaniu odpowiedniego wpisu do pliku konfiguracyjnego, które zmodyfikuję domyślne działanie funkcji _cy.visit()_ oraz _cy.request(). Przechodząc do implementacji modyfikuje plik _cypress.json_ do postaci:
+
+```
+{
+    "baseUrl": "http://localhost:4100"
+}
+```
+
+Następnie mogę zmodyfikować testy _cypress/integration/LoginTests.AppActions.spec.js_ do postaci:
+
+```
+describe('Login Tests App Actions', function () {
+
+    beforeEach(function () {
+        cy.visit('/login')
+    })
+
+    it('Successfull login', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('/')
+            .shouldBeLoggedIn('test', 'test@test.com', 'test')
+    })
+
+    //analogiczne zmiany dla reszty testów
+    (...)
+})
+```
+
+![2-wrong-url-assertion](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2F2-wrong-url-assertion.png?alt=media&token=6cb3750d-5a44-480a-9b42-75c7febcdec8)
+
+Okazuje się jednak, że test nie jest dokładnie taki sam jak przed zmianami. W linii _URL ASSERT_ można zauważyć tego typu log: "_expected http://localhost:4100/ to include /_". Test sprawdził jedynie to, czy adres URL posiada w sobie następujący ciąg znaków: "/". To niedopuszczalna sytuacja należy ją poprawić. Na szczęście jest na to łatwy sposób, możemy z łatwością pobrać wartość parametru _baseUrl_ zapisanego w konfiguracji za pomocą funkcji: _Cypress.config('arg')_, implementacja wygląda w ten sposób:
+
+```
+Cypress.Commands.add('shouldUrlContain', (subPath) => {
+    Cypress.log({
+        name: 'shouldUrlContain',
+        message: `${Cypress.config('baseUrl') + subPath}`
+    })
+    cy.url()
+        .should('contain', Cypress.config('baseUrl') + subPath)
+})
+```
+
+Naprawia to jeden z problemów tej funkcji. Niestety jest w niej kolejny poważny defekt. Sprawdza jedynie, czy URL **zawiera** w sobie podany ciąg znaków. Jest to błędne podejście co zostało zauważone przez jedną osobę w komentarzach, za co dziękuje. Poprawnym podejściem jest sprawdzenie czy ciąg znaków jest równy temu, którego oczekujemy. Zamiast argumentu _'contain'_, należało użyć _'equal'_. Dlaczego? W obecnej sytuacji, jeżeli aplikacja po wykonaniu się logiki testu, błędnie, przekierowałaby nas na stronę: _http://localhost:4100/you_should_not_be_here_, test zakończyłby się błędnie powodzeniem. Parę linijek kodu, a zdołały zawierać w sobie aż dwa defekty - całkiem niezły wynik. Zmieniam również nazwę funkcji na poprawnie odwzorowywującą aktualne działanie i poprawna implementacja wygląda tak:
+
+```
+Cypress.Commands.add('shouldUrlBe', (subPath) => {
+    Cypress.log({
+        name: 'shouldUrlBe',
+        message: `${Cypress.config('baseUrl') + subPath}`
+    })
+    cy.url()
+        .should('equal', Cypress.config('baseUrl') + subPath)
+})
+```
+
+Oczywiście należy teraz uważać, aby nie przekazać do funkcji pełnego adresu URL, jednak to podejście wydaje się spójne z natywnym działaniem Cypress, które proponują jego twórcy. Poza tym zawsze możemy w funkcji dodać odpowiedni blok _if_, który rozwiąże ten problem. Obecnie nie jest to powodem do dalszych zmian dlatego nie zmieniam już tej funkcji w związku z tą uwagą. Widzę jeszcze drobną możliwość usprawnienia tego bloku kodu za pomocą wyciągnięcia budowy pełnego adresu URL do osobnej zmiennej. Funkcja wygląda teraz tak i myślę, że nie potrzebuje już więcej zmian:
+
+```
+Cypress.Commands.add('shouldUrlBe', (subPath) => {
+    const url = Cypress.config('baseUrl') + subPath
+    Cypress.log({
+        name: 'shouldUrlBe',
+        message: `${url}`
+    })
+    cy.url()
+        .should('equal', url)
+})
+```
+
+Aplikuję również wyżej opisane zmiany do testów korzystających z Page Object Pattern, wyciągając URL do osobnej zmiennej i modyfikując asercje:
+
+```
+import LoginPage from '../pageobjects/LoginPage'
+import User from '../requests/User'
+
+describe('Login Tests Page Objects', function () {
+
+  const baseUrl = Cypress.config('baseUrl')
+
+  beforeEach(function () {
+    cy.visit('/login')
+  })
+
+  it('Successfull login', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    const homePage = new LoginPage()
+      .loginCorrectPass('test@test.com', 'test')
+
+    homePage.url()
+      .should('equal', baseUrl + '/')
+    homePage.userProfile()
+      .should('have.attr', 'href', '/@test')
+    homePage.settings()
+      .should('have.attr', 'href', '/settings')
+    homePage.editor()
+      .should('have.attr', 'href', '/editor')
+  })
+
+  it('Incorrect password', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    const loginPage = new LoginPage()
+      .loginIncorrectPass('test@test.com', 'test-incorrect')
+
+    loginPage.url()
+      .should('equal', baseUrl + '/login')
+  })
+
+  (...)
+})
+```
+
+## Zapytania do API
+
+Backend aplikacji znajduje się pod innym adresem, więc również należy wyciągnąć go do konfiguracji. Dodaję nowy wpis do pliku _cypress.json_:
+
+```
+{
+    "baseUrl": "http://localhost:4100",
+    "apiUrl": "http://localhost:5000"
+}
+```
+
+Następnie wyciągam URL do osobnej zmiennej w pliku _cypress/support/api/apiCommands.js_ Używając analogicznego podejścia co z _baseUrl_ zamieniam jedynie nazwę parametru którego poszukuję w pliku konfiguracyjnym, czyli użycie funkcji będzie wyglądać tak _Cypress.config('apiUrl')_, a implementacja w następujący sposób:
+
+```
+
+const usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+Cypress.Commands.add('createNewUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'createNewUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', usersEndpointUrl, {
+        user: {
+            username: 'test',
+            email: 'test@test.com',
+            password: 'test'
+        }
+    })
+
+    (...)
+})
+```
+
+Zauważam również jeden defekt, argumenty przekazane do funkcji nie zostały wykorzystane. Okazuje się, że testy korzystają z tych _zahardkodowanych_. Poprawna wersja:
+
+```
+const usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+Cypress.Commands.add('createNewUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'createNewUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', usersEndpointUrl, {
+        user: {
+            username: username,
+            email: email,
+            password: password
+        }
+    })
+    (...)
+})
+```
+
+Tutaj również aplikuję zmiany do pliku _cypress/requests/User.js_:
+
+```
+class User {
+  usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+  (...)
+
+  create() {
+    (...)
+
+    cy.request('POST', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    return this;
+  }
+  (...)
+}
+
+export default User;
+```
+
+Podobnie jak powyżej w tej funkcji również kryje się defekt. Jest to błąd logiczny - przed utworzeniem użytkownika nie usuwam go. Powód, dla którego to robię został omówiony w poście: [Testy logowania z Cypress]({% post_url 2019-10-17-login-tests-with-cypress %}) w sekcji _Implementacja pierwszego testu_. Poprawna wersji funkcji _create()_:
+
+```
+  create() {
+    Cypress.log({
+      name: 'Log.User.create()',
+      message: `${this.username} | ${this.email} | ${this.password}`
+    })
+    cy.request('DELETE', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    cy.request('POST', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    return this;
+  }
+```
+
+## Podsumowanie
+
+Jak widać, Cypress daje nam możliwość łatwego zarządzania i czytania konfiguracji. Oczywiście to nie wszystko co oferuje dewelopereom. Z przydatnych funkcji, która jako pierwsza przychodzi na myśl to nadpisywanie konfiguracji, co z pewnością przyda się podczas jej zmiany w procesie CI i na pewno zostanie opisane w przyszłości.
+
+Całość zmian znajdziesz w moim repo na branchu, tutaj:
+
+    https://github.com/12masta/react-redux-realworld-example-app/tree/4-cypress
+
+Changeset:
+
+    https://github.com/12masta/react-redux-realworld-example-app/pull/4/files
+
+Okazuje się że przypadkowo wprowadziłem jeszcze jeden defekt co uniemożliwia uruchomienie testów: _cypress/integration/LoginTests.AppActions.spec.js_. Rozwiązaniem problemu jest następujący kod:
+
+    https://github.com/12masta/react-redux-realworld-example-app/pull/5/files
