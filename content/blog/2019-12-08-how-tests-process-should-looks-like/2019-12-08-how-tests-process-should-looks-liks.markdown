@@ -40,7 +40,7 @@ Testy automatyczne powinny zawierać:
 Poniższy diagram pokazuje jak wyobrażam sobie idealny rozkłąd testów automtycznych i manualnych. Diagram inspirowany: [autorem oryginalnego diagramu](http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2)
  i [książką](https://books.google.pl/books/about/Agile_Testing.html?id=68_lhPvoKS8C&redir_esc=y).
 
-![automation-diagram](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-08-how-tests-process-should-looks-liks%2Fwykres.png?alt=media&token=118b6508-5354-4602-af07-fa9f49911954){:alt="automation-diagram"}
+![automation-diagram](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-08-how-tests-process-should-looks-liks%2Fwykres.png?alt=media&token=118b6508-5354-4602-af07-fa9f49911954)
 
 Testy automatyczne z tego wykresu doskonale pasują również do procesów Continuous Delivery. Co to oznacza? Każda zmiana w kodzie powoduje uruchomienie procesu budowania aplikacji, tworzenia paczek, uruchomienie testów jednostkowych i uruchomienia procesów statycznej analizy. Po tej pierwszej fazie zostają odpalone testy, które potrzebują więcej czasu na ich wykonanie, tj. testy akceptacyjne. Tego typu build powinien być już gotowy na wykonanie testów eksploracyjnych czy też innej manualnej kontroli jakości, jeżeli przeszedł poprawnie wcześniejsze fazy oczywiście. Kiedy zakończono manualną kontrolę uznajemy tak utworzona paczkę jako gotową do wydania z technologicznego punktu widzenia.
 
