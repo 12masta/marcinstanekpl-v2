@@ -5,21 +5,13 @@ categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, pl]
 slug: azure-devops-1
 language: pl
-ogimage:
-  - https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
-ogimagetype:
-  - image/png
-ogdescription:
-  - Raport z testów na Slacku, automatycznie.
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
+ogImageType: image/png
 ---
 
 ## Raport z testów na Slacku - automatycznie
 
 Wysyłanie wiadomości na Slacka z rezultatem przeprowadzonych testów automatycznych po skończonym buildzie na serwerze CI dało mi bardzo dużo wartości. Mechanizm ten ułatwia dostęp do raportów z testów dla całego zespołu. Zachęca do głębszej analizy testów. Do tego, dodatkowa analityka jest bardzo pomocna w wykrywaniu niestabilnych testów, tj. flaky tests. Przeczytaj jak to osiągnąć.
-
-Poprzedni post znajdziesz tutaj: [Raportowanie testów Cypress w Azure DevOps]({% post_url 2020-04-29-publishing-test-results-azure-devops %})
-
-{% include_relative leadmagnet-selenium-homework.markdown %}
 
 ## Jak to osiągnąć?
    
@@ -31,7 +23,7 @@ Rozwiązanie opiera się na API Slack, Webhooks i skryptu Powershell. Jest to ba
 
 Potrzebujemy webhook URL, aby móc kontynuować, sekcja "Create an Incoming Webhook". Następnym krokiem jest konsumpcja API również opisana w dokumentacji pod linkiem podanym powyżej. Aby połączyć te wszystkie elementy wykorzystam skrypt Powershell:
 
-{% highlight powershell %}
+```
 function SendSlackTestReport {
     param (    
         [Parameter(Mandatory = $true, Position = 1)]$Url
@@ -65,7 +57,7 @@ function SendSlackTestReport {
 Write-Host "Sending slack message for BUILD: $($env:BUILD_BUILDID)"
 
 SendSlackTestReport $($env:WEBHOOK_URL)
-{% endhighlight %}
+```
 
 ## Logika biznesowa
    
@@ -77,13 +69,13 @@ SendSlackTestReport $($env:WEBHOOK_URL)
 
 Krok w azure-pipelines.yml wygląda następująco:
 
-{% highlight powershell %}
+```
 - task: PowerShell@2
   inputs:
     filePath: 'devops/slack-message.ps1'
   displayName: 'Send Slack message with link to test report' 
   condition: always()
-{% endhighlight %}
+```
 
 Jak widać skrypt powershell jest umieszczony w repozytorium projektu w katalogu devops. W ten sposób narzędzia CI wiedzą jaki skrypt uruchomić. Dodałem również sekcje condition, która spowoduję, że krok uruchomi się zawsze niezależnie od rezultatu testów.
 
@@ -91,4 +83,3 @@ Jak widać skrypt powershell jest umieszczony w repozytorium projektu w katalogu
 
 W ten właśnie sposób osiągnąłem efekt monitoringu testów automatycznych na platformie Slack. Sposób ten jest dość uniwersalny. Pozwala zastosować skrypt w każdym miejscu wspierającym Powershell. Znacznie zwiększa on jakość testów automatycznych oraz skłania zespół do częstszej analizy wyników testów wykonywanych na serwerze CI we wcześniejszych zaplanowanych porach czy też, kiedy wykonują się automatycznie po stworzeniu PR do kodu.
 
-{% include_relative leadmagnet.markdown %}

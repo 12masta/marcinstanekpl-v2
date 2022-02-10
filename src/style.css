@@ -47,3 +47,9 @@
         margin-top: 7rem;
     }
 }
+
+/* img adjustment
+-------------------------------------------------- */
+.blog-post img{
+    width: 100%
+}

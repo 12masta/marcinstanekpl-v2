@@ -1,0 +1,380 @@
+---
+title:  Cleanup, systematization of URLs
+date:   2019-11-11 08:00:00 +0200
+categories: [testautomation, cypress]
+tags: [testautomation, cypress, en]
+slug: en/cypress-4
+ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fblog_post_cover.png?alt=media&token=ff1ab910-05aa-464a-9b6f-5dd81930ef8b
+ogimagetype: image/png
+language: en
+---
+
+## Introduction
+
+In this post, I bring up another important missing element in my tests. It is
+the proper management of the URLs of the application that I am automating tests
+of.
+
+You can find the previous post on this topic here: [Test refactoring - App Actions vs Page Object Model](/en/cypress-3)
+
+## Hooks
+
+The first item which qualifies for refactoring today is loading the appropriate
+subpage of the application. This operation is performed on each test which
+blurs its logic and purpose. I have in mind precisely this line:
+
+```
+cy.visit('http://localhost:4100/login')
+```
+
+Certainly not only me have noticed that it makes no sense and should be solved
+in a better, cleaner way.  Of course, Cypress provides tools that will allow us
+to clean up this disorder.  Like most tools, frameworks or test libraries, we
+have access to functions that allow us to run the code before or after the
+test.  Cypress's authors call them _hooks_.  We have 4 functions of this type
+to choose from:
+
+```
+describe('Hooks', function() {
+  before(function() {
+    // runs once before execution of the entire set of tests in the describe block
+  })
+
+  after(function() {
+    // runs once after execution of the entire set of tests in the describe block
+  })
+
+  beforeEach(function() {
+    // runs before each test in the describe block
+  })
+
+  afterEach(function() {
+    // runs after each test in the describe block
+  })
+})
+```
+
+Applying it to the application tests which I am trying to automate I know that
+before each test I have to navigate to a specific page Looks like an excellent
+case for the _beforeEach()_ function. The implementation will not be too
+complicated:
+
+```
+describe('Login Tests App Actions', function () {
+
+    beforeEach(function () {
+        cy.visit('http://localhost:4100/login')
+    })
+
+    it('Successfull login', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('http://localhost:4100/')
+            .shouldBeLoggedIn('test', 'test@test.com', 'test')
+    })
+
+    //similar changes for the rest of the tests
+    (...)
+})
+```
+
+You can easily see that such a simple change significantly improved the quality
+of tests.  It has removed an unnecessary step that is needed in the test case
+study and highlighted the need to navigate to the desired subpage before the
+test can be performed.  During the test execution we can notice that the
+_BEFORE EACH_ block is appropriately separated in the Cypress window:
+
+![1-beforeEach](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fcypress-4-1.gif?alt=media&token=274b2530-c182-404c-9eb2-2f4da0719dd1)
+
+## URL centralization
+
+The next problem is the spread of URLs in function arguments.  Attempting to
+change the URL to test the application on another, for example non-local
+environment, would end up with a headache by changing it in every place, where
+that address is used.  I will use two mechanisms to fix this.  The first is to
+set: _baseUrl_, and the next is setting environment variables.  Both refer to
+the storage of variables in the configuration file.  Setting _baseUrl_ consists
+in adding the appropriate entry to the file configuration which will modify the
+default behavior of the _cy.visit()_ function and _cy.request()_. Going to the
+implementation, I modify the _cypress.json_ file as follow:
+
+```
+{
+    "baseUrl": "http://localhost:4100"
+}
+```
+
+Then I can change the _cypress/integration/LoginTests.AppActions.spec.js_ tests to the form:
+
+```
+describe('Login Tests App Actions', function () {
+
+    beforeEach(function () {
+        cy.visit('/login')
+    })
+
+    it('Successfull login', function () {
+        cy.createNewUserAPI('test', 'test@test.com', 'test')
+            .login('test@test.com', 'test')
+            .shouldUrlContain('/')
+            .shouldBeLoggedIn('test', 'test@test.com', 'test')
+    })
+
+    //similar changes for the rest of the tests
+    (...)
+})
+```
+
+![2-wrong-url-assertion](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2F2-wrong-url-assertion.png?alt=media&token=6cb3750d-5a44-480a-9b42-75c7febcdec8)
+
+It turns out, however, that the test is not exactly the same as before the
+changes. On the _URL ASSERT_ line you notice this type of log: "_expected
+http://localhost:4100/ to include /_". The test only checked that the URL had
+the following string "/" in it characters. This is an unacceptable situation
+and should be corrected.  Fortunately, there is an easy way to do this, we can
+easily retrieve the value of _baseUrl_ parameter saved in the configuration
+using the function: _Cypress.config('arg')_, the implementation looks like
+this:
+
+```
+Cypress.Commands.add('shouldUrlContain', (subPath) => {
+    Cypress.log({
+        name: 'shouldUrlContain',
+        message: `${Cypress.config('baseUrl') + subPath}`
+    })
+    cy.url()
+        .should('contain', Cypress.config('baseUrl') + subPath)
+})
+```
+
+This fixes one of the problems of this function.  Unfortunately, there is
+another serious defect in it.  It only checks that the URL **contains** the
+specified string.  This is a wrong approach, which was noticed by one person in
+the comments, for which thanks.  The correct approach is to check that the
+string is equal to the one in which we expect.  Instead of _'contain'_, a
+_'equal'_ should have been used.  Why? In the current situation, if the
+application, after executing the test logic, would wrongly redirect us to the
+page: _http://localhost:4100/you_should_not_be_here_, the test would pass which
+is incorrect.  A few lines of code, and they managed to contain as many as two
+defects - quite good score.  I also change the name of the function to
+correctly reflect the current operation and the correct implementation looks
+like this:
+
+```
+Cypress.Commands.add('shouldUrlBe', (subPath) => {
+    Cypress.log({
+        name: 'shouldUrlBe',
+        message: `${Cypress.config('baseUrl') + subPath}`
+    })
+    cy.url()
+        .should('equal', Cypress.config('baseUrl') + subPath)
+})
+```
+
+Of course, we should now be careful not to pass the full URL address to the
+function, however, this approach seems consistent with the native behavior of
+Cypress, which authors propose.  Besides, we can always add the appropriate
+_if_ block to the function, which will solve this problem.  Currently, it is
+not a reason for further changes so I am not changing this one function in
+conjunction with this note.  I can see another small option to improve this
+block of code with is putting the full URL into a separate variable.  The
+function looks like this now and I think it doesn't need any more changes:
+
+```
+Cypress.Commands.add('shouldUrlBe', (subPath) => {
+    const url = Cypress.config('baseUrl') + subPath
+    Cypress.log({
+        name: 'shouldUrlBe',
+        message: `${url}`
+    })
+    cy.url()
+        .should('equal', url)
+})
+```
+
+I am also applying the changes described above to tests using Page Object
+Pattern by putting the URL into a separate variable and modifying the assertions:
+
+```
+import LoginPage from '../pageobjects/LoginPage'
+import User from '../requests/User'
+
+describe('Login Tests Page Objects', function () {
+
+  const baseUrl = Cypress.config('baseUrl')
+
+  beforeEach(function () {
+    cy.visit('/login')
+  })
+
+  it('Successfull login', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    const homePage = new LoginPage()
+      .loginCorrectPass('test@test.com', 'test')
+
+    homePage.url()
+      .should('equal', baseUrl + '/')
+    homePage.userProfile()
+      .should('have.attr', 'href', '/@test')
+    homePage.settings()
+      .should('have.attr', 'href', '/settings')
+    homePage.editor()
+      .should('have.attr', 'href', '/editor')
+  })
+
+  it('Incorrect password', function () {
+    new User('test', 'test@test.com', 'test')
+      .remove()
+      .create()
+
+    const loginPage = new LoginPage()
+      .loginIncorrectPass('test@test.com', 'test-incorrect')
+
+    loginPage.url()
+      .should('equal', baseUrl + '/login')
+  })
+
+  (...)
+})
+```
+
+## API Queries
+
+The app's backend is at a different address, so it should be too put in
+configuration. I am adding a new entry to the _cypress.json_ file:
+
+```
+{
+    "baseUrl": "http://localhost:4100",
+    "apiUrl": "http://localhost:5000"
+}
+```
+
+Then I extract the URL into a separate variable in the file
+_cypress/support/api/apiCommands.js_ Using the same approach as in _baseUrl_ I
+am replacing only the name of the parameter I am looking for in the file
+configuration. Use of the function will look like this
+_Cypress.config('apiUrl')_ and implemented as follows:
+
+```
+
+const usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+Cypress.Commands.add('createNewUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'createNewUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', usersEndpointUrl, {
+        user: {
+            username: 'test',
+            email: 'test@test.com',
+            password: 'test'
+        }
+    })
+
+    (...)
+})
+```
+
+I also notice one defect, the arguments passed to the function were not used.
+It turns out that the tests use the _hardcoded_ once. Correct version:
+
+```
+const usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+Cypress.Commands.add('createNewUserAPI', (username, email, password) => {
+    Cypress.log({
+        name: 'createNewUserAPI',
+        message: `${username} | ${email}| ${password}`
+    })
+    cy.request('DELETE', usersEndpointUrl, {
+        user: {
+            username: username,
+            email: email,
+            password: password
+        }
+    })
+    (...)
+})
+```
+
+Here I also apply changes to the _cypress/requests/User.js_ file:
+
+```
+class User {
+  usersEndpointUrl = Cypress.config('apiUrl') + '/users'
+
+  (...)
+
+  create() {
+    (...)
+
+    cy.request('POST', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    return this;
+  }
+  (...)
+}
+
+export default User;
+```
+
+As above, there is also a defect in this function. This is a logical error - I
+do not delete the user before creating the new one. The reason why I am doing
+this is discussed in the post: [Login tests with Cypress]({% post_url 2020-09-13-login-tests-with-cypress-en %})
+in the section _Implementation of first test_. The correct version of the
+_create()_ function:
+
+```
+  create() {
+    Cypress.log({
+      name: 'Log.User.create()',
+      message: `${this.username} | ${this.email} | ${this.password}`
+    })
+    cy.request('DELETE', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    cy.request('POST', this.usersEndpointUrl, {
+      user: {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+    })
+    return this;
+  }
+```
+
+## Summary
+
+As you can see, Cypress gives us the ability to easily manage and read
+configuration.  Of course, that's not all it offers developers.  The first
+handy feature that comes to mind is overwriting configuration, which will
+certainly come in handy when changing it in the CI process and will definitely
+be described in the future.  You can find all the changes in my repo on the
+branch, here:
+
+    https://github.com/12masta/react-redux-realworld-example-app/tree/4-cypress
+
+Changeset:
+
+    https://github.com/12masta/react-redux-realworld-example-app/pull/4/files
+
+It turns out that I accidentally introduced one more defect, which makes it
+impossible running tests: _cypress/integration/LoginTests.AppActions.spec.js_.
+The solution to the problem is the following code:
+
+    https://github.com/12masta/react-redux-realworld-example-app/pull/5/files
