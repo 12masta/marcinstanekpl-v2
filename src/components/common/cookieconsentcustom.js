@@ -12,7 +12,7 @@ export class CookieConsentCustom extends React.Component {
       buttonText = "Accept"
       description =
         "This website stores data including, but not limited to, cookies to provide you with basic website functionalities as well as for marketing, personalization and analytics. You can change your settings or accept the default settings at any time."
-      cookiePolicyLabel = "Cookies policy."
+      cookiePolicyLabel = "Learn more."
       cookiePolicyHref = "/en/privacy-policy"
     } else {
       buttonText = "Akceptuj"
@@ -28,9 +28,15 @@ export class CookieConsentCustom extends React.Component {
     return (
       <CookieConsent
         location="bottom"
+        className="text-center"
         buttonText={buttonText}
         declineButtonText="Decline"
         cookieName="gatsby-gdpr-google-analytics"
+        disableStyles={true}
+        buttonClasses="btn btn-primary"
+        contentClasses="col-12 col-md-10"
+        buttonWrapperClasses="col-12 col-md-2"
+        containerClasses="position-fixed p-2 bg-white border-5 row text-center"
       >
         {description} <a href={cookiePolicyHref}>{cookiePolicyLabel}</a>
       </CookieConsent>
