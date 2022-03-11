@@ -38,6 +38,14 @@ const thresholdsConfig = {
   pwa: 50,
 }
 
+const homePageConfig = {
+  performance: 83,
+  accessibility: 100,
+  "best-practices": 100,
+  seo: 100,
+  pwa: 50,
+}
+
 const thresholdsConfigNavbarBlogHomePageEn = {
   performance: 94,
   accessibility: 100,
@@ -62,7 +70,7 @@ lighthouseTest.describe("Lighthouse", () => {
     await playAudit({
       page,
       port,
-      thresholds: thresholdsConfig,
+      thresholds: homePageConfig,
     })
   })
 
@@ -73,7 +81,7 @@ lighthouseTest.describe("Lighthouse", () => {
     await playAudit({
       page,
       port,
-      thresholds: thresholdsConfig,
+      thresholds: homePageConfig,
     })
   })
 
