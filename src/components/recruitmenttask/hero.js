@@ -1,6 +1,9 @@
 import * as React from "react"
+import { MailingButton } from "../common/mailingbutton"
 
 export class Hero extends React.Component {
+
+
   render() {
     return (
       <div className="px-1 py-1 my-1 text-center">
@@ -24,8 +27,7 @@ export class Hero extends React.Component {
             </div>
           </div>
           <div className="d-grid gap-2">
-            <button className="btn btn-primary text-uppercase btn-lg" type="button"  id="button">Chcę zobaczyć rozwiązanie!
-              &raquo;</button>
+            <MailingButton text="dupa"/>
           </div>
         </div>
       </div>
