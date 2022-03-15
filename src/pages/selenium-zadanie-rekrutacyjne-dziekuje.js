@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Hero } from "../components/recruitmenttask/hero"
 import { ThankYou } from "../components/recruitmenttask/thankyou"
-import { MailingSection } from "../components/common/mailingsection"
+import { LinkBadges } from "../components/recruitmenttask/linkbadges"
 
 const SeleniumRecruitmentTask = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -13,11 +13,8 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver" />
-      <Hero videoLink="https://player.vimeo.com/video/386467595" />
-      <MailingSection
-        text="Chcę zobaczyć rozwiązanie!
-                            &raquo;"
-      />
+      <Hero videoLink="https://player.vimeo.com/video/386371924" />
+      <LinkBadges />
       <ThankYou />
     </Layout>
   )
