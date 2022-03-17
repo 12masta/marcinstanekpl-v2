@@ -3,8 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Hero } from "../components/recruitmenttask/hero"
-import { ThankYou } from "../components/recruitmenttask/thankyou"
+import { Headlines } from "../components/common/headlines"
 import { MailingSection } from "../components/common/mailingsection"
 
 const SeleniumRecruitmentTask = ({ data, location }) => {
@@ -12,15 +11,18 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver" />
-      <Hero videoLink="https://player.vimeo.com/video/386467595" />
-      <MailingSection
-        text="Chcę zobaczyć rozwiązanie!
-                            &raquo;"
-        endpoint="/createorupdatecontactseleniumwebdriverhomework"
-        redirectionUrl="/selenium-zadanie-rekrutacyjne-dziekuje/"
+      <Seo title="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ TESTY" />
+      <Headlines
+        header="WEŹ ZA DARMO!"
+        lead="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ
+                TESTY oraz lista bibliotek, z których korzystam w każdym moim
+                projekcie testowym"
       />
-      <ThankYou />
+      <MailingSection
+        text="TAK! Chcę!"
+        endpoint="/createorupdatecontact"
+        redirectionUrl="/dziekuje/"
+      />
     </Layout>
   )
 }

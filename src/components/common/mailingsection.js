@@ -2,6 +2,8 @@ import React, { useState } from "react"
 
 export const MailingSection = props => {
   const [buttonText, setButtonText] = useState(props.text)
+  const [endpoint, setEndpoint] = useState(props.endpoint)
+  const [redirectionUrl, setRedirectionUrl] = useState(props.redirectionUrl)
   const [input, setInput] = useState("")
   const [inputClassName, setInputClassName] = useState("form-control")
 
@@ -16,8 +18,7 @@ export const MailingSection = props => {
   }
 
   const createOrUpdateContact = async input => {
-    var apiUrl =
-      "https://pacific-lowlands-81394.herokuapp.com/createorupdatecontact"
+    var apiUrl = "https://pacific-lowlands-81394.herokuapp.com" + endpoint
 
     var contact = {
       contact: {
@@ -46,7 +47,7 @@ export const MailingSection = props => {
     }
 
     if (json.statusCode === 200) {
-      window.location.href = "/selenium-zadanie-rekrutacyjne-dziekuje/"
+      window.location.href = redirectionUrl.toString()
     } else {
       setButtonText("Spróbuj ponownie")
     }
