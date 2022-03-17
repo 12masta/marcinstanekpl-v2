@@ -10,7 +10,7 @@ import { ContactForm } from "../components/home/contactform"
 
 const HomePl = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl")
+  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl").slice(0, 5)
 
   return (
     <Layout location={location} title={siteTitle}>
