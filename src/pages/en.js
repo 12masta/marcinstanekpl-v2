@@ -16,7 +16,7 @@ const HomeEn = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Home page"/>
       <Jumbotron header={"I initiate and improve software Quality Assurance processes"}
-                 description={"Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins."}
+                 description={"I am a QA Engineer with more than 7 years of experience. I specialise in the terms of test automation expertise, over it I am also have an experience with leading QA teams. I can help you with various things arround quality in your company or project."}
                  wantToKnowMoreButtonText={"I want to know more"} blogUrl="/blog/en/"/>
       <LastBlogPosts header={"Recent blog posts"} posts={posts}/>
       <Featurette header={"Quality Assurance"}
