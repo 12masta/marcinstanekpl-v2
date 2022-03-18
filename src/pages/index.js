@@ -10,13 +10,13 @@ import { ContactForm } from "../components/home/contactform"
 
 const HomePl = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl")
+  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl").slice(0, 5)
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Strona główna"/>
       <Jumbotron header={"Inicjuję i naprawiam procesy kontroli jakości oprogramowania"}
-                 description={"Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins."}
+                 description={"Jestem Inżynierem QA z ponad 7-letnim doświadczeniem. Specjalizuję się w zakresie automatyzacji testów, poza tym mam również doświadczenie z czołowymi zespołami QA. Pomogę Ci w różnych sprawach związanych z jakością w Twojej firmie lub projekcie."}
                  wantToKnowMoreButtonText={"Chcę wiedzieć więcej"} blogUrl="/blog/pl/"/>
       <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts}/>
       <Featurette header={"Quality Assurance"}
