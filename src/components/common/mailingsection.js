@@ -2,8 +2,8 @@ import React, { useState } from "react"
 
 export const MailingSection = props => {
   const [buttonText, setButtonText] = useState(props.text)
-  const [endpoint, setEndpoint] = useState(props.endpoint)
-  const [redirectionUrl, setRedirectionUrl] = useState(props.redirectionUrl)
+  const [endpoint] = useState(props.endpoint)
+  const [redirectionUrl] = useState(props.redirectionUrl)
   const [input, setInput] = useState("")
   const [inputClassName, setInputClassName] = useState("form-control")
 
@@ -18,9 +18,9 @@ export const MailingSection = props => {
   }
 
   const createOrUpdateContact = async input => {
-    var apiUrl = "https://pacific-lowlands-81394.herokuapp.com" + endpoint
+    const apiUrl = "https://pacific-lowlands-81394.herokuapp.com" + endpoint
 
-    var contact = {
+    const contact = {
       contact: {
         email: input,
         firstName: "",

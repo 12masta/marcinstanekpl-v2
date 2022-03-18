@@ -10,6 +10,7 @@ export class Hero extends React.Component {
         <div className="col-lg-10 mx-auto">
           <div className="ratio ratio-16x9">
             <iframe
+              title="hero-iframe"
               className="embed-responsive-item"
               src={this.props.videoLink}
               allowFullScreen
