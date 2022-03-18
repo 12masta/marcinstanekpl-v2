@@ -1,17 +1,10 @@
 trigger:
   branches:
     include:
-      - "*"
-    - exclude:
       - master
 
-pr:
-  branches:
-    include:
-      - "*"
-
 pool:
-  vmImage: "ubuntu-latest"
+  vmImage: 'ubuntu-latest'
 
 variables:
   - group: tokens
@@ -43,21 +36,21 @@ steps:
 
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: "JUnit"
-      testResultsFiles: "**/results.xml"
-      testRunTitle: "Playwright tests"
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/results.xml'
+      testRunTitle: 'Playwright tests'
 
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: "JUnit"
-      testResultsFiles: "**/results-lighthouse.xml"
-      testRunTitle: "Playwright tests"
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/results-lighthouse.xml'
+      testRunTitle: 'Playwright tests'
 
   - task: AzureStaticWebApp@0
-    displayName: "Deploying to QA"
+    displayName: "Deploying to PROD"
     inputs:
       app_location: "/public/"
       output_location: "public"
       skip_app_build: true
       verbose: true
-      azure_static_web_apps_api_token: "$(static-web-app-deployment-token)"
+      azure_static_web_apps_api_token: "$(static-web-app-deployment-token-prod)"
