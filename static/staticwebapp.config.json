@@ -121,12 +121,6 @@
       "statusCode": 301
     },
     {
-      "route": "/16-rzeczy.html",
-      "redirect": "/16-rzeczy/",
-      "statusCode": 301
-    },
-
-    {
       "route": "/en/cypress-0.html",
       "redirect": "/en/cypress-0/",
       "statusCode": 301
