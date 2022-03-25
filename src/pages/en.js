@@ -6,7 +6,9 @@ import Seo from "../components/seo"
 import { Jumbotron } from "../components/home/jumbotron"
 import { LastBlogPosts } from "../components/home/lastblogbosts"
 import { Featurette } from "../components/home/featurette"
+/*
 import { ContactForm } from "../components/home/contactform"
+*/
 
 const HomeEn = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -34,10 +36,10 @@ const HomeEn = ({ data, location }) => {
       <Featurette header={"Keep you updated"}
                   leadText={"My clients are informed at every stage of the software production process. No surprises. A simple point of view."}
                   image={"inform"} alignToLeft={true}/>
-      <ContactForm header={"Contact"} labelMessage={"Message"}
+      {/*<ContactForm header={"Contact"} labelMessage={"Message"}
                    messageCheckboxText={"I will add you to the mailing list from which you can unsubscribe at any time (one click)"}
                    privacyPolicyText={"Privacy policy"} buttonText={"Send"}
-                   privacyPolicyLink={"/regulamin_en.html"}/>
+                   privacyPolicyLink={"/regulamin_en.html"}/>*/}
     </Layout>
   )
 }
