@@ -15,9 +15,5 @@
       "redirect": "/cypress-2/",
       "statusCode": 301
     }
-  ],
-  "navigationFallback": {
-    "rewrite": "/",
-    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
-  }
+  ]
 }
