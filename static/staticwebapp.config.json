@@ -25,7 +25,6 @@
       "redirect": "material-which_will-help-you-part-5",
       "statusCode": 301
     },
-
     {
       "route": "/blog/environment/2019/09/30/environment-setup.html",
       "redirect": "/cypress-0/",
@@ -119,6 +118,92 @@
     {
       "route": "/selenium-zadanie-rekrutacyjne.html",
       "redirect": "/selenium-zadanie-rekrutacyjne/",
+      "statusCode": 301
+    },
+    {
+      "route": "/16-rzeczy.html",
+      "redirect": "/16-rzeczy/",
+      "statusCode": 301
+    },
+
+    {
+      "route": "/en/cypress-0.html",
+      "redirect": "/en/cypress-0/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-1.html",
+      "redirect": "/en/cypress-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-2.html",
+      "redirect": "/en/cypress-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-3.html",
+      "redirect": "/en/cypress-3/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-4.html",
+      "redirect": "/en/cypress-4/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-5.html",
+      "redirect": "/en/cypress-5/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-6.html",
+      "redirect": "/en/cypress-6/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-7.html",
+      "redirect": "/en/cypress-7/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-8.html",
+      "redirect": "/en/cypress-8/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-9.html",
+      "redirect": "/en/cypress-9/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/test-process-1.html",
+      "redirect": "/en/test-process-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-1.html",
+      "redirect": "/en/playwright-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/azure-devops-1.html",
+      "redirect": "/en/azure-devops-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/testcontainers-1.html",
+      "redirect": "/en/testcontainers-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/selenium-ai-1.html",
+      "redirect": "/en/selenium-ai-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/selenium-zadanie-rekrutacyjne.html",
+      "redirect": "/en/selenium-zadanie-rekrutacyjne/",
       "statusCode": 301
     },
     {
