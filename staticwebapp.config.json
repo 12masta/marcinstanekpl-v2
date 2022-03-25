@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "route": "/cypress-0.html",
+      "rewrite": "/cypress-0/"
+    },
+    {
+      "route": "/cypress-1.html",
+      "rewrite": "/cypress-1/"
+    },
+    {
+      "route": "/cypress-2.html",
+      "rewrite": "/cypress-2/"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  }
+}
