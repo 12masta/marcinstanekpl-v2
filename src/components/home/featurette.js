@@ -74,7 +74,7 @@ export class Featurette extends React.Component {
     }
 
     return (
-    <div className="container marketing">
+    <div className="container marketing" id={this.props.id}>
       <hr className="featurette-divider" />
       <div className="row featurette">
         <div className={column1Orientation}>

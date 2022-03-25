@@ -22,7 +22,7 @@ export class Jumbotron extends React.Component {
             <p className="lead">{this.props.description}</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <a
-                href="#want-to-know"
+                href="#featurette-want-to-know"
                 type="button"
                 className="btn btn-primary btn-lg px-4 me-md-2"
               >
