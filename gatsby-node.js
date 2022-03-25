@@ -1,11 +1,6 @@
 const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
-
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
@@ -42,24 +37,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+    const postsEn = posts.filter(x => x.fields.slug.includes("en"))
+    const postsPl = posts.filter(x => !x.fields.slug.includes("en"))
 
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-          slug: post.fields.slug,
-          ogImage: post.fields.ogImage,
-          ogImageType: post.fields.ogImageType
-        },
-      })
-    })
+    createPages(postsEn, actions)
+    createPages(postsPl, actions)
   }
+}
+
+function createPages(posts, actions) {
+  const { createPage } = actions
+
+  // Define a template for blog post
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+
+  posts.forEach((post, index) => {
+    const previousPostId = index === 0 ? null : posts[index - 1].id
+    const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+
+    createPage({
+      path: post.fields.slug,
+      component: blogPost,
+      context: {
+        id: post.id,
+        previousPostId,
+        nextPostId,
+        slug: post.fields.slug,
+        ogImage: post.fields.ogImage,
+        ogImageType: post.fields.ogImageType,
+      },
+    })
+  })
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
