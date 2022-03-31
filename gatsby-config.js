@@ -56,12 +56,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-119547384-2`,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -118,8 +118,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Marcin Stanek Blog`,
+        short_name: `marcinstanek.pl`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
@@ -134,5 +134,69 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     "gatsby-plugin-slug",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/",
+        excludes: [
+          "/privacy-policy/",
+          "/dziekuje/",
+          "/selenium-zadanie-rekrutacyjne-dziekuje/",
+        ],
+        query: `
+                {
+                  site {
+                    siteMetadata {
+                      siteUrl
+                    }
+                  }
+                  allSitePage {
+                    nodes {
+                      path
+                    }
+                  }
+                  allMarkdownRemark {
+                    nodes {
+                      frontmatter {
+                        date
+                      },
+                      fields {
+                        slug
+                      }
+                    }
+                  }
+                }`,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMarkdownRemark: { nodes: allPosts },
+        }) => {
+          const pathToDateMap = {}
+
+          allPosts.map(post => {
+            pathToDateMap[post.fields.slug] = { date: post.frontmatter.date }
+          })
+
+          const pages = allPages.map(page => {
+            return { ...page, ...pathToDateMap[page.path] }
+          })
+
+          return pages
+        },
+        serialize: ({ path, date }) => {
+          let entry = {
+            url: path,
+            changefreq: "daily",
+            priority: 0.5,
+          }
+
+          if (date) {
+            entry.priority = 0.7
+            entry.lastmod = date
+          }
+
+          return entry
+        },
+      },
+    },
   ],
 }

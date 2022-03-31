@@ -1,0 +1,213 @@
+{
+  "routes": [
+    {
+      "route": "/blog/materials/2019/09/01/material-which_will-help-you-part-1*",
+      "redirect": "material-which_will-help-you-part-1",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/materials/2019/09/04/material-which_will-help-you-part-2*",
+      "redirect": "material-which_will-help-you-part-2",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/materials/2019/09/15/material-which_will-help-you-part-3*",
+      "redirect": "material-which_will-help-you-part-3",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/materials/2019/09/25/material-which_will-help-you-part-4*",
+      "redirect": "material-which_will-help-you-part-4",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/materials/2019/09/25/material-which_will-help-you-part-5*",
+      "redirect": "material-which_will-help-you-part-5",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/environment/2019/09/30/environment-setup.html",
+      "redirect": "/cypress-0/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/cypress/testautomation/2019/10/01/first-tests-with-cypress.html",
+      "redirect": "/cypress-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/testautomation/cypress/2019/10/17/login-tests-with-cypress.html",
+      "redirect": "/cypress-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-0.html",
+      "redirect": "/cypress-0/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-1.html",
+      "redirect": "/cypress-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-2.html",
+      "redirect": "/cypress-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-3.html",
+      "redirect": "/cypress-3/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-4.html",
+      "redirect": "/cypress-4/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-5.html",
+      "redirect": "/cypress-5/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-6.html",
+      "redirect": "/cypress-6/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-7.html",
+      "redirect": "/cypress-7/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-8.html",
+      "redirect": "/cypress-8/",
+      "statusCode": 301
+    },
+    {
+      "route": "/cypress-9.html",
+      "redirect": "/cypress-9/",
+      "statusCode": 301
+    },
+    {
+      "route": "/test-process-1.html",
+      "redirect": "/test-process-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-1.html",
+      "redirect": "/playwright-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/azure-devops-1.html",
+      "redirect": "/azure-devops-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/testcontainers-1.html",
+      "redirect": "/testcontainers-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/selenium-ai-1.html",
+      "redirect": "/selenium-ai-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/selenium-zadanie-rekrutacyjne.html",
+      "redirect": "/selenium-zadanie-rekrutacyjne/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-0.html",
+      "redirect": "/en/cypress-0/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-1.html",
+      "redirect": "/en/cypress-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-2.html",
+      "redirect": "/en/cypress-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-3.html",
+      "redirect": "/en/cypress-3/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-4.html",
+      "redirect": "/en/cypress-4/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-5.html",
+      "redirect": "/en/cypress-5/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-6.html",
+      "redirect": "/en/cypress-6/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-7.html",
+      "redirect": "/en/cypress-7/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-8.html",
+      "redirect": "/en/cypress-8/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/cypress-9.html",
+      "redirect": "/en/cypress-9/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/test-process-1.html",
+      "redirect": "/en/test-process-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-1.html",
+      "redirect": "/en/playwright-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/azure-devops-1.html",
+      "redirect": "/en/azure-devops-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/testcontainers-1.html",
+      "redirect": "/en/testcontainers-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/selenium-ai-1.html",
+      "redirect": "/en/selenium-ai-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/selenium-zadanie-rekrutacyjne.html",
+      "redirect": "/en/selenium-zadanie-rekrutacyjne/",
+      "statusCode": 301
+    },
+    {
+      "route": "/16-rzeczy.html",
+      "redirect": "/16-rzeczy/",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  }
+}

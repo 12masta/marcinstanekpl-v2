@@ -1,2 +1,15 @@
+User-agent: Googlebot
+Disallow: /privacy-policy/
+
+User-agent: Googlebot
+Disallow: /dziekuje/
+
+# Grupa 1
+User-agent: Googlebot
+Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
+
+# Grupa 2
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: http://www.marcinstanek.pl/sitemap.xml
