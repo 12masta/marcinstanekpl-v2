@@ -4,8 +4,8 @@ date: 2022-09-15 08:00:00 +0200
 categories: [testautomation, process, test-process]
 tags: [testautomation, process, test-process, pl]
 slug: who-should-write-the-tests-part-1 
-language: pl 
-ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/who-should-write-the-tests-part-1%2Fbusiness-team-meeting-boardroom-min.jpg?alt=media&token=e1f0adbd-3583-4f68-ab96-19f2d278ee67 
+language: pl
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/who-should-write-the-tests-part-1%2Fbusiness-team-meeting-boardroom-min.jpg?alt=media&token=e1f0adbd-3583-4f68-ab96-19f2d278ee67
 ogImageType: image/jpg
 ---
 
@@ -35,7 +35,7 @@ Kolejnym problemem, którego często dotyka tę grupę, jest dzielenie obowiązk
 Poświęcanie określonego procentu swojej pracy na jedną czynność, a drugiej części na inną, prawie nigdy nie jest
 praktyczne. Ponadto bardzo ciężko to zmierzyć, aby rzeczywiście mieć nad tym kontrolę. Automatyzacja to nie tylko
 pisanie testów. Absolutne minimum to sprawdzanie ich wyników. A co jeżeli wynik testów jest negatywny? Musimy się nimi
-zająć. W ten sposób działamy bardzo nie wydajnie, zmieniając co chwile kontekst wykonywanej pracy.
+zająć. W ten sposób działamy bardzo nie wydajnie.
 
 ## Podsumowanie
 
