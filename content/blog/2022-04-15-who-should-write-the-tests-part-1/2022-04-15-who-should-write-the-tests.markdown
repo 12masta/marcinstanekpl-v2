@@ -5,7 +5,7 @@ categories: [testautomation, process, test-process]
 tags: [testautomation, process, test-process, pl]
 slug: who-should-write-the-tests-part-1 
 language: pl 
-ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/who-should-write-the-tests-part-1%2Fbusiness-team-meeting-boardroom.jpg?alt=media&token=dd83f088-298a-4373-bc4a-05c13422e5d9 
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/who-should-write-the-tests-part-1%2Fbusiness-team-meeting-boardroom-min.jpg?alt=media&token=e1f0adbd-3583-4f68-ab96-19f2d278ee67 
 ogImageType: image/jpg
 ---
 
