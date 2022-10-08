@@ -1,8 +1,8 @@
 ---
-title: Zamiana implementacji na potrzeby testów w testach integracyjnych ASP.NET Core - WebApplicationFactory 
-date:2022-10-07 08:00:00 +0200 
-categories: [testautomation, .net, webapplicationfactory]
-tags: [testautomation, .net, pl, webapplicationfactory]
+title: DI na potrzeby testów w ASP.NET Core - WebApplicationFactory 
+date: 2022-10-08 08:00:00 +0200 
+categories: [testautomation, .net, webapplicationfactory, di]
+tags: [testautomation, .net, pl, webapplicationfactory, di]
 slug: integration-tests-dotnet 
 language: pl 
 ogImage: TODO 
@@ -15,11 +15,11 @@ Zaczynamy od utworzenia projektu API oraz projektu z testami. Jest to najprostsz
 
     dotnet new webapi
 
-Oraz projekt testowy:
+Projekt testowy:
 
     dotnet new nunit
 
-Link do gotowego projektu, który posłuży w następnych krokach:
+Link do gotowego projektu, który zostanie użyty w następnych krokach:
 [https://github.com/12masta/integration-tests-dotnet/tree/init-version](https://github.com/12masta/integration-tests-dotnet/tree/init-version)
 .
 
@@ -32,17 +32,18 @@ Podejście to drastycznie zwiększa testowalność kodu, co za chwilę będę mi
 
 Najprostszy test, który możemy napisać zgodnie z tą techniką:
 
-    [Test]
-    public async Task InitialIntegrationTest()
-    {
-        var url = "/WeatherForecast";
-        var sut = new WebApplicationFactory<Program>();
-        var client = sut.CreateClient();
-        
-        var response = await client.GetAsync(url);
-
-        response.Invoking(r => r.EnsureSuccessStatusCode()).Should().NotThrow();
-    }
+```
+[Test]
+public async Task InitialIntegrationTest()
+{
+    var url = "/WeatherForecast";
+    var sut = new WebApplicationFactory<Program>();
+    var client = sut.CreateClient();
+    
+    var response = await client.GetAsync(url);
+    response.Invoking(r => r.EnsureSuccessStatusCode()).Should().NotThrow();
+}
+```
 
 Podczas wykonywania się testu zostaje utworzony klient http, który pozwoli nam skonsumować przed chwilą uruchomione Api.
 Następnie wykonujemy żądanie typu GET i sprawdzamy, czy status zwróconego zapytania może zostać zinterpretowany jako
@@ -58,42 +59,48 @@ Model _WeatherForecast_ jest już gotowy, więc wystarczy dodać jedną klasę, 
 
 Kontroler po wykonanych zmianach:
 
-    private readonly IWeatherForecast _forecast;
+```
+private readonly IWeatherForecast _forecast;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecast forecast)
-    {
-        _logger = logger;
-        _forecast = forecast;
-    }
+public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecast forecast)
+{
+    _logger = logger;
+    _forecast = forecast;
+}
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public WeatherForecast Get()
-    {
-        _logger.LogInformation("Using IWeatherForecast implementation: {0}", _forecast.ToString());
-        return _forecast.GetPrediction();
-    }
+[HttpGet(Name = "GetWeatherForecast")]
+public WeatherForecast Get()
+{
+    _logger.LogInformation("Using IWeatherForecast implementation: {0}", _forecast.ToString());
+    return _forecast.GetPrediction();
+}
+```
 
 Nowy interfejs:
 
-    public interface IWeatherForecast
-    {
-        WeatherForecast GetPrediction();
-    }
+```
+public interface IWeatherForecast
+{
+    WeatherForecast GetPrediction();
+}
+```
 
 Oraz jego nieskomplikowana, najprostsza implementacja:
 
-    public class HotForecast : IWeatherForecast
+```
+public class HotForecast : IWeatherForecast
+{
+    public WeatherForecast GetPrediction()
     {
-        public WeatherForecast GetPrediction()
+        return new WeatherForecast()
         {
-            return new WeatherForecast()
-            {
-                Date = DateTime.UtcNow,
-                TemperatureC = 30,
-                Summary = "High temperature is expected."
-            };
-        }
+            Date = DateTime.UtcNow,
+            TemperatureC = 30,
+            Summary = "High temperature is expected."
+        };
     }
+}
+```
 
 Aby zmiany zostały zastosowane, musimy zarejestrować interfejs oraz jego implementację. W tym przypadku w klasie Program
 należy dodać nową linię kodu:
@@ -104,19 +111,21 @@ Aby móc zweryfikować zmiany potrzebny jest również nowy test. Sprawdzi on za
 nowo dodaną implementacją. W tym przypadku użyłem metody: _GetFromJsonAsync<T>(string arg)_ do konsumpcji API. Umożliwia
 to automatyczną deserializację obiektu zwróconego przez zapytanie, dzięki czemu asercję są bardziej skondensowane.
 
-    [Test]
-    public async Task CheckIfProperValuesAreReturned()
-    {
-        var sut = new WebApplicationFactory<Program>();
-        var client = sut.CreateClient();
+```
+[Test]
+public async Task CheckIfProperValuesAreReturned()
+{
+    var sut = new WebApplicationFactory<Program>();
+    var client = sut.CreateClient();
 
-        var result = await client.GetFromJsonAsync<WeatherForecast>(_url);
+    var result = await client.GetFromJsonAsync<WeatherForecast>(_url);
 
-        result.Should().NotBeNull();
-        result!.Date.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(5));
-        result.Summary.Should().Be("High temperature is expected.");
-        result.TemperatureC.Should().Be(30);
-    }
+    result.Should().NotBeNull();
+    result!.Date.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromSeconds(5));
+    result.Summary.Should().Be("High temperature is expected.");
+    result.TemperatureC.Should().Be(30);
+}
+```
 
 Pod tym linkiem znajdziecie commit ze wszystkimi
 zmianami: [https://github.com/12masta/integration-tests-dotnet/commit/ef2d8d34fb54bbfc6ed0c8498ba5be1b5ecedf70](https://github.com/12masta/integration-tests-dotnet/commit/ef2d8d34fb54bbfc6ed0c8498ba5be1b5ecedf70)
