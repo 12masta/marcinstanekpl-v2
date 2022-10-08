@@ -5,8 +5,8 @@ categories: [testautomation, .net, webapplicationfactory, di]
 tags: [testautomation, .net, en, webapplicationfactory, di]
 slug: en/integration-tests-dotnet 
 language: en 
-ogImage: TODO 
-ogImageType: image/jpg
+ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2022-10-08-integration-tests-dotnet%2F2022-10-08-integration-tests-dotnet-ogimage.png?alt=media&token=4d80394c-a3f7-43af-86b8-951cddf944a9 
+ogImageType: image/png
 ---
 
 ## Take-off
