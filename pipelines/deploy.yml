@@ -12,7 +12,15 @@ variables:
   - group: tokens
 
 stages:
-  - stage: A
+  - stage: Deploy to QA
+    jobs:
+      - job: 
+        steps:
+            - task: NodeTool@0
+              inputs:
+                versionSpec: "14.x"
+            - script: npm install
+              displayName: "npm install"
 
-  - stage: B
+  - stage: Deploy to PROD
     condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/main'))
