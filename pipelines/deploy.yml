@@ -1,0 +1,75 @@
+trigger:
+  branches:
+    include:
+      - master
+    exclude:
+      - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: tokens
+
+stages:
+  - stage: DeployToQA
+    jobs:
+      - job: 
+        steps:
+            - task: NodeTool@0
+              inputs:
+                versionSpec: "14.x"
+
+            - script: npm install
+              displayName: "npm install"
+
+            - script: npm run build
+              displayName: "Building site with gatsby under the hood"
+
+            - script: npx playwright install-deps
+              displayName: "Installing playwright deps"
+
+            - script: npx playwright install
+              displayName: "Installing playwright"
+            - script: npm run test-ci
+              displayName: "Run playwirght tests"
+              continueOnError: true
+
+            - script: npm run test-ci-li
+              displayName: "Run playwirght-lighthouse tests"
+              continueOnError: true
+
+            - task: PublishTestResults@2
+              inputs:
+                testResultsFormat: "JUnit"
+                testResultsFiles: "**/results.xml"
+                testRunTitle: "Playwright tests"
+
+            - task: PublishTestResults@2
+              inputs:
+                testResultsFormat: "JUnit"
+                testResultsFiles: "**/results-lighthouse.xml"
+                testRunTitle: "Playwright tests"
+
+            - task: AzureStaticWebApp@0
+              displayName: "Deploying to QA"
+              inputs:
+                app_location: "/public/"
+                output_location: "public"
+                skip_app_build: true
+                verbose: true
+                azure_static_web_apps_api_token: "$(static-web-app-deployment-token)"
+
+  - stage: DeployToPROD
+    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/main'))
+    jobs:
+      - job: 
+        steps:
+              - task: AzureStaticWebApp@0
+                displayName: "Deploying to PROD"
+                inputs:
+                  app_location: "/public/"
+                  output_location: "public"
+                  skip_app_build: true
+                  verbose: true
+                  azure_static_web_apps_api_token: "$(static-web-app-deployment-token-prod)"
