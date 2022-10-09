@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+      - master
+    exclude:
+      - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: tokens
+
+stages:
+  - stage: A
+
+  - stage: B
+    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/main'))
