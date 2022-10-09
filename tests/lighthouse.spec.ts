@@ -39,7 +39,7 @@ const thresholdsConfig = {
 }
 
 const homePageConfig = {
-  performance: 83,
+  performance: 79,
   accessibility: 100,
   "best-practices": 100,
   seo: 100,
