@@ -1,5 +1,5 @@
 ---
-title: How do teams write tests and what do I think about it? Part 1.
+title: How do teams write tests and what do I think about it? Part 1
 date: 2022-09-15 08:00:00 +0200 
 categories: [testautomation, process, test-process]
 tags: [testautomation, process, test-process, en]
