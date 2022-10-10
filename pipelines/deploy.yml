@@ -93,11 +93,11 @@ stages:
               testResultsFiles: "**/results-lighthouse.xml"
               testRunTitle: "Playwright tests"
 
-              - task: AzureStaticWebApp@0
-                displayName: "Deploying to PROD"
-                inputs:
-                  app_location: "/public/"
-                  output_location: "public"
-                  skip_app_build: true
-                  verbose: true
-                  azure_static_web_apps_api_token: "$(static-web-app-deployment-token-prod)"
+          - task: AzureStaticWebApp@0
+            displayName: "Deploying to PROD"
+            inputs:
+              app_location: "/public/"
+              output_location: "public"
+              skip_app_build: true
+              verbose: true
+              azure_static_web_apps_api_token: "$(static-web-app-deployment-token-prod)"
