@@ -32,7 +32,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-want-to-know"}
         header={"Quality Assurance"}
         leadText={
-          "Are you looking for a Quality Assurance Engineer? Do you need to automate test processes in your company? You have a problem with the quality of the code in your organization? You've come to the right place to solve these problems!"
+          "Enhancing Your software's reliability, stability and performance through expert quality assurance services. Trust us to optimize your testing processes and ensure seamless deployment, so you can deliver exceptional software products to your users."
         }
         image={"qa"}
         alignToLeft={true}
@@ -41,7 +41,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-automation"}
         header={"Automation"}
         leadText={
-          "I am passionate about creating test frameworks that improve the work of development teams, they are effective and easy to maintain."
+          "Streamlining development processes with effective and easy to maintain test frameworks. Harness the power of automation to accelerate your software delivery, reduce manual effort, and achieve consistent, reliable results throughout your development lifecycle."
         }
         image={"automation"}
         alignToLeft={false}
@@ -50,7 +50,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-complete-solutions"}
         header={"Complete solutions"}
         leadText={
-          "Your business is unique. The delivery method should also be like this. I create comprehensive quality assurance solutions to publish the highest quality software every time."
+          "Tailored quality assurance solutions for Your unique business needs. Ensuring the Highest Quality Software Every Time. From requirements analysis to test execution and beyond, trust our expertise to seamlessly integrate quality throughout your software development lifecycle."
         }
         image={"complete_solutions"}
         alignToLeft={true}
@@ -58,7 +58,7 @@ const HomeEn = ({ data, location }) => {
       <Featurette
         id={"featurette-on-time"}
         header={"On time"}
-        leadText={"I provide on-time services without compromising on quality."}
+        leadText={"On-Time delivery of quality services. Ensuring timely solutions without compromising on quality. Trust in our efficient project management and proactive communication to meet your deadlines, leaving you confident in the timely completion of your projects."}
         image={"on_time"}
         alignToLeft={false}
       />
@@ -66,7 +66,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-inform"}
         header={"Keep you updated"}
         leadText={
-          "My clients are informed at every stage of the software production process. No surprises. A simple point of view."
+          "Stay informed at every stage of the software production process. No surprises, just clear and transparent communication. With regular updates and open channels of communication, I ensure that your vision is aligned with the progress, fostering collaboration and delivering results that exceed your expectations."
         }
         image={"inform"}
         alignToLeft={true}

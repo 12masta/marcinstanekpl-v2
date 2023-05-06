@@ -32,7 +32,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-want-to-know"}
         header={"Quality Assurance"}
         leadText={
-          "Poszukujesz kontrolera jakości? Potrzebujesz zautomatyzować procesy testowe w Twojej firmie? Masz problem z jakością kodu w Twojej organizacji? Trafiłeś w dobre miejsce, aby rozwiązać te problemy!"
+          "Zwiększenie niezawodności, stabilności i wydajności Twojego oprogramowania dzięki specjalistycznym usługom zapewniania jakości. Zaufaj nam, jeśli chodzi o optymalizację procesów testowania i zapewnienie bezproblemowego wdrożenia, dzięki czemu możesz dostarczać swoim użytkownikom wyjątkowe oprogramowanie."
         }
         image={"qa"}
         alignToLeft={true}
@@ -41,7 +41,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-automation"}
         header={"Automatyzacja"}
         leadText={
-          "Pasjonuję się tworzeniem frameworków testowych, które usprawniają pracę zespołów deweloperskich, są efektywne i łatwe w utrzymaniu."
+          "Usprawnianie procesów programistycznych dzięki efektywnym i łatwym w utrzymaniu frameworkom testowym. Wykorzystaj moc automatyzacji, aby przyspieszyć dostarczanie oprogramowania, zmniejszyć nakład pracy ręcznej i osiągnąć spójne, niezawodne wyniki w całym cyklu rozwoju."
         }
         image={"automation"}
         alignToLeft={false}
@@ -50,7 +50,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-complete-solutions"}
         header={"Tworzę kompletne rozwiązania"}
         leadText={
-          "Twój biznes jest unikatowy. Sposób jego dostarczania również powinien taki być. Tworzę kompleksowe rozwiązania zapewniania jakości aby za każdym razem wydawać oprogramowanie najwyższej jakości."
+          "Dostosowane rozwiązania zapewniania jakości dla Twoich unikalnych potrzeb biznesowych. Zapewnienie najwyższej jakości oprogramowania za każdym razem. Od analizy wymagań po wykonanie testów i nie tylko, zaufaj naszej wiedzy fachowej, aby bezproblemowo zintegrować jakość w całym cyklu tworzenia oprogramowania."
         }
         image={"complete_solutions"}
         alignToLeft={true}
@@ -59,7 +59,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-on-time"}
         header={"Dostarczam na czas"}
         leadText={
-          "Zapewniam dostarczanie serwisów na czas, bez kompromisów w dziedzinie jakośći."
+          "Terminowe dostarczanie wysokiej jakości usług. Zapewnienie terminowych rozwiązań bez uszczerbku dla jakości. Zaufaj naszemu efektywnemu zarządzaniu projektami i proaktywnej komunikacji, aby dotrzymać terminów, co daje pewność terminowej realizacji projektów."
         }
         image={"on_time"}
         alignToLeft={false}
@@ -68,7 +68,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-inform"}
         header={"Informuję na bieżąco"}
         leadText={
-          "Moi klienci są informowani na każdym etapie procesu produkcji oprogramowania. Bez niespodzianek. Prosty punkt widzenia."
+          "Bądź na bieżąco na każdym etapie procesu produkcji oprogramowania. Żadnych niespodzianek, tylko jasna i przejrzysta komunikacja. Dzięki regularnym aktualizacjom i otwartym kanałom komunikacji zapewniam, że Twoja wizja jest zgodna z postępem, wspierając współpracę i dostarczając wyniki, które przekraczają Twoje oczekiwania."
         }
         image={"inform"}
         alignToLeft={true}
