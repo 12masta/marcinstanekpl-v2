@@ -32,7 +32,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-want-to-know"}
         header={"Quality Assurance"}
         leadText={
-          "Enhancing Your software's reliability, stability and performance through Expert Quality Assurance Services. Trust us to optimize your testing processes and ensure seamless deployment, so you can deliver exceptional software products to your users."
+          "Enhancing Your software's reliability, stability and performance through expert quality assurance services. Trust us to optimize your testing processes and ensure seamless deployment, so you can deliver exceptional software products to your users."
         }
         image={"qa"}
         alignToLeft={true}
@@ -41,7 +41,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-automation"}
         header={"Automation"}
         leadText={
-          "Streamlining development processes with effective and easy to maintain Test Frameworks. Harness the power of automation to accelerate your software delivery, reduce manual effort, and achieve consistent, reliable results throughout your development lifecycle."
+          "Streamlining development processes with effective and easy to maintain test frameworks. Harness the power of automation to accelerate your software delivery, reduce manual effort, and achieve consistent, reliable results throughout your development lifecycle."
         }
         image={"automation"}
         alignToLeft={false}
@@ -50,7 +50,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-complete-solutions"}
         header={"Complete solutions"}
         leadText={
-          "Tailored Quality Assurance Solutions for Your unique business needs. Ensuring the Highest Quality Software Every Time. From requirements analysis to test execution and beyond, trust our expertise to seamlessly integrate quality throughout your software development lifecycle."
+          "Tailored quality assurance solutions for Your unique business needs. Ensuring the Highest Quality Software Every Time. From requirements analysis to test execution and beyond, trust our expertise to seamlessly integrate quality throughout your software development lifecycle."
         }
         image={"complete_solutions"}
         alignToLeft={true}
@@ -58,7 +58,7 @@ const HomeEn = ({ data, location }) => {
       <Featurette
         id={"featurette-on-time"}
         header={"On time"}
-        leadText={"On-Time delivery of quality services. Ensuring timely solutions without compromising on Quality. Trust in our efficient project management and proactive communication to meet your deadlines, leaving you confident in the timely completion of your projects."}
+        leadText={"On-Time delivery of quality services. Ensuring timely solutions without compromising on quality. Trust in our efficient project management and proactive communication to meet your deadlines, leaving you confident in the timely completion of your projects."}
         image={"on_time"}
         alignToLeft={false}
       />
