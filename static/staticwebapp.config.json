@@ -1,31 +1,6 @@
 {
   "routes": [
     {
-      "route": "/blog/materials/2019/09/01/material-which_will-help-you-part-1*",
-      "redirect": "material-which_will-help-you-part-1",
-      "statusCode": 301
-    },
-    {
-      "route": "/blog/materials/2019/09/04/material-which_will-help-you-part-2*",
-      "redirect": "material-which_will-help-you-part-2",
-      "statusCode": 301
-    },
-    {
-      "route": "/blog/materials/2019/09/15/material-which_will-help-you-part-3*",
-      "redirect": "material-which_will-help-you-part-3",
-      "statusCode": 301
-    },
-    {
-      "route": "/blog/materials/2019/09/25/material-which_will-help-you-part-4*",
-      "redirect": "material-which_will-help-you-part-4",
-      "statusCode": 301
-    },
-    {
-      "route": "/blog/materials/2019/09/25/material-which_will-help-you-part-5*",
-      "redirect": "material-which_will-help-you-part-5",
-      "statusCode": 301
-    },
-    {
       "route": "/blog/environment/2019/09/30/environment-setup.html",
       "redirect": "/cypress-0/",
       "statusCode": 301
