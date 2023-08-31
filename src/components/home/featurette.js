@@ -79,7 +79,6 @@ export class Featurette extends React.Component {
       <div className="row featurette">
         <div className={column1Orientation}>
           <h2 className="featurette-heading">{this.props.header}
-          {/*<span className="text-muted">It’ll blow your mind.</span>*/}
           </h2>
           <p className="lead">{this.props.leadText}</p>
         </div>

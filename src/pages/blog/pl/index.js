@@ -1,17 +1,21 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../../../components/layout"
 import Seo from "../../../components/seo"
+import { TopPost } from "../../../components/posts/toppost"
+import { FeaturedPost } from "../../../components/posts/featuredpost"
+import { PostsList } from "../../../components/posts/postslist"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl")
 
+
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="Wszystkie posty"/>
+        <Seo title="All posts"/>
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -21,47 +25,22 @@ const BlogIndex = ({ data, location }) => {
     )
   }
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="Wszystkie posty"/>
-      <div className="container mt-4">
-        <div className="container p-1">
-          <h1>Wszystkie posty</h1>
-        </div>
-        <ol className="p-1" style={{ listStyle: `none` }}>
-          {posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
+  return <Layout location={location} title={siteTitle}>
+    <Seo title="All posts"/>
 
-            return (
-              <li key={post.fields.slug}>
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <header>
-                    <h2>
-                      <Link to={post.fields.slug} itemProp="url">
-                        <span itemProp="headline">{title}</span>
-                      </Link>
-                    </h2>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
-                </article>
-              </li>
-            )
-          })}
-        </ol>
+    <TopPost post={posts.shift()} label="Kontynuuj czytanie..."/>
+
+    <div className="row mb-2">
+      <div className="col-md-6">
+        <FeaturedPost post={posts.shift()} label="Kontynuuj czytanie" />
       </div>
-    </Layout>
-  )
+      <div className="col-md-6">
+        <FeaturedPost post={posts.shift()} label="Kontynuuj czytanie" />
+      </div>
+    </div>
+
+    <PostsList posts={posts} label="Wybrane dla Ciebie"/>
+  </Layout>
 }
 
 export default BlogIndex

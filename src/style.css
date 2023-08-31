@@ -53,3 +53,14 @@
 .blog-post img{
     width: 100%
 }
+
+/* stylelint-disable stylistic/selector-list-comma-newline-after */
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+    .h-md-250 { height: 250px; }
+}
