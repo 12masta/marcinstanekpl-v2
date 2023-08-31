@@ -25,7 +25,6 @@ export class LastBlogPosts extends React.Component {
                         <span itemProp="headline">{title} &raquo;</span>
                       </Link>
                     </h3>
-                    <small>{post.frontmatter.date}</small>
                   </header>
                   <section>
                     <p
