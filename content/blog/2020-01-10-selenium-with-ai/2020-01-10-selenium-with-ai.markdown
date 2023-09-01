@@ -7,6 +7,7 @@ slug: selenium-ai-1
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-01-10-selenium-with-ai%2Fcover.png?alt=media&token=8e0ffe7a-9075-45dc-a0ab-a942981dbd18
 ogimagetype: image/png
 language: pl
+description: Autor omawia implementację sztucznej inteligencji w automatyzacji testów Selenium WebDriver, w szczególności z wykorzystaniem wtyczki test-ai-classifier. Podczas instalacji napotykają wyzwania, ostatecznie osiągając sukces. Chociaż rozpoznawanie elementów w oparciu o sztuczną inteligencję jest obiecujące, obecnie ma ograniczoną funkcjonalność, a rozwój projektu kryje w sobie potencjał dla przyszłości testów.
 ---
 
 ## Wstęp

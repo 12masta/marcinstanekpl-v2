@@ -7,6 +7,7 @@ language: en
 slug: en/cypress-7
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fpost_cover.png?alt=media&token=0c3c0db2-1c8c-48c7-8b3c-c4a49eaf3dda
 ogimagetype: image/png
+description: Concept of visual regression testing, where you compare the expected interface appearance with the actual state during testing to detect defects not caught by traditional regression tests. It explains how to set up visual regression testing using the Cypress framework with the free cypress-image-snapshot plugin, and provides examples of testing the entire screen and specific elements for visual differences, showcasing its effectiveness in detecting even small changes.
 ---
 
 ## What is visual regression?

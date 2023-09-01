@@ -7,6 +7,7 @@ slug: selenium-zadanie-rekrutacyjne-2
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-02-29-selenium-recruitment-task-solution-from-blog-reader%2Fpost_cover.png?alt=media&token=2566edd6-2d6a-485e-8f42-5450fc03d163
 ogimagetype: image/png
 language: pl
+description: Czytelnik bloga rozwiązał zadanie rekrutacyjne dotyczące Selenium WebDriver i poprosił autora o przegląd kodu, który jest dostępny na GitHubie.
 ---
 
 ## Wstęp

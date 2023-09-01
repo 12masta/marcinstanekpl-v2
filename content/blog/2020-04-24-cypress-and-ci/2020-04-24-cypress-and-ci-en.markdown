@@ -7,9 +7,10 @@ language: en
 slug: en/cypress-8
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fpost_cover.png?alt=media&token=582925ff-bf77-4edb-96f7-341c5a06668d
 ogimagetype: image/png
+description: Discusses the integration of Cypress testing into Azure DevOps for continuous integration. It provides a step-by-step guide on configuring the CI pipeline in Azure DevOps, making necessary script adjustments, handling environment variables, and highlights the importance of testing in the CI process. Additionally, it emphasizes the ease of integration and the significance of applying testing to CI for testers. You can find the code on GitHub for reference.
 ---
 
-## Cypress and Continous Integration
+## Cypress and Continuous Integration
 
 In my opinion, we require a modern tester to do something more than just the correct creation of automated tests. One of the distinguishing attributes of modern QA engineers is the ability to independently manage the continuous integration process. In this post, I touch on the issue of connecting tests to the CI process. I am going to use the Azure DevOps platform - I will only run tests, without the deploy backend and frontend step, I have listed these components as a separate process not described in this material.
 

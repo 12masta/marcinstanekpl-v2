@@ -7,6 +7,7 @@ language: en
 slug: en/cypress-9
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fpost_cover.png?alt=media&token=9800ca92-ef08-4b5a-beee-7b20ace97430
 ogimagetype: image/png
+description: Explains how to set up Cypress test reporting in Azure DevOps pipelines. It outlines the steps to configure test reporting using the JUnit format, ensuring that test failures do not interrupt the pipeline, and provides an overview of the resulting test report features in Azure DevOps, emphasizing the ease of integration and the potential for additional functionalities in future posts.
 ---
 
 ## Azure DevOps, Cypress and Test Report

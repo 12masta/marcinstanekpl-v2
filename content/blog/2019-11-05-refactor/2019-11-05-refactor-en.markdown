@@ -7,6 +7,7 @@ slug: en/cypress-3
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-05-refactor%2Fblog_post_cover.png?alt=media&token=5dc8a4e0-cda0-4138-99d6-25cea5138a2d
 ogimagetype: image/png
 language: en
+description: The author discusses the process of refactoring code tests and compares two approaches. App Actions and Page Object Model. They start by implementing App Actions, creating custom commands and functions to make tests cleaner and more organized. Then, they transition to Page Object Model, creating classes to represent pages and managing test actions through these classes. They conclude that both approaches have their benefits and drawbacks, with the choice depending on the project's needs and preferences.
 ---
 
 ## Introduction

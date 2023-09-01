@@ -7,6 +7,7 @@ slug: test-process-1
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-08-how-tests-process-should-looks-liks%2Fblog_post-cover.png?alt=media&token=b090c220-e684-4cb3-96f9-99e2f374c1cb
 ogimagetype: image/png
 language: pl
+description: W tym wpisie na blogu autor zastanawia się nad idealnym procesem testowym, jaki chcą osiągnąć w swoich projektach, podkreślając znaczenie szybkiej informacji zwrotnej na temat zmian w kodzie oraz wady testowania ręcznego. Opowiadają się za zrównoważonym podejściem, łączącym zarówno testy automatyczne (testy jednostkowe i akceptacyjne), jak i testy manualne, i podkreślają zalety procesu Continuous Delivery w zakresie szybkiej walidacji kodu i korygowania defektów.
 ---
 
 ## Wstęp

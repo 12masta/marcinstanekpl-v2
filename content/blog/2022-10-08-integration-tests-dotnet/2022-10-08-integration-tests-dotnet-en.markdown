@@ -7,6 +7,7 @@ slug: en/integration-tests-dotnet
 language: en 
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2022-10-08-integration-tests-dotnet%2F2022-10-08-integration-tests-dotnet-ogimage.png?alt=media&token=4d80394c-a3f7-43af-86b8-951cddf944a9 
 ogImageType: image/png
+description: The material presents a DI-based approach to integration testing in .NET applications, utilizing the WebApplicationFactory for in-memory testing. It showcases how to implement and switch between different feature implementations using DI, enhancing test stability and dependency isolation.
 ---
 
 ## Take-off

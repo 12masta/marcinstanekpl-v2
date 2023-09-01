@@ -7,6 +7,7 @@ language: pl
 slug: dotnet-polly
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-07-01-retry-policy-in-test-methods%2FRetry%20policy%20for%20methods%20in%20terms%20of%20integration%20tests.png?alt=media&token=e5a5db4b-7f5b-4ffb-94fa-9d22751f79f6
 ogImageType: image/png
+description: Wykorzystanie biblioteki Polly do implementacji polityki ponawiania prób w testach integracyjnych w projektach .NET w celu uwzględnienia warunków wyścigu i zwiększenia stabilności testów. Autor podaje przykład zastosowania logiki ponawiania prób do metod interakcji z bazą danych i podkreśla znaczenie dokładnego zdefiniowania ram czasowych dla optymalnego wykonania testu.
 ---
 
 ## Polityka ponawiania

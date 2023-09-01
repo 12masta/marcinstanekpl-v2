@@ -5,6 +5,7 @@ categories: [environment]
 tags: [pl]
 language: pl
 slug: cypress-0
+description: We wstępie do Cypress autor dzieli się swoją techniką tworzenia kompleksowych testów dla aplikacji internetowej zbudowanej na ASP.NET Core i React. Wyjaśniają proces instalacji, w tym instalację Cypress i pisanie podstawowych testów umożliwiających odwiedzanie stron internetowych, wyszukiwanie elementów, klikanie na nie i wykonywanie asercji. Podają także link do swojego repozytorium w celu uzyskania dalszych informacji i wspominają o zamiarze napisania większej liczby testów w przyszłych postach.
 ---
 
 ## Wstęp

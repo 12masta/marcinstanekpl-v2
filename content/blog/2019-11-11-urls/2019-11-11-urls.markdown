@@ -7,6 +7,7 @@ slug: cypress-4
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fblog_post_cover.png?alt=media&token=ff1ab910-05aa-464a-9b6f-5dd81930ef8b
 ogimagetype: image/png
 language: pl
+description: W tym wpisie autor omawia znaczenie prawidłowego zarządzania adresami URL w testach automatycznych i rozwiązuje ten problem, używając haków Cypress do scentralizowania nawigacji URL i ustawień konfiguracyjnych. Wprowadzają także ulepszenia funkcji potwierdzania adresu URL, aby zapewnić dokładne testowanie.
 ---
 
 ## Wstęp

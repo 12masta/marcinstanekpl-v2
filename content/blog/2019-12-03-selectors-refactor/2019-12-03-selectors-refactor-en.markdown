@@ -7,6 +7,7 @@ slug: en/cypress-5
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fblog_post-cover.png?alt=media&token=6a825ffc-639e-42d8-a4fc-628c983dbfaa
 ogimagetype: image/png
 language: en
+description: The author emphasizes the importance of using stable and high-quality selectors in automated tests and advocates for the use of the "data-cy" attribute for this purpose in Cypress. They demonstrate how to add and utilize these attributes in a React project, simplifying selector complexity and enhancing test resilience, providing links to corresponding code changes on GitHub.
 ---
 
 ## Introduction

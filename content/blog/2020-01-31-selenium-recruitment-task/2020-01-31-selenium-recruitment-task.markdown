@@ -7,6 +7,7 @@ slug: selenium-zadanie-rekrutacyjne-1
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/selenium-zadanie-rekrutacyjne-1%2FScreenshot%202020-02-13%20at%2011.11.06.png?alt=media&token=c5906f21-2f4a-4a46-b825-562e5e50fb53
 ogimagetype: image/png
 language: pl
+description: Autor przygotował wideo, w którym prezentuje rozwiązanie zadania rekrutacyjnego dotyczącego automatyzacji testów z użyciem Selenium WebDriver i C#. Wideo trwa ponad 2 godziny i zawiera opis zadania, boilerplate oraz rozwiązanie, stanowiąc cenną okazję do nauki dobrych praktyk w tej dziedzinie.
 ---
 
 ## Wstęp
