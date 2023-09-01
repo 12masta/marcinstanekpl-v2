@@ -7,9 +7,10 @@ language: pl
 slug: cypress-8
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fpost_cover.png?alt=media&token=582925ff-bf77-4edb-96f7-341c5a06668d
 ogimagetype: image/png
+description: W poście omówiono integrację testów Cypress z usługą Azure DevOps w celu zapewnienia ciągłej integracji. Zawiera przewodnik krok po kroku dotyczący konfigurowania potoku CI w Azure DevOps, wprowadzania niezbędnych dostosowań skryptów, obsługi zmiennych środowiskowych i podkreśla znaczenie testowania w procesie CI. Dodatkowo podkreśla łatwość integracji i znaczenie stosowania testowania do CI dla testerów. Kod można znaleźć w serwisie GitHub w celach informacyjnych.
 ---
 
-## Cypress i Continous Integration
+## Cypress i Continuous Integration
 
 Moim zdaniem od współczesnego testera wymagamy czegoś więcej niż tylko samego poprawnego utworzenia testów automatycznych. Jednym z atrybutów wyróżniających nowoczesnych inżynierów QA jest umiejętność samodzielnego zarządzania procesem ciągłej integracji. W tym poście dotykam zagadnienia właśnie wpięcia testów w proces CI. Zamierzam wykorzystać platformę Azure DevOps - uruchomię jedynie testy, bez kroku deploy backendu i frontendu, te komponenty wystawiłem jako osobny proces nieopisany w tym materiale.
 

@@ -5,6 +5,7 @@ slug: cypress-2
 categories: [testautomation, cypress]
 tags: [testautomation, cypress, pl]
 language: pl
+description: W tym wpisie na blogu omówiono implementację testów logowania za pomocą Cypress na stronie autora. Obejmuje cztery przypadki testowe, udane logowanie, nieprawidłowe hasło, nieistniejący użytkownik i puste pola. Autor pokazuje, jak przygotować dane testowe i wykorzystać framework Cypress do przeprowadzenia tych testów, jednocześnie odnosząc się do problemów z testowaną aplikacją.
 ---
 
 ## Wstęp

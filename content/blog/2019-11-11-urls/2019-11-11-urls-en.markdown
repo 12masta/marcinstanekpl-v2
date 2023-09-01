@@ -7,6 +7,7 @@ slug: en/cypress-4
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fblog_post_cover.png?alt=media&token=ff1ab910-05aa-464a-9b6f-5dd81930ef8b
 ogimagetype: image/png
 language: en
+description: In this blog post, the author discusses the importance of proper URL management in automated tests and addresses this issue by using Cypress hooks to centralize URL navigation and configuration settings. They also make improvements to the URL assertion function to ensure accurate testing.
 ---
 
 ## Introduction

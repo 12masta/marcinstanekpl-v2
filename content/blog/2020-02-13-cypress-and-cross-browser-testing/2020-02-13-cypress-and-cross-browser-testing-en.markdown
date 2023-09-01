@@ -7,6 +7,7 @@ slug: en/cypress-6
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fblog-post-cover.png?alt=media&token=937f5e7b-8ef9-480f-ab8a-27193ce2f86f
 ogimagetype: image/png
 language: en
+description: Cypress has introduced support for new browsers, Firefox and Microsoft Edge, in its latest update. Despite some initial installation issues, the author successfully updated Cypress and conducted tests on these browsers, noting that the new features are valuable for testing purposes.
 ---
 
 ## Introduction

@@ -7,6 +7,7 @@ slug: azure-devops-1
 language: pl
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
 ogImageType: image/png
+description: Wartość wysyłania wyników testów automatycznych do Slacka po procesie budowania CI, opisując rozwiązanie techniczne wykorzystujące PowerShell, Webhooks i API Slack. Takie podejście podnosi jakość testów automatycznych i zachęca do zespołowej analizy wyników testów w różnych środowiskach CI.
 ---
 
 ## Raport z testów na Slacku - automatycznie

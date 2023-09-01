@@ -5,6 +5,7 @@ categories: [environment]
 tags: [en]
 slug: en/cypress-0
 language: en
+description: In this introduction to Cypress, the author shares their technique for creating end-to-end tests for a web application built on ASP.NET Core and React. They explain the setup process, including installing Cypress and writing basic tests to visit web pages, search for elements, click on them, and perform assertions. They also provide a link to their repository for further reference and mention their intention to write more tests in future posts.
 ---
 
 ## Introduction

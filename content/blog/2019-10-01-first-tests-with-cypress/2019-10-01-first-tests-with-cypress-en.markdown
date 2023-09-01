@@ -5,6 +5,7 @@ categories: [cypress, testautomation]
 tags: [cypress, testautomation, en]
 slug: en/cypress-1
 language: en
+description: The author has shared their technique for creating end-to-end tests using the Cypress tool for applications built on ASP.NET Core and React. They provide step-by-step instructions for setting up Cypress, creating basic tests to visit a website, search for elements, click on them, make assertions, and interact with input fields, highlighting the power of Cypress for testing web applications.
 ---
 
 ## Introduction

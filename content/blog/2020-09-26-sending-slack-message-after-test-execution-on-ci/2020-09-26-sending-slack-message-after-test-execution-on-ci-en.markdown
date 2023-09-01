@@ -7,6 +7,7 @@ slug: en/azure-devops-1
 language: en
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/azure-devops-1%2Fazure-devops-1.png?alt=media&token=794b4f9e-d113-4b78-a514-9f72082fd643
 ogImageType: image/png
+description: Value of sending automated test results to Slack after the CI build process, outlining a technical solution using PowerShell, Webhooks, and the Slack API. This approach enhances the quality of automated tests and encourages team analysis of test results in various CI environments.
 ---
 
 ## Context

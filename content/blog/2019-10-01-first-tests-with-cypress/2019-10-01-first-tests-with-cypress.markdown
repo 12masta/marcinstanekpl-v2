@@ -5,6 +5,7 @@ categories: [cypress, testautomation]
 tags: [cypress, testautomation, pl]
 slug: cypress-1
 language: pl
+description: Autor podzielił się swoją techniką tworzenia kompleksowych testów z wykorzystaniem narzędzia Cypress dla aplikacji zbudowanych na ASP.NET Core i React. Zawierają instrukcje krok po kroku dotyczące konfiguracji Cypress, tworzenia podstawowych testów umożliwiających odwiedzanie witryny internetowej, wyszukiwanie elementów, klikanie na nie, wprowadzanie asercji i interakcję z polami wejściowymi, podkreślając moc Cypress w testowaniu aplikacji internetowych.
 ---
 
 ## Wstęp

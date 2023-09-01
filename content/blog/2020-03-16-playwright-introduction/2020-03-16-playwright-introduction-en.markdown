@@ -7,6 +7,7 @@ language: en
 slug: en/playwright-1
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-08-playwright-introduction%2Fpost_cover.png?alt=media&token=2a44c1c7-46ac-49b2-a737-984998cdbd6f
 ogimagetype: image/png
+description: Microsoft recently announced Playwright, a platform designed for automating browser operations, offering multi-browser support for Chromium, WebKit, Firefox, and Edge. While not a standalone test automation tool, it can be integrated with libraries like Mocha and Chai to perform tasks such as launching browsers, taking screenshots, finding elements, clicking, and handling input, making it a user-friendly choice for test automation enthusiasts. The platform's extensive documentation and accessible features bode well for its potential in test automation.
 ---
 
 ## A new platform designed to automate operations performed in the browser

@@ -7,6 +7,7 @@ language: pl
 slug: cypress-9
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fpost_cover.png?alt=media&token=9800ca92-ef08-4b5a-beee-7b20ace97430
 ogimagetype: image/png
+description: Wyjaśniono, jak skonfigurować raportowanie testów Cypress w potokach Azure DevOps. Opisuje kroki konfiguracji raportowania testów przy użyciu formatu JUnit, zapewniając, że awarie testów nie zakłócą potoku, a także zawiera przegląd wynikowych funkcji raportu z testów w Azure DevOps, podkreślając łatwość integracji i potencjał dodatkowych funkcjonalności w przyszłości posty.
 ---
 
 ## Azure DevOps, Cypress i raport z testów

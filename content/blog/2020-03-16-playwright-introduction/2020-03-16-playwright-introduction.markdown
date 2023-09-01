@@ -7,6 +7,7 @@ language: pl
 slug: playwright-1
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-08-playwright-introduction%2Fpost_cover.png?alt=media&token=2a44c1c7-46ac-49b2-a737-984998cdbd6f
 ogimagetype: image/png
+description: Firma Microsoft ogłosiła niedawno Playwright, platformę zaprojektowaną do automatyzacji operacji w przeglądarkach, oferującą obsługę wielu przeglądarek dla Chromium, WebKit, Firefox i Edge. Chociaż nie jest to samodzielne narzędzie do automatyzacji testów, można je zintegrować z bibliotekami takimi jak Mocha i Chai w celu wykonywania zadań, takich jak uruchamianie przeglądarek, robienie zrzutów ekranu, znajdowanie elementów, klikanie i obsługa danych wejściowych, co czyni go przyjaznym dla użytkownika wyborem dla entuzjastów automatyzacji testów. Obszerna dokumentacja platformy i dostępne funkcje dobrze wróżą jej potencjałowi w automatyzacji testów.
 ---
 
 ## Nowa platforma przeznaczona do automatyzacji operacji wykonywanych w przeglądarce

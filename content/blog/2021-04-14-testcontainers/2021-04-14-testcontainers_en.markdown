@@ -7,6 +7,7 @@ slug: en/testcontainers-1
 language: en
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-04-14-testcontainers%2Flogo.png?alt=media&token=e5c98b5b-5b66-4047-9ac9-e67130825b1a
 ogImageType: image/png
+description: Challenges of managing heavy dependencies like databases for integration tests and introduces TestContainers, a tool used to manage containers for testing purposes. The author demonstrates how to set up and use TestContainers with an MSSQL database in a .NET project, highlighting its simplicity and potential for improving test efficiency.
 ---
 
 ## Testcontainers

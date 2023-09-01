@@ -5,6 +5,7 @@ slug: en/cypress-2
 categories: [testautomation, cypress]
 tags: [testautomation, cypress, en]
 language: en
+description: This blog post discusses the implementation of login tests with Cypress on the author's website. It covers four test cases, successful login, incorrect password, not existing user, and empty fields. The author demonstrates how to prepare test data and use the Cypress framework to perform these tests while also addressing issues with the application under test.
 ---
 
 ## Introduction

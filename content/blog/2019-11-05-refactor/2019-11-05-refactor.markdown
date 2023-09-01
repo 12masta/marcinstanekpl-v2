@@ -7,6 +7,7 @@ slug: cypress-3
 ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-05-refactor%2Fblog_post_cover.png?alt=media&token=5dc8a4e0-cda0-4138-99d6-25cea5138a2d
 ogimagetype: image/png
 language: pl
+description: Autor omawia proces refaktoryzacji testów kodu i porównuje dwa podejścia: App Actions i Page Object Model. Zaczynają od wdrożenia akcji aplikacji, tworzenia niestandardowych poleceń i funkcji, aby testy były czystsze i bardziej zorganizowane. Następnie przechodzą do modelu obiektowego strony, tworząc klasy reprezentujące strony i zarządzając działaniami testowymi za pośrednictwem tych klas. Doszli do wniosku, że oba podejścia mają swoje zalety i wady, a wybór zależy od potrzeb i preferencji projektu.
 ---
 
 ## Wstęp
