@@ -7,7 +7,7 @@ slug: testcontainers-1
 language: pl
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-04-14-testcontainers%2Flogo.png?alt=media&token=e5c98b5b-5b66-4047-9ac9-e67130825b1a
 ogImageType: image/png
-description: W poście omówiono wyzwania związane z zarządzaniem dużymi zależnościami, takimi jak bazy danych do testów integracyjnych, i przedstawiono TestContainers, narzędzie służące do zarządzania kontenerami do celów testowych. Autor demonstruje jak skonfigurować i wykorzystać TestContainers z bazą danych MSSQL w projekcie .NET, podkreślając jego prostotę i potencjał poprawy efektywności testów.
+description: W poście omówiono wyzwania związane z zarządzaniem dużymi zależnościami, takimi jak bazy danych do testów integracyjnych. Przedstawiono TestContainers, narzędzie służące do zarządzania kontenerami do celów testowych. Autor demonstruje jak skonfigurować i wykorzystać TestContainers z bazą danych MSSQL w projekcie .NET.
 ---
 
 ## Testcontainers
