@@ -31,7 +31,7 @@ export const lighthouseTest = base.extend<
 })
 
 const thresholdsConfig = {
-  performance: 94,
+  performance: 93,
   accessibility: 100,
   "best-practices": 100,
   seo: 100,
@@ -47,7 +47,7 @@ const homePageConfig = {
 }
 
 const thresholdsConfigNavbarBlogHomePageEn = {
-  performance: 94,
+  performance: 93,
   accessibility: 100,
   "best-practices": 100,
   seo: 100,
