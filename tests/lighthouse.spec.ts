@@ -10,7 +10,7 @@ export const lighthouseTest = base.extend<
   { port: number; browser: Browser }
 >({
   port: [
-    async ({}, use) => {
+    async ({ }, use) => {
       // Assign a unique port for each playwright worker to support parallel tests
       const port = await getPort()
       await use(port)
