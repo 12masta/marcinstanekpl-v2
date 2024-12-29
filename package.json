@@ -38,8 +38,9 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "@playwright/test": "^1.17.1",
+    "@playwright/test": "^1.49.1",
     "lighthouse": "^8.6.0",
+    "playwright": "^1.49.1",
     "playwright-lighthouse": "^2.1.0",
     "prettier": "^2.4.1"
   },
@@ -60,7 +61,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "npx playwright test --config=tests/local.config.ts --grep-invert=lighthouse",
+    "test": "npx playwright test --config=tests/local.config.ts --grep-invert=lighthouse --ui",
     "test-ci": "npx playwright test --config=tests/ci.config.ts --grep-invert=lighthouse",
     "test-li": "npx playwright test --config=tests/local.lighthouse.config.ts --grep=lighthouse",
     "test-ci-li": "npx playwright test --config=tests/ci.lighthouse.config.ts --grep=lighthouse"

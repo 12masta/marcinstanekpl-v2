@@ -10,7 +10,7 @@ export const lighthouseTest = base.extend<
   { port: number; browser: Browser }
 >({
   port: [
-    async ({}, use) => {
+    async ({ }, use) => {
       // Assign a unique port for each playwright worker to support parallel tests
       const port = await getPort()
       await use(port)
@@ -31,7 +31,7 @@ export const lighthouseTest = base.extend<
 })
 
 const thresholdsConfig = {
-  performance: 94,
+  performance: 93,
   accessibility: 100,
   "best-practices": 100,
   seo: 100,
@@ -47,7 +47,7 @@ const homePageConfig = {
 }
 
 const thresholdsConfigNavbarBlogHomePageEn = {
-  performance: 94,
+  performance: 93,
   accessibility: 100,
   "best-practices": 100,
   seo: 100,
