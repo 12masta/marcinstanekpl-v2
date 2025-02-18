@@ -17,6 +17,12 @@ We can of course run it manually. However, when designing good quality automatic
 Thanks to the _Microsoft.AspNetCore.Mvc.Testing_ library, we can achieve this effect for an application written in Blazor and tested using the Playwright tool.
 However, compared to the example in the last [post](/en/integration-tests-dotnet), some changes need to be made.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Implementation
 We start by adding a class responsible for launching the application, it will inherit from the WebApplicationFactory class. You need to override the _CreateHost_ method and the Host startup logic. The change will launch the WebServer, i.e. Kestrel, enabling communication with the browser and will overwrite the BaseAddress property with an address that we can use later in the process.
 ```

@@ -16,6 +16,12 @@ Koncepcja jest bardzo prosta. Mając obraz tego, jak powinien wyglądać interfe
 
 Cypress nie udostępnia nam tej funkcji. Koniec. :) Na szczęście są zewnętrzne pluginy, te płatne i te darmowe. Postanowiłem wybrać darmowy, z największą liczbą gwiazdek na githubie - _cypress-image-snapshot_. Narzędzie to wrapper na narzędzie _jest-image-snapshot_ 2,3k gwiazdek na githubie daje wysoką pewność, że narzędzie dostarczy to, czego oczekujemy i nie zawiedziemy się w połowie implementacji.
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Setup pluginu
 
 Instalacja jest prosta w projekcie root projektu _react-redux-realworld-example-app_ uruchamiam polecenie: 

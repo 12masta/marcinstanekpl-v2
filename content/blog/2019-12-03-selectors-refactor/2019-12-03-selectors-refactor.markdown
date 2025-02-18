@@ -16,6 +16,12 @@ Selektory i sposób ich budowania to bardzo istotny temat w kontekście stabilno
 
 Poprzedni post w tej tematyce znajdziesz tutaj: [Porządki, usystematyzowanie adresów URL](/cypress-4)
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Dlaczego do tej pory używałem tak niskiej jakości selektorów
 
 Najpierw trochę kontekstu. Cypress posiada wbudowane narzędzie, które umożliwia szybkie pobranie selektora dla elementu na stronie. Możesz już znać podobne narzędzie np. z narzędzi deweloperskich wbudowanych w przeglądarkę. Jest ono dostępne po uruchomieniu testów, po najechaniu kursorem na ikonę celownika. Klikamy w nią, najeżdżamy na interesujący nas element na stronie, klikamy jeszcze raz i gotowe, mamy selektor gotowy do użycia.

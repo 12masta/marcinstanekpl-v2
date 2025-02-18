@@ -24,6 +24,12 @@ Link do gotowego projektu, który zostanie użyty w następnych krokach:
 [https://github.com/12masta/integration-tests-dotnet/tree/init-version](https://github.com/12masta/integration-tests-dotnet/tree/init-version)
 .
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Pierwszy integracyjny test
 
 Musimy dodać paczkę nuget _Microsoft.AspNetCore.Mvc.Testing_. Dzięki tej bibliotece mamy dostęp do klasy

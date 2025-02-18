@@ -18,6 +18,12 @@ Po dodaniu paru bibliotek osiągniemy oczekiwany efekt. Będę się opierał na 
 
 Jeżeli chcesz podążać krok za krokiem mojego rozwiązania u siebie lokalnie będziesz potrzebować, wykonać odrobinę pracy i przejść przez setup projektu, który opisałem już w poście: [Przygotowanie środowiska](/cypress-0) Playground jest ten sam co w przypadku serii testów o Cypress. Oba rozwiązania są stworzone na podstawie JS także będzie ciekawa okazja do porównania tych dwóch narzędzi.
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Setup
 
 W projekcie _react-redux-realworld-example-app_ tworzę nowy katalog o nazwie _playwrighttests_ w terminalu uruchamiam komendę:

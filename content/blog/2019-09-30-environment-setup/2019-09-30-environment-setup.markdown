@@ -15,6 +15,12 @@ Repozytoria które sforkowalem można znaleźć tutaj:
 
     https://github.com/gothinkster/realworld
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Backend
 
     https://github.com/12masta/aspnetcore-realworld-example-app

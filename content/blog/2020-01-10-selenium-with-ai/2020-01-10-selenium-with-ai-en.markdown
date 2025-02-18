@@ -16,6 +16,12 @@ I recently read about a way to use artificial intelligence to replace regular pl
 
 You can find the previous post here: [Proces testowy, do którego dążę w projektach, nad którymi pracuję](/en/test-process-1)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Setup of the application to be tested
 
 I'm going to test the app you already know from the series on Cypress. Its setup is described in this post: [Environment preparation](/en/cypress-0)

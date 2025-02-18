@@ -15,6 +15,12 @@ will learn quite a log after this post.
 
 Previous post can be found here : [Introduction into Cypress](/en/cypress-2)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## First step
 
 Let's code! But wait, firstly we prepare test cases which will be automatized.

@@ -16,6 +16,12 @@ Przeczytałem ostatnio o sposobie użycia sztucznej inteligencji w celu zastąpi
 
 Poprzedni post znajdziesz tutaj: [Proces testowy, do którego dążę w projektach, nad którymi pracuję](/test-process-1)
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Setup aplikacji, która zostanie przetestowana
 
 Zamierzam przetestować aplikację, którą już znasz z serii o Cypress. Jej setup opisałem w tym poście: [Przygotowanie środowiska]({% post_url 2019-09-30-environment-setup %})

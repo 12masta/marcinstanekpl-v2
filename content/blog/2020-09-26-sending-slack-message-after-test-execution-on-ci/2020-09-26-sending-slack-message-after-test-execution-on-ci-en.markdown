@@ -14,6 +14,11 @@ description: Value of sending automated test results to Slack after the CI build
 
 Sending messages to Slack with the results of automated tests after the build on the CI server gave me a lot of value. This mechanism facilitates access to test reports for the entire team. It encourages a deeper analysis of the tests. Moreover, additional analytics are very helpful in detecting flaky tests. Read how to achieve it.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
 ## How to achieve it?
    

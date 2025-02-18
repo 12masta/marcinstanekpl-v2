@@ -22,6 +22,12 @@ W moim przypadku najczęściej potrzebuję bazy MSSQL, jeżeli chcę przeprowadz
 Poprzedni post znajdziesz tutaj: [Wiadomość Slack z wynikami testów po zakończonym procesie budowania na CI
 ]({% post_url 2020-09-26-sending-slack-message-after-test-execution-on-ci %})
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Tworzenie nowego projektu .NET
 Tworzę nowy projekt z testami Xunit
 

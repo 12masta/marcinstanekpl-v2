@@ -16,6 +16,12 @@ Kiedy mamy gotowy piepline z testami Cypress relatywnie łatwo możemy utworzyć
 
 Raporty z testów zapewniają skuteczny i spójny sposób przeglądania wyników testów wykonanych przy użyciu różnych platform testowych, ponadto służą w celu pomiaru jakości pipeline'u, ułatwiają identyfikowanie i rozwiązywanie problemów.
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Publikowanie wyników testów w Azure DevOps
 
 Aby osiągnąć wyżej wymieniony efekt musimy dodać nowy task do naszego pipeline o nazwie _Publish Test Results._ Znajdziemy go w sekcji _Tasks_ podczas edycji naszego pipeline.
