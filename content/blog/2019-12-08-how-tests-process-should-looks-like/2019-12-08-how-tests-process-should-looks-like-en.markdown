@@ -16,6 +16,12 @@ Recently, I had the opportunity to reflect on how I imagine an ideal test proces
 
 You can find the previous post here: [Cypress and correct use of selections, data-cy attribute](/en/cypress-5)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Fundamentals
 
 Personally, I think that:

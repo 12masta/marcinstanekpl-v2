@@ -19,6 +19,12 @@ It is used to manage containers in the context of test code. It should enable us
 
 In my case, most often I need an MSSQL database if I want to run tests that interact with the database. Therefore, in this post, I will try to run such a container with MSSQL server in the context of the test. Such an image is included in a predefined collection, so the task seems simple.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Creating new .NET project
 I am creating a new project with Xunit tests
 

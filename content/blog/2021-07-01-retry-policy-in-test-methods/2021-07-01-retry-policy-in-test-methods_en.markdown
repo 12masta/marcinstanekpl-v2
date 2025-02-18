@@ -17,6 +17,12 @@ During several integrations of tests implementation across the .NET-based projec
 You can find the previous post here: [.NET Testcontainers library, infrastructure for the tests
 ](/2021-04-14-testcontainers/2021-04-14-testcontainers_en/)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
  I saw some implementation of Polly library in the case where as a team we were trying to consume 3rd parties API’s to increase resilience. I decided to try the same in the tests in terms of methods that pull some data from the database. The solution looks promising it already fixes some issues in the project which I am currently working on.
  
 This is how code can look like:

@@ -16,6 +16,12 @@ The concept is very simple. Having a picture of what the interface you are testi
 
 Cypress does not provide this feature to us. The end. :) Fortunately, there are external plugins, both paid and free. I decided to choose the free one with the most stars on github - _cypress-image-snapshot_. This tool is a wrapper for the _ is-image-snapshot_ tool. 2.3k stars on github gives a high degree of confidence that the tool will deliver what we expect and we will not be disappointed in the middle of the implementation.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Plugin setup
 
 Installation is simple in the root project of the _react-redux-realworld-example-app_ project, I run the command:

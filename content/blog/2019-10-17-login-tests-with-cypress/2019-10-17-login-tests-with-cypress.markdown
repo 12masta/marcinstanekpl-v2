@@ -14,6 +14,12 @@ Dzisiaj na stół biorę pozornie proste testowanie logowania się użytkownika 
 
 Poprzedni post znajdziesz tutaj: [Zapoznanie się z Cypress](/cypress-2)
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Krok pierwszy
 
 Lecimy z kodem! Nie, najpierw przygotujemy przypadki, które zostaną zautomatyzowane.

@@ -14,6 +14,12 @@ description: Discusses the integration of Cypress testing into Azure DevOps for 
 
 In my opinion, we require a modern tester to do something more than just the correct creation of automated tests. One of the distinguishing attributes of modern QA engineers is the ability to independently manage the continuous integration process. In this post, I touch on the issue of connecting tests to the CI process. I am going to use the Azure DevOps platform - I will only run tests, without the deploy backend and frontend step, I have listed these components as a separate process not described in this material.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Azure DevOps
 
 The account is free. So to start our adventure with CI, we create an account and we can start working. On page:

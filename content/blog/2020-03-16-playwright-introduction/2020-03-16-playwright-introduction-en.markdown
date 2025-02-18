@@ -18,6 +18,12 @@ After adding a few libraries, we will achieve the expected effect. I will rely o
 
 If you want to follow my solution step by step you will need locally, do a bit of work and go through the project setup, which I already described in the post: [Environment preparation](/en/cypress-0) Playground is the same as the Cypress test series. Both solutions are based on JS, so there will be an interesting opportunity to compare the two tools.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Setup
 
 In the _react-redux-realworld-example-app_ project, I create a new directory called _playwrighttests_ in the terminal, I run the command:

@@ -16,6 +16,12 @@ I received an email yesterday with excellent news. Cypres has just introduced su
 
 You can find the previous post here: [Cypress and correct use of selections, data-cy attribute](/en/cypress-5)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Cypress version update
 
 First of all, I check that the tests I have created so far are working properly. I start Cypress with the command:

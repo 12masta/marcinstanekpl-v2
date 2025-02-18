@@ -17,6 +17,12 @@ Możemy go oczywiście uruchomić ręcznie. Jednak projektując dobrej jakości 
 Dzięki bibliotece _Microsoft.AspNetCore.Mvc.Testing_ możemy uzyskać taki efekt dla aplikacji na pisanej w Blazor i testowanej przy użyciu narzedzia Playwright. 
 Jednak w porównaniu do przykładu z ostatniego [posta](/integration-tests-dotnet) należy dokonać pewnych zmian.
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Implementacja
 Zaczynamy od dodania klasy odpowiedzialnej za uruchomienie aplikacji będzie ona dziedziczyć po klasie WebApplicationFactory. Należy nadpisać metodę _CreateHost_ i logikę uruchomienia Hosta. Zmiana spowoduje uruchomienie WebServera, tj. Kestrel, umożliwiający komunikacje z przeglądarką oraz nadpisze właściwość BaseAddress adresem, który możemy użyć później w procesie.
 

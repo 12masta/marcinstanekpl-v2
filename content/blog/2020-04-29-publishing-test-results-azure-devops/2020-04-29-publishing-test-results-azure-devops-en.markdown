@@ -16,6 +16,12 @@ When we have a ready piepline with Cypress tests, it is relatively easy to creat
 
 Test reports provide an effective and consistent way to view the results of tests performed on various test platforms, and are also used to measure the quality of the pipeline, and facilitate problem identification and resolution.
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Publish test results to Azure DevOps
 
 To achieve the above-mentioned effect, we need to add a new task to our pipeline called _Publish Test Results._ We can find it in the _Tasks_ section when editing our pipeline.

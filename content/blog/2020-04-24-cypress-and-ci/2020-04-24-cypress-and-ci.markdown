@@ -14,6 +14,12 @@ description: W poście omówiono integrację testów Cypress z usługą Azure De
 
 Moim zdaniem od współczesnego testera wymagamy czegoś więcej niż tylko samego poprawnego utworzenia testów automatycznych. Jednym z atrybutów wyróżniających nowoczesnych inżynierów QA jest umiejętność samodzielnego zarządzania procesem ciągłej integracji. W tym poście dotykam zagadnienia właśnie wpięcia testów w proces CI. Zamierzam wykorzystać platformę Azure DevOps - uruchomię jedynie testy, bez kroku deploy backendu i frontendu, te komponenty wystawiłem jako osobny proces nieopisany w tym materiale.
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Azure DevOps
 
 Konto jest darmowe. Więc aby zacząć przygodę z CI zakładamy konto i możemy zaczynać pracę. Na stronie:

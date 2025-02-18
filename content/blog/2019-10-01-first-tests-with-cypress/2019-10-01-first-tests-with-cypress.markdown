@@ -20,6 +20,12 @@ Ten i następne posty zakładają ze jeżeli chcesz razem ze mną podążać kro
 
 Ich setup opisałem w tym poście: [Przygotowanie środowiska](/cypress-0)
 
+## Analiza historii użytkownika oparta na AI
+
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## Szybki setup
 
 Aby moc używać tego narzędzia najpierw musimy go zainstalować w naszym projekcie. Najlepiej jest zastosować się do artykuły Getting Started na stronie twórców:

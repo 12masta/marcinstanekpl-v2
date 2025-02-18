@@ -23,6 +23,12 @@ Test project:
 Link to the project, which will be used in the next
 steps: [https://github.com/12masta/integration-tests-dotnet/tree/init-version](https://github.com/12masta/integration-tests-dotnet/tree/init-version)
 
+## AI-Powered User Story Analysis for Smarter Testing
+
+Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+
+[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
+
 ## First integration test
 
 We need to add the nuget package _Microsoft.AspNetCore.Mvc.Testing_. With this library we have access to the class
