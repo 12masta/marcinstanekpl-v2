@@ -7,7 +7,7 @@ slug: en/playwright-tests-along-with-blazor-app
 language: en 
 ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2024-04-03-playwright-tests-along-with-blazor-app%2F2024-04-03-playwright-tests-along-with-blazor-app.png?alt=media&token=05809de2-bd2a-4fca-b73e-8b92995cca29
 ogImageType: image/png
-description: The article discusses the process of automating functional tests of Blazor applications using the Microsoft.AspNetCore.Mvc.Testing library and the Playwright tool. The author presents the implementation steps, from configuring the class that runs the application to writing tests to check the correct operation of the home page and the FAQ section. Thanks to this solution, a one-time test instance was obtained, significantly facilitating the testing process
+description: The article discusses the process of automating functional tests of Blazor applications using the Microsoft.AspNetCore.Mvc.Testing library and the Playwright tool. The author presents the implementation steps, from configuring the class that runs the application to writing tests to check the correct operation of the home page and the FAQ section.
 ---
 
 ## Context
