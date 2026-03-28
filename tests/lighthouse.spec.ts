@@ -1,6 +1,7 @@
 import { test, expect, chromium, Browser } from "@playwright/test"
 import { HomePage } from "./pom/home/homepage"
 import { BlogHomePage } from "./pom/blog/bloghomepage"
+import { PostBlogPage } from "./pom/blog/postblogpage"
 import { playAudit } from "playwright-lighthouse"
 import { test as base } from "@playwright/test"
 import getPort from "get-port"
@@ -107,9 +108,9 @@ lighthouseTest.describe("Lighthouse", () => {
     })
   })
 
-  lighthouseTest("Lighthouse - Navbar post blog page pl", async ({ page, port }) => {
-    const homePlPage = new BlogHomePage(page)
-    await homePlPage.gotoPl()
+  lighthouseTest("Lighthouse - single post pl", async ({ page, port }) => {
+    const postPl = new PostBlogPage(page)
+    await postPl.gotoPl()
 
     await playAudit({
       page,
@@ -118,9 +119,9 @@ lighthouseTest.describe("Lighthouse", () => {
     })
   })
 
-  lighthouseTest("Lighthouse - Navbar post blog page en", async ({ page, port }) => {
-    const homeEnPage = new BlogHomePage(page)
-    await homeEnPage.gotoEn()
+  lighthouseTest("Lighthouse - single post en", async ({ page, port }) => {
+    const postEn = new PostBlogPage(page)
+    await postEn.gotoEn()
 
     await playAudit({
       page,
