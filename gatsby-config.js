@@ -1,4 +1,6 @@
 module.exports = {
+  // Gatsby 5 default is "always"; set explicitly so URLs stay predictable across upgrades.
+  trailingSlash: `always`,
   siteMetadata: {
     title: `marcinstanek.pl`,
     author: {
@@ -104,7 +106,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                 ) {
                   nodes {
                     excerpt

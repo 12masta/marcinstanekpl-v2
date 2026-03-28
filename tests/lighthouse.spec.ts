@@ -4,7 +4,6 @@ import { BlogHomePage } from "./pom/blog/bloghomepage"
 import { PostBlogPage } from "./pom/blog/postblogpage"
 import { playAudit } from "playwright-lighthouse"
 import { test as base } from "@playwright/test"
-import getPort from "get-port"
 
 export const lighthouseTest = base.extend<
   {},
@@ -13,6 +12,7 @@ export const lighthouseTest = base.extend<
   port: [
     async ({ }, use) => {
       // Assign a unique port for each playwright worker to support parallel tests
+      const { default: getPort } = await import("get-port")
       const port = await getPort()
       await use(port)
     },
