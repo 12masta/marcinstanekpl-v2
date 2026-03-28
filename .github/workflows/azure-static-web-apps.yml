@@ -48,11 +48,14 @@ jobs:
         if: always()
         continue-on-error: true
         with:
+          # Playwright outputFile paths in tests/*.config.ts are resolved next to those configs (see tests/results*.xml).
           files: |
-            results.xml
-            results-lighthouse.xml
+            **/results.xml
+            **/results-lighthouse.xml
           check_name: Playwright
           fail_on: nothing
+          # Avoid 403 when GITHUB_TOKEN cannot post issue comments (fork PRs / minimal permissions).
+          comment_mode: off
 
       - name: Deploy to QA
         uses: Azure/static-web-apps-deploy@v1
