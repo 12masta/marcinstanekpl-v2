@@ -1,8 +1,9 @@
 // local.config.ts
+import * as path from "path"
 import { PlaywrightTestConfig, devices } from "@playwright/test"
 
 const config: PlaywrightTestConfig = {
-  reporter: [["junit", { outputFile: "results.xml" }]],
+  reporter: [["junit", { outputFile: path.join(__dirname, "..", "results.xml") }]],
   webServer: {
     command: "npm run serve",
     port: 9000,

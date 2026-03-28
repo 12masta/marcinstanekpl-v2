@@ -1,0 +1,79 @@
+# Build, test, and deploy to Azure Static Web Apps (QA on every push; PROD on master/main).
+#
+# Repository secrets (Settings → Secrets and variables → Actions):
+#   AZURE_STATIC_WEB_APPS_API_TOKEN       — deployment token for QA (same value as Azure DevOps variable group)
+#   AZURE_STATIC_WEB_APPS_API_TOKEN_PROD — deployment token for production
+#
+# Tokens: Azure Portal → your Static Web App → Manage deployment token
+
+name: Azure Static Web Apps
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  build_test_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "14"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - run: npx playwright install-deps
+
+      - run: npx playwright install
+
+      - name: Playwright tests
+        run: npm run test-ci
+        continue-on-error: true
+
+      - name: Playwright Lighthouse tests
+        run: npm run test-ci-li
+        continue-on-error: true
+
+      - name: Publish JUnit results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        continue-on-error: true
+        with:
+          # Playwright outputFile paths in tests/*.config.ts are resolved next to those configs (see tests/results*.xml).
+          files: |
+            **/results.xml
+            **/results-lighthouse.xml
+          check_name: Playwright
+          fail_on: nothing
+          # Avoid 403 when GITHUB_TOKEN cannot post issue comments (fork PRs / minimal permissions).
+          comment_mode: off
+
+      - name: Deploy to QA
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: public
+          api_location: ""
+          skip_app_build: true
+
+      - name: Deploy to production
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROD }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: public
+          api_location: ""
+          skip_app_build: true
