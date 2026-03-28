@@ -3,6 +3,7 @@
 # Repository secrets (Settings → Secrets and variables → Actions):
 #   AZURE_STATIC_WEB_APPS_API_TOKEN       — deployment token for QA (same value as Azure DevOps variable group)
 #   AZURE_STATIC_WEB_APPS_API_TOKEN_PROD — deployment token for production
+#   GATSBY_GA_MEASUREMENT_ID             — optional; GA4 Measurement ID (G-XXXXXXXXXX) from Google Analytics
 #
 # Tokens: Azure Portal → your Static Web App → Manage deployment token
 
@@ -30,6 +31,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          GATSBY_GA_MEASUREMENT_ID: ${{ secrets.GATSBY_GA_MEASUREMENT_ID }}
 
       - run: npx playwright install-deps
 
