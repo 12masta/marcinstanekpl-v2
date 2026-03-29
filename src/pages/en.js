@@ -20,9 +20,11 @@ const HomeEn = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Home page" />
       <Jumbotron
-        header={"I initiate and improve software Quality Assurance processes"}
+        header={
+          "I reduce delivery risk through QA, automation, and clearer decisions in CI/CD"
+        }
         description={
-          "I am a QA Engineer with more than 7 years of experience. I specialise in the terms of test automation expertise, over it I am also have an experience with leading QA teams. I can help you with various things arround quality in your company or project."
+          "I'm an independent QA and test automation engineer (B2B, 10+ years): .NET/API, CI/CD, and pipelines where pull requests produce a short QA context - scope and risk before you run full regression. Alongside classic execution automation; I work with backend teams on frequent, predictable releases."
         }
         wantToKnowMoreButtonText={"I want to know more"}
         blogUrl="/blog/en/"
@@ -30,27 +32,27 @@ const HomeEn = ({ data, location }) => {
       <LastBlogPosts header={"Recent blog posts"} posts={posts} />
       <Featurette
         id={"featurette-want-to-know"}
-        header={"Quality Assurance"}
+        header={"What to test, before you run tests"}
         leadText={
-          "Enhancing Your software's reliability, stability and performance through expert quality assurance services. Trust us to optimize your testing processes and ensure seamless deployment, so you can deliver exceptional software products to your users."
+          "Most tooling optimizes execution; the hard part is knowing what deserves attention. I help you tighten the gap between code changes and QA decisions - structured briefs from the pull request and its context, clearer risk and impacted areas, and fewer surprises in production. The goal is operational risk reduction, not novelty for its own sake."
         }
         image={"qa"}
         alignToLeft={true}
       />
       <Featurette
         id={"featurette-automation"}
-        header={"Automation"}
+        header={"Automation that fits the pipeline"}
         leadText={
-          "Streamlining development processes with effective and easy to maintain test frameworks. Harness the power of automation to accelerate your software delivery, reduce manual effort, and achieve consistent, reliable results throughout your development lifecycle."
+          "Maintainable frameworks for APIs and services, wired into CI/CD so feedback is continuous. Useful on its own - and the foundation when you want intelligence on failures, flakiness, and scope layered on top of the same pipelines."
         }
         image={"automation"}
         alignToLeft={false}
       />
       <Featurette
         id={"featurette-complete-solutions"}
-        header={"Complete solutions"}
+        header={"End-to-end quality in the lifecycle"}
         leadText={
-          "Tailored quality assurance solutions for Your unique business needs. Ensuring the Highest Quality Software Every Time. From requirements analysis to test execution and beyond, trust our expertise to seamlessly integrate quality throughout your software development lifecycle."
+          "From requirements and test design to execution and release. I integrate quality practices with your toolchain - so briefs, checks, and automation live where developers already work, not in a separate silo."
         }
         image={"complete_solutions"}
         alignToLeft={true}
@@ -58,7 +60,9 @@ const HomeEn = ({ data, location }) => {
       <Featurette
         id={"featurette-on-time"}
         header={"On time"}
-        leadText={"On-Time delivery of quality services. Ensuring timely solutions without compromising on quality. Trust in our efficient project management and proactive communication to meet your deadlines, leaving you confident in the timely completion of your projects."}
+        leadText={
+          "Predictable cadence on contract work: clear milestones, proactive communication, and scope that matches your release train. You get fewer last-minute QA firefights and more time for the decisions that actually reduce risk."
+        }
         image={"on_time"}
         alignToLeft={false}
       />
@@ -66,7 +70,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-inform"}
         header={"Keep you updated"}
         leadText={
-          "Stay informed at every stage of the software production process. No surprises, just clear and transparent communication. With regular updates and open channels of communication, I ensure that your vision is aligned with the progress, fostering collaboration and delivering results that exceed your expectations."
+          "Clarity at every stage: status, risk, and outcomes visible where the team already works - including alongside repository changes and pipeline output. No surprises; communication that keeps everyone aligned on progress."
         }
         image={"inform"}
         alignToLeft={true}

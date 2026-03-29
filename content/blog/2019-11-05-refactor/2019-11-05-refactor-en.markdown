@@ -23,12 +23,6 @@ to compare.
 
 Previous post about that topic you can find here: [Login tests with Cypress](/en/cypress-2)
 
-## AI-Powered User Story Analysis for Smarter Testing
-
-Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
-
-[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
-
 ## App Actions
 
 As I am curious of this new approach, I will begin with App Actions. I am creating

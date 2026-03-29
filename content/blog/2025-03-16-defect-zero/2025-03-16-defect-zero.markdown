@@ -15,12 +15,6 @@ Automatyzacja testów zrewolucjonizowała zapewnianie jakości oprogramowania, z
 
 Dzięki postępowi w dziedzinie **sztucznej inteligencji (AI) i uczenia maszynowego (ML)** narzędzia wspierane przez te osiągnięcia, takie jak **DefectZero**, rewolucjonizują sposób tworzenia przypadków testowych, czyniąc automatyzację jeszcze bardziej efektywną. W tym artykule omówimy, jak AI usprawnia **automatyzację testów**, jak DefectZero wpisuje się w ten ekosystem i jak można zintegrować przypadki testowe generowane przez AI z istniejącymi frameworkami automatyzacji.
 
-## Analiza historii użytkownika oparta na AI
-
-Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Więcej na stronie [DefectZero — analiza historii użytkownika z AI](https://defectzero.com/).
-
-[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
-
 ## Rola AI w generowaniu przypadków testowych
 
 Generowanie przypadków testowych za pomocą AI wykorzystuje przetwarzanie języka naturalnego (NLP) i algorytmy uczenia maszynowego do analizy **user stories, kryteriów akceptacji**, co pozwala na sugerowanie odpowiednich scenariuszy testowych. Korzyści z takiego podejścia obejmują:

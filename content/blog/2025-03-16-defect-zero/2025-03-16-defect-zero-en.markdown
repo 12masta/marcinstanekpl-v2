@@ -14,12 +14,6 @@ Test automation has revolutionized software quality assurance by improving effic
 
 With advancements in **Artificial Intelligence (AI) and Machine Learning (ML)**, AI-powered tools like **DefectZero** are transforming how test cases are created, making automation even more efficient. In this post, we explore how AI enhances **test automation**, how DefectZero fits into this ecosystem, and how you can integrate AI-generated test cases into your automation framework.
 
-## AI-Powered User Story Analysis for Smarter Testing
-
-Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
-
-[![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
-
 ## The Role of AI in Test Case Generation
 
 AI-powered test case generation utilizes Natural Language Processing (NLP) and Machine Learning algorithms to analyze **user stories, acceptance criteria, and historical defects** to suggest test cases. The benefits include:
