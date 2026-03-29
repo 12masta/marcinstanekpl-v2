@@ -21,10 +21,10 @@ const HomePl = ({ data, location }) => {
       <Seo title="Strona główna" />
       <Jumbotron
         header={
-          "Ograniczam ryzyko dostaw: QA, automatyzacja i jaśniejsze decyzje w CI/CD"
+          "Ograniczam ryzyko dostaw: QA, automatyzacja i jaśniejsze decyzje w procesie dostaw"
         }
         description={
-          "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): API i .NET, CI/CD oraz pipeline’y, w których z PR powstaje krótki kontekst dla QA - zakres i ryzyko, zanim odpalicie pełną regresję. Obok klasycznej automatyzacji wykonania, współpraca z backendem przy częstych, przewidywalnych wdrożeniach."
+          "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): testy i automatyzacja wpasowane w Wasz sposób wydawania oprogramowania, z krótkim, czytelnym kontekstem dla QA przy każdej zmianie - zakres i ryzyko, zanim przeprowadzicie pełną regresję. Oprócz automatyzacji wykonania współpracuję z zespołami przy częstych, przewidywalnych wdrożeniach."
         }
         contactButtonText="Kontakt"
         contactMailSubject="Wiadomość ze strony marcinstanek.pl"

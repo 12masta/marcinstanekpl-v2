@@ -1,9 +1,9 @@
 # Build, test, and deploy to Azure Static Web Apps (QA on every push; PROD on master/main).
 #
 # Repository secrets (Settings → Secrets and variables → Actions):
-#   AZURE_STATIC_WEB_APPS_API_TOKEN       — deployment token for QA (same value as Azure DevOps variable group)
-#   AZURE_STATIC_WEB_APPS_API_TOKEN_PROD — deployment token for production
-#   GATSBY_GA_MEASUREMENT_ID             — optional; GA4 ID used only for production builds (QA deploys never include GA)
+#   AZURE_STATIC_WEB_APPS_API_TOKEN       - deployment token for QA (same value as Azure DevOps variable group)
+#   AZURE_STATIC_WEB_APPS_API_TOKEN_PROD - deployment token for production
+#   GATSBY_GA_MEASUREMENT_ID             - optional; GA4 ID used only for production builds (QA deploys never include GA)
 #
 # Tokens: Azure Portal → your Static Web App → Manage deployment token
 

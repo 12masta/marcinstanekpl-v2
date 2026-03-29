@@ -21,10 +21,10 @@ const HomeEn = ({ data, location }) => {
       <Seo title="Home page" />
       <Jumbotron
         header={
-          "I reduce delivery risk through QA, automation, and clearer decisions in CI/CD"
+          "I reduce delivery risk through QA, automation, and clearer decisions in how you ship"
         }
         description={
-          "I'm an independent QA and test automation engineer (B2B, 10+ years): .NET/API, CI/CD, and pipelines where pull requests produce a short QA context - scope and risk before you run full regression. Alongside classic execution automation, I work with backend teams on frequent, predictable releases."
+          "I'm an independent QA and test automation engineer (B2B, 10+ years): tests and automation aligned with your delivery process, with concise QA context for each change - scope and risk before you run full regression. Beyond execution automation, I work with teams on frequent, predictable releases."
         }
         contactButtonText="Contact"
         contactMailSubject="Message from marcinstanek.pl"
