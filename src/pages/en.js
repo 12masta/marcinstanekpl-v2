@@ -24,7 +24,7 @@ const HomeEn = ({ data, location }) => {
           "I reduce delivery risk through QA, automation, and clearer decisions in CI/CD"
         }
         description={
-          "I'm an independent QA and test automation engineer (B2B, 10+ years): .NET/API, CI/CD, and pipelines where pull requests produce a short QA context - scope and risk before you run full regression. Alongside classic execution automation; I work with backend teams on frequent, predictable releases."
+          "I'm an independent QA and test automation engineer (B2B, 10+ years): .NET/API, CI/CD, and pipelines where pull requests produce a short QA context - scope and risk before you run full regression. Alongside classic execution automation, I work with backend teams on frequent, predictable releases."
         }
         wantToKnowMoreButtonText={"I want to know more"}
         blogUrl="/blog/en/"
@@ -34,7 +34,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-want-to-know"}
         header={"What to test, before you run tests"}
         leadText={
-          "Most tooling optimizes execution; the hard part is knowing what deserves attention. I help you tighten the gap between code changes and QA decisions - structured briefs from the pull request and its context, clearer risk and impacted areas, and fewer surprises in production. The goal is operational risk reduction, not novelty for its own sake."
+          "Most tooling optimizes execution, the hard part is knowing what deserves attention. I help you tighten the gap between code changes and QA decisions - structured briefs from the pull request and its context, clearer risk and impacted areas, and fewer surprises in production. The goal is operational risk reduction, not novelty for its own sake."
         }
         image={"qa"}
         alignToLeft={true}
@@ -70,7 +70,7 @@ const HomeEn = ({ data, location }) => {
         id={"featurette-inform"}
         header={"Keep you updated"}
         leadText={
-          "Clarity at every stage: status, risk, and outcomes visible where the team already works - including alongside repository changes and pipeline output. No surprises; communication that keeps everyone aligned on progress."
+          "Clarity at every stage: status, risk, and outcomes visible where the team already works - including alongside repository changes and pipeline output. No surprises, communication that keeps everyone aligned on progress."
         }
         image={"inform"}
         alignToLeft={true}

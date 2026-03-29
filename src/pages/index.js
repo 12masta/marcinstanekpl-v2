@@ -24,7 +24,7 @@ const HomePl = ({ data, location }) => {
           "Ograniczam ryzyko dostaw: QA, automatyzacja i jaśniejsze decyzje w CI/CD"
         }
         description={
-          "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): API i .NET, CI/CD oraz pipeline’y, w których z PR powstaje krótki kontekst dla QA - zakres i ryzyko, zanim odpalicie pełną regresję. Obok klasycznej automatyzacji wykonania; współpraca z backendem przy częstych, przewidywalnych wdrożeniach."
+          "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): API i .NET, CI/CD oraz pipeline’y, w których z PR powstaje krótki kontekst dla QA - zakres i ryzyko, zanim odpalicie pełną regresję. Obok klasycznej automatyzacji wykonania, współpraca z backendem przy częstych, przewidywalnych wdrożeniach."
         }
         wantToKnowMoreButtonText={"Chcę wiedzieć więcej"}
         blogUrl="/blog/pl/"
@@ -34,7 +34,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-want-to-know"}
         header={"Co testować, zanim odpalisz testy"}
         leadText={
-          "Większość narzędzi optymalizuje wykonanie; trudniejsze jest wskazanie, co naprawdę wymaga uwagi. Pomagam zawęzić lukę między zmianami w kodzie a decyzjami QA - uporządkowane briefingi z PR i kontekstu, jaśniejsze ryzyko i obszary wpływu, mniej niespodzianek na produkcji. Chodzi o realne ograniczenie ryzyka operacyjnego, a nie modę na kolejne gadżety."
+          "Większość narzędzi optymalizuje wykonanie, trudniejsze jest wskazanie, co naprawdę wymaga uwagi. Pomagam zawęzić lukę między zmianami w kodzie a decyzjami QA - uporządkowane briefingi z PR i kontekstu, jaśniejsze ryzyko i obszary wpływu, mniej niespodzianek na produkcji. Chodzi o realne ograniczenie ryzyka operacyjnego, a nie modę na kolejne gadżety."
         }
         image={"qa"}
         alignToLeft={true}
