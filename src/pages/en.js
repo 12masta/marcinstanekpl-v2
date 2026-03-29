@@ -26,7 +26,8 @@ const HomeEn = ({ data, location }) => {
         description={
           "I'm an independent QA and test automation engineer (B2B, 10+ years): .NET/API, CI/CD, and pipelines where pull requests produce a short QA context - scope and risk before you run full regression. Alongside classic execution automation, I work with backend teams on frequent, predictable releases."
         }
-        wantToKnowMoreButtonText={"I want to know more"}
+        contactButtonText="Contact"
+        contactMailSubject="Message from marcinstanek.pl"
         blogUrl="/blog/en/"
       />
       <LastBlogPosts header={"Recent blog posts"} posts={posts} />

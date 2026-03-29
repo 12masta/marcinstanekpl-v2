@@ -22,11 +22,16 @@ export class Jumbotron extends React.Component {
             <p className="lead">{this.props.description}</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <a
-                href="#featurette-want-to-know"
-                type="button"
+                href={
+                  this.props.contactMailSubject
+                    ? `mailto:kontakt@marcinstanek.pl?subject=${encodeURIComponent(
+                        this.props.contactMailSubject
+                      )}`
+                    : "mailto:kontakt@marcinstanek.pl"
+                }
                 className="btn btn-primary btn-lg px-4 me-md-2"
               >
-                {this.props.wantToKnowMoreButtonText}
+                {this.props.contactButtonText}
               </a>
               <a
                 href={this.props.blogUrl}

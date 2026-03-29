@@ -26,7 +26,8 @@ const HomePl = ({ data, location }) => {
         description={
           "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): API i .NET, CI/CD oraz pipeline’y, w których z PR powstaje krótki kontekst dla QA - zakres i ryzyko, zanim odpalicie pełną regresję. Obok klasycznej automatyzacji wykonania, współpraca z backendem przy częstych, przewidywalnych wdrożeniach."
         }
-        wantToKnowMoreButtonText={"Chcę wiedzieć więcej"}
+        contactButtonText="Kontakt"
+        contactMailSubject="Wiadomość ze strony marcinstanek.pl"
         blogUrl="/blog/pl/"
       />
       <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts} />
