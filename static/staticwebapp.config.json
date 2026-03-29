@@ -179,6 +179,26 @@
       "route": "/16-rzeczy.html",
       "redirect": "/16-rzeczy/",
       "statusCode": 301
+    },
+    {
+      "route": "/pr-scope-hidden-tax.html",
+      "redirect": "/pr-scope-hidden-tax/",
+      "statusCode": 301
+    },
+    {
+      "route": "/noisy-ci-signal.html",
+      "redirect": "/noisy-ci-signal/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/pr-scope-hidden-tax.html",
+      "redirect": "/en/pr-scope-hidden-tax/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/noisy-ci-signal.html",
+      "redirect": "/en/noisy-ci-signal/",
+      "statusCode": 301
     }
   ],
   "navigationFallback": {
