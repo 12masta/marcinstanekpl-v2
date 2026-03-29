@@ -21,7 +21,7 @@ You can find the previous post on this topic here [Cleanup, systematization of U
 
 ## AI-Powered User Story Analysis for Smarter Testing
 
-Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -69,7 +69,7 @@ responsibility of the automation tester.
 
 We are dealing with a project created with the React library. So we expect to
 find components in the design. What are components?
-[Here](https://pl.reactjs.org/docs/components-and-props.html) is explained
+The [React documentation on components and props](https://pl.reactjs.org/docs/components-and-props.html) explains it
 quite nicely with an example. I understand them as reusable pieces of html to
 which we can pass arguments in order to specify their operation, appearance and
 purpose. You don't need to understand them now. You just need to be able to
@@ -88,8 +88,8 @@ File:
     src/components/Login.js
 
 After opening it, we find the JavaScript code that returns JSX code. It's a
-JavaScript extended with the ability to return HTML tags. More
-[here](https://pl.reactjs.org/docs/introducing-jsx.html). After analyzing the
+JavaScript extended with the ability to return HTML tags. Read more in the
+[React introduction to JSX](https://pl.reactjs.org/docs/introducing-jsx.html). After analyzing the
 code, I can see that the _input_ tag is responsible for displaying the text
 fields. In React's nomenclature, we call it a controlled component:
 

@@ -16,6 +16,7 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
         ogImage={post.frontmatter.ogImage}
         ogImageType={post.frontmatter.ogImageType}
+        lang={post.frontmatter.language || `en`}
       />
       <div className="container mt-4">
         <article

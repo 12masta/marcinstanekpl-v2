@@ -15,14 +15,14 @@ description: Wykorzystanie biblioteki Polly do implementacji polityki ponawiania
 Podczas kilku implementacji testów w projektach opartych na .NET, bardzo często zmagałem się ze zjawiskiem _race conditions_ między metodami, które próbują pobrać jakiś stan z bazy danych, aby dokonać na nim pewnych asercji. Bardzo często jest to punkt niepowodzenia, który sprawia, że ​​testy integracyjne są niepewne tzw. flaky tests.
 
 Poprzedni post znajdziesz tutaj: [Biblioteka .NET Testcontainers, infrastruktura dla testów
-](/2021-04-14-testcontainers/2021-04-14-testcontainers/)
+](/testcontainers-1/)
 
 
 Widziałem implementację biblioteki Polly w przypadku, gdy jako zespół próbowaliśmy wykorzystać API stron trzecich w celu zwiększenia odporności. Postanowiłem spróbować tego samego w testach pod kątem metod, które pobierają niektóre dane z bazy danych. Rozwiązanie wygląda obiecująco, naprawia już pewne problemy w projekcie, nad którym aktualnie pracuję.
 
 ## Analiza historii użytkownika oparta na AI
 
-Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Więcej na stronie [DefectZero — analiza historii użytkownika z AI](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
  

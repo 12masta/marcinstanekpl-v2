@@ -15,11 +15,11 @@ description: Using the Polly library for implementing a retry policy in integrat
 During several integrations of tests implementation across the .NET-based projects, I was struggling very often race conditions across the methods which try to pull some state from the DB to make some assertion on it. Very often this is a point of failure which makes the integration tests flaky.
 
 You can find the previous post here: [.NET Testcontainers library, infrastructure for the tests
-](/2021-04-14-testcontainers/2021-04-14-testcontainers_en/)
+](/en/testcontainers-1/)
 
 ## AI-Powered User Story Analysis for Smarter Testing
 
-Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 

@@ -18,7 +18,7 @@ Poprzedni post znajdziesz tutaj: [Proces testowy, do którego dążę w projekta
 
 ## Analiza historii użytkownika oparta na AI
 
-Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Więcej na stronie [DefectZero — analiza historii użytkownika z AI](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -221,7 +221,7 @@ Ten test spisuję na straty, spróbuje z czymś innym. :)
 
 ## Drugi test
 
-Okazuje się, że nie można wpisać dosłownie wszystkiego jako element wyszukiwany - to byłoby za piękne. Listę dostępnych słów kluczowych można znaleźć [tutaj](https://github.com/testdotai/appium-classifier-plugin/blob/master/lib/labels.js). Nie jest ona zbyt okazała jak na razie. Będę musiał więc dostawać test, aby użyć którejś z nich.
+Okazuje się, że nie można wpisać dosłownie wszystkiego jako element wyszukiwany - to byłoby za piękne. Listę dostępnych słów kluczowych znajdziesz w [repozytorium wtyczki Appium classifier na GitHubie](https://github.com/testdotai/appium-classifier-plugin/blob/master/lib/labels.js). Nie jest ona zbyt okazała jak na razie. Będę musiał więc dostawać test, aby użyć którejś z nich.
 
 ```
 def 'User click settings link at home page'(){

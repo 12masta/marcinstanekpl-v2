@@ -12,4 +12,4 @@ Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
 User-agent: *
 Allow: /
 
-Sitemap: http://www.marcinstanek.pl/sitemap.xml
+Sitemap: https://marcinstanek.pl/sitemap-index.xml

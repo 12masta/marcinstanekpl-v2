@@ -19,7 +19,7 @@ However, compared to the example in the last [post](/en/integration-tests-dotnet
 
 ## AI-Powered User Story Analysis for Smarter Testing
 
-Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -87,4 +87,4 @@ Consequently, we consume the URL in the tests:
 
 Thanks to the technology used to build this project, I obtained a one-time test instance that can be used in tests built using Playwirght.
 
-PR can be found [here](https://github.com/12masta/FAQCompanies/pull/5/commits/438efde547a27049b4cef0a3c33c56c7e8df21e6).
+See the [GitHub pull request with these changes](https://github.com/12masta/FAQCompanies/pull/5/commits/438efde547a27049b4cef0a3c33c56c7e8df21e6).

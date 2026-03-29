@@ -48,6 +48,62 @@
     }
 }
 
+/*
+ * Prism default theme tokens fail WCAG AA on #f5f2f0 (~4.46:1). Darken for blog code blocks.
+ */
+.gatsby-highlight .token.keyword,
+.gatsby-highlight .token.atrule,
+.gatsby-highlight .token.attr-value {
+    color: #005a7a !important;
+}
+
+.gatsby-highlight .token.function,
+.gatsby-highlight .token.class-name {
+    color: #9c1446 !important;
+}
+
+.gatsby-highlight .token.punctuation {
+    color: #5c5c5c !important;
+}
+
+.gatsby-highlight .token.comment,
+.gatsby-highlight .token.prolog,
+.gatsby-highlight .token.doctype,
+.gatsby-highlight .token.cdata {
+    color: #4a5f6a !important;
+}
+
+.gatsby-highlight .token.operator,
+.gatsby-highlight .token.entity,
+.gatsby-highlight .token.url {
+    color: #6b4a1a !important;
+}
+
+.gatsby-highlight .token.property,
+.gatsby-highlight .token.tag,
+.gatsby-highlight .token.boolean,
+.gatsby-highlight .token.number,
+.gatsby-highlight .token.constant,
+.gatsby-highlight .token.symbol,
+.gatsby-highlight .token.deleted {
+    color: #6b1538 !important;
+}
+
+.gatsby-highlight .token.selector,
+.gatsby-highlight .token.attr-name,
+.gatsby-highlight .token.string,
+.gatsby-highlight .token.char,
+.gatsby-highlight .token.builtin,
+.gatsby-highlight .token.inserted {
+    color: #2d4f00 !important;
+}
+
+.gatsby-highlight .token.regex,
+.gatsby-highlight .token.important,
+.gatsby-highlight .token.variable {
+    color: #8a4a00 !important;
+}
+
 /* img adjustment
 -------------------------------------------------- */
 .blog-post img{

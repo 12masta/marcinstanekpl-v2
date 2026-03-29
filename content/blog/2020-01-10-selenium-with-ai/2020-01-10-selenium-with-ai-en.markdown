@@ -18,7 +18,7 @@ You can find the previous post here: [Proces testowy, do którego dążę w proj
 
 ## AI-Powered User Story Analysis for Smarter Testing
 
-Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -220,7 +220,7 @@ I am writing this test at a loss, I will try with something else. :)
 
 ## Second test
 
-It turns out you can't type literally anything as a search item - that would be too good. The list of available keywords can be found [here](https://github.com/testdotai/appium-classifier-plugin/blob/master/lib/labels.js). It is not very impressive so far. So I'll have to get a test to use one of them.
+It turns out you can't type literally anything as a search item - that would be too good. Browse the [Appium classifier plugin label list on GitHub](https://github.com/testdotai/appium-classifier-plugin/blob/master/lib/labels.js). It is not very impressive so far. So I'll have to get a test to use one of them.
 
 ```
 def 'User click settings link at home page'(){

@@ -25,7 +25,7 @@ Previous post about that topic you can find here: [Login tests with Cypress](/en
 
 ## AI-Powered User Story Analysis for Smarter Testing
 
-Unlock the full potential of your software development process with our AI-driven tool! You will find it [here](https://defectzero.com/).
+Unlock the full potential of your software development process with our AI-driven tool! Learn more on [DefectZero — AI user story analysis](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -305,8 +305,8 @@ specification by Cypress.
 
 ### App Actions - commit
 
-You can find all changes in code about App Actions
-[here](https://github.com/12masta/react-redux-realworld-example-app/commit/11d965258e549f1de7cc003858aba7ee6e0baba4).
+You can find all changes in code about App Actions in
+[this GitHub commit](https://github.com/12masta/react-redux-realworld-example-app/commit/11d965258e549f1de7cc003858aba7ee6e0baba4).
 
 {% include_relative subForm-en.markdown %}
 
@@ -611,7 +611,7 @@ I focused on the basic implementation of the pattern assumptions.
 
 ### Page Object Model - commit
 
-You can find all the changes of the Page Object Model [here](https://github.com/12masta/react-redux-realworld-example-app/commit/c8408db5ec5d9dd23fc528bb692a2dff5cd91bae).
+You can find all the changes of the Page Object Model in [this GitHub commit](https://github.com/12masta/react-redux-realworld-example-app/commit/c8408db5ec5d9dd23fc528bb692a2dff5cd91bae).
 
 ## Summary
 

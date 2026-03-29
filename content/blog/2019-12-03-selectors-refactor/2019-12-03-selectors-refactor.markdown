@@ -18,7 +18,7 @@ Poprzedni post w tej tematyce znajdziesz tutaj: [Porządki, usystematyzowanie ad
 
 ## Analiza historii użytkownika oparta na AI
 
-Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Więcej na stronie [DefectZero — analiza historii użytkownika z AI](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -45,7 +45,7 @@ Nie biorą się one jednak znikąd. Wymagają od testera otworzenia projektu tes
 
 ## Dodawanie atrybutów na ekranie logowania
 
-Mamy do czynienia z projektem utworzonym przy pomocy biblioteki React. A więc spodziewamy się, że w projekcie znajdziemy komponenty. Co to są komponenty? [Tutaj](https://pl.reactjs.org/docs/components-and-props.html) jest to dość fajnie wyjaśnione na przykładzie. Ja rozumiem je jako reużywalne kawałki html'a do którego możemy przekazywać argumenty w celu sprecyzowania ich działania, wyglądu i przeznaczenia. Nie musisz ich teraz zrozumieć. Wystarczy, że będziesz umiał przekazać do nich atrybut w celu jego przetestowania.
+Mamy do czynienia z projektem utworzonym przy pomocy biblioteki React. A więc spodziewamy się, że w projekcie znajdziemy komponenty. Co to są komponenty? [Dokumentacja React o komponentach i propsach](https://pl.reactjs.org/docs/components-and-props.html) wyjaśnia to dość fajnie na przykładzie. Ja rozumiem je jako reużywalne kawałki html'a do którego możemy przekazywać argumenty w celu sprecyzowania ich działania, wyglądu i przeznaczenia. Nie musisz ich teraz zrozumieć. Wystarczy, że będziesz umiał przekazać do nich atrybut w celu jego przetestowania.
 
 W zależności od specyfiki projektu poprawny sposób dodawania atrybutu będzie się różnił. Myśle, jednak że ostatecznie zawsze musimy zmodyfikować HTML - oprócz jakichś ekstremalnych przypadków brzegowych. ;)
 
@@ -57,7 +57,7 @@ Plik:
 
     src/components/Login.js
 
-Po otworzeniu go znajdujemy kod JavaScript, zwracający kod JSX. To JavaScript rozszerzony o możliwość zwracania znaczników HTML. Więcej [tutaj](https://pl.reactjs.org/docs/introducing-jsx.html). Po analizie kodu widzę, że za wyświetlenie pól tekstowych odpowiedzialny jest po prostu tag _input_. W nazewnictwie Reacta nazywamy go komponentem kontrolowanym_:
+Po otworzeniu go znajdujemy kod JavaScript, zwracający kod JSX. To JavaScript rozszerzony o możliwość zwracania znaczników HTML. Więcej w [wprowadzeniu do JSX w dokumentacji React](https://pl.reactjs.org/docs/introducing-jsx.html). Po analizie kodu widzę, że za wyświetlenie pól tekstowych odpowiedzialny jest po prostu tag _input_. W nazewnictwie Reacta nazywamy go komponentem kontrolowanym_:
 
 ```
 <input

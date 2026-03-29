@@ -19,7 +19,7 @@ Jednak w porównaniu do przykładu z ostatniego [posta](/integration-tests-dotne
 
 ## Analiza historii użytkownika oparta na AI
 
-Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Znajdziesz je [tutaj](https://defectzero.com/).
+Odblokuj pełny potencjał swojego procesu rozwoju oprogramowania dzięki naszemu narzędziu opartemu na sztucznej inteligencji! Więcej na stronie [DefectZero — analiza historii użytkownika z AI](https://defectzero.com/).
 
 [![Defect zero](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/defect%20zero%2Fdefect-zero-min.png?alt=media&token=6ca28446-47df-4391-a5a7-a5d8ca7bd0e5)](https://defectzero.com/)
 
@@ -92,4 +92,4 @@ W konsekwencji konsumujemy adres URL w testach:
 
 Dzięki technologi użytej przy budowaniu tego projektu uzyskałem jednorazowa instancje testowa, która może zostać wykorzystana w testach zbudowanych przy użyciu Playwirght.
 
-PR można znaleźć [tutaj](https://github.com/12masta/FAQCompanies/pull/5/commits/438efde547a27049b4cef0a3c33c56c7e8df21e6).
+Zobacz [pull request z tymi zmianami na GitHubie](https://github.com/12masta/FAQCompanies/pull/5/commits/438efde547a27049b4cef0a3c33c56c7e8df21e6).

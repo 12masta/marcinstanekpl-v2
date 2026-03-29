@@ -1,17 +1,16 @@
-import { test, expect, chromium, Browser } from "@playwright/test"
+import { chromium, Browser } from "@playwright/test"
 import { HomePage } from "./pom/home/homepage"
 import { BlogHomePage } from "./pom/blog/bloghomepage"
-import { PostBlogPage } from "./pom/blog/postblogpage"
 import { playAudit } from "playwright-lighthouse"
 import { test as base } from "@playwright/test"
+import { getBlogPostPaths } from "./helpers/blog-post-paths"
 
 export const lighthouseTest = base.extend<
   {},
   { port: number; browser: Browser }
 >({
   port: [
-    async ({ }, use) => {
-      // Assign a unique port for each playwright worker to support parallel tests
+    async ({}, use) => {
       const { default: getPort } = await import("get-port")
       const port = await getPort()
       await use(port)
@@ -31,7 +30,8 @@ export const lighthouseTest = base.extend<
   ],
 })
 
-const thresholdsConfig = {
+/** Same bar as the previous single-post Lighthouse checks (not all categories are 100). */
+const blogPostThresholds = {
   performance: 93,
   accessibility: 100,
   "best-practices": 100,
@@ -47,21 +47,7 @@ const homePageConfig = {
   pwa: 50,
 }
 
-const thresholdsConfigNavbarBlogHomePageEn = {
-  performance: 93,
-  accessibility: 100,
-  "best-practices": 100,
-  seo: 100,
-  pwa: 50,
-}
-
-const thresholdsConfigNavbarPostBlogPagePl = {
-  performance: 93,
-  accessibility: 100,
-  "best-practices": 100,
-  seo: 100,
-  pwa: 50,
-}
+const blogPostPaths = getBlogPostPaths()
 
 lighthouseTest.describe("Lighthouse", () => {
   lighthouseTest("Lighthouse - Navbar home page pl", async ({ page, port }) => {
@@ -86,47 +72,49 @@ lighthouseTest.describe("Lighthouse", () => {
     })
   })
 
-  lighthouseTest("Lighthouse - Navbar blog home page pl", async ({ page, port }) => {
+  lighthouseTest("Lighthouse - Navbar blog home page pl", async ({
+    page,
+    port,
+  }) => {
     const homePlPage = new BlogHomePage(page)
     await homePlPage.gotoPl()
 
     await playAudit({
       page,
       port,
-      thresholds: thresholdsConfig,
+      thresholds: blogPostThresholds,
     })
   })
 
-  lighthouseTest("Lighthouse - Navbar blog home page en", async ({ page, port }) => {
+  lighthouseTest("Lighthouse - Navbar blog home page en", async ({
+    page,
+    port,
+  }) => {
     const homeEnPage = new BlogHomePage(page)
     await homeEnPage.gotoEn()
 
     await playAudit({
       page,
       port,
-      thresholds: thresholdsConfigNavbarBlogHomePageEn,
+      thresholds: blogPostThresholds,
     })
   })
 
-  lighthouseTest("Lighthouse - single post pl", async ({ page, port }) => {
-    const postPl = new PostBlogPage(page)
-    await postPl.gotoPl()
+  lighthouseTest.describe("Blog posts", () => {
+    for (const postPath of blogPostPaths) {
+      lighthouseTest(`Lighthouse - blog post ${postPath}`, async ({
+        page,
+        port,
+      }) => {
+        await page.goto(postPath)
+        await page.locator("data-test=navbar-brand").waitFor()
 
-    await playAudit({
-      page,
-      port,
-      thresholds: thresholdsConfigNavbarPostBlogPagePl,
-    })
+        await playAudit({
+          page,
+          port,
+          thresholds: blogPostThresholds,
+        })
+      })
+    }
   })
-
-  lighthouseTest("Lighthouse - single post en", async ({ page, port }) => {
-    const postEn = new PostBlogPage(page)
-    await postEn.gotoEn()
-
-    await playAudit({
-      page,
-      port,
-      thresholds: thresholdsConfig,
-    })
-  })
-});
+})
