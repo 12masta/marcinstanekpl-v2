@@ -192,3 +192,26 @@
 @media (min-width: 768px) {
     .h-md-250 { height: 250px; }
 }
+
+/* About page: career accordion (scan headers, expand for full copy) */
+.about-career-accordion .accordion-button {
+    align-items: flex-start;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.about-career-accordion .accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+.about-career-accordion .accordion-button::after {
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+}
+
+.about-career-accordion__title {
+    flex: 1;
+    min-width: 0;
+    text-align: start;
+    padding-right: 0.5rem;
+}

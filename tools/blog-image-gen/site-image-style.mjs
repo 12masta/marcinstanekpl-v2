@@ -20,3 +20,18 @@ Tone (balance): credible B2B independent practitioner — approachable and human
 
 /** Full style block appended to blog image prompts (replaces legacy SITE_IMAGE_STYLE). */
 export const BLOG_IMAGE_STYLE_PROMPT = `${SITE_ILLUSTRATION_STYLE}\n\n${COMPOSITION_BLOG_OG}`
+
+/**
+ * About-page portrait (tools/blog-image-gen/process-about-photo.mjs).
+ * Matches the calm B2B look of SITE_ILLUSTRATION_STYLE (restrained, not punchy stock photo).
+ * Framing on the site is Bootstrap `rounded` + `shadow-sm` on the img (o-mnie / en/about).
+ */
+export const ABOUT_PHOTO_PIPELINE = {
+  /** Max width in px; height scales, fit inside, no upscale. */
+  maxWidth: 880,
+  jpegQuality: 88,
+  /** Mild grade: slightly calmer saturation, tiny brightness lift. */
+  modulate: { saturation: 0.92, brightness: 1.02 },
+  /** Subtle edge clarity (sharp 0.32 API). */
+  sharpen: { sigma: 0.6, flat: 1, jagged: 2 },
+}

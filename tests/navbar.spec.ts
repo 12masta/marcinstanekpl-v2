@@ -9,6 +9,7 @@ test("Navbar home page pl", async ({ page }) => {
 
   await expect(homePlPage.navbarBrand).toHaveAttribute("href", "/")
   await expect(homePlPage.navbarLanguageLink).toHaveAttribute("href", "/en/")
+  await expect(homePlPage.aboutLink).toHaveAttribute("href", "/o-mnie/")
   await expect(homePlPage.blogLink).toHaveAttribute("href", "/blog/pl/")
 })
 
@@ -18,6 +19,7 @@ test("Navbar home page en", async ({ page }) => {
 
   await expect(homeEnPage.navbarBrand).toHaveAttribute("href", "/en/")
   await expect(homeEnPage.navbarLanguageLink).toHaveAttribute("href", "/")
+  await expect(homeEnPage.aboutLink).toHaveAttribute("href", "/en/about/")
   await expect(homeEnPage.blogLink).toHaveAttribute("href", "/blog/en/")
 })
 
@@ -30,6 +32,7 @@ test("Navbar blog home page pl", async ({ page }) => {
     "href",
     "/blog/en/"
   )
+  await expect(homePlPage.aboutLink).toHaveAttribute("href", "/o-mnie/")
   await expect(homePlPage.blogLink).toHaveAttribute("href", "/blog/pl/")
 })
 
@@ -42,6 +45,7 @@ test("Navbar blog home page en", async ({ page }) => {
     "href",
     "/blog/pl/"
   )
+  await expect(homeEnPage.aboutLink).toHaveAttribute("href", "/en/about/")
   await expect(homeEnPage.blogLink).toHaveAttribute("href", "/blog/en/")
 })
 
@@ -54,6 +58,7 @@ test("Navbar single post page pl", async ({ page }) => {
     "href",
     "/en/dotnet-polly/"
   )
+  await expect(postPl.aboutLink).toHaveAttribute("href", "/o-mnie/")
   await expect(postPl.blogLink).toHaveAttribute("href", "/blog/pl/")
 })
 
@@ -66,6 +71,7 @@ test("Navbar single post page en", async ({ page }) => {
     "href",
     "/dotnet-polly/"
   )
+  await expect(postEn.aboutLink).toHaveAttribute("href", "/en/about/")
   await expect(postEn.blogLink).toHaveAttribute("href", "/blog/en/")
 })
 

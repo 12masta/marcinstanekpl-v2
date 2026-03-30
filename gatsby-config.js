@@ -239,6 +239,7 @@ module.exports = {
               `active`,
             ],
             deep: [
+              /^accordion/,
               /^navbar-/,
               /^collapse/,
               /^modal-/,

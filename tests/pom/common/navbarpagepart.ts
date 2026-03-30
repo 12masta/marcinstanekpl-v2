@@ -6,6 +6,7 @@ export class NavbarPagePart implements INavbarPagePart {
   readonly navbar: Locator
   readonly navbarBrand: Locator
   readonly navbarLanguageLink: Locator
+  readonly aboutLink: Locator
   readonly blogLink: Locator
   readonly ogImage: Locator
   readonly ogImageType: Locator
@@ -15,6 +16,7 @@ export class NavbarPagePart implements INavbarPagePart {
     this.navbar = page.locator("data-test=navbar-brand")
     this.navbarBrand = page.locator("data-test=navbar-brand")
     this.navbarLanguageLink = page.locator("data-test=navbar-language-link")
+    this.aboutLink = page.locator("data-test=about-link")
     this.blogLink = page.locator("data-test=blog-link")
     this.ogImage = page.locator("id=og:image")
     this.ogImageType = page.locator("id=og:image:type")
@@ -26,6 +28,7 @@ export interface INavbarPagePart {
   readonly page: Page
   readonly navbarBrand: Locator
   readonly navbarLanguageLink: Locator
+  readonly aboutLink: Locator
   readonly blogLink: Locator
   readonly ogImage: Locator
   readonly ogImageType: Locator

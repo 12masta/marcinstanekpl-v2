@@ -75,9 +75,9 @@ export const pageQuery = graphql`
         listOgImageFile {
           childImageSharp {
             gatsbyImageData(
+              layout: CONSTRAINED
               width: 400
-              height: 225
-              layout: FIXED
+              aspectRatio: 1.7777777777777777
               formats: [AUTO, WEBP, AVIF]
               placeholder: DOMINANT_COLOR
             )
