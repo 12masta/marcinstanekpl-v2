@@ -191,6 +191,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       translationKey: String
       ogImage: String
       ogImageType: String
+      tags: [String]
+      categories: [String]
     }
 
     type Fields {

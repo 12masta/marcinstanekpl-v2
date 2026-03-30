@@ -28,6 +28,38 @@
     contain-intrinsic-size: auto 12rem;
 }
 
+/* purgecss start ignore */
+/*
+ * GatsbyImage/StaticImage (constrained): inline-block + inner max-width can letterbox
+ * (grey bands) in Bootstrap columns or .ratio boxes. Fill wrapper + spacer; img keeps
+ * object-fit from gatsby-plugin-image where applicable.
+ */
+.post-list-item .post-list-thumb > [data-gatsby-image-wrapper],
+.last-blog-posts .post-list-thumb > [data-gatsby-image-wrapper] {
+    display: block !important;
+    height: 100% !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.post-list-item .post-list-thumb [data-gatsby-image-wrapper] > div:first-of-type,
+.last-blog-posts .post-list-thumb [data-gatsby-image-wrapper] > div:first-of-type {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.home-gatsby-fill {
+    display: block !important;
+    width: 100% !important;
+}
+
+.home-gatsby-fill > div:first-of-type {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* purgecss end ignore */
+
 /* Hero → recent posts: do not use featurette vertical rhythm (5rem + 7rem) on desktop */
 @media (min-width: 62em) {
     .last-blog-posts .featurette-divider {

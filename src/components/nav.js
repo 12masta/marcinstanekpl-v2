@@ -1,4 +1,5 @@
 import * as React from "react"
+import { BlogNavSearch } from "./blog-nav-search"
 
 export class Nav extends React.Component {
   render() {
@@ -57,8 +58,9 @@ export class Nav extends React.Component {
                     aria-label="Toggle navigation" data-test="navbar-toggler">
               <span className="navbar-toggler-icon" />
             </button>
-            <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-              <div className="navbar-nav">
+            <div className="collapse navbar-collapse flex-grow-1 align-items-lg-center" id="navbarNavAltMarkup">
+              <div className="navbar-nav ms-auto align-items-lg-center">
+                <BlogNavSearch pathName={this.props.pathName} />
                 <a className="nav-link" aria-current="page" href={languageHref} data-test="navbar-language-link">{languageLabel}</a>
                 <a className="nav-link" href={aboutHref} data-test="about-link">{aboutLabel}</a>
                 <a className="nav-link" href={blogHref} data-test="blog-link">Blog</a>
