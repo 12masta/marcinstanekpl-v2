@@ -4,8 +4,8 @@ date:   2020-01-10 08:00:00 +0200
 categories: [testautomation, selenium, AI]
 tags: [testautomation, selenium, AI, en]
 slug: en/selenium-ai-1
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-01-10-selenium-with-ai%2Fcover.png?alt=media&token=8e0ffe7a-9075-45dc-a0ab-a942981dbd18
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/selenium-ai-1/og.png
+ogImageType: image/png
 language: en
 description: The author discusses the implementation of artificial intelligence in Selenium WebDriver test automation, specifically utilizing the test-ai-classifier plugin. They encounter challenges during installation, ultimately achieving success. While the AI-based element recognition shows promise, it currently has limited functionality, and the project's development holds potential for the future of testing.
 ---

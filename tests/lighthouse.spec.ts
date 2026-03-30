@@ -4,6 +4,11 @@ import { BlogHomePage } from "./pom/blog/bloghomepage"
 import { playAudit } from "playwright-lighthouse"
 import { test as base } from "@playwright/test"
 import { getBlogPostPaths } from "./helpers/blog-post-paths"
+import {
+  blogIndexThresholds,
+  homePageThresholds,
+  thresholdsForBlogPost,
+} from "./lighthouse-thresholds"
 
 export const lighthouseTest = base.extend<
   {},
@@ -30,22 +35,19 @@ export const lighthouseTest = base.extend<
   ],
 })
 
-/** Blog index + posts: performance after global CSS/JS trim; SEO 98 buffers LH variance on long-title pages. */
-const blogPostThresholds = {
-  performance: 93,
-  accessibility: 100,
-  "best-practices": 100,
-  seo: 98,
-  pwa: 50,
-}
-
-/** Home PL/EN: lazy featurettes, PurgeCSS, smaller bundles; performance 85 buffers CI/LH variance (samples often mid‑90s). */
-const homePageConfig = {
-  performance: 85,
-  accessibility: 100,
-  "best-practices": 100,
-  seo: 100,
-  pwa: 50,
+function logLighthouseScores(label: string, auditResult: unknown) {
+  if (!process.env.LH_LOG_SCORES) return
+  const lhr = (auditResult as { lhr?: { categories?: Record<string, { score: number | null }> } })
+    ?.lhr
+  if (!lhr?.categories) return
+  const scores = Object.fromEntries(
+    Object.entries(lhr.categories).map(([k, v]) => [
+      k,
+      Math.round((v.score ?? 0) * 100),
+    ])
+  )
+  // eslint-disable-next-line no-console
+  console.log(`[LH_SCORES] ${label}`, JSON.stringify(scores))
 }
 
 const blogPostPaths = getBlogPostPaths()
@@ -55,22 +57,24 @@ lighthouseTest.describe("Lighthouse", () => {
     const homePlPage = new HomePage(page)
     await homePlPage.gotoPl()
 
-    await playAudit({
+    const r = await playAudit({
       page,
       port,
-      thresholds: homePageConfig,
+      thresholds: homePageThresholds,
     })
+    logLighthouseScores(`home pl`, r)
   })
 
   lighthouseTest("Lighthouse - Navbar home page en", async ({ page, port }) => {
     const homeEnPage = new HomePage(page)
     await homeEnPage.gotoEn()
 
-    await playAudit({
+    const r = await playAudit({
       page,
       port,
-      thresholds: homePageConfig,
+      thresholds: homePageThresholds,
     })
+    logLighthouseScores(`home en`, r)
   })
 
   lighthouseTest("Lighthouse - Navbar blog home page pl", async ({
@@ -80,11 +84,12 @@ lighthouseTest.describe("Lighthouse", () => {
     const homePlPage = new BlogHomePage(page)
     await homePlPage.gotoPl()
 
-    await playAudit({
+    const r = await playAudit({
       page,
       port,
-      thresholds: blogPostThresholds,
+      thresholds: blogIndexThresholds,
     })
+    logLighthouseScores(`blog index pl`, r)
   })
 
   lighthouseTest("Lighthouse - Navbar blog home page en", async ({
@@ -94,11 +99,12 @@ lighthouseTest.describe("Lighthouse", () => {
     const homeEnPage = new BlogHomePage(page)
     await homeEnPage.gotoEn()
 
-    await playAudit({
+    const r = await playAudit({
       page,
       port,
-      thresholds: blogPostThresholds,
+      thresholds: blogIndexThresholds,
     })
+    logLighthouseScores(`blog index en`, r)
   })
 
   lighthouseTest.describe("Blog posts", () => {
@@ -110,11 +116,13 @@ lighthouseTest.describe("Lighthouse", () => {
         await page.goto(postPath)
         await page.locator("data-test=navbar-brand").waitFor()
 
-        await playAudit({
+        const thresholds = thresholdsForBlogPost(postPath)
+        const r = await playAudit({
           page,
           port,
-          thresholds: blogPostThresholds,
+          thresholds,
         })
+        logLighthouseScores(postPath, r)
       })
     }
   })

@@ -19,6 +19,15 @@
     background-color: var(--bs-tertiary-bg);
 }
 
+/*
+ * Blog index (/blog/en/, /blog/pl/) and home “recent posts”: skip layout/paint for
+ * rows that are off-screen until the user scrolls (pairs with native lazy-loading).
+ */
+.post-list-item-deferred {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 12rem;
+}
+
 /* Hero → recent posts: do not use featurette vertical rhythm (5rem + 7rem) on desktop */
 @media (min-width: 62em) {
     .last-blog-posts .featurette-divider {

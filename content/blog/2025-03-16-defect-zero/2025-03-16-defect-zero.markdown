@@ -4,9 +4,9 @@ date: 2025-03-16 08:00:00 +0200
 categories: [testautomation, ai, testcases]
 tags: [testautomation, ai, testcases, AI-powered test automation, C# test automation, AI test case generation, Artificial intelligence in software testing, AI-driven software quality assurance]
 slug: defect-zero
-language: pl 
 ogImage: https://marcinstanek.pl/images/blog/defect-zero/og.png
 ogImageType: image/png
+language: pl 
 description: "AI i uczenie maszynowe w generowaniu przypadków testowych: DefectZero, integracja z automatyzacją i większe pokrycie. Krótki przegląd dla inżynierów QA."
 ---
 # Usprawnienie automatyzacji za pomocą uczenia maszynowego

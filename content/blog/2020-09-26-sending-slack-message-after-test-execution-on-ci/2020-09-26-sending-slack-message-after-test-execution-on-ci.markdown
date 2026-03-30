@@ -4,9 +4,9 @@ date: 2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, pl]
 slug: azure-devops-1
-language: pl
 ogImage: https://marcinstanek.pl/images/blog/azure-devops-1/og.png
 ogImageType: image/png
+language: pl
 description: Wartość wysyłania wyników testów automatycznych do Slacka po procesie budowania CI, opisując rozwiązanie techniczne wykorzystujące PowerShell, Webhooks i API Slack. Takie podejście podnosi jakość testów automatycznych i zachęca do zespołowej analizy wyników testów w różnych środowiskach CI.
 ---
 

@@ -4,10 +4,10 @@ date: 2026-03-29 10:00:00 +0200
 categories: [qa, ci, quality]
 tags: [qa, continuous integration, flaky tests, triage, delivery, trust, signal vs noise]
 slug: noisy-ci-signal
-language: pl
-description: "Gdy pipeline częściej budzi wątpliwości niż daje jasny werdykt, „zrób rerun” zastępuje diagnozę. QA traci uwagę na szum zamiast na zmianę."
 ogImage: https://marcinstanek.pl/images/blog/noisy-ci-signal/og.png
 ogImageType: image/png
+language: pl
+description: "Gdy pipeline częściej budzi wątpliwości niż daje jasny werdykt, „zrób rerun” zastępuje diagnozę. QA traci uwagę na szum zamiast na zmianę."
 ---
 
 Dobry pipeline ma mówić po prostu: ta zmiana coś zepsuła albo środowisko jest niezdrowe. Gdy przez miesiące słyszysz raczej „znów coś poszło, odpal jeszcze raz”, przestajesz słuchać treści komunikatu - słuchasz tylko dźwięku alarmu. Ten tekst jest o cenie tego znieczulenia, szczególnie dla QA, które w tym samym czasie próbuje zrozumieć realne ryzyko zmiany.

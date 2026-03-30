@@ -10,6 +10,8 @@ export function BlogPostListItem({
   siteUrl = ``,
   postCtaLabel,
   isLast,
+  /** When true (blog index, home “recent posts”): cheaper network priority + deferred paint for off-screen rows. */
+  deferThumbnailWork = false,
 }) {
   const slug = post.fields.slug
   const title = post.frontmatter.title || slug
@@ -21,12 +23,17 @@ export function BlogPostListItem({
     ? `col-12 col-sm-8 col-lg-9`
     : `col-12`
 
+  const liClass = [
+    deferThumbnailWork ? `post-list-item-deferred` : null,
+    isLast ? `mb-0` : `mb-4 pb-4 border-bottom border-secondary-subtle`,
+  ]
+    .filter(Boolean)
+    .join(` `)
+
+  const thumbImgProps = deferThumbnailWork ? { fetchPriority: `low` } : {}
+
   return (
-    <li
-      className={
-        isLast ? `mb-0` : `mb-4 pb-4 border-bottom border-secondary-subtle`
-      }
-    >
+    <li className={liClass}>
       <article
         className="post-list-item px-3 py-3 rounded-3"
         itemScope
@@ -46,8 +53,10 @@ export function BlogPostListItem({
                     image={listGatsbyImage}
                     alt=""
                     loading="lazy"
+                    decoding="async"
                     objectFit="cover"
                     className="h-100 w-100"
+                    {...thumbImgProps}
                   />
                 ) : (
                   <img
@@ -57,6 +66,7 @@ export function BlogPostListItem({
                     loading="lazy"
                     decoding="async"
                     itemProp="image"
+                    {...thumbImgProps}
                   />
                 )}
               </Link>

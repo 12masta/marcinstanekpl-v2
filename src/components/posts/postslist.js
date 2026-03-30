@@ -10,6 +10,7 @@ export class PostsList extends React.Component {
         ? this.props.postCtaLabel
         : "Czytaj wpis"
     const siteUrl = this.props.siteUrl || ``
+    const deferThumbnailWork = this.props.deferThumbnailWork !== false
 
     return (
       <div
@@ -30,6 +31,7 @@ export class PostsList extends React.Component {
                   siteUrl={siteUrl}
                   postCtaLabel={postCtaLabel}
                   isLast={index === posts.length - 1}
+                  deferThumbnailWork={deferThumbnailWork}
                 />
               ))}
             </ol>

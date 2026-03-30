@@ -4,9 +4,9 @@ date: 2020-09-26 08:00:00 +0200
 categories: [testautomation, cypress, ci, azuredevops]
 tags: [testautomation, cypress, ci, azuredevops, en]
 slug: en/azure-devops-1
-language: en
 ogImage: https://marcinstanek.pl/images/blog/azure-devops-1/og.png
 ogImageType: image/png
+language: en
 description: Value of sending automated test results to Slack after the CI build process, outlining a technical solution using PowerShell, Webhooks, and the Slack API. This approach enhances the quality of automated tests and encourages team analysis of test results in various CI environments.
 ---
 
