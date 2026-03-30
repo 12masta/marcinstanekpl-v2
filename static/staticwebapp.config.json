@@ -1,6 +1,26 @@
 {
   "routes": [
     {
+      "route": "/about",
+      "redirect": "/en/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/about/",
+      "redirect": "/en/about/",
+      "statusCode": 301
+    },
+    {
+      "route": "/o-mnie",
+      "redirect": "/o-mnie/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/about",
+      "redirect": "/en/about/",
+      "statusCode": 301
+    },
+    {
       "route": "/blog/environment/2019/09/30/environment-setup.html",
       "redirect": "/cypress-0/",
       "statusCode": 301

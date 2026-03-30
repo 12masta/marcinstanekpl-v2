@@ -8,12 +8,19 @@ Disallow: /dziekuje/
 User-agent: Googlebot
 Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
 
+# About (PL / EN canonical paths)
+User-agent: Googlebot
+Disallow: /about/
+
 # Grupa 2
 User-agent: *
+Allow: /o-mnie/
+Allow: /en/about/
 Allow: /pr-scope-hidden-tax/
 Allow: /noisy-ci-signal/
 Allow: /en/pr-scope-hidden-tax/
 Allow: /en/noisy-ci-signal/
+Disallow: /about/
 Allow: /
 
 Sitemap: https://marcinstanek.pl/sitemap-index.xml
