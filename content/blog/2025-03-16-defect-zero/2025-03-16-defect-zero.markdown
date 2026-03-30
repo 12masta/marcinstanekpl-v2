@@ -7,7 +7,7 @@ slug: defect-zero
 language: pl 
 ogImage: https://marcinstanek.pl/images/blog/defect-zero/og.png
 ogImageType: image/png
-description: AI i uczenie maszynowe w generowaniu przypadków testowych: DefectZero, integracja z automatyzacją i większe pokrycie. Krótki przegląd dla inżynierów QA.
+description: "AI i uczenie maszynowe w generowaniu przypadków testowych: DefectZero, integracja z automatyzacją i większe pokrycie. Krótki przegląd dla inżynierów QA."
 ---
 # Usprawnienie automatyzacji za pomocą uczenia maszynowego
 
