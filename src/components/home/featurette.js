@@ -81,7 +81,24 @@ export class Featurette extends React.Component {
         <div className={column1Orientation}>
           <h2 className="featurette-heading">{this.props.header}
           </h2>
-          <p className="lead">{this.props.leadText}</p>
+          {this.props.leadTextDesktop ? (
+            <>
+              <p
+                className="lead d-md-none"
+                data-testid={`${this.props.id}-lead-mobile`}
+              >
+                {this.props.leadText}
+              </p>
+              <p
+                className="lead d-none d-md-block"
+                data-testid={`${this.props.id}-lead-desktop`}
+              >
+                {this.props.leadTextDesktop}
+              </p>
+            </>
+          ) : (
+            <p className="lead">{this.props.leadText}</p>
+          )}
         </div>
         <div className={column2Orientation}>
           {image}

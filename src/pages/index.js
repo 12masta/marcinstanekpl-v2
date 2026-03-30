@@ -37,6 +37,9 @@ const HomePl = ({ data, location }) => {
         leadText={
           "Większość narzędzi optymalizuje wykonanie, trudniejsze jest wskazanie, co naprawdę wymaga uwagi. Pomagam zawęzić lukę między zmianami w kodzie a decyzjami QA - uporządkowane briefingi z PR i kontekstu, jaśniejsze ryzyko i obszary wpływu, mniej niespodzianek na produkcji. Chodzi o realne ograniczenie ryzyka operacyjnego, a nie modę na kolejne gadżety."
         }
+        leadTextDesktop={
+          "Większość narzędzi optymalizuje wykonanie, trudniejsze jest wskazanie, co naprawdę wymaga uwagi. Pomagam zawęzić lukę między zmianami w kodzie a decyzjami QA - uporządkowane briefingi z PR i kontekstu, jaśniejsze ryzyko i obszary wpływu, mniej niespodzianek na produkcji. Chodzi o realne ograniczenie ryzyka operacyjnego, a nie modę na kolejne gadżety. Doprecyzowujemy, co wchodzi w minimalny zestaw weryfikacji przy danej zmianie, a co można odłożyć lub pokryć warunkowo - żeby skracać pełną regresję tam, gdzie jest zbędna, i utrzymywać ją tam, gdzie historia zmian naprawdę tego wymaga."
+        }
         image={"qa"}
         alignToLeft={true}
       />
@@ -45,6 +48,9 @@ const HomePl = ({ data, location }) => {
         header={"Automatyzacja wpasowana w pipeline"}
         leadText={
           "Utrzymywalne frameworki pod API i usługi, spięte z CI/CD, żeby feedback był ciągły. To solidna baza sama w sobie - i fundament pod kolejne warstwy: sensowniejszą interpretację wyników, flaky testy czy doprecyzowanie zakresu w tym samym pipeline’ie."
+        }
+        leadTextDesktop={
+          "Utrzymywalne frameworki pod API i usługi, spięte z CI/CD, żeby feedback był ciągły. To solidna baza sama w sobie - i fundament pod kolejne warstwy: sensowniejszą interpretację wyników, flaky testy czy doprecyzowanie zakresu w tym samym pipeline’ie. Projektuję to tak, żeby nowi członkowie zespołu mogli szybko dodać scenariusz bez rozwalania całej struktury, a raporty i artefakty były czytelne dla osób, które nie piszą testów na co dzień. Ten sam pipeline może później karmić metryki stabilności i decyzje o priorytetach - bez osobnego „równoległego świata” automatyzacji."
         }
         image={"automation"}
         alignToLeft={false}
@@ -55,6 +61,9 @@ const HomePl = ({ data, location }) => {
         leadText={
           "Od wymagań i projektu testów po wykonanie i release. Praktyki jakości spinam z Twoim toolchainem - briefingi, checki i automatyzacja tam, gdzie i tak pracują deweloperzy, a nie w osobnym silosie."
         }
+        leadTextDesktop={
+          "Od wymagań i projektu testów po wykonanie i release. Praktyki jakości spinam z Twoim toolchainem - briefingi, checki i automatyzacja tam, gdzie i tak pracują deweloperzy, a nie w osobnym silosie. Chodzi też o spójność: te same źródła prawdy (ticket, PR, kontrakt API) prowadzą przez projekt pokrycia, wykonanie i decyzję o wydaniu. Dzięki temu nie duplikujemy pracy między narzędziami i łatwiej audytować, co zostało sprawdzone przy danej wersji."
+        }
         image={"complete_solutions"}
         alignToLeft={true}
       />
@@ -64,6 +73,9 @@ const HomePl = ({ data, location }) => {
         leadText={
           "Przewidywalny rytm pracy na kontrakcie: jasne kamienie milowe, proaktywna komunikacja i zakres dopasowany do Twojego pociągu wydań. Mniej gaśnic pod koniec sprintu, więcej przestrzeni na decyzje, które realnie obniżają ryzyko."
         }
+        leadTextDesktop={
+          "Przewidywalny rytm pracy na kontrakcie: jasne kamienie milowe, proaktywna komunikacja i zakres dopasowany do Twojego pociągu wydań. Mniej gaśnic pod koniec sprintu, więcej przestrzeni na decyzje, które realnie obniżają ryzyko. W praktyce oznacza to wczesne sygnały o blokadach i o tym, gdy zakres trzeba przyciąć albo przesunąć, zamiast komunikatu w ostatniej chwili. Stawiam na jawność: co jest w trakcie, co czeka na decyzję produktu, a co jest gotowe do wydania."
+        }
         image={"on_time"}
         alignToLeft={false}
       />
@@ -72,6 +84,9 @@ const HomePl = ({ data, location }) => {
         header={"Informuję na bieżąco"}
         leadText={
           "Przejrzystość na każdym etapie: status, ryzyko i wyniki pracy widoczne tam, gdzie zespół już je śledzi - w tym przy zmianach w repozytorium i pipeline’ie. Bez niespodzianek, z kanałami, które utrzymują wspólny obraz postępu."
+        }
+        leadTextDesktop={
+          "Przejrzystość na każdym etapie: status, ryzyko i wyniki pracy widoczne tam, gdzie zespół już je śledzi - w tym przy zmianach w repozytorium i pipeline’ie. Bez niespodzianek, z kanałami, które utrzymują wspólny obraz postępu. Stosuję krótkie podsumowania po istotnych merge’ach, rozróżnienie regresji blokującej i informacyjnej oraz spójny język statusu w narzędziach, których i tak używacie - żeby PM i dev nie tłumaczyli sobie nawzajem, co oznacza „zielone” w CI."
         }
         image={"inform"}
         alignToLeft={true}
