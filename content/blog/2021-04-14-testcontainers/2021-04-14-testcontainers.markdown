@@ -4,9 +4,9 @@ date: 2021-04-14 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, pl]
 slug: testcontainers-1
-language: pl
 ogImage: https://marcinstanek.pl/images/blog/testcontainers-1/og.png
 ogImageType: image/png
+language: pl
 description: W poście omówiono wyzwania związane z zarządzaniem dużymi zależnościami, takimi jak bazy danych do testów integracyjnych. Przedstawiono TestContainers, narzędzie służące do zarządzania kontenerami do celów testowych. Autor demonstruje jak skonfigurować i wykorzystać TestContainers z bazą danych MSSQL w projekcie .NET.
 ---
 

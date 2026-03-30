@@ -4,10 +4,10 @@ date: 2026-03-29 12:00:00 +0200
 categories: [qa, delivery, process]
 tags: [qa, pull request, scope, jira, code review, test planning, delivery risk, team]
 slug: en/pr-scope-hidden-tax
-language: en
-description: Someone reads the ticket and diff and decides what to verify before any suite runs. That time rarely shows in dashboards, but across many PRs it becomes a real weekly cost - often before anyone blames coverage or tooling.
 ogImage: https://marcinstanek.pl/images/blog/pr-scope-hidden-tax/og.png
 ogImageType: image/png
+language: en
+description: Someone reads the ticket and diff and decides what to verify before any suite runs. That time rarely shows in dashboards, but across many PRs it becomes a real weekly cost - often before anyone blames coverage or tooling.
 ---
 
 Most teams can quote pipeline duration or regression suite size. Far fewer can say how many minutes per week vanish before anyone runs a meaningful test against a specific change. This post names that cost in plain language - no vendor story, no magic fix.

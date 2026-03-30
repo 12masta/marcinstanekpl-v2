@@ -32,6 +32,7 @@ export class LastBlogPosts extends React.Component {
                   siteUrl={siteUrl}
                   postCtaLabel={postCtaLabel}
                   isLast={index === posts.length - 1}
+                  deferThumbnailWork
                 />
               ))}
             </ol>

@@ -4,10 +4,10 @@ date: 2026-03-29 12:00:00 +0200
 categories: [qa, delivery, process]
 tags: [qa, pull request, scope, jira, code review, test planning, delivery risk, zespół]
 slug: pr-scope-hidden-tax
-language: pl
-description: Zanim odpalisz testy, ktoś czyta zgłoszenie, diff i ustala, co faktycznie sprawdzić. Ten czas rzadko trafia do raportów, a przy wielu PR-ach robi się z niego realny tygodniowy koszt - często zanim w ogóle zacznie się mowa o pokryciu czy narzędziach.
 ogImage: https://marcinstanek.pl/images/blog/pr-scope-hidden-tax/og.png
 ogImageType: image/png
+language: pl
+description: Zanim odpalisz testy, ktoś czyta zgłoszenie, diff i ustala, co faktycznie sprawdzić. Ten czas rzadko trafia do raportów, a przy wielu PR-ach robi się z niego realny tygodniowy koszt - często zanim w ogóle zacznie się mowa o pokryciu czy narzędziach.
 ---
 
 Większość zespołów potrafi powiedzieć, ile trwa pipeline albo ile scenariuszy ma regresja. Znacznie rzadziej ktoś wie, ile minut tygodniowo znika, zanim ktokolwiek uruchomi pierwszy sensowny test na konkretnej zmianie. Ten tekst ma nazwać ten koszt wprost - bez narzędziowego żargonu i bez obietnic „magicznego rozwiązania”.

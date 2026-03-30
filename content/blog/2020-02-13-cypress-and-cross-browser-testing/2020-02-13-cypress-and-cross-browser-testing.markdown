@@ -4,8 +4,8 @@ date:   2020-02-13 08:00:00 +0200
 categories: [testautomation, cypress]
 tags: [testautomation, cypress, pl]
 slug: cypress-6
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fblog-post-cover.png?alt=media&token=937f5e7b-8ef9-480f-ab8a-27193ce2f86f
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/cypress-6/og.png
+ogImageType: image/png
 language: pl
 description: Cypress w swojej najnowszej aktualizacji wprowadził obsługę nowych przeglądarek, Firefox i Microsoft Edge. Pomimo pewnych początkowych problemów z instalacją, autor pomyślnie zaktualizował Cypress i przeprowadził testy na tych przeglądarkach, zauważając, że nowe funkcje są przydatne do celów testowych.
 ---

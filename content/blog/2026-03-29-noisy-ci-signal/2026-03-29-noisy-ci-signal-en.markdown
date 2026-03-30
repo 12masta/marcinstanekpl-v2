@@ -4,10 +4,10 @@ date: 2026-03-29 10:00:00 +0200
 categories: [qa, ci, quality]
 tags: [qa, continuous integration, flaky tests, triage, delivery, trust, signal vs noise]
 slug: en/noisy-ci-signal
-language: en
-description: "When the pipeline fuels doubt more than a clear verdict, rerun replaces root cause. QA burns attention on noise instead of the change—and a real regression is easy to mistake for one more flake."
 ogImage: https://marcinstanek.pl/images/blog/noisy-ci-signal/og.png
 ogImageType: image/png
+language: en
+description: "When the pipeline fuels doubt more than a clear verdict, rerun replaces root cause. QA burns attention on noise instead of the change—and a real regression is easy to mistake for one more flake."
 ---
 
 A healthy pipeline should say plainly: this change broke something or the environment is unhealthy. When for months you mostly hear "something failed again, just rerun," you stop listening to the content of the message - you only hear the alarm sound. This post is about the cost of that numbness, especially for QA trying to understand real risk while the build keeps crying wolf.
