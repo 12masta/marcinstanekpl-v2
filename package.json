@@ -71,6 +71,7 @@
     "test-ci-li": "npx playwright test --config=tests/ci.lighthouse.config.ts --grep=lighthouse",
     "lighthouse:smoke": "npm run build && npx playwright test tests/lighthouse.spec.ts --config=tests/ci.lighthouse.config.ts --grep \"Lighthouse - Navbar\"",
     "blog:image": "node tools/blog-image-gen/generate-blog-image.mjs",
-    "home:image": "node tools/blog-image-gen/generate-home-image.mjs"
+    "home:image": "node tools/blog-image-gen/generate-home-image.mjs",
+    "about:photo": "node tools/blog-image-gen/process-about-photo.mjs"
   }
 }
