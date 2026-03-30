@@ -64,13 +64,14 @@ export class Featurette extends React.Component {
       />
     }
 
+    // Below md: image on top (order-1 / order-2). md+: preserve text-left vs image-left layout.
     if(this.props.alignToLeft === true){
-      column1Orientation = "col-md-7";
-      column2Orientation = "col-md-5";
+      column1Orientation = "col-md-7 order-2 order-md-1";
+      column2Orientation = "col-md-5 order-1 order-md-2";
     }
     else if(this.props.alignToLeft === false){
-      column1Orientation = "col-md-7 order-md-2";
-      column2Orientation = "col-md-5 order-md-1";
+      column1Orientation = "col-md-7 order-2 order-md-2";
+      column2Orientation = "col-md-5 order-1 order-md-1";
     }
 
     return (
