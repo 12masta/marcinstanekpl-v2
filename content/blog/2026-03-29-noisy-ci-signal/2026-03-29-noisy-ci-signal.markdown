@@ -6,6 +6,8 @@ tags: [qa, continuous integration, flaky tests, triage, delivery, trust, signal 
 slug: noisy-ci-signal
 language: pl
 description: Niestabilne joby i kultura „odpal jeszcze raz” podjadą zaufanie do pipeline'u. Wtedy QA zamiast wejść głęboko w zmianę, gasi kolejny pozorny alarm - a prawdziwy regres łatwo pomylić z kolejnym flakiem.
+ogImage: https://marcinstanek.pl/images/blog/noisy-ci-signal/og.png
+ogImageType: image/png
 ---
 
 Dobry pipeline ma mówić po prostu: ta zmiana coś zepsuła albo środowisko jest niezdrowe. Gdy przez miesiące słyszysz raczej „znów coś poszło, odpal jeszcze raz”, przestajesz słuchać treści komunikatu - słuchasz tylko dźwięku alarmu. Ten tekst jest o cenie tego znieczulenia, szczególnie dla QA, które w tym samym czasie próbuje zrozumieć realne ryzyko zmiany.

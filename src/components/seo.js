@@ -35,8 +35,15 @@ const Seo = ({ description, lang, meta, title, ogImage, ogImageType }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
-  const metaOgImage =
-    ogImage || site.siteMetadata.siteUrl + site.siteMetadata.og.ogImage
+  const siteUrl = site.siteMetadata.siteUrl?.replace(/\/$/, ``) || ``
+  const metaOgImage = (() => {
+    const raw = ogImage
+    const fallback = site.siteMetadata.og.ogImage
+    if (!raw) return siteUrl + fallback
+    if (raw.startsWith(`https://`) || raw.startsWith(`http://`)) return raw
+    if (raw.startsWith(`/`)) return siteUrl + raw
+    return raw
+  })()
   const metaOgImageType = ogImageType || site.siteMetadata.og.ogImageType
 
   return (

@@ -41,8 +41,9 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "get-port": "^7.1.0",
+    "@google/genai": "^1.47.0",
     "@playwright/test": "^1.49.1",
+    "get-port": "^7.1.0",
     "lighthouse": "^8.6.0",
     "playwright": "^1.49.1",
     "playwright-lighthouse": "^2.1.0",
@@ -68,6 +69,7 @@
     "test": "npx playwright test --config=tests/local.config.ts --grep-invert=lighthouse --ui",
     "test-ci": "npx playwright test --config=tests/ci.config.ts --grep-invert=lighthouse",
     "test-li": "npx playwright test --config=tests/local.lighthouse.config.ts --grep=lighthouse",
-    "test-ci-li": "npx playwright test --config=tests/ci.lighthouse.config.ts --grep=lighthouse"
+    "test-ci-li": "npx playwright test --config=tests/ci.lighthouse.config.ts --grep=lighthouse",
+    "blog:image": "node tools/blog-image-gen/generate-blog-image.mjs"
   }
 }

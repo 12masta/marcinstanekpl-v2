@@ -5,8 +5,8 @@ categories: [testautomation, cypress]
 tags: [testautomation, cypress, pl]
 language: pl
 slug: cypress-8
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fpost_cover.png?alt=media&token=582925ff-bf77-4edb-96f7-341c5a06668d
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/cypress-8/og.png
+ogImageType: image/png
 description: W poście omówiono integrację testów Cypress z usługą Azure DevOps w celu zapewnienia ciągłej integracji. Zawiera przewodnik krok po kroku dotyczący konfigurowania potoku CI w Azure DevOps, wprowadzania niezbędnych dostosowań skryptów, obsługi zmiennych środowiskowych i podkreśla znaczenie testowania w procesie CI. Dodatkowo podkreśla łatwość integracji i znaczenie stosowania testowania do CI dla testerów. Kod można znaleźć w serwisie GitHub w celach informacyjnych.
 ---
 

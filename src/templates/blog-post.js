@@ -4,10 +4,26 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+/** Use same-host paths in <img src> so local dev serves /static, not production URLs. */
+function bannerImageSrc(ogImage, siteUrl) {
+  if (!ogImage) return null
+  if (ogImage.startsWith(`https://`) || ogImage.startsWith(`http://`)) {
+    const base = (siteUrl || ``).replace(/\/$/, ``)
+    if (base && ogImage.startsWith(`${base}/`)) {
+      return ogImage.slice(base.length)
+    }
+    return ogImage
+  }
+  if (ogImage.startsWith(`/`)) return ogImage
+  return ogImage
+}
+
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteUrl = data.site.siteMetadata?.siteUrl || ``
   const { previous, next } = data
+  const bannerSrc = bannerImageSrc(post.frontmatter.ogImage, siteUrl)
 
   return (
     <Layout
@@ -31,6 +47,17 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         >
           <header>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            {bannerSrc ? (
+              <figure className="blog-post-banner">
+                <img
+                  src={bannerSrc}
+                  alt={post.frontmatter.title}
+                  loading="lazy"
+                  decoding="async"
+                  itemProp="image"
+                />
+              </figure>
+            ) : null}
           </header>
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -81,6 +108,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {

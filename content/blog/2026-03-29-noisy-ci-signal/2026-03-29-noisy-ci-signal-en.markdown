@@ -6,6 +6,8 @@ tags: [qa, continuous integration, flaky tests, triage, delivery, trust, signal 
 slug: en/noisy-ci-signal
 language: en
 description: Flaky jobs and rerun-until-green habits wear down trust in CI. QA spends attention on noise instead of the change itself, and a real regression is easy to mistake for one more flake.
+ogImage: https://marcinstanek.pl/images/blog/noisy-ci-signal/og.png
+ogImageType: image/png
 ---
 
 A healthy pipeline should say plainly: this change broke something or the environment is unhealthy. When for months you mostly hear "something failed again, just rerun," you stop listening to the content of the message - you only hear the alarm sound. This post is about the cost of that numbness, especially for QA trying to understand real risk while the build keeps crying wolf.

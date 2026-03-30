@@ -110,6 +110,19 @@
     width: 100%
 }
 
+.blog-post-banner {
+    margin: 1rem 0 1.75rem;
+    width: 100%;
+}
+
+.blog-post-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+}
+
 /* Tables in article body (remark) - breathing room and readable cells */
 .blog-post table {
     margin: 1.75rem 0;

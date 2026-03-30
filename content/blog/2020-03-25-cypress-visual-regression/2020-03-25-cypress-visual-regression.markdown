@@ -5,8 +5,8 @@ categories: [testautomation, cypress]
 tags: [testautomation, cypress, pl]
 language: pl
 slug: cypress-7
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fpost_cover.png?alt=media&token=0c3c0db2-1c8c-48c7-8b3c-c4a49eaf3dda
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/cypress-7/og.png
+ogImageType: image/png
 description: W tym poście omówiono koncepcję testów regresji wizualnej, podczas których podczas testowania porównuje się oczekiwany wygląd interfejsu ze stanem rzeczywistym, aby wykryć defekty, których nie wyłapią tradycyjne testy regresyjne. Wyjaśnia, jak skonfigurować testy regresji wizualnej przy użyciu frameworka Cypress z bezpłatną wtyczką cypress-image-snapshot i podaje przykłady testowania całego ekranu i poszczególnych elementów pod kątem różnic wizualnych, pokazując jego skuteczność w wykrywaniu nawet niewielkich zmian.
 ---
 
