@@ -26,7 +26,7 @@ test("blog index PL lists posts", async ({ page }) => {
   const blog = new BlogHomePage(page)
   await blog.gotoPl()
   await expect(
-    page.locator("h1.display-4, article.post-list-item").first()
+    page.locator("h1.display-5, article.post-list-item").first()
   ).toBeVisible()
 })
 

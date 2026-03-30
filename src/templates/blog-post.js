@@ -46,7 +46,9 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           itemType="http://schema.org/Article"
         >
           <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <h1 className="display-5 fw-bold" itemProp="headline">
+              {post.frontmatter.title}
+            </h1>
             {bannerSrc ? (
               <figure className="blog-post-banner">
                 <img

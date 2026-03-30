@@ -79,7 +79,8 @@ export class Featurette extends React.Component {
       <hr className="featurette-divider" />
       <div className="row featurette">
         <div className={column1Orientation}>
-          <h2 className="featurette-heading">{this.props.header}
+          <h2 className="featurette-heading display-6 fw-light">
+            {this.props.header}
           </h2>
           {this.props.leadTextDesktop ? (
             <>

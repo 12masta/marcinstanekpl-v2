@@ -7,7 +7,7 @@ export class ContactForm extends React.Component {
     return (
       <div className="container">
         <hr/>
-        <h2 className="text-center">{this.props.header}</h2>
+        <h2 className="text-center fs-4 fw-semibold">{this.props.header}</h2>
         <form id="messageForm">
 
           <div className="input-group mb-3">

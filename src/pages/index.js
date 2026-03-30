@@ -30,7 +30,11 @@ const HomePl = ({ data, location }) => {
         contactMailSubject="Wiadomość ze strony marcinstanek.pl"
         blogUrl="/blog/pl/"
       />
-      <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts} />
+      <LastBlogPosts
+        header={"Ostatnie wpisy na blogu"}
+        posts={posts}
+        postCtaLabel={"Czytaj wpis"}
+      />
       <Featurette
         id={"featurette-want-to-know"}
         header={"Co testować, zanim odpalisz testy"}

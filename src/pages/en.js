@@ -30,7 +30,11 @@ const HomeEn = ({ data, location }) => {
         contactMailSubject="Message from marcinstanek.pl"
         blogUrl="/blog/en/"
       />
-      <LastBlogPosts header={"Recent blog posts"} posts={posts} />
+      <LastBlogPosts
+        header={"Recent blog posts"}
+        posts={posts}
+        postCtaLabel={"Read post"}
+      />
       <Featurette
         id={"featurette-want-to-know"}
         header={"What to test, before you run tests"}

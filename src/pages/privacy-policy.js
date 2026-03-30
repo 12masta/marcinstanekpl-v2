@@ -11,7 +11,9 @@ const PrivacyPolicy = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Polityka prywatności" />
       <div className="container">
-        <h1>POLITYKA PRYWATNOŚCI I PLIKÓW COOKIES</h1>
+        <h1 className="display-5 fw-bold">
+          POLITYKA PRYWATNOŚCI I PLIKÓW COOKIES
+        </h1>
         <h2>Dzień dobry!</h2>
         Jeżeli tutaj trafiłeś, to niezawodny znak, że cenisz swoją prywatność.
         Doskonale to rozumiemy, dlatego przygotowaliśmy dla Ciebie ten dokument,

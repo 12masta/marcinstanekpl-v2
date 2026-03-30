@@ -6,7 +6,7 @@ export class ThankYou extends React.Component {
     return (
       <div className="container">
         <hr/>
-        <h2 className="text-center">Podziękowania</h2>
+        <h2 className="text-center fs-4 fw-semibold">Podziękowania</h2>
         <div className="row">
           <div className="col-md-4 p-3">
             <a href="https://couponfollow.com/about">
