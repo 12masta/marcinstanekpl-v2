@@ -5,8 +5,8 @@ categories: [testautomation, cypress]
 tags: [testautomation, cypress, en]
 language: en
 slug: en/cypress-8
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fpost_cover.png?alt=media&token=582925ff-bf77-4edb-96f7-341c5a06668d
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/cypress-8/og.png
+ogImageType: image/png
 description: Discusses the integration of Cypress testing into Azure DevOps for continuous integration. It provides a step-by-step guide on configuring the CI pipeline in Azure DevOps, making necessary script adjustments, handling environment variables, and highlights the importance of testing in the CI process. Additionally, it emphasizes the ease of integration and the significance of applying testing to CI for testers. You can find the code on GitHub for reference.
 ---
 

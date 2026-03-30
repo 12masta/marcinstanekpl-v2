@@ -1,43 +1,41 @@
 import * as React from "react"
-import { Link } from "gatsby"
+
+import { BlogPostListItem } from "./blog-post-list-item"
 
 export class PostsList extends React.Component {
   render() {
-    return (<div className="row g-5">
-      <div className="col-md-12">
-        <h3 className="pb-4 mb-4 border-bottom">
-          {this.props.label}
-        </h3>
-        <ol className="p-1" style={{ listStyle: `none` }}>
-          {this.props.posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
+    const posts = this.props.posts
+    const postCtaLabel =
+      this.props.postCtaLabel != null
+        ? this.props.postCtaLabel
+        : "Czytaj wpis"
+    const siteUrl = this.props.siteUrl || ``
 
-            return <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          })}
-        </ol>
+    return (
+      <div
+        className={`marketing last-blog-posts w-100 ${this.props.className || ""}`}
+        id={this.props.id || undefined}
+      >
+        <hr className="featurette-divider" />
+        <div className="row featurette g-0">
+          <div className="col-12">
+            <h2 className="featurette-heading display-6 fw-light mb-4">
+              {this.props.label}
+            </h2>
+            <ol className="list-unstyled mb-0">
+              {posts.map((post, index) => (
+                <BlogPostListItem
+                  key={post.fields.slug}
+                  post={post}
+                  siteUrl={siteUrl}
+                  postCtaLabel={postCtaLabel}
+                  isLast={index === posts.length - 1}
+                />
+              ))}
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>)
+    )
   }
 }

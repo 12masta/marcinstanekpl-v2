@@ -3,11 +3,14 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { blogOgImageSrc } from "../utils/blog-og-image-src"
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteUrl = data.site.siteMetadata?.siteUrl || ``
   const { previous, next } = data
+  const bannerSrc = blogOgImageSrc(post.frontmatter.ogImage, siteUrl)
 
   return (
     <Layout
@@ -30,7 +33,20 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           itemType="http://schema.org/Article"
         >
           <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <h1 className="display-5 fw-bold" itemProp="headline">
+              {post.frontmatter.title}
+            </h1>
+            {bannerSrc ? (
+              <figure className="blog-post-banner">
+                <img
+                  src={bannerSrc}
+                  alt={post.frontmatter.title}
+                  loading="lazy"
+                  decoding="async"
+                  itemProp="image"
+                />
+              </figure>
+            ) : null}
           </header>
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -81,6 +97,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {

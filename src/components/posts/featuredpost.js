@@ -9,7 +9,7 @@ export class FeaturedPost extends React.Component {
     return (
       <div className="row g-0 rounded border overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
         <div className="col p-4 d-flex flex-column position-relative">
-          <h2 className="mb-0">{post.frontmatter.title}</h2>
+          <h2 className="mb-0 fs-5 fw-semibold">{post.frontmatter.title}</h2>
           <p className="card-text mb-auto">
             {post.frontmatter.description || post.excerpt}
           </p>

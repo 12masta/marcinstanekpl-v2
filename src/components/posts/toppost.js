@@ -9,7 +9,7 @@ export class TopPost extends React.Component {
     return (
       <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary position-relative">
         <div className="col-lg-12 px-0">
-          <h1 className="display-4">{post.frontmatter.title}</h1>
+          <h1 className="display-5 fw-bold">{post.frontmatter.title}</h1>
           <p className="lead my-3">
             {post.frontmatter.description || post.excerpt}
           </p>

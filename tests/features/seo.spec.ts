@@ -5,7 +5,7 @@ import { PostBlogPage } from "./../pom/blog/postblogpage"
 
 /** Stable fixture post with per-post Open Graph metadata (not site default). */
 const POST_DOTNET_POLLY_OG_IMAGE =
-  "https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-07-01-retry-policy-in-test-methods%2FRetry%20policy%20for%20methods%20in%20terms%20of%20integration%20tests.png?alt=media&token=e5a5db4b-7f5b-4ffb-94fa-9d22751f79f6"
+  "https://marcinstanek.pl/images/blog/dotnet-polly/og.png"
 const POST_DOTNET_POLLY_OG_TYPE = "image/png"
 
 test("Seo tags - home page pl", async ({ page }) => {

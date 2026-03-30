@@ -5,7 +5,7 @@ categories: [testautomation, .net, polly]
 tags: [testautomation, .net, polly, en]
 slug: en/dotnet-polly
 language: en
-ogImage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2021-07-01-retry-policy-in-test-methods%2FRetry%20policy%20for%20methods%20in%20terms%20of%20integration%20tests.png?alt=media&token=e5a5db4b-7f5b-4ffb-94fa-9d22751f79f6
+ogImage: https://marcinstanek.pl/images/blog/dotnet-polly/og.png
 ogImageType: image/png
 description: Using the Polly library for implementing a retry policy in integration tests within .NET projects to address race conditions and enhance test stability. The author provides an example of applying the retry logic to database interaction methods and highlights the importance of careful time frame definition for optimal test execution.
 ---

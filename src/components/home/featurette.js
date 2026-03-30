@@ -64,13 +64,14 @@ export class Featurette extends React.Component {
       />
     }
 
+    // Below md: image on top (order-1 / order-2). md+: preserve text-left vs image-left layout.
     if(this.props.alignToLeft === true){
-      column1Orientation = "col-md-7";
-      column2Orientation = "col-md-5";
+      column1Orientation = "col-md-7 order-2 order-md-1";
+      column2Orientation = "col-md-5 order-1 order-md-2";
     }
     else if(this.props.alignToLeft === false){
-      column1Orientation = "col-md-7 order-md-2";
-      column2Orientation = "col-md-5 order-md-1";
+      column1Orientation = "col-md-7 order-2 order-md-2";
+      column2Orientation = "col-md-5 order-1 order-md-1";
     }
 
     return (
@@ -78,9 +79,27 @@ export class Featurette extends React.Component {
       <hr className="featurette-divider" />
       <div className="row featurette">
         <div className={column1Orientation}>
-          <h2 className="featurette-heading">{this.props.header}
+          <h2 className="featurette-heading display-6 fw-light">
+            {this.props.header}
           </h2>
-          <p className="lead">{this.props.leadText}</p>
+          {this.props.leadTextDesktop ? (
+            <>
+              <p
+                className="lead d-md-none"
+                data-testid={`${this.props.id}-lead-mobile`}
+              >
+                {this.props.leadText}
+              </p>
+              <p
+                className="lead d-none d-md-block"
+                data-testid={`${this.props.id}-lead-desktop`}
+              >
+                {this.props.leadTextDesktop}
+              </p>
+            </>
+          ) : (
+            <p className="lead">{this.props.leadText}</p>
+          )}
         </div>
         <div className={column2Orientation}>
           {image}

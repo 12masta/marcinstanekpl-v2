@@ -1,3 +1,36 @@
+/* Site-wide body copy (Bootstrap uses 1rem on html; lock rhythm under .global-wrapper) */
+.global-wrapper {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.blog-post > section[itemprop="articleBody"] {
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+/* Recent posts on home: row feels interactive (title + CTA links) */
+.last-blog-posts .post-list-item {
+    transition: background-color 0.15s ease;
+}
+
+.last-blog-posts .post-list-item:hover,
+.last-blog-posts .post-list-item:focus-within {
+    background-color: var(--bs-tertiary-bg);
+}
+
+/* Hero → recent posts: do not use featurette vertical rhythm (5rem + 7rem) on desktop */
+@media (min-width: 62em) {
+    .last-blog-posts .featurette-divider {
+        margin-top: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .last-blog-posts .featurette-heading {
+        margin-top: 0;
+    }
+}
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -21,7 +54,7 @@
 ------------------------- */
 
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 1rem 0;
 }
 
 /* Thin out the marketing headings */
@@ -36,13 +69,11 @@
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 40em) {
-    .featurette-heading {
-        font-size: 50px;
-    }
-}
-
 @media (min-width: 62em) {
+    .featurette-divider {
+        margin: 5rem 0;
+    }
+
     .featurette-heading {
         margin-top: 7rem;
     }
@@ -108,6 +139,19 @@
 -------------------------------------------------- */
 .blog-post img{
     width: 100%
+}
+
+.blog-post-banner {
+    margin: 1rem 0 1.75rem;
+    width: 100%;
+}
+
+.blog-post-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
 }
 
 /* Tables in article body (remark) - breathing room and readable cells */

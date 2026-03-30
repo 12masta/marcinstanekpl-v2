@@ -30,10 +30,7 @@ jobs:
 
       - run: npm ci
 
-      # QA and CI tests use a build without Google Analytics (gatsby-config omits the plugin when the env var is unset).
-      - name: Build for QA
-        run: npm run build
-
+      # test-ci runs `gatsby build` then Playwright (serves fresh `public/`). Same GA-free build as QA deploy.
       - run: npx playwright install-deps
 
       - run: npx playwright install

@@ -39,7 +39,13 @@ const BlogIndex = ({ data, location }) => {
       </div>
     </div>
 
-    <PostsList posts={posts} label="Selected for you"/>
+    <PostsList
+      posts={posts}
+      label="Selected for you"
+      postCtaLabel="Read post"
+      className="mt-4"
+      siteUrl={data.site.siteMetadata?.siteUrl || ``}
+    />
   </Layout>
 }
 
@@ -50,6 +56,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
@@ -63,6 +70,7 @@ export const pageQuery = graphql`
           title
           description
           language
+          ogImage
         }
       }
     }

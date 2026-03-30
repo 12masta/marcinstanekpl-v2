@@ -6,6 +6,8 @@ tags: [qa, pull request, scope, jira, code review, test planning, delivery risk,
 slug: pr-scope-hidden-tax
 language: pl
 description: Zanim odpalisz testy, ktoś czyta zgłoszenie, diff i ustala, co faktycznie sprawdzić. Ten czas rzadko trafia do raportów, a przy wielu PR-ach robi się z niego realny tygodniowy koszt - często zanim w ogóle zacznie się mowa o pokryciu czy narzędziach.
+ogImage: https://marcinstanek.pl/images/blog/pr-scope-hidden-tax/og.png
+ogImageType: image/png
 ---
 
 Większość zespołów potrafi powiedzieć, ile trwa pipeline albo ile scenariuszy ma regresja. Znacznie rzadziej ktoś wie, ile minut tygodniowo znika, zanim ktokolwiek uruchomi pierwszy sensowny test na konkretnej zmianie. Ten tekst ma nazwać ten koszt wprost - bez narzędziowego żargonu i bez obietnic „magicznego rozwiązania”.
@@ -71,6 +73,6 @@ Tygodniowy podatek (osoba × minuty × liczba zmian) daje rząd wielkości, któ
 
 ## Na koniec - i powiązanie z CI
 
-Ten koszt nie żyje w próżni. Gdy pipeline często krzyczy fałszywym alarmem, uwaga, która mogłaby iść w rozumienie zmiany, spędza czas na triage hałasu. O tym drugim biegunie napisałem osobno w wpisie [Głośny CI - kiedy pipeline przeszkadza zamiast chronić](/noisy-ci-signal/) - warto czytać oba razem, jeśli chcecie zobaczyć pełny obraz „gdzie znika czas QA zanim padnie słowo pilot”.
+Ten koszt nie żyje w próżni. Gdy pipeline często krzyczy fałszywym alarmem, uwaga, która mogłaby iść w rozumienie zmiany, spędza czas na triage hałasu. O tym drugim biegunie napisałem osobno w wpisie [Pipeline, który dokłada wątpliwości zamiast jasnego sygnału](/noisy-ci-signal/) - warto czytać oba razem, jeśli chcecie zobaczyć pełny obraz „gdzie znika czas QA zanim padnie słowo pilot”.
 
 Jeśli opis z tego tekstu brzmi jak Wasz poniedziałek, następny rozsądny krok to porozmawiać o zakresie wcześniej i o wspólnym szkielecie briefu - a nie od razu dokładać kolejne pakiety testów w nadziei, że pokrycie samo rozwiąże niejasność intencji.
