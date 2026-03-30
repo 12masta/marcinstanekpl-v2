@@ -3,8 +3,6 @@
 export const aboutCareer = {
   pl: {
     experienceHeading: "Doświadczenie zawodowe",
-    experienceAccordionHint:
-      "Kliknij wybraną rolę, aby rozwinąć pełny opis. Domyślnie otwarta jest pierwsza pozycja.",
     educationHeading: "Wykształcenie",
     credentialsHeading: "Certyfikaty, języki i obszary pracy",
     techLabel: "Technologie i narzędzia",
@@ -200,8 +198,6 @@ export const aboutCareer = {
   },
   en: {
     experienceHeading: "Professional experience",
-    experienceAccordionHint:
-      "Expand a role to read the full detail. The first entry opens by default.",
     educationHeading: "Education",
     credentialsHeading: "Certifications, languages, and focus areas",
     techLabel: "Technologies and tools",

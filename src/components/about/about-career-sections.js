@@ -8,12 +8,12 @@ export function AboutCareerSections({ locale }) {
 
   return (
     <>
-      <h2 className="h3 fw-bold mt-5 pt-4 border-top">
+      <h2 className="h3 fw-bold mt-5 pt-4 mb-3 border-top">
         {c.experienceHeading}
       </h2>
-      <p className="text-body-secondary small mb-3">{c.experienceAccordionHint}</p>
 
       <Accordion
+        alwaysOpen
         defaultActiveKey="0"
         flush
         className="about-career-accordion shadow-sm border rounded overflow-hidden"
