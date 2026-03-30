@@ -20,37 +20,40 @@ const HomePl = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Strona główna" />
       <Jumbotron
-        header={"Inicjuję i naprawiam procesy kontroli jakości oprogramowania"}
-        description={
-          "Jestem Inżynierem QA z ponad 7-letnim doświadczeniem. Specjalizuję się w zakresie automatyzacji testów, poza tym mam również doświadczenie z czołowymi zespołami QA. Pomogę Ci w różnych sprawach związanych z jakością w Twojej firmie lub projekcie."
+        header={
+          "Ograniczam ryzyko dostaw: QA, automatyzacja i jaśniejsze decyzje w procesie dostaw"
         }
-        wantToKnowMoreButtonText={"Chcę wiedzieć więcej"}
+        description={
+          "Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10 lat): testy i automatyzacja wpasowane w Wasz sposób wydawania oprogramowania, z krótkim, czytelnym kontekstem dla QA przy każdej zmianie - zakres i ryzyko, zanim przeprowadzicie pełną regresję. Oprócz automatyzacji wykonania współpracuję z zespołami przy częstych, przewidywalnych wdrożeniach."
+        }
+        contactButtonText="Kontakt"
+        contactMailSubject="Wiadomość ze strony marcinstanek.pl"
         blogUrl="/blog/pl/"
       />
       <LastBlogPosts header={"Ostatnie wpisy na blogu"} posts={posts} />
       <Featurette
         id={"featurette-want-to-know"}
-        header={"Quality Assurance"}
+        header={"Co testować, zanim odpalisz testy"}
         leadText={
-          "Zwiększenie niezawodności, stabilności i wydajności Twojego oprogramowania dzięki specjalistycznym usługom zapewniania jakości. Zaufaj nam, jeśli chodzi o optymalizację procesów testowania i zapewnienie bezproblemowego wdrożenia, dzięki czemu możesz dostarczać swoim użytkownikom wyjątkowe oprogramowanie."
+          "Większość narzędzi optymalizuje wykonanie, trudniejsze jest wskazanie, co naprawdę wymaga uwagi. Pomagam zawęzić lukę między zmianami w kodzie a decyzjami QA - uporządkowane briefingi z PR i kontekstu, jaśniejsze ryzyko i obszary wpływu, mniej niespodzianek na produkcji. Chodzi o realne ograniczenie ryzyka operacyjnego, a nie modę na kolejne gadżety."
         }
         image={"qa"}
         alignToLeft={true}
       />
       <Featurette
         id={"featurette-automation"}
-        header={"Automatyzacja"}
+        header={"Automatyzacja wpasowana w pipeline"}
         leadText={
-          "Usprawnianie procesów programistycznych dzięki efektywnym i łatwym w utrzymaniu frameworkom testowym. Wykorzystaj moc automatyzacji, aby przyspieszyć dostarczanie oprogramowania, zmniejszyć nakład pracy ręcznej i osiągnąć spójne, niezawodne wyniki w całym cyklu rozwoju."
+          "Utrzymywalne frameworki pod API i usługi, spięte z CI/CD, żeby feedback był ciągły. To solidna baza sama w sobie - i fundament pod kolejne warstwy: sensowniejszą interpretację wyników, flaky testy czy doprecyzowanie zakresu w tym samym pipeline’ie."
         }
         image={"automation"}
         alignToLeft={false}
       />
       <Featurette
         id={"featurette-complete-solutions"}
-        header={"Tworzę kompletne rozwiązania"}
+        header={"Jakość end-to-end w cyklu życia"}
         leadText={
-          "Dostosowane rozwiązania zapewniania jakości dla Twoich unikalnych potrzeb biznesowych. Zapewnienie najwyższej jakości oprogramowania za każdym razem. Od analizy wymagań po wykonanie testów i nie tylko, zaufaj naszej wiedzy fachowej, aby bezproblemowo zintegrować jakość w całym cyklu tworzenia oprogramowania."
+          "Od wymagań i projektu testów po wykonanie i release. Praktyki jakości spinam z Twoim toolchainem - briefingi, checki i automatyzacja tam, gdzie i tak pracują deweloperzy, a nie w osobnym silosie."
         }
         image={"complete_solutions"}
         alignToLeft={true}
@@ -59,7 +62,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-on-time"}
         header={"Dostarczam na czas"}
         leadText={
-          "Terminowe dostarczanie wysokiej jakości usług. Zapewnienie terminowych rozwiązań bez uszczerbku dla jakości. Zaufaj naszemu efektywnemu zarządzaniu projektami i proaktywnej komunikacji, aby dotrzymać terminów, co daje pewność terminowej realizacji projektów."
+          "Przewidywalny rytm pracy na kontrakcie: jasne kamienie milowe, proaktywna komunikacja i zakres dopasowany do Twojego pociągu wydań. Mniej gaśnic pod koniec sprintu, więcej przestrzeni na decyzje, które realnie obniżają ryzyko."
         }
         image={"on_time"}
         alignToLeft={false}
@@ -68,7 +71,7 @@ const HomePl = ({ data, location }) => {
         id={"featurette-inform"}
         header={"Informuję na bieżąco"}
         leadText={
-          "Bądź na bieżąco na każdym etapie procesu produkcji oprogramowania. Żadnych niespodzianek, tylko jasna i przejrzysta komunikacja. Dzięki regularnym aktualizacjom i otwartym kanałom komunikacji zapewniam, że Twoja wizja jest zgodna z postępem, wspierając współpracę i dostarczając wyniki, które przekraczają Twoje oczekiwania."
+          "Przejrzystość na każdym etapie: status, ryzyko i wyniki pracy widoczne tam, gdzie zespół już je śledzi - w tym przy zmianach w repozytorium i pipeline’ie. Bez niespodzianek, z kanałami, które utrzymują wspólny obraz postępu."
         }
         image={"inform"}
         alignToLeft={true}

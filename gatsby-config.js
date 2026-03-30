@@ -8,7 +8,7 @@ module.exports = {
       summary: `who lives and works in Poland building useful things.`,
     },
     description: `
-        I implement and improve software Quality Assurance processes. Specialist in building automatic tests. QA leader.`,
+        Independent QA contractor (B2B). Test automation, .NET/APIs, CI/CD - and pipeline workflows that clarify what to test before execution. Based in Poland.`,
     siteUrl: `https://marcinstanek.pl`,
     social: {
       twitter: `MarcinstanekP`,

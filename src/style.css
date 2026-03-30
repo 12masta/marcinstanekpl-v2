@@ -110,6 +110,25 @@
     width: 100%
 }
 
+/* Tables in article body (remark) - breathing room and readable cells */
+.blog-post table {
+    margin: 1.75rem 0;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+.blog-post th,
+.blog-post td {
+    padding: 0.625rem 0.875rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    vertical-align: top;
+}
+
+.blog-post thead th {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.18);
+}
+
 /* stylelint-disable stylistic/selector-list-comma-newline-after */
 
 .flex-auto {

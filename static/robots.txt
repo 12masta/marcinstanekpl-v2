@@ -10,6 +10,10 @@ Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
 
 # Grupa 2
 User-agent: *
+Allow: /pr-scope-hidden-tax/
+Allow: /noisy-ci-signal/
+Allow: /en/pr-scope-hidden-tax/
+Allow: /en/noisy-ci-signal/
 Allow: /
 
 Sitemap: https://marcinstanek.pl/sitemap-index.xml

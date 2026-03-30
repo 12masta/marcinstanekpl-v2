@@ -29,6 +29,14 @@ export class Nav extends React.Component {
       blogHref = "/blog/pl/"
     }
 
+    if (
+      this.props.alternateLanguageHref &&
+      this.props.alternateLanguageLabel
+    ) {
+      languageHref = this.props.alternateLanguageHref
+      languageLabel = this.props.alternateLanguageLabel
+    }
+
     return (
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light" data-test="navbar">
