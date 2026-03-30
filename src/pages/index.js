@@ -127,6 +127,17 @@ export const pageQuery = graphql`
           language
           ogImage
         }
+        listOgImageFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 400
+              height: 225
+              layout: FIXED
+              formats: [AUTO, WEBP, AVIF]
+              placeholder: DOMINANT_COLOR
+            )
+          }
+        }
       }
     }
   }

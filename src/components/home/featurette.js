@@ -13,10 +13,9 @@ export class Featurette extends React.Component {
         className="d-block mx-lg-auto img-fluid"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/qa.png"
-        quality={95}
+        quality={85}
         alt="jumbotron image"
         placeholder="blurred"
-        loading="eager"
       />
     }
     else if(this.props.image === "automation"){
@@ -24,10 +23,9 @@ export class Featurette extends React.Component {
         className="d-block mx-lg-auto img-fluid"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/automation.png"
-        quality={95}
+        quality={85}
         alt="jumbotron image"
         placeholder="blurred"
-        loading="eager"
       />
     }
     else if(this.props.image === "complete_solutions"){
@@ -35,10 +33,9 @@ export class Featurette extends React.Component {
         className="d-block mx-lg-auto img-fluid"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/complete_solutions.png"
-        quality={95}
+        quality={85}
         alt="jumbotron image"
         placeholder="blurred"
-        loading="eager"
       />
     }
     else if(this.props.image === "on_time"){
@@ -46,10 +43,9 @@ export class Featurette extends React.Component {
         className="d-block mx-lg-auto img-fluid"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/on_time.png"
-        quality={95}
+        quality={85}
         alt="jumbotron image"
         placeholder="blurred"
-        loading="eager"
       />
     }
     else if(this.props.image === "inform"){
@@ -57,10 +53,9 @@ export class Featurette extends React.Component {
         className="d-block mx-lg-auto img-fluid"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/inform.png"
-        quality={95}
+        quality={85}
         alt="jumbotron image"
         placeholder="blurred"
-        loading="eager"
       />
     }
 

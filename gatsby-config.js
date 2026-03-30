@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   // Gatsby 5 default is "always"; set explicitly so URLs stay predictable across upgrades.
   trailingSlash: `always`,
@@ -32,6 +34,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogOgImages`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -208,6 +217,49 @@ module.exports = {
           }
 
           return entry
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        purgeCSSOptions: {
+          content: [
+            path.join(__dirname, `src/**/*.{js,jsx,ts,tsx}`),
+            path.join(__dirname, `content/**/*.markdown`),
+          ],
+          safelist: {
+            standard: [
+              `html`,
+              `body`,
+              `collapse`,
+              `collapsing`,
+              `show`,
+              `collapsed`,
+              `active`,
+            ],
+            deep: [
+              /^navbar-/,
+              /^collapse/,
+              /^modal-/,
+              /^tooltip/,
+              /^popover/,
+              /^offcanvas/,
+              /^dropdown/,
+              /^btn/,
+              /^alert/,
+              /^nav-/,
+              /^fade/,
+              /^ratio/,
+              /^object-fit/,
+              /^icon-link/,
+              /^border-secondary-subtle/,
+              /^text-bg-/,
+              /^bg-body/,
+              /^link-underline/,
+            ],
+            greedy: [/^gatsby-/],
+          },
         },
       },
     },

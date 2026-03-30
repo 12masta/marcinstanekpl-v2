@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { blogOgImageSrc } from "../../utils/blog-og-image-src"
 import { ChevronRightIcon } from "./chevron-right-icon"
@@ -13,7 +14,10 @@ export function BlogPostListItem({
   const slug = post.fields.slug
   const title = post.frontmatter.title || slug
   const imgSrc = blogOgImageSrc(post.frontmatter?.ogImage, siteUrl)
-  const textColClass = imgSrc
+  const listGatsbyImage =
+    post.listOgImageFile && getImage(post.listOgImageFile)
+  const showThumbColumn = Boolean(imgSrc || listGatsbyImage)
+  const textColClass = showThumbColumn
     ? `col-12 col-sm-8 col-lg-9`
     : `col-12`
 
@@ -29,7 +33,7 @@ export function BlogPostListItem({
         itemType="http://schema.org/Article"
       >
         <div className="row g-3 g-md-4 align-items-start">
-          {imgSrc ? (
+          {showThumbColumn ? (
             <div className="col-12 col-sm-4 col-lg-3">
               <Link
                 to={slug}
@@ -37,14 +41,24 @@ export function BlogPostListItem({
                 tabIndex={-1}
                 aria-hidden="true"
               >
-                <img
-                  src={imgSrc}
-                  alt=""
-                  className="object-fit-cover"
-                  loading="lazy"
-                  decoding="async"
-                  itemProp="image"
-                />
+                {listGatsbyImage ? (
+                  <GatsbyImage
+                    image={listGatsbyImage}
+                    alt=""
+                    loading="lazy"
+                    objectFit="cover"
+                    className="h-100 w-100"
+                  />
+                ) : (
+                  <img
+                    src={imgSrc}
+                    alt=""
+                    className="object-fit-cover"
+                    loading="lazy"
+                    decoding="async"
+                    itemProp="image"
+                  />
+                )}
               </Link>
             </div>
           ) : null}

@@ -11,10 +11,11 @@ export class Jumbotron extends React.Component {
               className="d-block mx-lg-auto img-fluid"
               formats={["auto", "webp", "avif"]}
               src="../../images/home/hero.png"
-              quality={95}
+              quality={90}
               alt="jumbotron image"
               placeholder="blurred"
               loading="eager"
+              fetchPriority="high"
             />
           </div>
           <div className="col-lg-6">

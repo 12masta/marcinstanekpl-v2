@@ -1,5 +1,31 @@
 const path = require(`path`)
 
+/** Map frontmatter ogImage URL/path to path under static/images (blogOgImages). */
+function ogImageToListRelativePath(ogImage, siteUrl) {
+  if (!ogImage || typeof ogImage !== `string`) return null
+  let pathname = ogImage.trim()
+  if (
+    pathname.startsWith(`https://`) ||
+    pathname.startsWith(`http://`)
+  ) {
+    const base = (siteUrl || ``).replace(/\/$/, ``)
+    let siteOrigin = ``
+    try {
+      if (base) siteOrigin = new URL(base).origin
+      const u = new URL(pathname)
+      if (siteOrigin && u.origin !== siteOrigin) return null
+      pathname = u.pathname
+    } catch {
+      return null
+    }
+  } else if (!pathname.startsWith(`/`)) {
+    return null
+  }
+  if (!pathname.startsWith(`/images/`)) return null
+  const rel = pathname.replace(/^\/images\//, ``)
+  return rel || null
+}
+
 /** Strip /en/ or /pl/ prefix for pairing PL ↔ EN versions of the same post. */
 function normalizeTranslationKey(slug) {
   if (!slug) return ``
@@ -154,6 +180,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
+      listOgImageFile: File
     }
 
     type Frontmatter {
@@ -177,4 +204,30 @@ exports.createSchemaCustomization = ({ actions }) => {
       ogImageType: String
     }
   `)
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+    MarkdownRemark: {
+      listOgImageFile: {
+        type: `File`,
+        resolve: async (source, _args, context) => {
+          const og = source.frontmatter?.ogImage
+          const site = await context.nodeModel.findOne({ type: `Site` })
+          const siteUrl = site?.siteMetadata?.siteUrl || ``
+          const rel = ogImageToListRelativePath(og, siteUrl)
+          if (!rel) return null
+          return context.nodeModel.findOne({
+            type: `File`,
+            query: {
+              filter: {
+                sourceInstanceName: { eq: `blogOgImages` },
+                relativePath: { eq: rel },
+              },
+            },
+          })
+        },
+      },
+    },
+  })
 }

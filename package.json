@@ -36,13 +36,12 @@
     "react-bootstrap": "^2.0.3",
     "react-cookie-consent": "^7.3.0",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@google/genai": "^1.47.0",
     "@playwright/test": "^1.49.1",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "get-port": "^7.1.0",
     "lighthouse": "^8.6.0",
     "playwright": "^1.49.1",
