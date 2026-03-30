@@ -4,6 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 /** Panel width cap; input uses the same so results align with the field. */
 const SEARCH_PANEL_MAX_REM = 22
 const SEARCH_PANEL_EDGE_MARGIN_PX = 12
+const SEARCH_REVEAL_MS = 320
 
 function searchLanguageFromPath(pathName) {
   if (pathName.includes("/blog/pl/")) return "pl"
@@ -87,9 +88,32 @@ export function BlogNavSearch({ pathName, className = `` }) {
 
   const [queryText, setQueryText] = React.useState(``)
   const [open, setOpen] = React.useState(false)
+  const [searchMounted, setSearchMounted] = React.useState(false)
+  const [searchExpanded, setSearchExpanded] = React.useState(false)
   const [dropdownLayout, setDropdownLayout] = React.useState(null)
   const rootRef = React.useRef(null)
   const inputRef = React.useRef(null)
+  const closeTimerRef = React.useRef(null)
+
+  const openSearchPanel = React.useCallback(() => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+    setSearchMounted(true)
+    window.requestAnimationFrame(() => setSearchExpanded(true))
+  }, [])
+
+  const closeSearchPanel = React.useCallback(() => {
+    setSearchExpanded(false)
+    setOpen(false)
+    setQueryText(``)
+    setDropdownLayout(null)
+    closeTimerRef.current = window.setTimeout(() => {
+      setSearchMounted(false)
+      closeTimerRef.current = null
+    }, SEARCH_REVEAL_MS)
+  }, [])
 
   const trimmed = queryText.trim()
   const tokens = React.useMemo(
@@ -110,16 +134,29 @@ export function BlogNavSearch({ pathName, className = `` }) {
   }, [langPosts, tokens])
 
   React.useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current)
+    }
+  }, [])
+
+  React.useEffect(() => {
     function onDocMouseDown(e) {
       if (!rootRef.current || rootRef.current.contains(e.target)) return
-      setOpen(false)
+      if (searchMounted) closeSearchPanel()
+      else setOpen(false)
     }
     document.addEventListener(`mousedown`, onDocMouseDown)
     return () => document.removeEventListener(`mousedown`, onDocMouseDown)
-  }, [])
+  }, [searchMounted, closeSearchPanel])
+
+  React.useEffect(() => {
+    if (!searchMounted || !searchExpanded) return undefined
+    const t = window.setTimeout(() => inputRef.current?.focus(), 40)
+    return () => window.clearTimeout(t)
+  }, [searchMounted, searchExpanded])
 
   React.useLayoutEffect(() => {
-    if (!open || trimmed.length === 0) {
+    if (!searchMounted || !searchExpanded || !open || trimmed.length === 0) {
       setDropdownLayout(null)
       return
     }
@@ -164,52 +201,88 @@ export function BlogNavSearch({ pathName, className = `` }) {
       window.removeEventListener(`resize`, updateDropdownLayout)
       window.removeEventListener(`scroll`, updateDropdownLayout, true)
     }
-  }, [open, trimmed])
+  }, [searchMounted, searchExpanded, open, trimmed])
 
   const placeholder = lang === `en` ? `Search blog…` : `Szukaj na blogu…`
   const emptyLabel =
     lang === `en` ? `No posts match your search.` : `Brak wpisów dla tego zapytania.`
+  const searchNavLabel = lang === `en` ? `Search` : `Szukaj`
+
+  const fieldWidth = `min(${SEARCH_PANEL_MAX_REM}rem, calc(100vw - ${SEARCH_PANEL_EDGE_MARGIN_PX * 2}px))`
+  const revealTransition = `max-width ${SEARCH_REVEAL_MS}ms cubic-bezier(0.22, 1, 0.36, 1), opacity ${Math.round(
+    SEARCH_REVEAL_MS * 0.65
+  )}ms ease`
+  /** Match stacked .nav-link block height so opening search does not shift navbar (esp. mobile). */
+  const searchRowMinHeight = `calc(2 * var(--bs-nav-link-padding-y, 0.5rem) + 1.5em)`
 
   return (
     <div
       ref={rootRef}
-      className={`position-relative ${className}`.trim()}
+      className={`d-flex align-items-center flex-nowrap w-100 w-lg-auto ${className}`.trim()}
+      style={{ minHeight: searchRowMinHeight }}
       data-test="navbar-blog-search"
     >
-      <form
-        className="d-flex"
-        role="search"
-        aria-label={placeholder}
-        onSubmit={e => e.preventDefault()}
-      >
-        <input
-          ref={inputRef}
-          type="search"
-          className="form-control form-control-sm"
+      {!searchMounted ? (
+        <button
+          type="button"
+          className="nav-link border-0 bg-transparent text-start w-100 w-lg-auto"
+          data-test="navbar-search-toggle"
+          aria-expanded="false"
+          aria-controls="navbar-blog-search-input"
+          onClick={openSearchPanel}
+        >
+          {searchNavLabel}
+        </button>
+      ) : (
+        <div
+          className="overflow-hidden w-100 w-lg-auto d-flex align-items-center"
           style={{
-            width: `min(${SEARCH_PANEL_MAX_REM}rem, calc(100vw - ${SEARCH_PANEL_EDGE_MARGIN_PX * 2}px))`,
-            maxWidth: `100%`,
+            maxWidth: searchExpanded ? `${SEARCH_PANEL_MAX_REM}rem` : 0,
+            opacity: searchExpanded ? 1 : 0,
+            transition: revealTransition,
+            pointerEvents: searchExpanded ? `auto` : `none`,
           }}
-          placeholder={placeholder}
-          autoComplete="off"
-          spellCheck="false"
-          value={queryText}
-          data-test="navbar-search-input"
-          onChange={e => {
-            setQueryText(e.target.value)
-            setOpen(true)
-          }}
-          onFocus={() => setOpen(true)}
-          onKeyDown={e => {
-            if (e.key === `Escape`) {
-              setQueryText(``)
-              setOpen(false)
-              inputRef.current?.blur()
-            }
-          }}
-        />
-      </form>
-      {open && trimmed.length > 0 && dropdownLayout ? (
+        >
+          <form
+            className="d-flex align-items-center w-100 mb-0"
+            role="search"
+            aria-label={placeholder}
+            onSubmit={e => e.preventDefault()}
+          >
+            <input
+              ref={inputRef}
+              id="navbar-blog-search-input"
+              type="search"
+              className="form-control form-control-sm"
+              style={{
+                width: fieldWidth,
+                maxWidth: `100%`,
+              }}
+              placeholder={placeholder}
+              autoComplete="off"
+              spellCheck="false"
+              value={queryText}
+              data-test="navbar-search-input"
+              onChange={e => {
+                setQueryText(e.target.value)
+                setOpen(true)
+              }}
+              onFocus={() => setOpen(true)}
+              onKeyDown={e => {
+                if (e.key === `Escape`) {
+                  e.preventDefault()
+                  closeSearchPanel()
+                }
+              }}
+            />
+          </form>
+        </div>
+      )}
+      {searchMounted &&
+      searchExpanded &&
+      open &&
+      trimmed.length > 0 &&
+      dropdownLayout ? (
         <div
           className="list-group shadow-sm border rounded"
           style={dropdownLayout}
@@ -228,8 +301,7 @@ export function BlogNavSearch({ pathName, className = `` }) {
                 className="list-group-item list-group-item-action py-2 px-3 text-break"
                 role="option"
                 onClick={() => {
-                  setOpen(false)
-                  setQueryText(``)
+                  closeSearchPanel()
                 }}
               >
                 <div className="fw-medium small">{post.title}</div>
