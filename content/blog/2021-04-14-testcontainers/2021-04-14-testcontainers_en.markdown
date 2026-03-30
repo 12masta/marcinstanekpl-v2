@@ -4,9 +4,9 @@ date: 2021-05-18 08:00:00 +0200
 categories: [testautomation, testcontainers, docker]
 tags: [testautomation, testcontainers, ci, docker, azuredevops, en]
 slug: en/testcontainers-1
-language: en
 ogImage: https://marcinstanek.pl/images/blog/testcontainers-1/og.png
 ogImageType: image/png
+language: en
 description: Challenges of managing heavy dependencies like databases for integration tests and introduces TestContainers, a tool used to manage containers for testing purposes. The author demonstrates how to set up and use TestContainers with an MSSQL database in a .NET project, highlighting its simplicity and potential for improving test efficiency.
 ---
 

@@ -4,6 +4,8 @@ date:   2019-10-01 10:03:22 +0200
 categories: [cypress, testautomation]
 tags: [cypress, testautomation, pl]
 slug: cypress-1
+ogImage: https://marcinstanek.pl/images/blog/cypress-1/og.png
+ogImageType: image/png
 language: pl
 description: Autor podzielił się swoją techniką tworzenia kompleksowych testów z wykorzystaniem narzędzia Cypress dla aplikacji zbudowanych na ASP.NET Core i React. Zawierają instrukcje krok po kroku dotyczące konfiguracji Cypress, tworzenia podstawowych testów umożliwiających odwiedzanie witryny internetowej, wyszukiwanie elementów, klikanie na nie, wprowadzanie asercji i interakcję z polami wejściowymi, podkreślając moc Cypress w testowaniu aplikacji internetowych.
 ---

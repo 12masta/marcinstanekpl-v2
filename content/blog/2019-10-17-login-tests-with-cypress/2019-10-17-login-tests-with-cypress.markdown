@@ -2,6 +2,8 @@
 title:  Testy logowania z Cypress
 date:   2019-10-17 08:03:22 +0200
 slug: cypress-2
+ogImage: https://marcinstanek.pl/images/blog/cypress-2/og.png
+ogImageType: image/png
 categories: [testautomation, cypress]
 tags: [testautomation, cypress, pl]
 language: pl

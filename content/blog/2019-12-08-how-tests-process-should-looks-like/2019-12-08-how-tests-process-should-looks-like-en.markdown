@@ -4,8 +4,8 @@ date:   2019-12-08 08:00:00 +0200
 categories: [testautomation, process, test-process]
 tags: [testautomation, process, test-process, pl]
 slug: en/test-process-1
-ogimage: https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-08-how-tests-process-should-looks-liks%2Fblog_post-cover.png?alt=media&token=b090c220-e684-4cb3-96f9-99e2f374c1cb
-ogimagetype: image/png
+ogImage: https://marcinstanek.pl/images/blog/test-process-1/og.png
+ogImageType: image/png
 language: en
 description: In this blog post, the author reflects on the ideal test process they aim to achieve in their projects, emphasizing the importance of quick feedback on code changes and the drawbacks of manual testing. They advocate for a balanced approach, combining both automated tests (unit and acceptance tests) with manual tests, and stress the benefits of a Continuous Delivery process for rapid code validation and defect correction.
 ---

@@ -4,9 +4,9 @@ date: 2025-03-16 08:00:00 +0200
 categories: [testautomation, ai, testcases]
 tags: [testautomation, ai, testcases, AI-powered test automation, C# test automation, AI test case generation, Artificial intelligence in software testing, AI-driven software quality assurance]
 slug: en/defect-zero
-language: en 
 ogImage: https://marcinstanek.pl/images/blog/defect-zero/og.png
 ogImageType: image/png
+language: en 
 description: AI-powered test case generation applies machine learning to user stories and requirements to suggest stronger scenarios. This post walks through DefectZero, how to improve coverage and automate test design, and how to connect AI-generated cases to frameworks such as SpecFlow and NUnit. For QA engineers and automation leads.
 ---
 ## Improving Automation with AI

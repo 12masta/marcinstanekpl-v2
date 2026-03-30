@@ -4,9 +4,9 @@ date: 2022-10-08 08:00:00 +0200
 categories: [testautomation, .net, webapplicationfactory, di]
 tags: [testautomation, .net, en, webapplicationfactory, di]
 slug: en/integration-tests-dotnet 
-language: en 
 ogImage: https://marcinstanek.pl/images/blog/integration-tests-dotnet/og.png
 ogImageType: image/png
+language: en 
 description: The material presents a DI-based approach to integration testing in .NET applications, utilizing the WebApplicationFactory for in-memory testing. It showcases how to implement and switch between different feature implementations using DI, enhancing test stability and dependency isolation.
 ---
 
