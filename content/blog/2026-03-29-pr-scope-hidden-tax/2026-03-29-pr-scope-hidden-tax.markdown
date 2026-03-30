@@ -73,6 +73,6 @@ Tygodniowy podatek (osoba × minuty × liczba zmian) daje rząd wielkości, któ
 
 ## Na koniec - i powiązanie z CI
 
-Ten koszt nie żyje w próżni. Gdy pipeline często krzyczy fałszywym alarmem, uwaga, która mogłaby iść w rozumienie zmiany, spędza czas na triage hałasu. O tym drugim biegunie napisałem osobno w wpisie [Głośny CI - kiedy pipeline przeszkadza zamiast chronić](/noisy-ci-signal/) - warto czytać oba razem, jeśli chcecie zobaczyć pełny obraz „gdzie znika czas QA zanim padnie słowo pilot”.
+Ten koszt nie żyje w próżni. Gdy pipeline często krzyczy fałszywym alarmem, uwaga, która mogłaby iść w rozumienie zmiany, spędza czas na triage hałasu. O tym drugim biegunie napisałem osobno w wpisie [Pipeline, który dokłada wątpliwości zamiast jasnego sygnału](/noisy-ci-signal/) - warto czytać oba razem, jeśli chcecie zobaczyć pełny obraz „gdzie znika czas QA zanim padnie słowo pilot”.
 
 Jeśli opis z tego tekstu brzmi jak Wasz poniedziałek, następny rozsądny krok to porozmawiać o zakresie wcześniej i o wspólnym szkielecie briefu - a nie od razu dokładać kolejne pakiety testów w nadziei, że pokrycie samo rozwiąże niejasność intencji.

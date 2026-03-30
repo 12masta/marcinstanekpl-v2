@@ -1,11 +1,11 @@
 ---
-title: Głośny CI - kiedy pipeline przeszkadza zamiast chronić (a QA traci czas na hałas)
+title: Pipeline, który dokłada wątpliwości zamiast jasnego sygnału
 date: 2026-03-29 10:00:00 +0200
 categories: [qa, ci, quality]
 tags: [qa, continuous integration, flaky tests, triage, delivery, trust, signal vs noise]
 slug: noisy-ci-signal
 language: pl
-description: Niestabilne joby i kultura „odpal jeszcze raz” podjadą zaufanie do pipeline'u. Wtedy QA zamiast wejść głęboko w zmianę, gasi kolejny pozorny alarm - a prawdziwy regres łatwo pomylić z kolejnym flakiem.
+description: "Gdy pipeline częściej budzi wątpliwości niż daje jasny werdykt, „zrób rerun” zastępuje diagnozę. QA traci uwagę na szum zamiast na zmianę."
 ogImage: https://marcinstanek.pl/images/blog/noisy-ci-signal/og.png
 ogImageType: image/png
 ---
@@ -18,8 +18,8 @@ Zazwyczaj nie trzeba długo szukać:
 
 - Losowość - ten sam job przechodzi cztery razy z rzędu, piąty raz pada na kroku, który „nikt nie dotykał”.
 - Retry jako procedura - zamiast diagnozy jest playbook: „poczekaj pięć minut i kliknij jeszcze raz”.
-- Brak właściciela czerwieni - kanał `#builds` świeci na czerwono, a wątek kończy się na „u mnie działa” albo „to infrastruktura”.
-- Żarty zamiast reakcji - „ruletka CI”, „dzisiaj znowu Mercury retrograde” - śmiech maskuje to, że nikt już nie wierzy, że czerwień coś znaczy.
+- Brak właściciela czerwieni - kanał #builds świeci na czerwono, a wątek kończy się na „u mnie działa” albo „to infrastruktura”.
+- Żarty zamiast reakcji - śmiech maskuje to, że nikt już nie wierzy, że czerwień coś znaczy.
 
 To nie jest tylko kwestia frustracji deweloperów. To jest uszkodzony kanał informacyjny, dokładnie ten, na którym opiera się wiele zespołów, żeby powiedzieć „main jest zdrowy”.
 
