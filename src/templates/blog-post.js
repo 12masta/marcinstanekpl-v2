@@ -3,27 +3,14 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-/** Use same-host paths in <img src> so local dev serves /static, not production URLs. */
-function bannerImageSrc(ogImage, siteUrl) {
-  if (!ogImage) return null
-  if (ogImage.startsWith(`https://`) || ogImage.startsWith(`http://`)) {
-    const base = (siteUrl || ``).replace(/\/$/, ``)
-    if (base && ogImage.startsWith(`${base}/`)) {
-      return ogImage.slice(base.length)
-    }
-    return ogImage
-  }
-  if (ogImage.startsWith(`/`)) return ogImage
-  return ogImage
-}
+import { blogOgImageSrc } from "../utils/blog-og-image-src"
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const siteUrl = data.site.siteMetadata?.siteUrl || ``
   const { previous, next } = data
-  const bannerSrc = bannerImageSrc(post.frontmatter.ogImage, siteUrl)
+  const bannerSrc = blogOgImageSrc(post.frontmatter.ogImage, siteUrl)
 
   return (
     <Layout

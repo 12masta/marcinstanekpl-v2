@@ -34,6 +34,7 @@ const HomePl = ({ data, location }) => {
         header={"Ostatnie wpisy na blogu"}
         posts={posts}
         postCtaLabel={"Czytaj wpis"}
+        siteUrl={data.site.siteMetadata?.siteUrl || ``}
       />
       <Featurette
         id={"featurette-want-to-know"}
@@ -110,6 +111,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
@@ -123,6 +125,7 @@ export const pageQuery = graphql`
           title
           description
           language
+          ogImage
         }
       }
     }
