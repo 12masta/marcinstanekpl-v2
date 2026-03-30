@@ -16,6 +16,18 @@ test("home EN loads with expected title", async ({ page }) => {
   await expect(page).toHaveTitle("Home page | marcinstanek.pl")
 })
 
+test("about PL loads with expected title", async ({ page }) => {
+  await page.goto("/o-mnie/")
+  await page.locator("data-test=navbar").waitFor()
+  await expect(page).toHaveTitle("O mnie | marcinstanek.pl")
+})
+
+test("about EN loads with expected title", async ({ page }) => {
+  await page.goto("/en/about/")
+  await page.locator("data-test=navbar").waitFor()
+  await expect(page).toHaveTitle("About | marcinstanek.pl")
+})
+
 test("unknown route shows 404 content", async ({ page }) => {
   await page.goto("/__playwright_missing_route__/")
   await expect(page.getByRole("heading", { name: "404: Not Found" })).toBeVisible()

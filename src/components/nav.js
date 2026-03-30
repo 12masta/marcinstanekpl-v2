@@ -6,27 +6,37 @@ export class Nav extends React.Component {
     let languageHref
     let languageLabel
     let blogHref
+    let aboutHref
+    let aboutLabel
 
     if (this.props.pathName.includes("blog/en/")) {
       brandHref = "/en/"
       languageHref = "/blog/pl/"
       languageLabel = "Polski"
       blogHref = "/blog/en/"
+      aboutHref = "/en/about/"
+      aboutLabel = "About"
     } else if (this.props.pathName.includes("blog/pl/")) {
       brandHref = "/"
       languageHref = "/blog/en/"
       languageLabel = "English"
       blogHref = "/blog/pl/"
+      aboutHref = "/o-mnie/"
+      aboutLabel = "O mnie"
     } else if (this.props.pathName.includes("/en")) {
       brandHref = "/en/"
       languageHref = "/"
       languageLabel = "Polski"
       blogHref = "/blog/en/"
+      aboutHref = "/en/about/"
+      aboutLabel = "About"
     } else {
       brandHref = "/"
       languageHref = "/en/"
       languageLabel = "English"
       blogHref = "/blog/pl/"
+      aboutHref = "/o-mnie/"
+      aboutLabel = "O mnie"
     }
 
     if (
@@ -50,6 +60,7 @@ export class Nav extends React.Component {
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <div className="navbar-nav">
                 <a className="nav-link" aria-current="page" href={languageHref} data-test="navbar-language-link">{languageLabel}</a>
+                <a className="nav-link" href={aboutHref} data-test="about-link">{aboutLabel}</a>
                 <a className="nav-link" href={blogHref} data-test="blog-link">Blog</a>
               </div>
             </div>
