@@ -59,11 +59,10 @@ export class Nav extends React.Component {
               <span className="navbar-toggler-icon" />
             </button>
             <div className="collapse navbar-collapse flex-grow-1 align-items-lg-center" id="navbarNavAltMarkup">
-              <BlogNavSearch
-                pathName={this.props.pathName}
-                className="my-2 my-lg-0 ms-lg-3"
-              />
-              <div className="navbar-nav ms-auto">
+              <div className="navbar-nav ms-auto align-items-lg-center">
+                <div className="nav-item my-2 my-lg-0 me-lg-2">
+                  <BlogNavSearch pathName={this.props.pathName} />
+                </div>
                 <a className="nav-link" aria-current="page" href={languageHref} data-test="navbar-language-link">{languageLabel}</a>
                 <a className="nav-link" href={aboutHref} data-test="about-link">{aboutLabel}</a>
                 <a className="nav-link" href={blogHref} data-test="blog-link">Blog</a>

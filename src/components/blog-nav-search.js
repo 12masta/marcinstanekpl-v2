@@ -1,6 +1,10 @@
 import * as React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
+/** Panel width cap; input uses the same so results align with the field. */
+const SEARCH_PANEL_MAX_REM = 22
+const SEARCH_PANEL_EDGE_MARGIN_PX = 12
+
 function searchLanguageFromPath(pathName) {
   if (pathName.includes("/blog/pl/")) return "pl"
   if (pathName.includes("/blog/en/")) return "en"
@@ -125,10 +129,13 @@ export function BlogNavSearch({ pathName, className = `` }) {
       if (!input || typeof window === `undefined`) return
 
       const r = input.getBoundingClientRect()
-      const margin = 12
+      const margin = SEARCH_PANEL_EDGE_MARGIN_PX
       const vw = window.innerWidth
       const vh = window.innerHeight
-      const maxPanelWidth = Math.min(22 * 16, vw - margin * 2)
+      const maxPanelWidth = Math.min(
+        SEARCH_PANEL_MAX_REM * 16,
+        vw - margin * 2
+      )
 
       let left = r.right - maxPanelWidth
       left = Math.max(margin, Math.min(left, vw - margin - maxPanelWidth))
@@ -179,6 +186,10 @@ export function BlogNavSearch({ pathName, className = `` }) {
           ref={inputRef}
           type="search"
           className="form-control form-control-sm"
+          style={{
+            width: `min(${SEARCH_PANEL_MAX_REM}rem, calc(100vw - ${SEARCH_PANEL_EDGE_MARGIN_PX * 2}px))`,
+            maxWidth: `100%`,
+          }}
           placeholder={placeholder}
           autoComplete="off"
           spellCheck="false"
