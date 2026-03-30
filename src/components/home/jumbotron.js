@@ -8,7 +8,7 @@ export class Jumbotron extends React.Component {
         <div className="row flex-lg-row-reverse align-items-center g-5 pt-0 pb-4 pb-lg-0">
           <div className="col-10 col-sm-8 col-lg-6">
             <StaticImage
-              className="d-block mx-lg-auto img-fluid"
+              className="d-block mx-lg-auto img-fluid home-gatsby-fill"
               formats={["auto", "webp", "avif"]}
               src="../../images/home/hero.png"
               quality={90}

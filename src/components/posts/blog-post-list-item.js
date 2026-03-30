@@ -5,6 +5,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { blogOgImageSrc } from "../../utils/blog-og-image-src"
 import { ChevronRightIcon } from "./chevron-right-icon"
 
+/** Thumbnail column ~ col-12 / sm-4 / lg-3 — helps pick sensible srcset entries. */
+const POST_LIST_THUMB_SIZES =
+  `(max-width: 575px) 100vw, (max-width: 991px) 40vw, 30vw`
+
 export function BlogPostListItem({
   post,
   siteUrl = ``,
@@ -44,7 +48,7 @@ export function BlogPostListItem({
             <div className="col-12 col-sm-4 col-lg-3">
               <Link
                 to={slug}
-                className="d-block ratio ratio-16x9 rounded-2 overflow-hidden bg-body-secondary shadow-sm"
+                className="d-block ratio ratio-16x9 rounded-2 overflow-hidden shadow-sm post-list-thumb"
                 tabIndex={-1}
                 aria-hidden="true"
               >
@@ -55,7 +59,9 @@ export function BlogPostListItem({
                     loading="lazy"
                     decoding="async"
                     objectFit="cover"
+                    sizes={POST_LIST_THUMB_SIZES}
                     className="h-100 w-100"
+                    imgProps={{ itemProp: `image` }}
                     {...thumbImgProps}
                   />
                 ) : (
