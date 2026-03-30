@@ -9,7 +9,6 @@ const PrivacyPolicy = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Polityka prywatności" />
       <div className="container">
         <h1 className="display-5 fw-bold">
           POLITYKA PRYWATNOŚCI I PLIKÓW COOKIES
@@ -389,6 +388,8 @@ const PrivacyPolicy = ({ data, location }) => {
 }
 
 export default PrivacyPolicy
+
+export const Head = () => <Seo title="Polityka prywatności" lang="pl" />
 
 export const pageQuery = graphql`
   query {

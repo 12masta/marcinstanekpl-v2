@@ -18,7 +18,6 @@ const HomeEn = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Home page" />
       <Jumbotron
         header={
           "I reduce delivery risk through QA, automation, and clearer decisions in how you ship"
@@ -105,6 +104,8 @@ const HomeEn = ({ data, location }) => {
 }
 
 export default HomeEn
+
+export const Head = () => <Seo title="Home page" lang="en" />
 
 export const pageQuery = graphql`
   query {

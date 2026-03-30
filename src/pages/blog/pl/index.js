@@ -15,7 +15,6 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts"/>
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -26,8 +25,6 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return <Layout location={location} title={siteTitle}>
-    <Seo title="All posts"/>
-
     <TopPost post={posts.shift()} label="Kontynuuj czytanie..."/>
 
     <div className="row mb-2">
@@ -50,6 +47,8 @@ const BlogIndex = ({ data, location }) => {
 }
 
 export default BlogIndex
+
+export const Head = () => <Seo title="All posts" lang="pl" />
 
 export const pageQuery = graphql`
   query {

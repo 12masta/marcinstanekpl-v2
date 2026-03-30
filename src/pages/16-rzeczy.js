@@ -11,7 +11,6 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ TESTY" />
       <Headlines
         header="WEŹ ZA DARMO!"
         lead="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ
@@ -28,6 +27,13 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 }
 
 export default SeleniumRecruitmentTask
+
+export const Head = () => (
+  <Seo
+    title="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ TESTY"
+    lang="pl"
+  />
+)
 
 export const pageQuery = graphql`
   query {

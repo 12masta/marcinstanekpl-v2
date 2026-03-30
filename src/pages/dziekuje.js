@@ -10,7 +10,6 @@ const ThankYouPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Pobierz dokument" />
       <Headlines
         header="Dziękuję za pobranie!"
         lead="Dokument znajdziesz za chwilę na swojej skrzynce mailowej lub możesz
@@ -34,6 +33,8 @@ const ThankYouPage = ({ data, location }) => {
 }
 
 export default ThankYouPage
+
+export const Head = () => <Seo title="Pobierz dokument" lang="pl" />
 
 export const pageQuery = graphql`
   query {

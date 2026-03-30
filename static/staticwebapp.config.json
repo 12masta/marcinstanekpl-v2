@@ -6,11 +6,6 @@
       "statusCode": 301
     },
     {
-      "route": "/about/",
-      "redirect": "/en/about/",
-      "statusCode": 301
-    },
-    {
       "route": "/o-mnie",
       "redirect": "/o-mnie/",
       "statusCode": 301

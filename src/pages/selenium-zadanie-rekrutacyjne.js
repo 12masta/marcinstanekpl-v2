@@ -12,7 +12,6 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver" />
       <Hero videoLink="https://player.vimeo.com/video/386467595" />
       <MailingSection
         text="Chcę zobaczyć rozwiązanie!
@@ -26,6 +25,10 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 }
 
 export default SeleniumRecruitmentTask
+
+export const Head = () => (
+  <Seo title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver" lang="pl" />
+)
 
 export const pageQuery = graphql`
   query {
