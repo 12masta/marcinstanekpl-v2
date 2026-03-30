@@ -21,7 +21,7 @@
 ------------------------- */
 
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 1rem 0;
 }
 
 /* Thin out the marketing headings */
@@ -43,6 +43,10 @@
 }
 
 @media (min-width: 62em) {
+    .featurette-divider {
+        margin: 5rem 0;
+    }
+
     .featurette-heading {
         margin-top: 7rem;
     }
