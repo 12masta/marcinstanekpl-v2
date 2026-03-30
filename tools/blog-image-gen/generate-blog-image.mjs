@@ -16,17 +16,10 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { BLOG_IMAGE_STYLE_PROMPT } from "./site-image-style.mjs"
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, "../..")
-
-/** Matches the flat, friendly illustration look used under src/images (home, leadmagnet, etc.). */
-const SITE_IMAGE_STYLE = `Visual style: clean modern flat illustration for a professional tech / QA blog,
-soft rounded shapes, restrained palette (blues, teals, warm neutrals), subtle gradients,
-no photorealism, no cluttered backgrounds, suitable as a social Open Graph image.
-Composition: extra-wide horizontal banner, vertically shallow (low profile strip), main subject spread left-to-right, not tall.
-
-Strict rule — no text in the image: do not draw letters, words, numbers, captions, labels, logos with readable type,
-UI chrome with text, watermarks, or any typography in Polish, English, or any language. Purely visual metaphor only.`
 
 const MODELS = {
   nano: "gemini-2.5-flash-image",
@@ -89,7 +82,7 @@ function slugFromPostPath(filePath) {
 
 function buildPromptFromPost(fm, userPrompt) {
   if (userPrompt) {
-    return `${userPrompt.trim()}\n\n${SITE_IMAGE_STYLE}`
+    return `${userPrompt.trim()}\n\n${BLOG_IMAGE_STYLE_PROMPT}`
   }
   const title = fm.title || "Blog post"
   const desc = fm.description || ""
@@ -98,7 +91,7 @@ function buildPromptFromPost(fm, userPrompt) {
 Topic / title: ${title}
 Summary: ${desc}
 
-${SITE_IMAGE_STYLE}`
+${BLOG_IMAGE_STYLE_PROMPT}`
 }
 
 function extractImageBuffer(response) {
