@@ -17,11 +17,6 @@ const AboutEn = ({ location }) => {
       alternateLanguageHref="/o-mnie/"
       alternateLanguageLabel="Polski"
     >
-      <Seo
-        title="About"
-        lang="en"
-        description="Marcin Stanek - independent QA and test automation engineer (B2B, 10+ years). I focus on reducing delivery risk: clear decisions on what to test, automation in CI/CD, and useful context for every change."
-      />
       <div className="about-page py-4">
         <h1 className="display-5 fw-bold mb-4">About</h1>
 
@@ -87,3 +82,11 @@ const AboutEn = ({ location }) => {
 }
 
 export default AboutEn
+
+export const Head = () => (
+  <Seo
+    title="About"
+    lang="en"
+    description="Marcin Stanek - independent QA and test automation engineer (B2B, 10+ years). I focus on reducing delivery risk: clear decisions on what to test, automation in CI/CD, and useful context for every change."
+  />
+)

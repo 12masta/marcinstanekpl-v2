@@ -18,7 +18,6 @@ const HomePl = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Strona główna" />
       <Jumbotron
         header={
           "Ograniczam ryzyko dostaw: QA, automatyzacja i jaśniejsze decyzje w procesie dostaw"
@@ -105,6 +104,8 @@ const HomePl = ({ data, location }) => {
 }
 
 export default HomePl
+
+export const Head = () => <Seo title="Strona główna" lang="pl" />
 
 export const pageQuery = graphql`
   query {

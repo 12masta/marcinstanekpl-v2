@@ -17,15 +17,18 @@ const AboutRedirect = ({ location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo
-        title="About"
-        lang="en"
-        description=""
-        meta={[{ name: `robots`, content: `noindex, nofollow` }]}
-      />
       <p className="py-4 text-body-secondary">Redirecting…</p>
     </Layout>
   )
 }
 
 export default AboutRedirect
+
+export const Head = () => (
+  <Seo
+    title="About"
+    lang="en"
+    description=""
+    meta={[{ name: `robots`, content: `noindex, nofollow` }]}
+  />
+)

@@ -17,11 +17,6 @@ const AboutPl = ({ location }) => {
       alternateLanguageHref="/en/about/"
       alternateLanguageLabel="English"
     >
-      <Seo
-        title="O mnie"
-        lang="pl"
-        description="Marcin Stanek - niezależny inżynier QA i automatyzacji (B2B, ponad 10 lat). Skupiam się na ograniczaniu ryzyka dostaw: jasne decyzje co testować, automatyzacja w CI/CD i sensowny kontekst przy każdej zmianie."
-      />
       <div className="about-page py-4">
         <h1 className="display-5 fw-bold mb-4">O mnie</h1>
 
@@ -90,3 +85,11 @@ const AboutPl = ({ location }) => {
 }
 
 export default AboutPl
+
+export const Head = () => (
+  <Seo
+    title="O mnie"
+    lang="pl"
+    description="Marcin Stanek - niezależny inżynier QA i automatyzacji (B2B, ponad 10 lat). Skupiam się na ograniczaniu ryzyka dostaw: jasne decyzje co testować, automatyzacja w CI/CD i sensowny kontekst przy każdej zmianie."
+  />
+)
