@@ -1,43 +1,89 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
+import { ChevronRightIcon } from "./chevron-right-icon"
+
 export class PostsList extends React.Component {
   render() {
-    return (<div className="row g-5">
-      <div className="col-md-12">
-        <h3 className="pb-4 mb-4 border-bottom fs-4 fw-semibold">
-          {this.props.label}
-        </h3>
-        <ol className="p-1" style={{ listStyle: `none` }}>
-          {this.props.posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
+    const posts = this.props.posts
+    const postCtaLabel =
+      this.props.postCtaLabel != null
+        ? this.props.postCtaLabel
+        : "Czytaj wpis"
 
-            return <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2 className="fs-5 fw-semibold">
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          })}
-        </ol>
+    return (
+      <div
+        className={`marketing last-blog-posts w-100 ${this.props.className || ""}`}
+        id={this.props.id || undefined}
+      >
+        <hr className="featurette-divider" />
+        <div className="row featurette g-0">
+          <div className="col-12">
+            <h2 className="featurette-heading display-6 fw-light mb-4">
+              {this.props.label}
+            </h2>
+            <ol className="list-unstyled mb-0">
+              {posts.map((post, index) => {
+                const title = post.frontmatter.title || post.fields.slug
+                const isLast = index === posts.length - 1
+
+                return (
+                  <li
+                    key={post.fields.slug}
+                    className={
+                      isLast
+                        ? "mb-0"
+                        : "mb-4 pb-4 border-bottom border-secondary-subtle"
+                    }
+                  >
+                    <article
+                      className="post-list-item px-3 py-3 rounded-3"
+                      itemScope
+                      itemType="http://schema.org/Article"
+                    >
+                      <header>
+                        <h3 className="h5 mb-2">
+                          <Link
+                            to={post.fields.slug}
+                            className="icon-link icon-link-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover fw-semibold text-body-emphasis d-flex flex-nowrap align-items-center gap-2 w-100"
+                            itemProp="url"
+                          >
+                            <span
+                              className="min-w-0 flex-grow-1 text-break"
+                              itemProp="headline"
+                            >
+                              {title}
+                            </span>
+                            <ChevronRightIcon />
+                          </Link>
+                        </h3>
+                      </header>
+                      <section>
+                        <p
+                          className="mb-0 text-body-secondary"
+                          dangerouslySetInnerHTML={{
+                            __html: post.frontmatter.description || post.excerpt,
+                          }}
+                          itemProp="description"
+                        />
+                      </section>
+                      <p className="mb-0 mt-3">
+                        <Link
+                          to={post.fields.slug}
+                          className="icon-link icon-link-hover small fw-semibold text-decoration-none d-inline-flex flex-nowrap align-items-center gap-1"
+                        >
+                          {postCtaLabel}
+                          <ChevronRightIcon />
+                        </Link>
+                      </p>
+                    </article>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>)
+    )
   }
 }

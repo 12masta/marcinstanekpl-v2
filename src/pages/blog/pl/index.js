@@ -39,7 +39,12 @@ const BlogIndex = ({ data, location }) => {
       </div>
     </div>
 
-    <PostsList posts={posts} label="Wybrane dla Ciebie"/>
+    <PostsList
+      posts={posts}
+      label="Wybrane dla Ciebie"
+      postCtaLabel="Czytaj wpis"
+      className="mt-4"
+    />
   </Layout>
 }
 

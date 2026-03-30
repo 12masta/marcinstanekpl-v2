@@ -1,22 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-const chevronRight = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="currentColor"
-    className="bi flex-shrink-0"
-    viewBox="0 0 16 16"
-    aria-hidden="true"
-  >
-    <path
-      fillRule="evenodd"
-      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-    />
-  </svg>
-)
+import { ChevronRightIcon } from "../posts/chevron-right-icon"
 
 export class LastBlogPosts extends React.Component {
 
@@ -71,7 +56,7 @@ export class LastBlogPosts extends React.Component {
                             >
                               {title}
                             </span>
-                            {chevronRight}
+                            <ChevronRightIcon />
                           </Link>
                         </h3>
                       </header>
@@ -90,7 +75,7 @@ export class LastBlogPosts extends React.Component {
                           className="icon-link icon-link-hover small fw-semibold text-decoration-none d-inline-flex flex-nowrap align-items-center gap-1"
                         >
                           {postCtaLabel}
-                          {chevronRight}
+                          <ChevronRightIcon />
                         </Link>
                       </p>
                     </article>
