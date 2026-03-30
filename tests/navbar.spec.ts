@@ -50,7 +50,10 @@ test("Navbar single post page pl", async ({ page }) => {
   await postPl.gotoPl()
 
   await expect(postPl.navbarBrand).toHaveAttribute("href", "/")
-  await expect(postPl.navbarLanguageLink).toHaveAttribute("href", "/en/")
+  await expect(postPl.navbarLanguageLink).toHaveAttribute(
+    "href",
+    "/en/dotnet-polly/"
+  )
   await expect(postPl.blogLink).toHaveAttribute("href", "/blog/pl/")
 })
 
@@ -59,7 +62,10 @@ test("Navbar single post page en", async ({ page }) => {
   await postEn.gotoEn()
 
   await expect(postEn.navbarBrand).toHaveAttribute("href", "/en/")
-  await expect(postEn.navbarLanguageLink).toHaveAttribute("href", "/")
+  await expect(postEn.navbarLanguageLink).toHaveAttribute(
+    "href",
+    "/dotnet-polly/"
+  )
   await expect(postEn.blogLink).toHaveAttribute("href", "/blog/en/")
 })
 

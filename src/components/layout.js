@@ -2,14 +2,24 @@ import * as React from "react"
 import { Nav } from "./nav"
 import { CookieConsentCustom } from "./common/cookieconsentcustom"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({
+  location,
+  title,
+  children,
+  alternateLanguageHref,
+  alternateLanguageLabel,
+}) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <main role="main">
-        <Nav pathName={location.pathname} />
+        <Nav
+          pathName={location.pathname}
+          alternateLanguageHref={alternateLanguageHref}
+          alternateLanguageLabel={alternateLanguageLabel}
+        />
         <div className="container">{children}</div>
       </main>
 

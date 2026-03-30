@@ -14,12 +14,12 @@ export class PostBlogPage
   }
 
   async gotoPl() {
-    await this.page.goto("/dotnet-polly")
+    await this.page.goto("/dotnet-polly/")
     await this.navbar.waitFor()
   }
 
   async gotoEn() {
-    await this.page.goto("/en/dotnet-polly")
+    await this.page.goto("/en/dotnet-polly/")
     await this.navbar.waitFor()
   }
 }

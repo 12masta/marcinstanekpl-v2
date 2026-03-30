@@ -1,7 +1,45 @@
 const path = require(`path`)
 
+/** Strip /en/ or /pl/ prefix for pairing PL ↔ EN versions of the same post. */
+function normalizeTranslationKey(slug) {
+  if (!slug) return ``
+  let s = String(slug).trim().replace(/\/+$/, ``)
+  if (!s.startsWith(`/`)) s = `/${s}`
+  const segments = s.split(`/`).filter(Boolean)
+  if (segments[0] === `en` || segments[0] === `pl`) {
+    segments.shift()
+  }
+  return segments.join(`/`)
+}
+
+function withTrailingSlash(p) {
+  if (!p) return p
+  const s = p.startsWith(`/`) ? p : `/${p}`
+  return s.endsWith(`/`) ? s : `${s}/`
+}
+
+function buildTranslationMap(nodes) {
+  /** @type {Map<string, { pl?: string, en?: string }>} */
+  const map = new Map()
+
+  for (const node of nodes) {
+    const slug = node.fields?.slug
+    if (!slug) continue
+    const lang = (node.frontmatter?.language || `pl`).trim().toLowerCase()
+    const explicit = node.frontmatter?.translationKey?.trim()
+    const key = explicit || normalizeTranslationKey(slug)
+    if (!key) continue
+    if (!map.has(key)) map.set(key, {})
+    const bucket = map.get(key)
+    const normalizedSlug = withTrailingSlash(slug)
+    if (lang === `en`) bucket.en = normalizedSlug
+    else bucket.pl = normalizedSlug
+  }
+
+  return map
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
       {
@@ -15,6 +53,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
               ogImage
               ogImageType
+            }
+            frontmatter {
+              language
+              translationKey
             }
           }
         }
@@ -31,29 +73,46 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes
-
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+  const translationMap = buildTranslationMap(posts)
 
   if (posts.length > 0) {
-    const postsEn = posts.filter(x => x.fields.slug.includes("en"))
-    const postsPl = posts.filter(x => !x.fields.slug.includes("en"))
+    const slugPath = s =>
+      String(s || ``)
+        .trim()
+        .replace(/^\/+|\/+$/g, ``)
+    const postsEn = posts.filter(x => slugPath(x.fields.slug).startsWith(`en/`))
+    const postsPl = posts.filter(x => !slugPath(x.fields.slug).startsWith(`en/`))
 
-    createPages(postsEn, actions)
-    createPages(postsPl, actions)
+    createPages(postsEn, actions, translationMap)
+    createPages(postsPl, actions, translationMap)
   }
 }
 
-function createPages(posts, actions) {
+function createPages(posts, actions, translationMap) {
   const { createPage } = actions
-
-  // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
   posts.forEach((post, index) => {
     const previousPostId = index === 0 ? null : posts[index - 1].id
-    const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+    const nextPostId =
+      index === posts.length - 1 ? null : posts[index + 1].id
+
+    const lang = (post.frontmatter?.language || `pl`).trim().toLowerCase()
+    const explicit = post.frontmatter?.translationKey?.trim()
+    const key = explicit || normalizeTranslationKey(post.fields.slug)
+    const pair = key ? translationMap.get(key) : null
+
+    let alternateLanguageHref = null
+    let alternateLanguageLabel = null
+    if (pair) {
+      if (lang === `pl` && pair.en) {
+        alternateLanguageHref = pair.en
+        alternateLanguageLabel = `English`
+      } else if (lang === `en` && pair.pl) {
+        alternateLanguageHref = pair.pl
+        alternateLanguageLabel = `Polski`
+      }
+    }
 
     createPage({
       path: post.fields.slug,
@@ -65,6 +124,8 @@ function createPages(posts, actions) {
         slug: post.fields.slug,
         ogImage: post.fields.ogImage,
         ogImageType: post.fields.ogImageType,
+        alternateLanguageHref,
+        alternateLanguageLabel,
       },
     })
   })
@@ -73,12 +134,6 @@ function createPages(posts, actions) {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
-  // Explicitly define the siteMetadata {} object
-  // This way those will always be defined even if removed from gatsby-config.js
-
-  // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author
@@ -106,6 +161,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       language: String
+      translationKey: String
       ogImage: String
       ogImageType: String
     }
