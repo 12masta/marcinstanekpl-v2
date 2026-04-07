@@ -30,13 +30,16 @@
 
 /* purgecss start ignore */
 /*
- * GatsbyImage/StaticImage (constrained): inline-block + inner max-width can letterbox
- * (grey bands) in Bootstrap columns or .ratio boxes. Fill wrapper + spacer; img keeps
- * object-fit from gatsby-plugin-image where applicable.
+ * GatsbyImage in Bootstrap .ratio: plugin CSS sets .gatsby-image-wrapper { position:relative },
+ * which overrides .ratio > * and leaves the ratio ::before spacer as empty space; force absolute fill.
+ * Also fixes letterboxing from inline-block + max-width in columns.
  */
 .post-list-item .post-list-thumb > [data-gatsby-image-wrapper],
 .last-blog-posts .post-list-thumb > [data-gatsby-image-wrapper] {
     display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     height: 100% !important;
     max-width: none !important;
     width: 100% !important;
