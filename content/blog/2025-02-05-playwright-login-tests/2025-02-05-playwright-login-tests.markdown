@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-2
-description: Cztery scenariusze logowania w Playwright Test - szczęśliwa ścieżka, złe hasło, brak użytkownika, puste pola - z izolacją danych przez API (DELETE/POST), analogicznie do wpisu o Cypressie.
+description: "Cztery realistyczne scenariusze logowania: udane logowanie, złe hasło, nieistniejący użytkownik i puste pola, z przygotowaniem danych przez backend, żeby testy nie wpadały na siebie. Dobry zestaw obok analogicznego wpisu o Cypressie."
 ---
 
 ## Wstęp

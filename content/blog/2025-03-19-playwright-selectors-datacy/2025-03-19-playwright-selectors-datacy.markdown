@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-5
-description: Zastąpienie kruchych selektorów CSS atrybutem data-testid i lokatorem getByTestId w Playwright - ta sama filozofia co dedykowane data-* w best practices Cypressa, z atrybutem zalecanym przez Playwright.
+description: "Bardziej odporne testy dzięki stałym punktom zaczepienia w markupie zamiast długich, kruchych łańcuchów CSS. Omawiam konwencję test id z dokumentacji Playwrighta i wiążę ją z dobrze znanym podejściem z dobrych praktyk Cypressa."
 ---
 
 ## Wstęp

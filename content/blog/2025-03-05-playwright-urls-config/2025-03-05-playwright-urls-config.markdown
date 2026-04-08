@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-4
-description: beforeEach, baseURL w playwright.config, ścisłe asercje URL oraz osobny adres API przez zmienne środowiskowe - odpowiednik wpisu o Cypressie i cypress.json.
+description: "Domyślny adres aplikacji i wspólne przygotowanie przed każdym testem, potem przewidywalne sprawdzanie URL-i. Zmienne środowiskowe oddzielają front od API - odpowiednik wpisu o adresach w Cypressie, ale z konwencjami Playwrighta."
 ---
 
 ## Wstęp

@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-5
-description: Replacing brittle CSS chains with data-testid and page.getByTestId in Playwright - same idea as Cypress best practices for dedicated data-* hooks, using Playwright's documented attribute name.
+description: "Write tests that survive UI refactors by giving important elements stable hooks instead of long, fragile CSS selectors. The post follows Playwright’s recommended test id style and relates it to the familiar Cypress idea of dedicated data attributes."
 ---
 
 ## Introduction

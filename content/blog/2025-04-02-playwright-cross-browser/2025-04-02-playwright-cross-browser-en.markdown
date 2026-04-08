@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-6
-description: Chromium, Firefox, and WebKit from one config - Playwright projects and CLI filters, contrasted with the Cypress era when Firefox/Edge support was big news.
+description: "One test suite against Chromium, Firefox, and WebKit: how Playwright lets you pick engines from configuration and the command line, and why multi-browser coverage today feels easier than when Cypress was still catching up on Firefox and Edge."
 ---
 
 ## Introduction

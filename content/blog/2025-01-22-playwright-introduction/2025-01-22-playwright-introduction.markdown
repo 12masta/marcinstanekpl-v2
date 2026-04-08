@@ -8,7 +8,7 @@ translationKey: playwright-1
 slug: playwright-1
 ogImage: https://marcinstanek.pl/images/blog/playwright-1/og.png
 ogImageType: image/png
-description: Praktyczny start z Playwright przy użyciu oficjalnego runnera @playwright/test - instalacja, konfiguracja, nawigacja, lokatory, klik, asercje URL i pola formularza. Ten sam stack co w serii o Cypress (React + ASP.NET Core), więc możesz porównać oba podejścia.
+description: "Praktyczny start z Playwrightem przy automatyzacji przeglądarki: instalacja oficjalnego runnera, nawigacja, stabilne wyszukiwanie elementów, praca z formularzami i sprawdzanie oczekiwań. Na tym samym przykładowym projekcie co seria o Cypressie, żeby wygodnie porównać oba narzędzia."
 ---
 
 ## Wstęp

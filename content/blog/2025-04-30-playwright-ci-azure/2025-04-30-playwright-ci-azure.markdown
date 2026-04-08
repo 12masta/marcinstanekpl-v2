@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-8
-description: Potok Azure z Node, zależnościami systemowymi Playwrighta, npm install oraz npx playwright test - adresy frontu i API ze zmiennych jak w wpisie o Cypressie.
+description: "Jak uruchomić testy Playwrighta w Azure DevOps: przygotowanie potoku i środowiska pod przeglądarki, trzymanie adresów aplikacji i API w zmiennych oraz ten sam ogólny przepływ co w artykule o Cypressie, przy prostszej konfiguracji po stronie Playwrighta."
 ---
 
 ## Wstęp

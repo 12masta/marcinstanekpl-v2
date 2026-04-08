@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-4
-description: beforeEach, baseURL in playwright.config, strict URL expectations, and a separate API base via environment variables - the Playwright counterpart to the Cypress URLs post.
+description: "Set a default site address and shared preconditions once, then keep URL checks explicit and predictable. Environment variables split the web app from the API, mirroring the Cypress URLs article with Playwright configuration habits."
 ---
 
 ## Introduction

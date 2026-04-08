@@ -8,7 +8,7 @@ translationKey: playwright-1
 slug: en/playwright-1
 ogImage: https://marcinstanek.pl/images/blog/playwright-1/og.png
 ogImageType: image/png
-description: "A practical introduction to Playwright using the official @playwright/test runner: install, config, navigation, locators, clicks, URL assertions, and form fields. Same React + ASP.NET sample app as the Cypress series, so you can compare both tools side by side."
+description: "A friendly on-ramp to Playwright for automating a real browser: install the official test runner, open pages, find elements in a maintainable way, interact with forms, and assert what you see. Uses the same sample app as the Cypress series so you can compare the two tools fairly."
 ---
 
 ## Introduction

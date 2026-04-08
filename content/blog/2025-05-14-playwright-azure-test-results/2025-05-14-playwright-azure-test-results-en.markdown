@@ -8,7 +8,7 @@ categories: [testautomation, playwright, azuredevops]
 tags: [testautomation, playwright, ci, azuredevops, en]
 language: en
 translationKey: playwright-9
-description: Playwright’s JUnit reporter, Publish TestResults@2 in Azure YAML, and moving the failing signal from the test step to the publish step - parallel to the Cypress article.
+description: "See Playwright failures clearly in Azure DevOps: publish test results in a standard format so the pipeline shows what broke, and shape the job so reporting stays useful when a run goes red, alongside the parallel Cypress test-results article."
 ---
 
 ## Introduction

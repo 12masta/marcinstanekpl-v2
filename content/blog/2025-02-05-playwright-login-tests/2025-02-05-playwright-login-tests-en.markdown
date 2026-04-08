@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-2
-description: Four Playwright Test scenarios for login - happy path, wrong password, missing user, empty fields - with data isolation via HTTP API (DELETE/POST), parallel to the Cypress article.
+description: "Exercise a real login form end to end: success, bad password, unknown account, and empty fields, with test data prepared through the backend so each run stays isolated. Pairs with the Cypress login article for a direct comparison."
 ---
 
 ## Introduction

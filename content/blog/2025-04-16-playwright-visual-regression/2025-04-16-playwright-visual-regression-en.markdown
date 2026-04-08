@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-7
-description: Image comparisons via expect().toHaveScreenshot() - no extra plugin, with baseline updates and pixel diff thresholds.
+description: "Spot accidental layout and styling regressions using Playwright screenshots: how reference images work, when to refresh them after intentional changes, and how to tune sensitivity so tests stay trustworthy without endless noise."
 ---
 
 ## Introduction

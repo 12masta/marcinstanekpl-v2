@@ -8,7 +8,7 @@ categories: [testautomation, playwright, azuredevops]
 tags: [testautomation, playwright, ci, azuredevops, pl]
 language: pl
 translationKey: playwright-9
-description: Reporter JUnit z Playwright, krok Publish Test Results w YAML i przeniesienie „faila” z kroku testów na publikację - analogia do wpisu o Cypressie.
+description: "Czytelne wyniki Playwrighta w Azure DevOps: publikacja raportu w formacie JUnit, widoczne niepowodzenia w podsumowaniu potoku oraz układ kroków, który ułatwia diagnozę - w parze z analogicznym wpisem o Cypressie."
 ---
 
 ## Wstęp

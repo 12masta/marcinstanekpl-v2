@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-7
-description: Porównanie zrzutów ekranu przez expect().toHaveScreenshot() - bez osobnej wtyczki, z aktualizacją baseline i progiem różnic pikseli.
+description: "Wykrywanie niechcianych zmian wyglądu dzięki zrzutom ekranu w Playwrightcie: obrazy referencyjne, aktualizacja po świadomych zmianach w UI oraz dobór tolerancji, żeby testy były wiarygodne, a nie serią fałszywych alarmów."
 ---
 
 ## Wstęp

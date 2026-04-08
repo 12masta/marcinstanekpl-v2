@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-3
-description: Porównanie dwóch stylów organizacji kodu w Playwright Test - czytelne funkcje „akcji” (jak App Actions w Cypressie) oraz klasyczny Page Object Model z klasami i konstruktorem Page.
+description: "Jak układać kod Playwrighta, gdy scenariuszy przybywa: proste funkcje opisujące kroki użytkownika versus klasyczny page object z klasami - i jak to mapuje na znane z Cypressa rozważania między App Actions a obiektami stron."
 ---
 
 ## Wstęp

@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-8
-description: Azure pipeline with Node 20, playwright install --with-deps, and npx playwright test - BASE_URL and API_URL from pipeline variables like the Cypress article.
+description: "Run Playwright end-to-end tests on Azure DevOps: prepare the pipeline and host so browsers work reliably, keep your app and API addresses in variables, and follow the same overall flow as the Cypress on Azure article, with a simpler Playwright-side setup."
 ---
 
 ## Introduction

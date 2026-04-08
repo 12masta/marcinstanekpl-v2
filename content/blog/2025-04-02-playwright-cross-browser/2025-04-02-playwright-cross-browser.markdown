@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
 translationKey: playwright-6
-description: Chromium, Firefox i WebKit z jednej konfiguracji - projects w playwright.config i uruchamianie wybranego silnika z CLI, w kontraście do historii Cypressa i Firefox/Edge.
+description: "Jedna paczka testów pod Chromium, Firefox i WebKit: wybór silników z konfiguracji i z linii poleceń oraz spojrzenie na to, jak dziś łatwiej myśleć o wielu przeglądarkach niż w czasach, gdy Cypress dopiero rozszerzał wsparcie dla Firefoxa i Edge."
 ---
 
 ## Wstęp

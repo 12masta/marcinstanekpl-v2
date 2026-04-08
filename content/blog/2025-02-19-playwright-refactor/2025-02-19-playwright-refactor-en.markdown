@@ -8,7 +8,7 @@ categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
 translationKey: playwright-3
-description: Two ways to structure Playwright Test code - plain “app action” functions (the Cypress custom-command idea) versus classic Page Object classes wrapping Page.
+description: "Keep Playwright flows readable as the suite grows: compare simple helper functions that describe user steps with a more classic page-object style, and relate both to the long-running Cypress debate between app actions and class-based wrappers."
 ---
 
 ## Introduction
