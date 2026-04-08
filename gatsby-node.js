@@ -140,14 +140,16 @@ function createPages(posts, actions, translationMap) {
       }
     }
 
+    /** Match `trailingSlash: 'always'` (gatsby-plugin-slug paths omit the slash). */
+    const pagePath = withTrailingSlash(post.fields.slug)
     createPage({
-      path: post.fields.slug,
+      path: pagePath,
       component: blogPost,
       context: {
         id: post.id,
         previousPostId,
         nextPostId,
-        slug: post.fields.slug,
+        slug: pagePath,
         ogImage: post.fields.ogImage,
         ogImageType: post.fields.ogImageType,
         alternateLanguageHref,
@@ -187,6 +189,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      dateModified: Date @dateformat
       language: String
       translationKey: String
       ogImage: String

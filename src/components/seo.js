@@ -9,7 +9,44 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, lang, meta, title, ogImage, ogImageType }) => {
+function withTrailingSlash(p) {
+  if (!p) return ``
+  const s = p.startsWith(`/`) ? p : `/${p}`
+  return s.endsWith(`/`) ? s : `${s}/`
+}
+
+function toAbsoluteUrl(siteUrl, pathname) {
+  const base = siteUrl?.replace(/\/$/, ``) || ``
+  return `${base}${withTrailingSlash(pathname)}`
+}
+
+function hreflangWithXDefault(alternates) {
+  if (!alternates?.length) return []
+  const hasPl = alternates.some(a => a.hreflang === `pl`)
+  const hasEn = alternates.some(a => a.hreflang === `en`)
+  if (hasPl && hasEn) {
+    const pl = alternates.find(a => a.hreflang === `pl`)
+    if (pl && !alternates.some(a => a.hreflang === `x-default`)) {
+      return [...alternates, { hreflang: `x-default`, pathname: pl.pathname }]
+    }
+  }
+  return [...alternates]
+}
+
+const Seo = ({
+  description,
+  lang,
+  meta,
+  title,
+  ogImage,
+  ogImageType,
+  pathname = ``,
+  hreflangAlternates = null,
+  ogType = `website`,
+  articlePublishedTime = ``,
+  articleModifiedTime = ``,
+  jsonLd = ``,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -47,55 +84,78 @@ const Seo = ({ description, lang, meta, title, ogImage, ogImageType }) => {
   })()
   const metaOgImageType = ogImageType || site.siteMetadata.og.ogImageType
 
-  const metaList = [
+  const canonicalUrl = pathname ? toAbsoluteUrl(siteUrl, pathname) : ``
+
+  const resolvedOgType = ogType || `website`
+  const twitterCard =
+    resolvedOgType === `article` ? `summary_large_image` : `summary`
+
+  const openGraphMeta = [
+    { property: `og:title`, content: title },
+    { property: `og:description`, content: metaDescription },
+    { property: `og:type`, content: resolvedOgType },
+  ]
+  if (canonicalUrl) {
+    openGraphMeta.push({ property: `og:url`, content: canonicalUrl })
+  }
+  if (articlePublishedTime) {
+    openGraphMeta.push({
+      property: `article:published_time`,
+      content: articlePublishedTime,
+    })
+  }
+  if (articleModifiedTime) {
+    openGraphMeta.push({
+      property: `article:modified_time`,
+      content: articleModifiedTime,
+    })
+  }
+  openGraphMeta.push(
     {
-      name: `description`,
-      content: metaDescription,
-    },
-    {
-      property: `og:title`,
-      content: title,
-    },
-    {
-      property: `og:description`,
-      content: metaDescription,
-    },
-    {
-      property: `og:type`,
-      content: `website`,
-    },
-    {
-      name: `twitter:card`,
-      content: `summary`,
-    },
-    {
-      name: `twitter:creator`,
-      content: site.siteMetadata?.social?.twitter || ``,
-    },
-    {
-      name: `twitter:title`,
-      content: title,
-    },
-    {
-      name: `twitter:description`,
-      content: metaDescription,
-    },
-    {
-      name: `og:image`,
+      property: `og:image`,
       content: metaOgImage,
       id: `og:image`,
     },
     {
-      name: `og:image:type`,
+      property: `og:image:type`,
       content: metaOgImageType,
       id: `og:image:type`,
+    }
+  )
+
+  const twitterMeta = [
+    { name: `twitter:card`, content: twitterCard },
+    {
+      name: `twitter:creator`,
+      content: site.siteMetadata?.social?.twitter || ``,
     },
-  ].concat(meta)
+    { name: `twitter:title`, content: title },
+    { name: `twitter:description`, content: metaDescription },
+    { name: `twitter:image`, content: metaOgImage },
+  ]
+
+  const descriptionMeta = [{ name: `description`, content: metaDescription }]
+
+  const metaList = descriptionMeta
+    .concat(openGraphMeta)
+    .concat(twitterMeta)
+    .concat(meta || [])
+
+  const alternates = hreflangWithXDefault(hreflangAlternates || [])
 
   return (
     <>
       <html lang={lang} />
       <title>{documentTitle}</title>
+      {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+      {alternates.map((alt, i) => (
+        <link
+          key={`${alt.hreflang}-${i}`}
+          rel="alternate"
+          hrefLang={alt.hreflang}
+          href={toAbsoluteUrl(siteUrl, alt.pathname)}
+        />
+      ))}
       {metaList.map((tag, i) => {
         const key = tag.name || tag.property || i
         if (tag.name) {
@@ -120,6 +180,9 @@ const Seo = ({ description, lang, meta, title, ogImage, ogImageType }) => {
         }
         return null
       })}
+      {jsonLd ? (
+        <script type="application/ld+json">{jsonLd}</script>
+      ) : null}
     </>
   )
 }
@@ -128,6 +191,12 @@ Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  pathname: ``,
+  hreflangAlternates: null,
+  ogType: `website`,
+  articlePublishedTime: ``,
+  articleModifiedTime: ``,
+  jsonLd: ``,
 }
 
 Seo.propTypes = {
@@ -135,6 +204,19 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  ogImage: PropTypes.string,
+  ogImageType: PropTypes.string,
+  pathname: PropTypes.string,
+  hreflangAlternates: PropTypes.arrayOf(
+    PropTypes.shape({
+      hreflang: PropTypes.string.isRequired,
+      pathname: PropTypes.string.isRequired,
+    })
+  ),
+  ogType: PropTypes.string,
+  articlePublishedTime: PropTypes.string,
+  articleModifiedTime: PropTypes.string,
+  jsonLd: PropTypes.string,
 }
 
 export default Seo

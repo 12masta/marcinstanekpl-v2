@@ -22,7 +22,11 @@ const SeleniumRecruitmentTask = ({ data, location }) => {
 export default SeleniumRecruitmentTask
 
 export const Head = () => (
-  <Seo title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver" lang="pl" />
+  <Seo
+    title="Rozwiązanie zadania rekrutacyjnego na podstawie Selenium WebDriver"
+    lang="pl"
+    pathname="/selenium-zadanie-rekrutacyjne-dziekuje/"
+  />
 )
 
 export const pageQuery = graphql`

@@ -29,6 +29,7 @@ export const Head = () => (
     title="About"
     lang="en"
     description=""
+    pathname="/en/about/"
     meta={[{ name: `robots`, content: `noindex, nofollow` }]}
   />
 )

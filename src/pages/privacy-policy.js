@@ -389,7 +389,17 @@ const PrivacyPolicy = ({ data, location }) => {
 
 export default PrivacyPolicy
 
-export const Head = () => <Seo title="Polityka prywatności" lang="pl" />
+export const Head = () => (
+  <Seo
+    title="Polityka prywatności"
+    lang="pl"
+    pathname="/privacy-policy/"
+    hreflangAlternates={[
+      { hreflang: `pl`, pathname: `/privacy-policy/` },
+      { hreflang: `en`, pathname: `/en/privacy-policy/` },
+    ]}
+  />
+)
 
 export const pageQuery = graphql`
   query {

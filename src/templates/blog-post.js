@@ -82,15 +82,87 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
 
 export default BlogPostTemplate
 
-export const Head = ({ data }) => {
+function toIso8601(value) {
+  if (value == null || value === ``) return ``
+  const d = new Date(value)
+  return Number.isNaN(d.getTime()) ? `` : d.toISOString()
+}
+
+function withTrailingSlash(p) {
+  if (!p) return ``
+  const s = p.startsWith(`/`) ? p : `/${p}`
+  return s.endsWith(`/`) ? s : `${s}/`
+}
+
+export const Head = ({ data, pageContext }) => {
   const post = data.markdownRemark
+  const siteUrl = data.site.siteMetadata.siteUrl?.replace(/\/$/, ``) || ``
+  const slug = pageContext?.slug || post.fields?.slug || ``
+  const lang = (post.frontmatter.language || `pl`).trim().toLowerCase()
+  const altPath = pageContext?.alternateLanguageHref || ``
+
+  const hreflangAlternates = []
+  if (slug) {
+    hreflangAlternates.push({
+      hreflang: lang === `en` ? `en` : `pl`,
+      pathname: slug,
+    })
+  }
+  if (altPath) {
+    hreflangAlternates.push({
+      hreflang: lang === `en` ? `pl` : `en`,
+      pathname: altPath,
+    })
+  }
+
+  const publishedIso = toIso8601(post.frontmatter.dateISO)
+  const modifiedIso = toIso8601(post.frontmatter.dateModifiedISO) || publishedIso
+
+  const canonicalUrl = slug ? `${siteUrl}${withTrailingSlash(slug)}` : ``
+  const authorName = data.site.siteMetadata.author?.name || `Marcin Stanek`
+
+  const defaultOg = data.site.siteMetadata.og?.ogImage || `/ogImage.jpg`
+  const rawOg = post.frontmatter.ogImage
+  const jsonLdImage = (() => {
+    if (!rawOg) return `${siteUrl}${defaultOg.startsWith(`/`) ? defaultOg : `/${defaultOg}`}`
+    if (rawOg.startsWith(`https://`) || rawOg.startsWith(`http://`)) return rawOg
+    if (rawOg.startsWith(`/`)) return `${siteUrl}${rawOg}`
+    return rawOg
+  })()
+
+  const jsonLd =
+    canonicalUrl && publishedIso
+      ? JSON.stringify({
+          "@context": `https://schema.org`,
+          "@type": `BlogPosting`,
+          headline: post.frontmatter.title,
+          image: [jsonLdImage],
+          datePublished: publishedIso,
+          dateModified: modifiedIso,
+          author: {
+            "@type": `Person`,
+            name: authorName,
+          },
+          mainEntityOfPage: {
+            "@type": `WebPage`,
+            "@id": canonicalUrl,
+          },
+        })
+      : ``
+
   return (
     <Seo
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
       ogImage={post.frontmatter.ogImage}
       ogImageType={post.frontmatter.ogImageType}
-      lang={post.frontmatter.language || `en`}
+      lang={lang === `en` ? `en` : `pl`}
+      pathname={slug ? withTrailingSlash(slug) : ``}
+      hreflangAlternates={hreflangAlternates.length > 1 ? hreflangAlternates : null}
+      ogType="article"
+      articlePublishedTime={publishedIso}
+      articleModifiedTime={modifiedIso}
+      jsonLd={jsonLd}
     />
   )
 }
@@ -105,15 +177,25 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
+        author {
+          name
+        }
+        og {
+          ogImage
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        dateISO: date
+        dateModifiedISO: dateModified
         description
         ogImage
         ogImageType
