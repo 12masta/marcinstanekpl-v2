@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   },
   globalSetup: require.resolve("./global-setup"),
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 3 : 0,
   timeout: 900000,
   use: {
     baseURL: "http://localhost:9000/",

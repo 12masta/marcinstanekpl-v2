@@ -4,10 +4,11 @@ date:   2025-01-22 10:00:00 +0200
 categories: [testautomation, playwright]
 tags: [testautomation, playwright, en]
 language: en
+translationKey: playwright-1
 slug: en/playwright-1
 ogImage: https://marcinstanek.pl/images/blog/playwright-1/og.png
 ogImageType: image/png
-description: A practical introduction to Playwright using the official @playwright/test runner: install, config, navigation, locators, clicks, URL assertions, and form fields. Same React + ASP.NET sample app as the Cypress series, so you can compare both tools side by side.
+description: "A practical introduction to Playwright using the official @playwright/test runner: install, config, navigation, locators, clicks, URL assertions, and form fields. Same React + ASP.NET sample app as the Cypress series, so you can compare both tools side by side."
 ---
 
 ## Introduction

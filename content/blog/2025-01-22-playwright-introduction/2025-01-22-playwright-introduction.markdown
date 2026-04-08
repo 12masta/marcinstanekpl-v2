@@ -4,6 +4,7 @@ date:   2025-01-22 10:00:00 +0200
 categories: [testautomation, playwright]
 tags: [testautomation, playwright, pl]
 language: pl
+translationKey: playwright-1
 slug: playwright-1
 ogImage: https://marcinstanek.pl/images/blog/playwright-1/og.png
 ogImageType: image/png

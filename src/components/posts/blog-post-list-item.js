@@ -19,6 +19,7 @@ export function BlogPostListItem({
 }) {
   const slug = post.fields.slug
   const title = post.frontmatter.title || slug
+  const postDate = post.frontmatter?.date
   const imgSrc = blogOgImageSrc(post.frontmatter?.ogImage, siteUrl)
   const listGatsbyImage =
     post.listOgImageFile && getImage(post.listOgImageFile)
@@ -95,10 +96,15 @@ export function BlogPostListItem({
                   <ChevronRightIcon />
                 </Link>
               </h3>
+              {postDate ? (
+                <p className="post-list-meta mb-2">
+                  <time>{postDate}</time>
+                </p>
+              ) : null}
             </header>
             <section>
               <p
-                className="mb-0 text-body-secondary"
+                className="mb-0 text-body-secondary post-list-description"
                 dangerouslySetInnerHTML={{
                   __html: post.frontmatter.description || post.excerpt,
                 }}

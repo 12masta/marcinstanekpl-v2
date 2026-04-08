@@ -9,7 +9,10 @@ import { PostsList } from "../../../components/posts/postslist"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "en")
+  const posts = data.allMarkdownRemark.nodes.filter(
+    post => post.frontmatter.language === "en"
+  )
+  const [topPost, featuredPostA, featuredPostB, ...remainingPosts] = posts
 
 
   if (posts.length === 0) {
@@ -24,26 +27,34 @@ const BlogIndex = ({ data, location }) => {
     )
   }
 
-  return <Layout location={location} title={siteTitle}>
-    <TopPost post={posts.shift()} label="Continue reading..."/>
+  return (
+    <Layout location={location} title={siteTitle}>
+      {topPost ? <TopPost post={topPost} label="Continue reading" /> : null}
 
-    <div className="row mb-2">
-      <div className="col-md-6">
-        <FeaturedPost post={posts.shift()} label="Continue reading..." />
-      </div>
-      <div className="col-md-6">
-        <FeaturedPost post={posts.shift()} label="Continue reading..." />
-      </div>
-    </div>
+      {featuredPostA || featuredPostB ? (
+        <div className="row mb-2">
+          <div className="col-md-6">
+            {featuredPostA ? (
+              <FeaturedPost post={featuredPostA} label="Continue reading" />
+            ) : null}
+          </div>
+          <div className="col-md-6">
+            {featuredPostB ? (
+              <FeaturedPost post={featuredPostB} label="Continue reading" />
+            ) : null}
+          </div>
+        </div>
+      ) : null}
 
-    <PostsList
-      posts={posts}
-      label="Selected for you"
-      postCtaLabel="Read post"
-      className="mt-4"
-      siteUrl={data.site.siteMetadata?.siteUrl || ``}
-    />
-  </Layout>
+      <PostsList
+        posts={remainingPosts}
+        label="Selected for you"
+        postCtaLabel="Read post"
+        className="mt-4"
+        siteUrl={data.site.siteMetadata?.siteUrl || ``}
+      />
+    </Layout>
+  )
 }
 
 export default BlogIndex
