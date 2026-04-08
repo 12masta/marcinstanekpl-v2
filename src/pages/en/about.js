@@ -88,5 +88,10 @@ export const Head = () => (
     title="About"
     lang="en"
     description="Marcin Stanek - independent QA and test automation engineer (B2B, 10+ years). I focus on reducing delivery risk: clear decisions on what to test, automation in CI/CD, and useful context for every change."
+    pathname="/en/about/"
+    hreflangAlternates={[
+      { hreflang: `pl`, pathname: `/o-mnie/` },
+      { hreflang: `en`, pathname: `/en/about/` },
+    ]}
   />
 )

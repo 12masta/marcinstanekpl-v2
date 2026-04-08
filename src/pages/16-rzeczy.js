@@ -32,6 +32,7 @@ export const Head = () => (
   <Seo
     title="16 RZECZY, KTÓRE MUSISZ WIEDZIEĆ, ABY SKUTECZNIE ZAUTOMATYZOWAĆ TESTY"
     lang="pl"
+    pathname="/16-rzeczy/"
   />
 )
 

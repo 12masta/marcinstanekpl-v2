@@ -59,7 +59,18 @@ const BlogIndex = ({ data, location }) => {
 
 export default BlogIndex
 
-export const Head = () => <Seo title="All posts" lang="en" />
+export const Head = () => (
+  <Seo
+    title="All posts"
+    lang="en"
+    description="English blog posts on test automation, CI/CD, Playwright, and QA practice."
+    pathname="/blog/en/"
+    hreflangAlternates={[
+      { hreflang: `pl`, pathname: `/blog/pl/` },
+      { hreflang: `en`, pathname: `/blog/en/` },
+    ]}
+  />
+)
 
 export const pageQuery = graphql`
   query {

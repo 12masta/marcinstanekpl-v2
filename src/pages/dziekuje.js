@@ -34,7 +34,9 @@ const ThankYouPage = ({ data, location }) => {
 
 export default ThankYouPage
 
-export const Head = () => <Seo title="Pobierz dokument" lang="pl" />
+export const Head = () => (
+  <Seo title="Pobierz dokument" lang="pl" pathname="/dziekuje/" />
+)
 
 export const pageQuery = graphql`
   query {

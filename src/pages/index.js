@@ -105,7 +105,18 @@ const HomePl = ({ data, location }) => {
 
 export default HomePl
 
-export const Head = () => <Seo title="Strona główna" lang="pl" />
+export const Head = () => (
+  <Seo
+    title="Strona główna"
+    lang="pl"
+    description="Niezależny inżynier QA i automatyzacji (B2B, ponad 10 lat): testy i automatyzacja wpasowane w sposób wydawania oprogramowania, z czytelnym kontekstem dla QA przy każdej zmianie - zanim odpalicie pełną regresję."
+    pathname="/"
+    hreflangAlternates={[
+      { hreflang: `pl`, pathname: `/` },
+      { hreflang: `en`, pathname: `/en/` },
+    ]}
+  />
+)
 
 export const pageQuery = graphql`
   query {

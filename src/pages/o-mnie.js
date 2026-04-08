@@ -91,5 +91,10 @@ export const Head = () => (
     title="O mnie"
     lang="pl"
     description="Marcin Stanek - niezależny inżynier QA i automatyzacji (B2B, ponad 10 lat). Skupiam się na ograniczaniu ryzyka dostaw: jasne decyzje co testować, automatyzacja w CI/CD i sensowny kontekst przy każdej zmianie."
+    pathname="/o-mnie/"
+    hreflangAlternates={[
+      { hreflang: `pl`, pathname: `/o-mnie/` },
+      { hreflang: `en`, pathname: `/en/about/` },
+    ]}
   />
 )

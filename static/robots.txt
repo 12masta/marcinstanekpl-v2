@@ -1,44 +1,7 @@
-User-agent: Googlebot
-Disallow: /privacy-policy/
-
-User-agent: Googlebot
-Disallow: /dziekuje/
-
-# Grupa 1
-User-agent: Googlebot
-Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
-
-# About (PL / EN canonical paths)
-User-agent: Googlebot
-Disallow: /about/
-
-# Grupa 2
 User-agent: *
-Allow: /o-mnie/
-Allow: /en/about/
-Allow: /pr-scope-hidden-tax/
-Allow: /noisy-ci-signal/
-Allow: /en/pr-scope-hidden-tax/
-Allow: /en/noisy-ci-signal/
-Allow: /playwright-1/
-Allow: /playwright-2/
-Allow: /playwright-3/
-Allow: /playwright-4/
-Allow: /playwright-5/
-Allow: /playwright-6/
-Allow: /playwright-7/
-Allow: /playwright-8/
-Allow: /playwright-9/
-Allow: /en/playwright-1/
-Allow: /en/playwright-2/
-Allow: /en/playwright-3/
-Allow: /en/playwright-4/
-Allow: /en/playwright-5/
-Allow: /en/playwright-6/
-Allow: /en/playwright-7/
-Allow: /en/playwright-8/
-Allow: /en/playwright-9/
+Disallow: /privacy-policy/
+Disallow: /dziekuje/
+Disallow: /selenium-zadanie-rekrutacyjne-dziekuje/
 Disallow: /about/
-Allow: /
 
 Sitemap: https://marcinstanek.pl/sitemap-index.xml

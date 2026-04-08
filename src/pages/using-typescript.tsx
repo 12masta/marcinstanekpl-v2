@@ -46,7 +46,9 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
 
 export default UsingTypescript
 
-export const Head: HeadFC<DataProps> = () => <Seo title="Using TypeScript" />
+export const Head: HeadFC<DataProps> = () => (
+  <Seo title="Using TypeScript" pathname="/using-typescript/" />
+)
 
 export const query = graphql`
   {

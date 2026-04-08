@@ -132,7 +132,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "marcinstanek.pl blog",
           },
         ],
       },
@@ -206,7 +206,7 @@ module.exports = {
         serialize: ({ path, date }) => {
           let entry = {
             url: path,
-            changefreq: "daily",
+            changefreq: date ? `weekly` : `monthly`,
             priority: 0.5,
           }
 
