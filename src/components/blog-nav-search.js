@@ -225,7 +225,7 @@ export function BlogNavSearch({ pathName, className = `` }) {
       {!searchMounted ? (
         <button
           type="button"
-          className="nav-link border-0 bg-transparent text-start w-100 w-lg-auto"
+          className="nav-link border-0 bg-transparent text-start text-nowrap flex-shrink-0 w-100 w-lg-auto"
           data-test="navbar-search-toggle"
           aria-expanded="false"
           aria-controls="navbar-blog-search-input"
