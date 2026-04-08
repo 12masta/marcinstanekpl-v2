@@ -1,6 +1,6 @@
 ---
 title: Jednorazowa instacja aplikacji Blazor dla testów w Playwirght
-date: 2024-04-03 08:00:00 +0200
+date:   2025-01-08 10:00:00 +0200
 categories: [testautomation, playwright, blazor, dotnet]
 tags: [testautomation, playwright, en, blazor, dotnet]
 slug: pl/playwright-tests-along-with-blazor-app 
