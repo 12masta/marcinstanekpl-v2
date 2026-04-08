@@ -91,6 +91,46 @@
       "statusCode": 301
     },
     {
+      "route": "/playwright-2.html",
+      "redirect": "/playwright-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-3.html",
+      "redirect": "/playwright-3/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-4.html",
+      "redirect": "/playwright-4/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-5.html",
+      "redirect": "/playwright-5/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-6.html",
+      "redirect": "/playwright-6/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-7.html",
+      "redirect": "/playwright-7/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-8.html",
+      "redirect": "/playwright-8/",
+      "statusCode": 301
+    },
+    {
+      "route": "/playwright-9.html",
+      "redirect": "/playwright-9/",
+      "statusCode": 301
+    },
+    {
       "route": "/azure-devops-1.html",
       "redirect": "/azure-devops-1/",
       "statusCode": 301
@@ -168,6 +208,46 @@
     {
       "route": "/en/playwright-1.html",
       "redirect": "/en/playwright-1/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-2.html",
+      "redirect": "/en/playwright-2/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-3.html",
+      "redirect": "/en/playwright-3/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-4.html",
+      "redirect": "/en/playwright-4/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-5.html",
+      "redirect": "/en/playwright-5/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-6.html",
+      "redirect": "/en/playwright-6/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-7.html",
+      "redirect": "/en/playwright-7/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-8.html",
+      "redirect": "/en/playwright-8/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/playwright-9.html",
+      "redirect": "/en/playwright-9/",
       "statusCode": 301
     },
     {

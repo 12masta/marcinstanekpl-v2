@@ -17,7 +17,10 @@ export type LighthouseThresholds = {
   pwa: number
 }
 
-/** Home PL/EN: buffers CI / machine variance (samples often mid‑90s). */
+/**
+ * Home PL/EN: buffers CI / machine variance (samples often mid‑90s).
+ * Navbar Lighthouse tests also use in-test performance-only warm retries (see lighthouse.spec.ts).
+ */
 export const homePageThresholds: LighthouseThresholds = {
   performance: 85,
   accessibility: 100,

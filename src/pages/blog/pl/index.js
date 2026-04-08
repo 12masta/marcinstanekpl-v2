@@ -9,46 +9,57 @@ import { PostsList } from "../../../components/posts/postslist"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes.filter(post => post.frontmatter.language === "pl")
+  const posts = data.allMarkdownRemark.nodes.filter(
+    post => post.frontmatter.language === "pl"
+  )
+  const [topPost, featuredPostA, featuredPostB, ...remainingPosts] = posts
 
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
+          Nie znaleziono wpisow blogowych. Dodaj wpisy markdown w "content/blog"
+          (lub katalog wskazany w pluginie "gatsby-source-filesystem" w
           gatsby-config.js).
         </p>
       </Layout>
     )
   }
 
-  return <Layout location={location} title={siteTitle}>
-    <TopPost post={posts.shift()} label="Kontynuuj czytanie..."/>
+  return (
+    <Layout location={location} title={siteTitle}>
+      {topPost ? <TopPost post={topPost} label="Kontynuuj czytanie" /> : null}
 
-    <div className="row mb-2">
-      <div className="col-md-6">
-        <FeaturedPost post={posts.shift()} label="Kontynuuj czytanie" />
-      </div>
-      <div className="col-md-6">
-        <FeaturedPost post={posts.shift()} label="Kontynuuj czytanie" />
-      </div>
-    </div>
+      {featuredPostA || featuredPostB ? (
+        <div className="row mb-2">
+          <div className="col-md-6">
+            {featuredPostA ? (
+              <FeaturedPost post={featuredPostA} label="Kontynuuj czytanie" />
+            ) : null}
+          </div>
+          <div className="col-md-6">
+            {featuredPostB ? (
+              <FeaturedPost post={featuredPostB} label="Kontynuuj czytanie" />
+            ) : null}
+          </div>
+        </div>
+      ) : null}
 
-    <PostsList
-      posts={posts}
-      label="Wybrane dla Ciebie"
-      postCtaLabel="Czytaj wpis"
-      className="mt-4"
-      siteUrl={data.site.siteMetadata?.siteUrl || ``}
-    />
-  </Layout>
+      <PostsList
+        posts={remainingPosts}
+        label="Wybrane dla Ciebie"
+        postCtaLabel="Czytaj wpis"
+        className="mt-4"
+        siteUrl={data.site.siteMetadata?.siteUrl || ``}
+      />
+    </Layout>
+  )
 }
 
 export default BlogIndex
 
-export const Head = () => <Seo title="All posts" lang="pl" />
+export const Head = () => <Seo title="Wszystkie wpisy" lang="pl" />
 
 export const pageQuery = graphql`
   query {

@@ -1,0 +1,22 @@
+---
+description: Use ASCII hyphen (-) instead of em dash (—) in all user-facing text
+alwaysApply: true
+---
+
+# Typography: no em dash
+
+In **all** user-visible copy - blog posts (`content/**/*.markdown`), page copy, UI labels, button text, `aria-label`, meta descriptions, image alt text, YAML frontmatter `title` / `description`, and similar - **do not use the em dash** (`—`, U+2014).
+
+Use a **plain hyphen** (`-`, ASCII hyphen-minus) instead.
+
+## Examples
+
+- **Avoid:** `Login flow — happy path and errors`
+- **Prefer:** `Login flow - happy path and errors`
+
+- **Avoid:** `See the guide — it covers setup`
+- **Prefer:** `See the guide - it covers setup`, or split into two sentences if readability suffers.
+
+When editing existing content, replace em dashes with hyphens unless the file is third-party or quoted material that must stay verbatim.
+
+Do not introduce en dashes (`–`) for the same role unless the project explicitly asks for them; default to `-` for dash-like punctuation in copy.

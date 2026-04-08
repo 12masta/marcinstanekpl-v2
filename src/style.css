@@ -19,6 +19,23 @@
     background-color: var(--bs-tertiary-bg);
 }
 
+.last-blog-posts .post-list-item:focus-within {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+.last-blog-posts .post-list-meta {
+    color: var(--bs-secondary-color);
+    font-size: 0.875rem;
+}
+
+.last-blog-posts .post-list-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
 /*
  * Blog index (/blog/en/, /blog/pl/) and home “recent posts”: skip layout/paint for
  * rows that are off-screen until the user scrolls (pairs with native lazy-loading).
@@ -72,6 +89,8 @@
 
     .last-blog-posts .featurette-heading {
         margin-top: 0;
+        line-height: 1.2;
+        letter-spacing: 0;
     }
 }
 

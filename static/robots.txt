@@ -20,6 +20,24 @@ Allow: /pr-scope-hidden-tax/
 Allow: /noisy-ci-signal/
 Allow: /en/pr-scope-hidden-tax/
 Allow: /en/noisy-ci-signal/
+Allow: /playwright-1/
+Allow: /playwright-2/
+Allow: /playwright-3/
+Allow: /playwright-4/
+Allow: /playwright-5/
+Allow: /playwright-6/
+Allow: /playwright-7/
+Allow: /playwright-8/
+Allow: /playwright-9/
+Allow: /en/playwright-1/
+Allow: /en/playwright-2/
+Allow: /en/playwright-3/
+Allow: /en/playwright-4/
+Allow: /en/playwright-5/
+Allow: /en/playwright-6/
+Allow: /en/playwright-7/
+Allow: /en/playwright-8/
+Allow: /en/playwright-9/
 Disallow: /about/
 Allow: /
 
