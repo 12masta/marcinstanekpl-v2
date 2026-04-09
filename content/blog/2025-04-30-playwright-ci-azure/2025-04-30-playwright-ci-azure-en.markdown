@@ -53,7 +53,7 @@ steps:
 
 Define `BASE_URL` and `API_URL` under Pipelines → Variables so tests target deployed environments instead of loopback.
 
-![Pipeline variables (screenshot from the Cypress series)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-1.png?alt=media&token=32482f6d-483d-4e3a-b6c9-d613a035be69)
+![Pipeline variables (screenshot from the Cypress series)](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-1.png)
 
 ## Config snippet
 

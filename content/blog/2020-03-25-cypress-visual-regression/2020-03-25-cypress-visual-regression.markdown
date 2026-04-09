@@ -71,7 +71,7 @@ W kontekście opisywanego tematu kluczowa jest linijka:
 
 Pierwsze uruchomienie testu spowoduje utworzenie obrazu, który od tej pory będzie wzorcem dla następnych testów.
 
-![wizualna regresja wzorzec](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-1.png?alt=media&token=d1d32cff-efec-4220-8b7c-b58dbd5beb32)
+![wizualna regresja wzorzec](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-1.png)
 
 Dokładna logika funkcji _cy.matchImageSnapshot()_ wygląda w następujący sposób:
 
@@ -86,11 +86,11 @@ Po uruchomieniu testu okazuję się, że biblioteka zachowała się doskonale. T
 
 Sfailowany test jest komunikowany w szczegółowy sposób. Możemy się z niego dowiedzieć jak duża jest różnica, w procentach i w pikselach:
 
-![cypress nie zaliczony test](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-2.png?alt=media&token=96fdbe41-8730-4a28-ae39-6418451ee5ee)
+![cypress nie zaliczony test](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-2.png)
 
 Oprócz wyżej wymienionych informacji biblioteka produkuje również diffa, gdzie możemy zobaczyć wizualnie różnicę. Zmiany podkreślone czerwonym kolorem. Różnica jest tylko na 8 pikselach także trzeba przybliżyć żeby zobaczyć efekt.
 
-![Diff](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-3.png?alt=media&token=7150c4ad-2b58-4077-8ed0-6827d5c6ae79)
+![Diff](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-3.png)
 
 Oprócz wizualnej regresji całego ekranu możemy wykonać również regresję konkretnego elementu na stronie. Umożliwia nam to składnia:
 
@@ -107,9 +107,9 @@ Implementuję tego typu test weryfikując przycisk logowania:
 
 Działanie jest analogiczne tak, jak dla całego ekranu. Jedyną różnicą jest jedynie kontekst weryfikacji. W tym przypadku zamierzam tak samo zweryfikować działanie funkcji. Zmieniłem dla przycisku jedną klasę, z "btn-primary" na "btn-secondary", co powoduje zmianę koloru przycisku. Biblioteka oczywiście z tym sobie radzi. A zmiany są znacznie bardziej widoczne.
 
-![rezultat testu](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-4.png?alt=media&token=16378f70-751c-4306-ad50-3f3a458bbfb9)
+![rezultat testu](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-4.png)
 
-![wizualna regresja diff](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-5.png?alt=media&token=c0951868-9eb3-4266-9b4c-ce11424a6970)
+![wizualna regresja diff](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-5.png)
 
 ## Przydatne polecenia
 
@@ -127,7 +127,7 @@ Pozwala na użycie specjalnego reportera, który umożliwi nam szybkie porównan
 
     npx cypress run --reporter cypress-image-snapshot/reporter --env failOnSnapshotDiff=false
 
-![raportowanie](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-6.png?alt=media&token=0d9f2937-7778-4393-914f-f2fc6d594e78){:alt="raportowanie"}
+![raportowanie](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-6.png){:alt="raportowanie"}
 
     --env updateSnapshots=true
 

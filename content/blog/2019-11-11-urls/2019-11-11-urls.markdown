@@ -69,7 +69,7 @@ describe('Login Tests App Actions', function () {
 
 Z łatwością można zauważyć, że taka prosta zmiana znacząco poprawiła jakość testów. Usunęła zbędny krok, który jest potrzebny podczas analizy przypadku testowego oraz uwydatniła potrzebę nawigacji do pożądanej przez nas podstrony przed możliwością przeprowadzenia testu. Podczas wykonywania się testu można zauważyć, że blok _BEFORE EACH_ jest odpowiednio wydzielony w oknie Cypressa:
 
-![1-beforeEach](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fcypress-4-1.gif?alt=media&token=274b2530-c182-404c-9eb2-2f4da0719dd1)
+![1-beforeEach](/media-from-firebase/2019-11-12-urls/cypress-4-1.gif)
 
 ## Centralizacja adresów URL
 
@@ -102,7 +102,7 @@ describe('Login Tests App Actions', function () {
 })
 ```
 
-![2-wrong-url-assertion](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2F2-wrong-url-assertion.png?alt=media&token=6cb3750d-5a44-480a-9b42-75c7febcdec8)
+![2-wrong-url-assertion](/media-from-firebase/2019-11-12-urls/2-wrong-url-assertion.png)
 
 Okazuje się jednak, że test nie jest dokładnie taki sam jak przed zmianami. W linii _URL ASSERT_ można zauważyć tego typu log: "_expected http://localhost:4100/ to include /_". Test sprawdził jedynie to, czy adres URL posiada w sobie następujący ciąg znaków: "/". To niedopuszczalna sytuacja należy ją poprawić. Na szczęście jest na to łatwy sposób, możemy z łatwością pobrać wartość parametru _baseUrl_ zapisanego w konfiguracji za pomocą funkcji: _Cypress.config('arg')_, implementacja wygląda w ten sposób:
 

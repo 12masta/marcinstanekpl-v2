@@ -64,7 +64,7 @@ export class Nav extends React.Component {
                 <a className="nav-link text-nowrap flex-shrink-0" href={blogHref} data-test="blog-link">Blog</a>
                 <BlogNavSearch pathName={this.props.pathName} />
                 <a
-                  className="nav-link text-nowrap flex-shrink-0 ms-lg-2"
+                  className="nav-link text-nowrap flex-shrink-0"
                   href={languageHref}
                   data-test="navbar-language-link"
                   lang={languageLabel === "English" ? "en" : "pl"}

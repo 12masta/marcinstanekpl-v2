@@ -20,7 +20,7 @@ Test reports provide an effective and consistent way to view the results of test
 
 To achieve the above-mentioned effect, we need to add a new task to our pipeline called _Publish Test Results._ We can find it in the _Tasks_ section when editing our pipeline.
 
-![Publication of test results](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-1.png?alt=media&token=0f130546-deea-4528-8653-2af58fdaa32d)
+![Publication of test results](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-1.png)
 
 This step supports several file formats in which the test results are stored. These are:
 
@@ -129,19 +129,19 @@ steps:
 
 After saving the changes, when our pipeline is executed, the _Tests_ tab appears, where we can see our report. This page has the following sections:
 
-![Summary of test results](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-3.png?alt=media&token=c1eccd8a-836e-4089-9e39-fd6b87411bc4)
+![Summary of test results](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-3.png)
 
 - Summary: provides key quantitative measures to perform a test, such as total number of tests, failed tests, pass percentage, and more. It also provides differential rates of change compared to the previous performance.
 
-![Test results](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-4.png?alt=media&token=fd9c574f-db49-432a-9b8a-57ac586b2f41)
+![Test results](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-4.png)
 
 - Results: lists all tests performed and reported as part of the current version or release. The default view only shows failed and aborted tests to focus on tests that require your attention. However, you can select other results using the provided filters.
 
-![Details of the tests](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-5.png?alt=media&token=5b86e9cf-8986-4235-acc3-8058c3f478be)
+![Details of the tests](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-5.png)
 
 - Details: a list of tests that you can sort, group, search, and filter to find the test results you want.
 
-![Historical trends of the test](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-6.png?alt=media&token=67d1f720-6132-4c8e-8fb7-9de4341c49b2)
+![Historical trends of the test](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-6.png)
 
 - History: The history of test execution can give a test engineer much of the information they need. When troubleshooting a problem, it is helpful to know how the test has performed in the past. This card contains the history of the tests in the context of the test results. Test history information is disclosed progressively, starting with the current build pipeline to other branches, or the current stage to other stages, for build and release, respectively.
 

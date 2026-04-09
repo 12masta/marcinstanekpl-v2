@@ -62,7 +62,7 @@ Or set defaults through `expect` in `playwright.config.ts`.
 
 The Cypress article’s diff screenshots still illustrate the idea; only the API differs.
 
-![Historical Cypress diff example](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-3.png?alt=media&token=7150c4ad-2b58-4077-8ed0-6827d5c6ae79)
+![Historical Cypress diff example](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-3.png)
 
 ## Git (Cypress era)
 

@@ -41,7 +41,7 @@ Automated Tests should include:
 The diagram below shows how I imagine the ideal timing of automatic and manual tests. Diagram inspired by: [author of original diagram] (http://www.exampler.com/old-blog/2003/08/22/#agile-testing-project-2)
  and [book](https://books.google.pl/books/about/Agile_Testing.html?id=68_lhPvoKS8C&redir_esc=y).
 
-![automation-diagram](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-08-how-tests-process-should-looks-liks%2Fwykres.png?alt=media&token=118b6508-5354-4602-af07-fa9f49911954)
+![automation-diagram](/media-from-firebase/2019-12-08-how-tests-process-should-looks-liks/wykres.png)
 
 The automated tests in this chart are also a perfect fit for Continuous Delivery processes. What does it mean? Each change in the code triggers the process of building the application, creating packages, running unit tests, and running static analysis processes. After this first phase, tests are launched that need more time to execute them, i.e. acceptance tests. This type of build should be ready to perform exploratory tests or other manual quality control, if it has passed the previous phases correctly, of course. When the manual control is completed, we consider the package thus created as ready for release from a technological point of view.
 

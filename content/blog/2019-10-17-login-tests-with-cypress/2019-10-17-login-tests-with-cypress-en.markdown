@@ -182,7 +182,7 @@ on.
 
 Test execution look:
 
-![2-successfull-login](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F2-successfull-login.png?alt=media&token=36df9d5d-284e-48dc-9d50-e514c7cce3e4)
+![2-successfull-login](/media-from-firebase/2019-10-18-login-tests-with-cypress/2-successfull-login.png)
 
 I have impression that test time execution was really short, especially compared
 to Selenium. Wow, I can not wait for more complicated cases to see how it will
@@ -214,7 +214,7 @@ convention and good practices then this particular type of endpoint - POST -
 with name users will be designed for it. Model which we have to sent with
 request also indicates it's create user. Let's go then.
 
-![3-swagger](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F3-swagger.png?alt=media)
+![3-swagger](/media-from-firebase/2019-10-18-login-tests-with-cypress/3-swagger.png)
 
 To send such request we need to use function:
 
@@ -238,7 +238,7 @@ I need to pass an URL, type of endpoint and body. Usage will look as follow:
 
 However, after test execution we see an error:
 
-![4-failing-request](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F4-failing-request.png?alt=media)
+![4-failing-request](/media-from-firebase/2019-10-18-login-tests-with-cypress/4-failing-request.png)
 
     Status: 400 - Bad Request
     Headers: {
@@ -267,7 +267,7 @@ user first and then create him again in state which tests requires to.
 So next step will be again visit API documentation and find endpoint which
 removes the user. We look for endpoint named user or users with DELETE type.
 
-![5-swagger-delete](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete.png?alt=media)
+![5-swagger-delete](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete.png)
 
 Unfortunately such endpoint doesn't exists. What can we do in such case? If
 we work on commercial project, we probably contact with our developers and we
@@ -295,7 +295,7 @@ You need execute:
 Which triggers the image creation. After execution we have access to user DELETE
 endpoint.
 
-![5-swagger-delete-exists](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete-exists.png?alt=media)
+![5-swagger-delete-exists](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete-exists.png)
 
 Finally we can write our first complete test. Code looks as follow:
 
@@ -338,7 +338,7 @@ Finally we can write our first complete test. Code looks as follow:
 
 Execution:
 
-![6-successfull-login-complete](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F6-successfull-login-complete.png?alt=media&token=ea33f4c3-13d2-4f41-9057-3fa0b40112d1)
+![6-successfull-login-complete](/media-from-firebase/2019-10-18-login-tests-with-cypress/6-successfull-login-complete.png)
 
 ## Implementation the next tests
 
@@ -378,7 +378,7 @@ verifies whether error message is displayed to user. Let's do it:
         .should('have.text', 'Error Invalid email / password.')
     })
 
-![7-incorrect-password](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F7-incorrect-password.png?alt=media&token=94f0aecd-9293-40cd-94a3-fc25686feef0)
+![7-incorrect-password](/media-from-firebase/2019-10-18-login-tests-with-cypress/7-incorrect-password.png)
 
 Implementation of test _Not existing user_  is also simple. We need to remove
 create user step, ensure that he doesn't exists in database and use assertion
@@ -408,7 +408,7 @@ which tests error message is displayed:
         .should('have.text', 'Error Invalid email / password.')
     })
 
-![8-not-existing-user](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F8-not-existing-user.png?alt=media&token=b66f8eca-c912-406d-b8de-222008e62fa3)
+![8-not-existing-user](/media-from-firebase/2019-10-18-login-tests-with-cypress/8-not-existing-user.png)
 
 Now left only _Empty fields_  case. We will not fill login fields and after push
 of Login button, a correct error message will be displayed:
@@ -433,7 +433,7 @@ escape character \ which allows bypass that problem. In this case
 for Cypress \'Email\' must not be empty means 'Email' must not be empty.
 Let's see how it works:
 
-![9-empty-fields](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F9-empty-fields.png?alt=media&token=42e52bb2-9f81-484c-9147-d76996fd357d)
+![9-empty-fields](/media-from-firebase/2019-10-18-login-tests-with-cypress/9-empty-fields.png)
 
 As we see test haven't passed because error message is incorrect:
 _User.Email 'Email' must not be empty._ and _User.Password 'Password' must not

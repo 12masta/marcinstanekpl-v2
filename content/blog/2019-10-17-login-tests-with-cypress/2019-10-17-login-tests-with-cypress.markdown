@@ -171,7 +171,7 @@ Mają za zadanie sprawdzić, czy użytkownik jest zalogowany. Sprawdzają, czy w
 
 Egzekucja testu wygląda tak.:
 
-![2-successfull-login](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F2-successfull-login.png?alt=media&token=36df9d5d-284e-48dc-9d50-e514c7cce3e4)
+![2-successfull-login](/media-from-firebase/2019-10-18-login-tests-with-cypress/2-successfull-login.png)
 
 Mam wrażenie że czas wykonania się testu był naprawdę krotki, zwłaszcza w porównaniu do Selenium. Wow, nie mogę doczekać się bardziej skomplikowanych przypadków, aby zobaczyć jak to się rozwinie. Jednak na razie nie został zrealizowany jeden Precondition, sorry puryści słowni, chodzi mi dokładnie o ten punkt z przypadku testowego:
 
@@ -183,7 +183,7 @@ Na ten moment test działa tylko dlatego ponieważ użytkownik który został wy
 
 Jak to localhost?! Jeżeli zadajesz to pytanie to zajrzyj do tego postu: [Przygotowanie środowiska]({% post_url 2019-09-30-environment-setup %}). Więc zaglądam pod ten adres, znajduje sekcje users i bingo, endpoint POST na pewno służy do utworzenia użytkownika. Skąd to wiem? To API REST-owe wiec jeżeli trzyma się konwencji i dobrych praktyk to właśnie ten endpoint typu POST o nazwie users będzie do tego służył. Model który musimy przekazac z zapytaniem tez na to wskazuje wiec jedziemy.
 
-![3-swagger](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F3-swagger.png?alt=media)
+![3-swagger](/media-from-firebase/2019-10-18-login-tests-with-cypress/3-swagger.png)
 
 Aby wysłać takie zapytanie musimy użyć funkcji:
 
@@ -207,7 +207,7 @@ Wiem ze muszę przekazać URL, typ endpointu i body. Użycie będzie wyglądać 
 
 Jednak po uruchomieniu testu widzimy następujący błąd:
 
-![4-failing-request](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F4-failing-request.png?alt=media)
+![4-failing-request](/media-from-firebase/2019-10-18-login-tests-with-cypress/4-failing-request.png)
 
     Status: 400 - Bad Request
     Headers: {
@@ -228,7 +228,7 @@ Oznacza to że API odpowiedziało kodem 400 - Bad request, a powodem było to ze
 
 Jednak myślę, że nie chce tego robić, ponieważ użytkownik, którego chce utworzyć może już istnieć w systemie, np. z innym hasłem. Więc aby być pewnym stanu aplikacji powinienem usunąć użytkownika, a następnie utworzyć go w takim stanie, jakiego wymaga test. Więc następnym krokiem będzie znów odwiedzenie dokumentacji API i znalezienie endpointu, który odpowiada za usunięcie użytkownika. Szukamy najprawdopobniej endpointu o nazwie user lub users typu DELETE.
 
-![5-swagger-delete](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete.png?alt=media)
+![5-swagger-delete](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete.png)
 
 Niestety nie ma takiego endpointu. Co można zrobić w takim przypadku? Jeżeli pracujemy nad komercyjnym projektem, prawdopodobnie idziemy do naszych developerów i planujemy dodanie endpointu na kolejny sprint. Słabo. Ja wyznaje zasadę, że specjalista od automatyzacji, jakkolwiek by go nie nazwać, powinien mieć też wystarczająco wiedzy, aby móc dostarczyć sobie wystarczająco funkcji od strony aplikacji, którą testuje, aby moc ją najzwyczajniej w świecie przetestować. A więc? Otwieram projekt backendu i dopisuje sobie ten endpoint. Jedna uwaga, w prawdziwym projekcie prawdopodobnie powinno to być osobne testowe API niewystawione do klienta, zapewnie nie chcemy mu udostępnić, ot, tak, funkcji usunięcia każdego użytkownika w systemie? Nie będę opisywał tego procesu. Jeżeli jednak jesteś ciekawy, changeset znajdziesz tu:
 
@@ -248,7 +248,7 @@ Należy uruchomić komendę:
 
 Która spowoduje utworzenie obrazu na nowo. Po wykonaniu tych czynności mam dostęp endpointu DELETE users:
 
-![5-swagger-delete-exists](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete-exists.png?alt=media)
+![5-swagger-delete-exists](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete-exists.png)
 
 Więc nareszcie możemy napisać kompletny pierwszy test. Kod wygląda tak:
 
@@ -291,7 +291,7 @@ Więc nareszcie możemy napisać kompletny pierwszy test. Kod wygląda tak:
 
 Egzekucja:
 
-![6-successfull-login-complete](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F6-successfull-login-complete.png?alt=media&token=ea33f4c3-13d2-4f41-9057-3fa0b40112d1)
+![6-successfull-login-complete](/media-from-firebase/2019-10-18-login-tests-with-cypress/6-successfull-login-complete.png)
 
 ## Implementacja kolejnych testów
 
@@ -328,7 +328,7 @@ Myślę, że mamy już wszystkie składniki potrzebne do implementacji reszty pr
         .should('have.text', 'Error Invalid email / password.')
     })
 
-![7-incorrect-password](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F7-incorrect-password.png?alt=media&token=94f0aecd-9293-40cd-94a3-fc25686feef0)
+![7-incorrect-password](/media-from-firebase/2019-10-18-login-tests-with-cypress/7-incorrect-password.png)
 
 Implementacja testu _Not existing user_ również będzie prosta. Należy usunąć krok tworzenia użytkownika, musimy zadbac o to zeby miec pewnosc ze nie istnieje on w bazie i że zostanie zastosowana odpowiednie asercja ktora sprawdzi czy został wyświetlony poprawny komunikat błędu.:
 
@@ -356,7 +356,7 @@ Implementacja testu _Not existing user_ również będzie prosta. Należy usuną
         .should('have.text', 'Error Invalid email / password.')
     })
 
-![8-not-existing-user](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F8-not-existing-user.png?alt=media&token=b66f8eca-c912-406d-b8de-222008e62fa3)
+![8-not-existing-user](/media-from-firebase/2019-10-18-login-tests-with-cypress/8-not-existing-user.png)
 
 Pozostał jedynie przypadek _Empty fields_ tutaj zostawiamy pola puste i naciskamy przycisk Logowania, powinien pojawić się użytkownikowi odpowiedni komunikat błędu:
 
@@ -376,7 +376,7 @@ Pozostał jedynie przypadek _Empty fields_ tutaj zostawiamy pola puste i naciska
 
 Jak widać oczekiwany tekst to: 'Email' must not be empty. Jako ze znak ' jest użyty jako znak zarezerwowany do przekazywania argumentu do funkcji typu string musiałem użyć znaku ucieczki \ który służy do obejścia tego problemu. W tym przypadku dla Cypressa \'Email\' must not be empty. oznacza 'Email' must not be empty. Zobaczmy egzekucje testu:
 
-![9-empty-fields](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F9-empty-fields.png?alt=media&token=42e52bb2-9f81-484c-9147-d76996fd357d)
+![9-empty-fields](/media-from-firebase/2019-10-18-login-tests-with-cypress/9-empty-fields.png)
 
 Jak widać nie został zaliczony poniewaz komunikat bledu nie jest poprawny: _User.Email 'Email' must not be empty._ oraz _User.Password 'Password' must not be empty._ Właśnie znaleźliśmy pierwszego buga w aplikacji. :)
 

@@ -37,7 +37,7 @@ test.describe("login", () => {
 
 In UI mode (`npx playwright test --ui`) the `beforeEach` steps are clearly grouped, similar to Cypress’s BEFORE EACH block.
 
-![beforeEach in the runner (asset from the Cypress series)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2Fcypress-4-1.gif?alt=media&token=274b2530-c182-404c-9eb2-2f4da0719dd1)
+![beforeEach in the runner (asset from the Cypress series)](/media-from-firebase/2019-11-12-urls/cypress-4-1.gif)
 
 ## `baseURL`
 
@@ -68,7 +68,7 @@ await expect(page).toHaveURL(`${base}/`)
 await expect(page).toHaveURL(`${base}/login`)
 ```
 
-![Wrong “include /” assertion (from the Cypress article)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-11-12-urls%2F2-wrong-url-assertion.png?alt=media&token=6cb3750d-5a44-480a-9b42-75c7febcdec8)
+![Wrong “include /” assertion (from the Cypress article)](/media-from-firebase/2019-11-12-urls/2-wrong-url-assertion.png)
 
 ## API base URL
 

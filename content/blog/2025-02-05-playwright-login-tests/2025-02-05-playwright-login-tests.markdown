@@ -105,7 +105,7 @@ Changeset (DELETE):
 
 Po zmianach w Dockerze pamiętaj o przebudowie obrazu (`make build` przed `make run`), tak jak w oryginale.
 
-![Swagger - usuwanie użytkownika](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete-exists.png?alt=media)
+![Swagger - usuwanie użytkownika](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete-exists.png)
 
 ## Pierwszy test - successful login
 
@@ -153,7 +153,7 @@ test("successful login", async ({ page, request }) => {
 
 Te same selektory co w wpisie o Cypressie są celowo „kruche” - docelowo warto je zastąpić atrybutami testowymi zgodnie z [best practices Cypressa](https://docs.cypress.io/guides/references/best-practices#Selecting-Elements); w Playwright wygodnie użyjesz [`data-testid`](/playwright-5/).
 
-![Udane logowanie](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F6-successfull-login-complete.png?alt=media&token=ea33f4c3-13d2-4f41-9057-3fa0b40112d1)
+![Udane logowanie](/media-from-firebase/2019-10-18-login-tests-with-cypress/6-successfull-login-complete.png)
 
 ## Incorrect password
 
@@ -174,7 +174,7 @@ test("incorrect password", async ({ page, request }) => {
 })
 ```
 
-![Błędne hasło](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F7-incorrect-password.png?alt=media&token=94f0aecd-9293-40cd-94a3-fc25686feef0)
+![Błędne hasło](/media-from-firebase/2019-10-18-login-tests-with-cypress/7-incorrect-password.png)
 
 ## Not existing user
 
@@ -196,7 +196,7 @@ test("not existing user", async ({ page, request }) => {
 })
 ```
 
-![Brak użytkownika](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F8-not-existing-user.png?alt=media&token=b66f8eca-c912-406d-b8de-222008e62fa3)
+![Brak użytkownika](/media-from-firebase/2019-10-18-login-tests-with-cypress/8-not-existing-user.png)
 
 ## Empty fields
 
@@ -217,7 +217,7 @@ test("empty fields", async ({ page }) => {
 
 W oryginalnej aplikacji RealWorld z tej serii komunikaty były dłuższe (prefiks `User.Email` / `User.Password`) - wtedy asercja się wyłożyła i zgłosiła realny defekt w treści błędu. Jeśli u Ciebie tekst jest inny, dopasuj `toHaveText` albo użyj `toContainText` / regex - ważne, żeby asercja odzwierciedlała kontrakt, na który się umawiasz z produktem.
 
-![Puste pola](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F9-empty-fields.png?alt=media&token=42e52bb2-9f81-484c-9147-d76996fd357d)
+![Puste pola](/media-from-firebase/2019-10-18-login-tests-with-cypress/9-empty-fields.png)
 
 ## Podsumowanie
 

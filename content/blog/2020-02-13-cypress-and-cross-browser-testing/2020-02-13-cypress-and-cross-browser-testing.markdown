@@ -44,7 +44,7 @@ W razie problemów po aktualizacji twórcy przygotowali konkretne przykłady jak
 
 Zmiana przeglądarki z poziomu Test Runnera jest dostępna w prawym górnym rogu.
 
-![jak-wybrac-przegladarke-cypress](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fcypress-6-1.png?alt=media&token=938fd6c1-3de8-486a-88ad-b847badcd214){:alt="jak-wybrac-przegladarke-cypress"}
+![jak-wybrac-przegladarke-cypress](/media-from-firebase/cypress-6/cypress-6-1.png){:alt="jak-wybrac-przegladarke-cypress"}
 
 Jak widać Firefox i Edge nie jest dostępny z prozaicznego sposobu. Nie mam tych przeglądarek zainstalowanych na dysku. Naprawiam ten problem i uruchamiam ponownie Test Runner'a. Po instalacji przeglądarek spotkałem się z problemem. Polecenie:
 
@@ -60,7 +60,7 @@ Następnie:
 
 Działał już poprawnie. Po wykonaniu tych operacji mam już dostępne nowe przeglądarki!
 
-![nowe-przegladarki-cypres](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fcypress-6-2.png?alt=media&token=ea14dafe-df17-4a19-b626-ebf15526f63f)
+![nowe-przegladarki-cypres](/media-from-firebase/cypress-6/cypress-6-2.png)
 
 Uruchomienie testów przebiegło już bez żadnych problemów. Ich wyniki zbiegają się z tymi z Google Chrome. Oto nagrania z przebiegu testów.
 

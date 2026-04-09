@@ -52,7 +52,7 @@ A więc w katalogu:
 
 Tworzę nowy plik, w moim przypadku o nazwie SmokeTests.spec.js. Powinien on zostać natychmiast rozpoznany i wyświetlony w oknie.:
 
-![1-cypress-windows](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F1-cypress-windows.png?alt=media&token=d833a67e-6977-40ad-8cd5-83c897b51ccd)
+![1-cypress-windows](/media-from-firebase/2019-10-01-first-tests-with-cypress/1-cypress-windows.png)
 
 Następnym krokiem jest otworzenie nowo utworzonego pliku i napisane swojego pierwszego testu, który odwiedzi naszą aplikacje. Aby tego dokonać należy użyć polecenie:
 
@@ -68,7 +68,7 @@ Musimy po prostu do tej funkcji przekazać adres URL.
 
 Po zapisaniu pliku i dwukrotnym kliknięciu na SmokeTests.spec.js w oknie Cypressa powinieneś zobaczyć następujący rezultat:
 
-![2-first-test](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F2-first-test.png?alt=media&token=6643978e-ba1f-4fcc-a319-3822d183adec)
+![2-first-test](/media-from-firebase/2019-10-01-first-tests-with-cypress/2-first-test.png)
 
 W oknie Cypress możesz zauważyć operacje VISIT która właśnie oznacza odwiedzenie strony przez nasz test.
 
@@ -99,7 +99,7 @@ Kiedy zamienimy selektor na naprzyklad:
 
 Zobaczymy następujący rezultat:
 
-![3-first-get](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F3-first-get-v2.png?alt=media&token=aee6da24-3e1e-4fbe-9936-ad5d7ae36338)
+![3-first-get](/media-from-firebase/2019-10-01-first-tests-with-cypress/3-first-get-v2.png)
 
 ## Klik!
 
@@ -122,7 +122,7 @@ Gotowy test będzie wyglądał tak:
 
 Okno aplikacji po utworzeniu tego testu powinno wyglądać w ten sposób:
 
-![4-first-click](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F4-first-click.png?alt=media&token=6848ffb6-57d6-457c-b115-294b1f81ee53)
+![4-first-click](/media-from-firebase/2019-10-01-first-tests-with-cypress/4-first-click.png)
 
 ## Asercja
 
@@ -142,7 +142,7 @@ Test składa się z 3 kroków, przechodzimy na stronę aplikacji która właśni
 
 Okno aplikacji po utworzeniu tego testu powinno wyglądać w ten sposób:
 
-![5-first-assertion](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F5-first-assertion.png?alt=media&token=673b7b71-2bac-4dc6-be71-8f40f6619c91)
+![5-first-assertion](/media-from-firebase/2019-10-01-first-tests-with-cypress/5-first-assertion.png)
 
 ## Obługa inputu
 
@@ -168,7 +168,7 @@ Zostaje wykonana asercja czy pole zawiera odpowiednia wartość po zakończeniu 
 
 Okno aplikacji po utworzeniu tego testu powinno wyglądać w ten sposób:
 
-![6-first-type](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F6-first-type.png?alt=media&token=4a7866a6-bc0a-4115-a798-7271a20b33a5)
+![6-first-type](/media-from-firebase/2019-10-01-first-tests-with-cypress/6-first-type.png)
 
 ## Zakończenie
 

@@ -49,7 +49,7 @@ Ten sam trick co przy Cypressie: krok z testami z `continueOnError: true`, żeby
       testRunTitle: Playwright tests
 ```
 
-![Publish Test Results (z serii Cypress)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-29-publishing-test-results-azure-devops%2Fcypress-9-1.png?alt=media&token=0f130546-deea-4528-8653-2af58fdaa32d)
+![Publish Test Results (z serii Cypress)](/media-from-firebase/2020-04-29-publishing-test-results-azure-devops/cypress-9-1.png)
 
 ## Dlaczego to ma sens
 

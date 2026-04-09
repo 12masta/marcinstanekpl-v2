@@ -102,13 +102,31 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
+              const base = site.siteMetadata.siteUrl.replace(/\/$/, "")
+              const absolutizeLocalMedia = html =>
+                html
+                  .replace(
+                    /src="\/media-from-firebase\//g,
+                    `src="${base}/media-from-firebase/`
+                  )
+                  .replace(
+                    /href="\/media-from-firebase\//g,
+                    `href="${base}/media-from-firebase/`
+                  )
+                  .replace(
+                    /poster="\/media-from-firebase\//g,
+                    `poster="${base}/media-from-firebase/`
+                  )
+
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [
+                    { "content:encoded": absolutizeLocalMedia(node.html) },
+                  ],
                 })
               })
             },
