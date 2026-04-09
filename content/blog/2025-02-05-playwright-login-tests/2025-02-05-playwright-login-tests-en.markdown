@@ -103,7 +103,7 @@ Pull request:
 
 After Docker changes, rebuild the image (`make build` before `make run`), exactly as in the original series.
 
-![Swagger - delete user](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F5-swagger-delete-exists.png?alt=media)
+![Swagger - delete user](/media-from-firebase/2019-10-18-login-tests-with-cypress/5-swagger-delete-exists.png)
 
 ## First test - successful login
 
@@ -130,7 +130,7 @@ test("successful login", async ({ page, request }) => {
 
 These navbar selectors are intentionally brittle - replace them with test hooks when you refactor.
 
-![Successful login](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F6-successfull-login-complete.png?alt=media&token=ea33f4c3-13d2-4f41-9057-3fa0b40112d1)
+![Successful login](/media-from-firebase/2019-10-18-login-tests-with-cypress/6-successfull-login-complete.png)
 
 ## Incorrect password
 
@@ -151,7 +151,7 @@ test("incorrect password", async ({ page, request }) => {
 })
 ```
 
-![Wrong password](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F7-incorrect-password.png?alt=media&token=94f0aecd-9293-40cd-94a3-fc25686feef0)
+![Wrong password](/media-from-firebase/2019-10-18-login-tests-with-cypress/7-incorrect-password.png)
 
 ## Not existing user
 
@@ -173,7 +173,7 @@ test("not existing user", async ({ page, request }) => {
 })
 ```
 
-![Unknown user](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F8-not-existing-user.png?alt=media&token=b66f8eca-c912-406d-b8de-222008e62fa3)
+![Unknown user](/media-from-firebase/2019-10-18-login-tests-with-cypress/8-not-existing-user.png)
 
 ## Empty fields
 
@@ -194,7 +194,7 @@ test("empty fields", async ({ page }) => {
 
 On the RealWorld build from this blog series the API actually returned longer strings (`User.Email …`, `User.Password …`), so the assertion failed and surfaced a real wording bug. Adjust `toHaveText`, `toContainText`, or a regex to match whatever contract your product guarantees.
 
-![Empty fields](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-18-login-tests-with-cypress%2F9-empty-fields.png?alt=media&token=42e52bb2-9f81-484c-9147-d76996fd357d)
+![Empty fields](/media-from-firebase/2019-10-18-login-tests-with-cypress/9-empty-fields.png)
 
 ## Summary
 

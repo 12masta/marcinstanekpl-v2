@@ -26,4 +26,4 @@ Doskonała okazja żeby podejrzeć dobre praktyki i to, jak może wyglądać tak
 
 Obejrzyj [nagranie rozwiązania zadania rekrutacyjnego Selenium](/selenium-zadanie-rekrutacyjne) lub kliknij obrazek poniżej:
 
-[![Zadanie rekrutacyjne](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/selenium-zadanie-rekrutacyjne-1%2FScreenshot%202020-02-13%20at%2011.11.06.png?alt=media&token=c5906f21-2f4a-4a46-b825-562e5e50fb53)](/selenium-zadanie-rekrutacyjne)
+[![Zadanie rekrutacyjne](/media-from-firebase/selenium-zadanie-rekrutacyjne-1/Screenshot%202020-02-13%20at%2011.11.06.png)](/selenium-zadanie-rekrutacyjne)

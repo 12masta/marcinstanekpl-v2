@@ -114,10 +114,10 @@ the change has been applied. Of course, the frontend project runs in the
 background all the time.
 
 <!--
-{% include_relative video.html id="vid2" webm="https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.webm?alt=media&token=48cbe7e1-b1e8-4d47-8a62-54cb18d13fa2" mp4="https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.mp4?alt=media&token=adba3b05-3e4d-461f-9d1d-05f529b62dde.mp4" img="https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.png?alt=media&token=7351c7e2-46a6-4c3c-a758-8302fc60a3aa" ogv="https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.ogv?alt=media&token=5a865b5d-4f10-4392-b56a-a40b73e41e2b" imgalt="cypress-5-2-data-cy-email-input" %}
+{% include_relative video.html id="vid2" webm="/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.webm" mp4="/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.mp4" img="/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.png" ogv="/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.ogv" imgalt="cypress-5-2-data-cy-email-input" %}
 -->
 
-[Email input video](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.mp4?alt=media&token=adba3b05-3e4d-461f-9d1d-05f529b62dde.mp4) 
+[Email input video](/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.mp4) 
  
 The same applies to the password field:
 
@@ -241,7 +241,7 @@ Finally, I assign a variable value to each attribute of the item on the bug list
 
 This is how the DOM displays what I expected:
 
-![cypres-5-3-selectors-error-messages](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypres-5-3-selectors-error-messages.png?alt=media&token=38e28971-9e03-476e-9d93-10272ad97483)
+![cypres-5-3-selectors-error-messages](/media-from-firebase/2019-12-03-selectors-refactor/cypres-5-3-selectors-error-messages.png)
 
 Moving on to refactoring error validation I modify the
 _shouldErrorMessageBeValid_ function in the file:

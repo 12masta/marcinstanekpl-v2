@@ -44,7 +44,7 @@ In case of problems after the update, the developers have prepared specific exam
 
 Changing the browser from within Test Runner is available in the upper right corner.
 
-![How to choose browser cypress](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fcypress-6-1.png?alt=media&token=938fd6c1-3de8-486a-88ad-b847badcd214)
+![How to choose browser cypress](/media-from-firebase/cypress-6/cypress-6-1.png)
 
 As you can see Firefox and Edge are not available from a mundane way. I don't have these browsers installed on the disk. I fix this problem and restart Test Runner. After installing the browsers, I encountered the problem. Command:
 
@@ -60,7 +60,7 @@ Then:
 
 It was already working properly. After performing these operations, I now have new browsers available!
 
-![new browsers cypres](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/cypress-6%2Fcypress-6-2.png?alt=media&token=ea14dafe-df17-4a19-b626-ebf15526f63f)
+![new browsers cypres](/media-from-firebase/cypress-6/cypress-6-2.png)
 
 The launch of the tests has already run without any problems. Their results coincide with those of Google Chrome. Here are the recordings of the tests.
 

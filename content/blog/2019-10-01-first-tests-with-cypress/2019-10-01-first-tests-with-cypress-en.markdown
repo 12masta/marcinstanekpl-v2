@@ -56,7 +56,7 @@ So in directory:
 
 I create a new file named SmokeTests.spec.js. It should be immediately identified and displayed in window:
 
-![1-cypress-windows](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F1-cypress-windows.png?alt=media&token=d833a67e-6977-40ad-8cd5-83c897b51ccd)
+![1-cypress-windows](/media-from-firebase/2019-10-01-first-tests-with-cypress/1-cypress-windows.png)
 
 Next step is to open newly created file and write first test, which will open our application. Use below command in order to achieve that:
 
@@ -72,7 +72,7 @@ We need just pass an URL as function parameter
 
 After save and double click on SmokeTests.spec.js in Cypress window you should see following result:
 
-![2-first-test](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F2-first-test.png?alt=media&token=6643978e-ba1f-4fcc-a319-3822d183adec)
+![2-first-test](/media-from-firebase/2019-10-01-first-tests-with-cypress/2-first-test.png)
 
 In Cypress window you can notice a VISIT operation which indicates that test has visited our website.
 
@@ -103,7 +103,7 @@ When we change code to:
 
 Result will be:
 
-![3-first-get](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F3-first-get-v2.png?alt=media&token=aee6da24-3e1e-4fbe-9936-ad5d7ae36338)
+![3-first-get](/media-from-firebase/2019-10-01-first-tests-with-cypress/3-first-get-v2.png)
 
 ## Clik!
 
@@ -126,7 +126,7 @@ Our code:
 
 Look of application window after execution:
 
-![4-first-click](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F4-first-click.png?alt=media&token=6848ffb6-57d6-457c-b115-294b1f81ee53)
+![4-first-click](/media-from-firebase/2019-10-01-first-tests-with-cypress/4-first-click.png)
 
 ## Assertion
 
@@ -146,7 +146,7 @@ Test have 3 steps: go to website, click the button, ensure we've been redirected
 
 Application window after test execution will look:
 
-![5-first-assertion](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F5-first-assertion.png?alt=media&token=673b7b71-2bac-4dc6-be71-8f40f6619c91)
+![5-first-assertion](/media-from-firebase/2019-10-01-first-tests-with-cypress/5-first-assertion.png)
 
 ## Input handle
 
@@ -172,7 +172,7 @@ An assertion is executed to ensure field contains correct value.
 
 Application windows will look:
 
-![6-first-type](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-10-01-first-tests-with-cypress%2F6-first-type.png?alt=media&token=4a7866a6-bc0a-4115-a798-7271a20b33a5)
+![6-first-type](/media-from-firebase/2019-10-01-first-tests-with-cypress/6-first-type.png)
 
 ## Ending
 

@@ -53,7 +53,7 @@ steps:
 
 Ustaw `BASE_URL` i `API_URL` w Pipelines → Variables (tak jak na zrzucie z serii Cypress) - wtedy testy trafiają w wdrożony front/API zamiast w `localhost`.
 
-![Zmienne pipeline (materiał z wpisu o Cypressie)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-1.png?alt=media&token=32482f6d-483d-4e3a-b6c9-d613a035be69)
+![Zmienne pipeline (materiał z wpisu o Cypressie)](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-1.png)
 
 ## `playwright.config.ts`
 

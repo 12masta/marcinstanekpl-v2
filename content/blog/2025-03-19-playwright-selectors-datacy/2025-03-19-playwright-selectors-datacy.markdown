@@ -62,7 +62,7 @@ Nagrania z tamtego wpisu nadal dobrze ilustrują dodawanie atrybutu w React:
 
 [Selector playground (mp4)](https://s3.eu-north-1.amazonaws.com/marcinstanek.pl/2019-12-03-selectors-refactor/cypress-5-1-selector-playground-.mp4)
 
-[Email input (mp4)](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2019-12-03-selectors-refactor%2Fcypress-5-2-data-cy-email-input.mp4?alt=media&token=adba3b05-3e4d-461f-9d1d-05f529b62dde.mp4)
+[Email input (mp4)](/media-from-firebase/2019-12-03-selectors-refactor/cypress-5-2-data-cy-email-input.mp4)
 
 ## Kod na GitHubie
 

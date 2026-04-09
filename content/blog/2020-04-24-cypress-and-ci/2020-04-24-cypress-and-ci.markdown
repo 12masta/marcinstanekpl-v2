@@ -162,11 +162,11 @@ Pobieram wartość zmiennej środowiskowej za pomocą polecenia _process.env.BAS
 
 Następnie muszę dodać zmienne w Azure DevOps. Przechodzę do sekcji Pipelines, wybieram mojego pipe'a. Klikam Edit. W prawym górnym rogu wybieram Variables. Dodaje dwa Variable, które pozwolą mi na ustawienie adresu dostępnego w sieci. Dodaje je i zapisuje od tego momentu mój pipeline działa poprawnie.
 
-![zmienne środowiskowe azure devops](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-1.png?alt=media&token=32482f6d-483d-4e3a-b6c9-d613a035be69)
+![zmienne środowiskowe azure devops](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-1.png)
 
 Dzięki integracji AzureDevOps przy każdym PR zostanie uruchomiony nasz pipeline, który może być wymagany na przykład do możliwości zmergowania zmian. Nie jest to domyślna konfiguracja, jednak jest to możliwe. Oznacza to, że możemy wymusić uruchomienie testów dla każdego PR, a sam proces uruchomienia testów został przed chwilą przeprowadzony.
 
-![integracja azure devops i github](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-2.png?alt=media&token=8fe77ccd-55d3-4207-a2d9-00bcd9686f2c)
+![integracja azure devops i github](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-2.png)
 
 ## Podsumowanie
 

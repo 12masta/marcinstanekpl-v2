@@ -62,7 +62,7 @@ albo globalnie w `expect` w `playwright.config.ts` (`toHaveScreenshot` threshold
 
 Efekt „wyłapania” pojedynczej zmiany w tekście nadal dobrze pokazują zrzuty z [cypress-7](/cypress-7/) - mechanizm jest ten sam, tylko API inne.
 
-![Przykładowy diff z epoki Cypress](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-03-29-cypress-visual-regression%2Fcypress-7-3.png?alt=media&token=7150c4ad-2b58-4077-8ed0-6827d5c6ae79)
+![Przykładowy diff z epoki Cypress](/media-from-firebase/2020-03-29-cypress-visual-regression/cypress-7-3.png)
 
 ## Kod na GitHubie (Cypress / historyczny)
 

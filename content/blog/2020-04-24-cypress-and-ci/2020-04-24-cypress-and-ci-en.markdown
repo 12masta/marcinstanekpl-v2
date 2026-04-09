@@ -161,11 +161,11 @@ I get the value of an environment variable using the _process.env.BASE_URL_ comm
 
 Then I need to add variables in Azure DevOps. I go to the Pipelines section, choose my pipe. I click Edit. In the top right corner I choose Variables. It adds two Variables that will allow me to set an address available on the network. I add them and save them from then on my pipeline works fine.
 
-![azure devops environment variables](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-1.png?alt=media&token=32482f6d-483d-4e3a-b6c9-d613a035be69)
+![azure devops environment variables](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-1.png)
 
 Dzięki integracji AzureDevOps przy każdym PR zostanie uruchomiony nasz pipeline, który może być wymagany na przykład do możliwości zmergowania zmian. Nie jest to domyślna konfiguracja, jednak jest to możliwe. Oznacza to, że możemy wymusić uruchomienie testów dla każdego PR, a sam proces uruchomienia testów został przed chwilą przeprowadzony.
 
-![azure devops and github integration](https://firebasestorage.googleapis.com/v0/b/marcinstanek-a2c3b.appspot.com/o/2020-04-13-cypress-and-ci%2Fcypress-8-2.png?alt=media&token=8fe77ccd-55d3-4207-a2d9-00bcd9686f2c)
+![azure devops and github integration](/media-from-firebase/2020-04-13-cypress-and-ci/cypress-8-2.png)
 
 ## Summary
 
