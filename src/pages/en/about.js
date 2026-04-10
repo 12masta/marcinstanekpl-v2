@@ -59,8 +59,9 @@ const AboutEn = ({ location }) => {
             <p className="mb-0">
               Longer term I&apos;m building toward a QA decision layer in CI/CD:
               from structured PR briefs, through test-result intelligence, to
-              security triage - always framed as risk reduction, not an
-              AI gimmick.
+              clearer support for data-impacting changes - contracts, migrations,
+              downstream usage - always framed as risk reduction, not an AI
+              gimmick.
             </p>
           </div>
         </div>

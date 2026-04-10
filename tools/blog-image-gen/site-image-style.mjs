@@ -18,6 +18,15 @@ Background: solid white (#FFFFFF) across the canvas. No grey or tinted full-fram
 
 Tone (balance): credible B2B independent practitioner — approachable and human, still orderly. Soft rounded shapes and a restrained blue / teal / warm-neutral palette are good. Avoid mascot characters, exaggerated cartoon faces, or childish sticker energy. Abstract metaphors, simple icons, and optional small stylized people (minimal, adult proportions) are fine if they stay secondary to the main idea — not a crowded scene.`
 
+/** QA PR briefs landing (/en/qa-pr-briefs/, /qa-briefingi-pr/) - tools/blog-image-gen/generate-qa-pr-briefs-images.mjs */
+export const COMPOSITION_QA_LANDING_WORKFLOW = `Composition: same ultra-wide horizontal strip as the roadmap asset (low profile, about 1200 by 420 at export) - clear left-to-right flow: ticket, code change, and context resolving into one calm outcome suggesting a structured brief. Plenty of breathing room.
+
+Background: solid white (#FFFFFF) across the canvas.`
+
+export const COMPOSITION_QA_LANDING_ROADMAP = `Composition: 21:9 ultra-wide horizontal strip - three linked stages with even rhythm left to right (entry, expansion, hardening), low visual height, no readable labels on steps.
+
+Background: solid white (#FFFFFF) across the canvas.`
+
 /** Full style block appended to blog image prompts (replaces legacy SITE_IMAGE_STYLE). */
 export const BLOG_IMAGE_STYLE_PROMPT = `${SITE_ILLUSTRATION_STYLE}\n\n${COMPOSITION_BLOG_OG}`
 

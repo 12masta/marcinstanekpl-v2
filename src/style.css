@@ -269,3 +269,11 @@
     text-align: start;
     padding-right: 0.5rem;
 }
+
+/* QA PR briefs landing: roadmap card titles stay h3 but same font-size as body */
+.qa-pr-briefs-landing .qa-pr-briefs-roadmap-card__title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 0.35rem;
+}

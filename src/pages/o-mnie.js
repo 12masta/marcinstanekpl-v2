@@ -61,9 +61,10 @@ const AboutPl = ({ location }) => {
             <p className="mb-0">
               Długoterminowo rozwijam kierunek, który można opisać jako warstwę
               decyzji QA w CI/CD: od strukturyzowanych briefingów przy PR,
-              przez inteligencję na wynikach testów, po triage znalezisk
-              bezpieczeństwa - zawsze z naciskiem na to, co realnie obniża
-              ryzyko, a nie na „fajne demo z AI”.
+              przez inteligencję na wynikach testów, po jaśniejsze wsparcie przy
+              zmianach dotykających danych - kontrakty, migracje, zależności
+              downstream - zawsze z naciskiem na to, co realnie obniża ryzyko, a
+              nie na „fajne demo z AI”.
             </p>
           </div>
         </div>

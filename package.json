@@ -73,6 +73,7 @@
     "lighthouse:smoke": "npm run build && npx playwright test tests/lighthouse.spec.ts --config=tests/ci.lighthouse.config.ts --grep \"Lighthouse - Navbar\"",
     "blog:image": "node tools/blog-image-gen/generate-blog-image.mjs",
     "home:image": "node tools/blog-image-gen/generate-home-image.mjs",
+    "qa-pr-briefs:image": "node tools/blog-image-gen/generate-qa-pr-briefs-images.mjs",
     "about:photo": "node tools/blog-image-gen/process-about-photo.mjs",
     "media:firebase-localize": "node tools/firebase-storage-localize.mjs"
   }

@@ -9,6 +9,8 @@ export class Nav extends React.Component {
     let blogHref
     let aboutHref
     let aboutLabel
+    let offerHref
+    let offerLabel
 
     if (this.props.pathName.includes("blog/en/")) {
       brandHref = "/en/"
@@ -17,6 +19,8 @@ export class Nav extends React.Component {
       blogHref = "/blog/en/"
       aboutHref = "/en/about/"
       aboutLabel = "About"
+      offerHref = "/en/qa-pr-briefs/"
+      offerLabel = "QA PR briefs"
     } else if (this.props.pathName.includes("blog/pl/")) {
       brandHref = "/"
       languageHref = "/blog/en/"
@@ -24,6 +28,8 @@ export class Nav extends React.Component {
       blogHref = "/blog/pl/"
       aboutHref = "/o-mnie/"
       aboutLabel = "O mnie"
+      offerHref = "/qa-briefingi-pr/"
+      offerLabel = "Briefingi QA"
     } else if (this.props.pathName.includes("/en")) {
       brandHref = "/en/"
       languageHref = "/"
@@ -31,6 +37,8 @@ export class Nav extends React.Component {
       blogHref = "/blog/en/"
       aboutHref = "/en/about/"
       aboutLabel = "About"
+      offerHref = "/en/qa-pr-briefs/"
+      offerLabel = "QA PR briefs"
     } else {
       brandHref = "/"
       languageHref = "/en/"
@@ -38,6 +46,8 @@ export class Nav extends React.Component {
       blogHref = "/blog/pl/"
       aboutHref = "/o-mnie/"
       aboutLabel = "O mnie"
+      offerHref = "/qa-briefingi-pr/"
+      offerLabel = "Briefingi QA"
     }
 
     if (
@@ -61,6 +71,7 @@ export class Nav extends React.Component {
             <div className="collapse navbar-collapse flex-grow-1 align-items-lg-center" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto align-items-lg-center flex-nowrap gap-lg-1">
                 <a className="nav-link text-nowrap flex-shrink-0" href={aboutHref} data-test="about-link">{aboutLabel}</a>
+                <a className="nav-link text-nowrap flex-shrink-0" href={offerHref} data-test="qa-pr-briefs-link">{offerLabel}</a>
                 <a className="nav-link text-nowrap flex-shrink-0" href={blogHref} data-test="blog-link">Blog</a>
                 <BlogNavSearch pathName={this.props.pathName} />
                 <a

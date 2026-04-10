@@ -8,6 +8,7 @@
  * and --print-context to preview prompts without calling the API.
  *
  * Requires GEMINI_API_KEY or GOOGLE_API_KEY (skipped when --print-context only).
+ * Loads repo-root `.env` automatically when present.
  *
  * Examples:
  *   npm run blog:image -- --print-context --refs none --file content/blog/.../post.markdown
@@ -26,6 +27,7 @@ import {
   SITE_ILLUSTRATION_STYLE,
   COMPOSITION_BLOG_OG,
 } from "./site-image-style.mjs"
+import { loadRepoEnv } from "./load-repo-env.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, "../..")
@@ -242,6 +244,7 @@ function buildGenerateConfig(model, aspectRatio) {
 }
 
 async function main() {
+  loadRepoEnv()
   const args = parseArgs(process.argv)
   if (args.help) {
     console.log(`Usage: npm run blog:image -- [options]
@@ -259,7 +262,8 @@ Options:
   --public          Also write static/images/blog/<slug>/og.png (served at /images/blog/... after build)
 
 Environment:
-  GEMINI_API_KEY or GOOGLE_API_KEY — required unless --print-context
+  GEMINI_API_KEY or GOOGLE_API_KEY - required unless --print-context
+  Also read from repo-root .env if the file exists (does not override existing env vars).
 `)
     process.exit(0)
   }
@@ -347,7 +351,7 @@ Environment:
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
   if (!apiKey) {
     console.error(
-      "Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment (not committed; use .env locally if you load it)."
+      "Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment or in repo-root .env (not committed)."
     )
     process.exit(1)
   }

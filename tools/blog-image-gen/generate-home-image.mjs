@@ -4,6 +4,7 @@
  * Writes 1:1 PNGs under src/images/home/ (hero.png, qa.png, …).
  *
  * Requires GEMINI_API_KEY or GOOGLE_API_KEY (skipped when --print-context only).
+ * Loads repo-root `.env` automatically when present (same as blog:image / qa-pr-briefs:image).
  *
  * Examples:
  *   npm run home:image -- --print-context --refs none
@@ -22,6 +23,7 @@ import {
   SITE_ILLUSTRATION_STYLE,
   COMPOSITION_HOME_FEATURE,
 } from "./site-image-style.mjs"
+import { loadRepoEnv } from "./load-repo-env.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, "../..")
@@ -296,6 +298,7 @@ async function generateOne(ai, args, sectionId) {
 }
 
 async function main() {
+  loadRepoEnv()
   const args = parseArgs(process.argv)
   if (args.help) {
     console.log(`Usage: npm run home:image -- [options]
@@ -314,7 +317,8 @@ Options:
   --delay         Milliseconds between requests when using --all (default: 2500)
 
 Environment:
-  GEMINI_API_KEY or GOOGLE_API_KEY — required unless --print-context
+  GEMINI_API_KEY or GOOGLE_API_KEY - required unless --print-context
+  Also read from repo-root .env if the file exists (does not override existing env vars).
 `)
     process.exit(0)
   }
@@ -376,7 +380,7 @@ Environment:
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
   if (!apiKey) {
     console.error(
-      "Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment (not committed; use .env locally if you load it)."
+      "Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment or in repo-root .env (not committed)."
     )
     process.exit(1)
   }
