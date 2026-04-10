@@ -15,15 +15,12 @@ export class LastBlogPosts extends React.Component {
 
     return (
       <div
-        className="container marketing last-blog-posts px-4"
+        className="container marketing last-blog-posts px-4 mb-5 home-landing-section"
         id="ostatnie-wpisy"
       >
-        <hr className="featurette-divider" />
         <div className="row featurette">
           <div className="col-12">
-            <h2 className="featurette-heading display-6 fw-light mb-4">
-              {this.props.header}
-            </h2>
+            <h2 className="fs-4 fw-bold mb-3">{this.props.header}</h2>
             <ol className="list-unstyled mb-0">
               {posts.map((post, index) => (
                 <BlogPostListItem

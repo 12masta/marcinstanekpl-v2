@@ -18,7 +18,7 @@ const AboutEn = ({ location }) => {
       alternateLanguageLabel="Polski"
     >
       <div className="about-page py-4">
-        <h1 className="display-5 fw-bold mb-4">About</h1>
+        <h1 className="fs-2 fw-bold mb-4">About</h1>
 
         <div className="row g-4 align-items-start">
           <div className="col-md-4 col-lg-3">
@@ -33,7 +33,7 @@ const AboutEn = ({ location }) => {
             />
           </div>
           <div className="col-md-8 col-lg-9">
-            <p className="lead">
+            <p className="mb-4">
               I&apos;m an independent QA and test automation engineer (B2B, 10+
               years). I help teams reduce delivery risk: tests and automation
               aligned with how you ship software, with concise QA context for

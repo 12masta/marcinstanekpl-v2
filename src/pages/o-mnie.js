@@ -18,7 +18,7 @@ const AboutPl = ({ location }) => {
       alternateLanguageLabel="English"
     >
       <div className="about-page py-4">
-        <h1 className="display-5 fw-bold mb-4">O mnie</h1>
+        <h1 className="fs-2 fw-bold mb-4">O mnie</h1>
 
         <div className="row g-4 align-items-start">
           <div className="col-md-4 col-lg-3">
@@ -33,7 +33,7 @@ const AboutPl = ({ location }) => {
             />
           </div>
           <div className="col-md-8 col-lg-9">
-            <p className="lead">
+            <p className="mb-4">
               Jestem niezależnym inżynierem QA i automatyzacji (B2B, ponad 10
               lat). Pomagam zespołom ograniczać ryzyko dostaw: testy i
               automatyzacja wpasowane w Wasz sposób wydawania oprogramowania,

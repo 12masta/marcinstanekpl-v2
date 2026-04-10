@@ -17,7 +17,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
   location,
 }) => (
   <Layout title="Using TypeScript" location={location}>
-    <h1 className="display-5 fw-bold">
+    <h1 className="fs-2 fw-bold mb-3">
       Gatsby supports TypeScript by default!
     </h1>
     <p>

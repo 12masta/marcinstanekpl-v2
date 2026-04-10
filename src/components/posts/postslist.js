@@ -15,18 +15,14 @@ export class PostsList extends React.Component {
 
     return (
       <div
-        className={`marketing last-blog-posts w-100 ${this.props.className || ""}`}
+        className={`marketing last-blog-posts w-100 mb-5 home-landing-section ${this.props.className || ""}`}
         id={this.props.id || undefined}
         role="region"
         aria-labelledby={headingId}
       >
-        <hr className="featurette-divider" />
         <div className="row featurette g-0">
           <div className="col-12">
-            <h2
-              id={headingId}
-              className="featurette-heading display-6 fw-light mb-4"
-            >
+            <h2 id={headingId} className="fs-4 fw-bold mb-3">
               {this.props.label}
             </h2>
             <ol className="list-unstyled mb-0">

@@ -10,7 +10,7 @@ export class Featurette extends React.Component {
 
     if(this.props.image === "qa"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid home-gatsby-fill"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/qa.png"
         quality={85}
@@ -20,7 +20,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "automation"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid home-gatsby-fill"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/automation.png"
         quality={85}
@@ -30,7 +30,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "complete_solutions"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid home-gatsby-fill"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/complete_solutions.png"
         quality={85}
@@ -40,7 +40,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "on_time"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid home-gatsby-fill"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/on_time.png"
         quality={85}
@@ -50,7 +50,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "inform"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid home-gatsby-fill"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/inform.png"
         quality={85}
@@ -70,30 +70,27 @@ export class Featurette extends React.Component {
     }
 
     return (
-    <div className="container marketing" id={this.props.id}>
-      <hr className="featurette-divider" />
-      <div className="row featurette">
+    <div className="container marketing mb-5 home-landing-section" id={this.props.id}>
+      <div className="row featurette align-items-md-center">
         <div className={column1Orientation}>
-          <h2 className="featurette-heading display-6 fw-light">
-            {this.props.header}
-          </h2>
+          <h2 className="fs-4 fw-bold mb-3">{this.props.header}</h2>
           {this.props.leadTextDesktop ? (
             <>
               <p
-                className="lead d-md-none"
+                className="mb-3 d-md-none"
                 data-testid={`${this.props.id}-lead-mobile`}
               >
                 {this.props.leadText}
               </p>
               <p
-                className="lead d-none d-md-block"
+                className="mb-3 d-none d-md-block"
                 data-testid={`${this.props.id}-lead-desktop`}
               >
                 {this.props.leadTextDesktop}
               </p>
             </>
           ) : (
-            <p className="lead">{this.props.leadText}</p>
+            <p className="mb-3">{this.props.leadText}</p>
           )}
         </div>
         <div className={column2Orientation}>

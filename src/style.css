@@ -78,21 +78,21 @@
     width: 100% !important;
 }
 
-/* purgecss end ignore */
-
-/* Hero → recent posts: do not use featurette vertical rhythm (5rem + 7rem) on desktop */
-@media (min-width: 62em) {
-    .last-blog-posts .featurette-divider {
-        margin-top: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .last-blog-posts .featurette-heading {
-        margin-top: 0;
-        line-height: 1.2;
-        letter-spacing: 0;
-    }
+/*
+ * Home featurette StaticImage: do not use .home-gatsby-fill (width/max-width overrides
+ * stretch the Gatsby constrained layout and make the art column much taller than the text).
+ * Keep the wrapper bounded to the column; vertical balance via align-items-md-center on the row.
+ */
+.marketing .row.featurette [data-gatsby-image-wrapper].home-featurette-image {
+    display: block !important;
+    max-width: 100% !important;
 }
+
+.marketing .row.featurette [data-gatsby-image-wrapper].home-featurette-image > div:first-of-type {
+    max-width: 100% !important;
+}
+
+/* purgecss end ignore */
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -133,12 +133,15 @@
 -------------------------------------------------- */
 
 @media (min-width: 62em) {
+    /*
+     * Default Bootstrap marketing featurettes used 5rem / 7rem - too airy for this site.
+     */
     .featurette-divider {
-        margin: 5rem 0;
+        margin: 2.25rem 0;
     }
 
     .featurette-heading {
-        margin-top: 7rem;
+        margin-top: 2rem;
     }
 }
 
