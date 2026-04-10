@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
       alternateLanguageHref={pageContext.alternateLanguageHref || undefined}
       alternateLanguageLabel={pageContext.alternateLanguageLabel || undefined}
     >
-      <div className="container mt-4">
+      <div className="mt-4">
         <article
           className="blog-post"
           itemScope

@@ -9,7 +9,7 @@ const PrivacyPolicyEn = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="container py-4">
+      <div className="py-4">
         <h1 className="fs-2 fw-bold mb-4">PRIVACY AND COOKIES POLICY</h1>
         <h2>Dzień dobry!</h2>
         Jeżeli tutaj trafiłeś, to niezawodny znak, że cenisz swoją prywatność.

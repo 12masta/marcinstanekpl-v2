@@ -70,7 +70,7 @@ export class Featurette extends React.Component {
     }
 
     return (
-    <div className="container marketing mb-5 home-landing-section" id={this.props.id}>
+    <div className="marketing mb-5 home-landing-section" id={this.props.id}>
       <div className="row featurette align-items-md-center">
         <div className={column1Orientation}>
           <h2 className="fs-4 fw-bold mb-3">{this.props.header}</h2>

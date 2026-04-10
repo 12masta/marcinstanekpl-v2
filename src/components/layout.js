@@ -20,13 +20,17 @@ const Layout = ({
           alternateLanguageHref={alternateLanguageHref}
           alternateLanguageLabel={alternateLanguageLabel}
         />
-        <div className="container">{children}</div>
+        <div className="container">
+          <div className="container px-4">{children}</div>
+        </div>
       </main>
 
       <CookieConsentCustom pathName={location.pathname} />
 
       <div className="container">
-        <footer>© marcinstanek.pl, {new Date().getFullYear()}</footer>
+        <div className="container px-4">
+          <footer>© marcinstanek.pl, {new Date().getFullYear()}</footer>
+        </div>
       </div>
     </div>
   )

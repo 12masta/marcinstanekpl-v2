@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export class ThankYou extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <hr/>
         <h2 className="text-center fs-4 fw-semibold">Podziękowania</h2>
         <div className="row">

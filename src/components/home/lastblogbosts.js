@@ -15,7 +15,7 @@ export class LastBlogPosts extends React.Component {
 
     return (
       <div
-        className="container marketing last-blog-posts px-4 mb-5 home-landing-section"
+        className="marketing last-blog-posts mb-5 home-landing-section"
         id="ostatnie-wpisy"
       >
         <div className="row featurette">

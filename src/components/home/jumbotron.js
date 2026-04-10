@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export class Jumbotron extends React.Component {
   render() {
     return (
-      <div className="container px-4 py-4 mb-5 home-landing-hero">
+      <div className="py-4 mb-5 home-landing-hero">
         <div className="row flex-lg-row-reverse align-items-center g-4 g-lg-5">
           <div className="col-10 col-sm-8 col-lg-6">
             <StaticImage

@@ -3,7 +3,7 @@ import * as React from "react"
 export class LinkBadges extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <h4 className="text-center">
           Link do wideo z zadaniem:
           <a
