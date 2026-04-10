@@ -46,7 +46,7 @@ export function QaPrBriefsLanding({ copy }) {
 
       <figure className="mb-5">
         <img
-          className="img-fluid rounded shadow-sm w-100"
+          className="img-fluid rounded w-100"
           src={qaPrBriefsImageSrc(QA_PR_BRIEFS_IMAGES.workflow)}
           alt={images.workflowAlt}
           width={1200}
@@ -106,7 +106,7 @@ export function QaPrBriefsLanding({ copy }) {
         <p className="mb-4">{copy.roadmapIntro}</p>
         <figure className="mb-4">
           <img
-            className="img-fluid rounded shadow-sm w-100"
+            className="img-fluid rounded w-100"
             src={qaPrBriefsImageSrc(QA_PR_BRIEFS_IMAGES.roadmap)}
             alt={images.roadmapAlt}
             width={1200}

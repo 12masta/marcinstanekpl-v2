@@ -49,7 +49,7 @@ export function BlogPostListItem({
             <div className="col-12 col-sm-4 col-lg-3">
               <Link
                 to={slug}
-                className="d-block ratio ratio-16x9 rounded-2 overflow-hidden shadow-sm post-list-thumb"
+                className="d-block ratio ratio-16x9 rounded-2 overflow-hidden post-list-thumb"
                 tabIndex={-1}
                 aria-hidden="true"
               >

@@ -23,7 +23,7 @@ const AboutPl = ({ location }) => {
         <div className="row g-4 align-items-start">
           <div className="col-md-4 col-lg-3">
             <img
-              className="img-fluid rounded shadow-sm"
+              className="img-fluid rounded"
               src={`${__PATH_PREFIX__}/images/myself.jpg`}
               alt="Marcin Stanek"
               width={400}

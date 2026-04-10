@@ -10,7 +10,7 @@ export class Featurette extends React.Component {
 
     if(this.props.image === "qa"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/qa.png"
         quality={85}
@@ -20,7 +20,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "automation"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/automation.png"
         quality={85}
@@ -30,7 +30,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "complete_solutions"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/complete_solutions.png"
         quality={85}
@@ -40,7 +40,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "on_time"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/on_time.png"
         quality={85}
@@ -50,7 +50,7 @@ export class Featurette extends React.Component {
     }
     else if(this.props.image === "inform"){
       image = <StaticImage
-        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded shadow-sm"
+        className="d-block mx-lg-auto img-fluid w-100 home-featurette-image rounded"
         formats={["auto", "webp", "avif"]}
         src="../../images/home/inform.png"
         quality={85}
